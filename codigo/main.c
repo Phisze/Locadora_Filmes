@@ -13,11 +13,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "vector.h"
+#include "structs.h"
 /*
  * 
  */
 int main(int argc, char** argv) {
+    Cliente c;
+    printf("Digite o nome:");
+    scanf("%s",c.nome);
     
     return (EXIT_SUCCESS);
 }

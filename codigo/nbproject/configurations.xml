@@ -11,14 +11,25 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
-      <itemPath>modelo/daos/clienteDAO.c</itemPath>
-      <itemPath>main.c</itemPath>
+      <itemPath>modelo/daos/ClienteDAO.c</itemPath>
+      <itemPath>controle/conCliente.c</itemPath>
       <itemPath>modelo/beans/structs.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Arquivos de Recurso"
                    projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Arquivos de Teste"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Arquivos Importantes"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Arquivos de Teste"
@@ -43,6 +54,8 @@
       <compileType>
       </compileType>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -78,6 +91,8 @@
         </asmTool>
       </compileType>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>

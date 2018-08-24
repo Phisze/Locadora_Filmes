@@ -25,7 +25,7 @@ extern "C" {
 }
 #endif
 
-#include "../../vector.h"
+#include "vector.h"
 
 typedef struct {
     float codigo;
@@ -69,7 +69,7 @@ typedef struct {
 typedef struct {
     float codigo;
     vector nome;
-    vector razão_social;
+    vector razao_social;
     vector inscricao_estadual;
     vector cnpj;
     vector endereco;

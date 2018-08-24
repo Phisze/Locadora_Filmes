@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/beans/structs.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/controle/conCliente.o: controle/conCliente.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCliente.o controle/conCliente.c
 
 ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle
