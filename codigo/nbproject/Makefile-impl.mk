@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=struct_thomas
+PROJECTNAME=codigo
 
 # Active Configuration
 DEFAULTCONF=Debug

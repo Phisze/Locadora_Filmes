@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=struct_thomas
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/struct_thomas
+CND_ARTIFACT_NAME_Debug=codigo
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/codigo
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=structthomas.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/structthomas.tar
+CND_PACKAGE_NAME_Debug=codigo.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/codigo.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=struct_thomas
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/struct_thomas
+CND_ARTIFACT_NAME_Release=codigo
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/codigo
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=structthomas.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/structthomas.tar
+CND_PACKAGE_NAME_Release=codigo.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/codigo.tar
 #
 # include compiler specific variables
 #

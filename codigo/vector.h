@@ -54,4 +54,3 @@ void vector_free(vector *);
 
 
 #endif /* VECTOR_H */
-
