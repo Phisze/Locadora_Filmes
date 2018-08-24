@@ -4,12 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
-      <itemPath>modelo/beans/structs.h</itemPath>
+      <itemPath>clienteDAO.h</itemPath>
+      <itemPath>structs.h</itemPath>
       <itemPath>vector.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>modelo/daos/ClienteDAO.c</itemPath>
       <itemPath>modelo/beans/structs.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
     </logicalFolder>
@@ -39,11 +41,15 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/beans/structs.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/beans/structs.h" ex="false" tool="3" flavor2="0">
+      <item path="modelo/daos/ClienteDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="structs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -68,11 +74,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/beans/structs.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/beans/structs.h" ex="false" tool="3" flavor2="0">
+      <item path="modelo/daos/ClienteDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="structs.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
       </item>

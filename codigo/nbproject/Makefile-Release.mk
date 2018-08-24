@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/controle/vector.o \
-	${OBJECTDIR}/modelo/beans/structs.o
+	${OBJECTDIR}/modelo/beans/structs.o \
+	${OBJECTDIR}/modelo/daos/ClienteDAO.o
 
 
 # C Compiler Flags
@@ -72,6 +73,11 @@ ${OBJECTDIR}/modelo/beans/structs.o: modelo/beans/structs.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/beans
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/beans/structs.o modelo/beans/structs.c
+
+${OBJECTDIR}/modelo/daos/ClienteDAO.o: modelo/daos/ClienteDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/ClienteDAO.o modelo/daos/ClienteDAO.c
 
 # Subprojects
 .build-subprojects:
