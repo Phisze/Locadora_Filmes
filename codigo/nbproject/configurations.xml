@@ -11,7 +11,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
-      <itemPath>modelo/daos/ClienteDAO.c</itemPath>
+      <itemPath>modelo/daos/clienteDAO.c</itemPath>
+      <itemPath>main.c</itemPath>
       <itemPath>modelo/beans/structs.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
     </logicalFolder>
@@ -45,9 +46,11 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="modelo/beans/structs.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/daos/ClienteDAO.c" ex="false" tool="0" flavor2="0">
+      <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -78,9 +81,11 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="modelo/beans/structs.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/daos/ClienteDAO.c" ex="false" tool="0" flavor2="0">
+      <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -37,7 +37,7 @@ typedef struct {
     char sexo;
     vector estado_civil;
     vector data_nascimento;
-
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Cliente;
 
 typedef struct {
@@ -46,12 +46,14 @@ typedef struct {
     float exemplares;
     float catCodigo;
     char lingua;
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Filme;
 
 typedef struct {
     float codigo;
     float descricao;
     float valor_locacao;
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Categoria;
 
 typedef struct {
@@ -61,6 +63,7 @@ typedef struct {
     vector endereco;
     vector telefone;
     vector email;
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Funcionario;
 
 typedef struct {
@@ -72,6 +75,7 @@ typedef struct {
     vector endereco;
     vector telefone;
     vector email;
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Fornecedor;
 
 typedef struct {
@@ -84,6 +88,7 @@ typedef struct {
     vector email;
     vector nome_responsavel;
     vector tel_responsavel;
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Locadora;
 
 #endif /* STRUCTS_H */

@@ -31,19 +31,20 @@ void inclusaoCliente(Cliente c);
 
 /*
  **  Lista Clientes em arquivo binario
- */void listarClientes();
+ */
+void listarClientes();
 
 /*
  **  Consultar Clientes em arquivo binario
  */
-void consultar();
+void consultarCliente();
 /*
  **  Altera Clientes em arquivo binario
  */
-void alterar();
+void alterarCliente();
 /*
  **  Deleta Clientes em arquivo binario
  */
-void excluir();
+void excluirCliente();
 #endif /* CLIENTEDAO_H */
 
