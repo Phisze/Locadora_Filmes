@@ -23,19 +23,19 @@ void inclusaoCliente(Cliente c) {
     fclose(arq);
 }
 
-vector listarClientes() {
-    Cliente c;
-    vector clientes;
-    FILE *arq = fopen("produtos.pro", "rb");
-    if (arq == NULL) {
-        printf("Arquivo inexistente!");
-        return;
-    }
-    while (fread(&c, sizeof (c), 1, arq))
-        if (c.deletado != '*') {
-            VECTOR_ADD(clientes, c); 
-//            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
-        }
-    fclose(arq);
-    return clientes;
-}
+//vector listarClientes() {
+//    Cliente c;
+//    vector clientes;
+//    FILE *arq = fopen("produtos.pro", "rb");
+//    if (arq == NULL) {
+//        printf("Arquivo inexistente!");
+//        return;
+//    }
+//    while (fread(&c, sizeof (c), 1, arq))
+//        if (c.deletado != '*') {
+//            VECTOR_ADD(clientes, c); 
+////            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
+//        }
+//    fclose(arq);
+//    return clientes;
+//}

@@ -15,13 +15,17 @@
 #include <stdlib.h>
 #include "vector.h"
 #include "structs.h"
+#include "clienteDAO.h"
 /*
  * 
  */
 int main(int argc, char** argv) {
     Cliente c;
     printf("Digite o nome:");
-    scanf("%s",c.nome);
+    scanf("%s&*c",&c.nome);
+    printf("Nome do cliente: %s",c.nome);
+    inclusaoCliente(c);
+    
     
     return (EXIT_SUCCESS);
 }

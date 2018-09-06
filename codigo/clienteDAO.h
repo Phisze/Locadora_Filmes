@@ -32,7 +32,7 @@ void inclusaoCliente(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
-void listarClientes();
+vector listarClientes();
 
 /*
  **  Consultar Clientes em arquivo binario
