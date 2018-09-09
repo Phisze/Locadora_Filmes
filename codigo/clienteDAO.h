@@ -14,6 +14,9 @@
 #ifndef CLIENTEDAO_H
 #define CLIENTEDAO_H
 
+#include "structs.h"
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -32,19 +35,19 @@ void inclusaoCliente(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
-vector listarClientes();
+Cliente listarClientes();
 
 /*
  **  Consultar Clientes em arquivo binario
  */
-void consultarCliente();
+Cliente consultarClientes(int cod);
 /*
  **  Altera Clientes em arquivo binario
  */
-void alterarCliente();
+void alterarCliente(Cliente clintes, int cod);
 /*
  **  Deleta Clientes em arquivo binario
  */
-void excluirCliente();
+void excluirCliente(int cod);
 #endif /* CLIENTEDAO_H */
 
