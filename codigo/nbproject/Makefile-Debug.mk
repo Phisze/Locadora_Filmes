@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=MinGW-Windows
+CND_PLATFORM=Cygwin-Windows
 CND_DLIB_EXT=dll
 CND_CONF=Debug
 CND_DISTDIR=dist
@@ -38,7 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/modelo/daos/clienteDao.o
+	${OBJECTDIR}/modelo/daos/clienteDAO.o
 
 
 # C Compiler Flags
@@ -80,10 +80,10 @@ ${OBJECTDIR}/main.o: main.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
-${OBJECTDIR}/modelo/daos/clienteDao.o: modelo/daos/clienteDao.c
+${OBJECTDIR}/modelo/daos/clienteDAO.o: modelo/daos/clienteDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDao.o modelo/daos/clienteDao.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDAO.o modelo/daos/clienteDAO.c
 
 # Subprojects
 .build-subprojects:

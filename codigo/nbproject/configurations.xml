@@ -11,7 +11,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
-      <itemPath>modelo/daos/clienteDao.c</itemPath>
+      <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
@@ -47,7 +47,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>MinGW|MinGW</compilerSet>
+        <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -61,7 +61,7 @@
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/daos/clienteDao.c" ex="false" tool="0" flavor2="0">
+      <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -96,7 +96,7 @@
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/daos/clienteDao.c" ex="false" tool="0" flavor2="0">
+      <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
       </item>

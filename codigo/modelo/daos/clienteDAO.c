@@ -23,9 +23,10 @@ void inclusaoCliente(Cliente c) {
     fclose(arq);
 }
 
-Cliente listarClientes() {
+Cliente * listarClientes() {
     Cliente c;
     Cliente clientes[100];
+    //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
     printf("Arquivo xistente!");
 
@@ -45,9 +46,7 @@ Cliente listarClientes() {
         }
     }
     fclose(arq);
-    for (int i = 0; i < sizeof (c); i++) {
-        return clientes[i];
-    }
+    return clientes;
 }
 
 Cliente consultarClientes(int cod) {

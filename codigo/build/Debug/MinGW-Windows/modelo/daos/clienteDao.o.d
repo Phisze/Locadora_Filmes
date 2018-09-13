@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/modelo/daos/clienteDao.o: \
- modelo/daos/clienteDao.c modelo/daos/../../vector.h \
+build/Debug/MinGW-Windows/modelo/daos/clienteDAO.o: \
+ modelo/daos/clienteDAO.c modelo/daos/../../vector.h \
  modelo/daos/../../structs.h modelo/daos/../../vector.h \
  modelo/daos/../../clienteDAO.h modelo/daos/../../structs.h
 

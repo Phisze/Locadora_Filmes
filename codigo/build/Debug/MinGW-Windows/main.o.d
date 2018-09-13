@@ -1,7 +1,7 @@
-build/Debug/MinGW-Windows/main.o: main.c vector.h structs.h clienteDAO.h
+build/Debug/MinGW-Windows/main.o: main.c clienteDAO.h structs.h vector.h
 
-vector.h:
+clienteDAO.h:
 
 structs.h:
 
-clienteDAO.h:
+vector.h:

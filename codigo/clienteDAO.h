@@ -35,7 +35,7 @@ void inclusaoCliente(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
-Cliente listarClientes();
+Cliente* listarClientes();
 
 /*
  **  Consultar Clientes em arquivo binario

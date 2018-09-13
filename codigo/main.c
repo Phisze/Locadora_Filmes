@@ -8,28 +8,32 @@
  * File:   main.c
  * Author: alunos
  *
- * Created on 24 de Agosto de 2018, 15:12
+ * Created on 13 de Setembro de 2018, 14:49
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "vector.h"
-#include "structs.h"
 #include "clienteDAO.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    Cliente c;
-
-    printf("Digite o nome:");
-    scanf("%s&*c", &c.nome);
-    printf("Digite o Codigo:");
-    scanf("%f&*c", &c.codigo);
-    //printf("Nome do cliente: %s",c.nome);
-    inclusaoCliente(c);
     
+    //    Cliente incluir;
+    //    printf("Insira o codigo:");
+    //    scanf("%f%*c",&incluir.codigo);
+    //    printf("Insira o nome:");
+    //    scanf("%s%*c",&incluir.nome);
+    //    inclusaoCliente(incluir);
+
+    //Cliente c=consultarClientes(1);
+    //printf(" %s",c.nome);
+    for (int i = 0; i < 100; i++) {
+        printf("test");
+        printf(" %s", listarClientes()[i].nome);
+    }
+
     return (EXIT_SUCCESS);
 }
 
