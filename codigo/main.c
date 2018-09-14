@@ -19,7 +19,7 @@
  * 
  */
 int main(int argc, char** argv) {
-    
+
     //    Cliente incluir;
     //    printf("Insira o codigo:");
     //    scanf("%f%*c",&incluir.codigo);
@@ -29,10 +29,17 @@ int main(int argc, char** argv) {
 
     //Cliente c=consultarClientes(1);
     //printf(" %s",c.nome);
-    for (int i = 0; i < 100; i++) {
-        printf("test");
-        printf(" %s", listarClientes()[i].nome);
+    Cliente *array;
+
+    array = listarClientes();
+    for (int i = 0; i < 6; i++) {
+
+        printf("First name is %s\n", array[i].nome);
     }
+    ///for (int i = 0; i < 100; i++) {
+    //   printf("test");
+    //     printf("\n %s", listarClientes()->nome);
+    //}
 
     return (EXIT_SUCCESS);
 }
