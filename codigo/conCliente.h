@@ -26,13 +26,21 @@ extern "C" {
 #endif
 
 #include "vector.h"
+#include "structs.h"
 
 int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil
-, vector data_nascimento){}
+, vector data_nascimento){};
 
-int atualizaCliente(Cliente c){}
+int atualizaCliente(Cliente c){};
 
-int deletaCliente(int codCliente){}
+int deletaCliente(int codCliente){};
+
+vector listaClientes(){};
+
+Cliente consultaCliente(int codigo){};
+
+
+
 
 
 

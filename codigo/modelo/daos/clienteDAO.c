@@ -11,48 +11,52 @@
 
 //Funcao Inclusao 
 
-void inclusaoCliente(Cliente c) {
+int inclusaoCliente(Cliente c) {
 
     FILE *arq = fopen("cliente.pro", "ab");
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
-        return;
+        return 0;
     }
 
     fwrite(&c, sizeof (c), 1, arq);
     fclose(arq);
+    return 1;
+    
 }
 
-Cliente* listarClientes() {
-    int i = 0;
-
-    Cliente c;
-    Cliente *cw = &c;
-    Cliente * array = malloc(5 * sizeof c);
-    ;
-    //    Cliente *cli = &clientes;
-    FILE *arq = fopen("cliente.pro", "rb");
-    //printf("Arquivo xistente!");
-
-    if (arq == NULL) {
-        printf("Arquivo inexistente!");
-        return;
-    }
-    while (fread(&c, sizeof (c), 1, arq)) {
-        if (c.deletado != '*') {
-            //for (int i = 0; i < sizeof (c); i++) {
-            array[i].nome = c.nome;
-            //array++;
-            //}
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
-
-            //VECTOR_ADD(clientes, cw);
-            //            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
-            i++;
-        }
-    }
-    fclose(arq);
-    return array;
+vector listarClientes() {
+//    int i = 0;
+//
+//    Cliente c;
+//    Cliente *cw = &c;
+//    Cliente * array = malloc(5 * sizeof c);
+//    VECTOR_INIT(v);
+//    //    Cliente *cli = &clientes;
+//    FILE *arq = fopen("cliente.pro", "rb");
+//    //printf("Arquivo xistente!");
+//
+//    if (arq == NULL) {
+//        printf("Arquivo inexistente!");
+//        
+//        return VECTOR_INIT(k);
+//    }
+//    while (fread(&c, sizeof (c), 1, arq)) {
+//        if (c.deletado != '*') {
+//            //for (int i = 0; i < sizeof (c); i++) {
+//            VECTOR_ADD(v,c);
+//            //  array[i].nome = c.nome;
+//            //array++;
+//            //}
+//            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+//
+//            //VECTOR_ADD(clientes, cw);
+//            //            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
+//            i++;
+//        }
+//    }
+//    fclose(arq);
+//    return v;
 }
 
 Cliente consultarClientes(int cod) {
@@ -60,7 +64,8 @@ Cliente consultarClientes(int cod) {
     FILE *arq = fopen("cliente.pro", "rb");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        return;
+        Cliente v;
+        return v;
     }
 
     Cliente c;
@@ -83,14 +88,15 @@ Cliente consultarClientes(int cod) {
         printf("\nCodigo nao cadastrado!!\n");
     }
     fclose(arq);
-    return;
+    Cliente v;
+    return v;
 }
 
-void alterarCliente(Cliente clintes, int cod) {
+int alterarCliente(Cliente clintes, int cod) {
     FILE *arq = fopen("cliente.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        return;
+        return 0;
     }
 
     Cliente c;
@@ -113,7 +119,7 @@ void alterarCliente(Cliente clintes, int cod) {
 
             fwrite(&clintes, sizeof (clintes), 1, arq);
             fseek(arq, sizeof (clintes)* 0, SEEK_END);
-            return;
+            return 1;
         }
     }
 
@@ -121,14 +127,15 @@ void alterarCliente(Cliente clintes, int cod) {
         printf("\nCodigo nao cadastrado!!\n");
 
     fclose(arq);
+    return 0;
 }
 
-void excluirCliente(int cod) {
+int excluirCliente(int cod) {
 
     FILE *arq = fopen("produtos.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        return;
+        return 0;
     }
 
     Cliente c;
@@ -152,9 +159,9 @@ void excluirCliente(int cod) {
                 fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
                 fwrite(&c, sizeof (c), 1, arq);
                 fseek(arq, sizeof (c)* 0, SEEK_END);
-                return;
+                return 1;
             } else if (certeza == 'n')
-                return;
+                return 1;
         }
     }
 
@@ -162,4 +169,5 @@ void excluirCliente(int cod) {
         printf("\nCodigo nao cadastrado!!\n");
 
     fclose(arq);
+    return 0;
 }

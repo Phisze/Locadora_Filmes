@@ -13,34 +13,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "clienteDAO.h"
+
+//#include "conCliente.h"
+#include "structs.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-
-    //    Cliente incluir;
-    //    printf("Insira o codigo:");
-    //    scanf("%f%*c",&incluir.codigo);
-    //    printf("Insira o nome:");
-    //    scanf("%s%*c",&incluir.nome);
-    //    inclusaoCliente(incluir);
-
-    //Cliente c=consultarClientes(1);
-    //printf(" %s",c.nome);
-    Cliente *array;
-
-    array = listarClientes();
-    for (int i = 0; i < 6; i++) {
-
-        printf("First name is %s\n", array[i].nome);
-    }
-    ///for (int i = 0; i < 100; i++) {
-    //   printf("test");
-    //     printf("\n %s", listarClientes()->nome);
-    //}
-
+    Cliente c;
+    printf("Digite o nome");
+    scanf("%s%*c",&c.nome);
+    printf("%s",c.nome);
     return (EXIT_SUCCESS);
 }
 

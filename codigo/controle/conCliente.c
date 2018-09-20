@@ -8,15 +8,19 @@
 int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil
 , vector data_nascimento){
     Cliente c;
-    c.nome=nome;
-    c.cpf=cpf;
-    c.data_nascimento=data_nascimento;
-    c.email=email;
-    c.endereco=endereco;
-    c.estado_civil=estado_civil;
-    c.sexo=sexo;
-    c.telefone=telefone;
-    c.deletado=" ";
+   // VECTOR_ADD(c.nome,nome);
+//    c.nome=nome;
+//    c.cpf=cpf;
+//    c.data_nascimento=data_nascimento;
+//    c.email=email;
+//    c.endereco=endereco;
+//    c.estado_civil=estado_civil;
+//    c.sexo=sexo;
+//    c.telefone=telefone;
+//    c.deletado=' ';
+    
+    int tamanho= sizeof(listarClientes())/sizeof(Cliente);
+    c.codigo=tamanho;
     
     return inclusaoCliente(c);
 }

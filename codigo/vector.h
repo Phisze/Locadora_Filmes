@@ -25,7 +25,7 @@ extern "C" {
 }
 #endif
 
-
+//https://eddmann.com/posts/implementing-a-dynamic-vector-array-in-c/
 #define VECTOR_INIT_CAPACITY 4
 
 #define VECTOR_INIT(vec) vector vec; vector_init(&vec)

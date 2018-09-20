@@ -30,12 +30,12 @@ extern "C" {
 /*
  **  Inclui Clientes em arquivo binario
  */
-void inclusaoCliente(Cliente c);
+int inclusaoCliente(Cliente c);
 
 /*
  **  Lista Clientes em arquivo binario
  */
-Cliente* listarClientes();
+vector listarClientes();
 
 /*
  **  Consultar Clientes em arquivo binario
@@ -44,10 +44,10 @@ Cliente consultarClientes(int cod);
 /*
  **  Altera Clientes em arquivo binario
  */
-void alterarCliente(Cliente clintes, int cod);
+int alterarCliente(Cliente clintes, int cod);
 /*
  **  Deleta Clientes em arquivo binario
  */
-void excluirCliente(int cod);
+int excluirCliente(int cod);
 #endif /* CLIENTEDAO_H */
 

@@ -1,6 +1,4 @@
-build/Debug/Cygwin-Windows/main.o: main.c clienteDAO.h structs.h vector.h
-
-clienteDAO.h:
+build/Debug/Cygwin-Windows/main.o: main.c structs.h vector.h
 
 structs.h:
 
