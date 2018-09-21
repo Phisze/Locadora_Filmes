@@ -10,7 +10,7 @@ int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector
 , vector data_nascimento){
     Cliente c;
     c.nome=nome;
-    printf("%s",c.nome);
+//    printf("%s",c.nome);
 //    c.nome=nome;
 //    c.cpf=cpf;
 //    c.data_nascimento=data_nascimento;

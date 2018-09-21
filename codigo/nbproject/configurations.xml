@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>Util.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCliente.h</itemPath>
       <itemPath>structs.h</itemPath>
@@ -54,6 +55,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Util.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
@@ -91,6 +94,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Util.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">

@@ -15,39 +15,33 @@
 #include <stdlib.h>
 #include <string.h>
 #include "conCliente.h"
+#include "Util.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
     Cliente c;
-    c.nome.capacity = 4;
-    c.nome.total = 0;
-    c.nome.items = calloc(sizeof (void *) * c.nome.capacity, sizeof (void*));
-    // VECTOR_INIT(c.nome);
+    init_Cliente(&c);
+
+    VECTOR_INIT(teste);
+    char nomew[] = "Weverton Rodrigues Arantes LSAKJDLKSA JDALKSDJ SAIUYRKSJLDKSA UYRWA IJSLKSJ DLKAJ AUYR SJ DLKSJ LKJS DLKJS DLKJSDLSAUR LSKDJLS KDALURLDKJLSAKJRLUYRLSAIJLSKJDLKSA JDLSKJHDLKSAJHRSALKSAJRLKSJHRLSKJR LKSJR";
+    char nom[]="";
+    VECTOR_ADD(teste, nomew);
+
+    for (int i = 0; i < VECTOR_TOTAL(teste); i++)
+        printf("%s ", VECTOR_GET(teste, char*, i));
+    printf("\n");
+
     printf("Digite o nome: ");
-    //    scanf("%s%*c", &c.nome);
-    //    printf("\n%s", c.nome);
-    //    printf("\n%d", sizeof c.nome);
-    //    printf("\n%d", sizeof (Cliente));
 
-
-    char nom[] = "    ";
     fgets(nom, 100, stdin);
+    VECTOR_ADD(c.nome, nom);
 
-
-    //scanf("%s%*c", &nom);
-    //  printf("%s\n", nom);
-    //    for(int i=0; i<;i++){
-    //    }
-    //  printf("%d", strlen(nom));
-
-    //  VECTOR_ADD(c.nome,(char *)&nom);
-
-    printf("%s", VECTOR_GET(c.nome, char*, 0));
-    //    for(int z=1;z<=VECTOR_TOTAL(c.nome);z++){
-    //        printf("%c",VECTOR_GET(c.nome,char *,z));
-    //    }
+    for (int z = 0; z < VECTOR_TOTAL(teste); z++) {
+   
+        printf("%s", VECTOR_GET(teste, char *, z));
+    }
 
 
 
