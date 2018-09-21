@@ -14,6 +14,9 @@
 #ifndef CONCLIENTE_H
 #define CONCLIENTE_H
 
+#include "vector.h"
+#include "structs.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -25,19 +28,17 @@ extern "C" {
 }
 #endif
 
-#include "vector.h"
-#include "structs.h"
 
-int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil
-, vector data_nascimento){};
 
-int atualizaCliente(Cliente c){};
+int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil, vector data_nascimento);
 
-int deletaCliente(int codCliente){};
+int atualizaCliente(Cliente c);
 
-vector listaClientes(){};
+int deletaCliente(int codCliente);
 
-Cliente consultaCliente(int codigo){};
+Cliente* listaClientes();
+
+Cliente consultaCliente(int codigo);
 
 
 

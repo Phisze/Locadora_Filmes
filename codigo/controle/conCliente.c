@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 #include "../clienteDAO.h"
+//#include "../conCliente.h"
 
 int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil
 , vector data_nascimento){
     Cliente c;
-   // VECTOR_ADD(c.nome,nome);
+    c.nome=nome;
+    printf("%s",c.nome);
 //    c.nome=nome;
 //    c.cpf=cpf;
 //    c.data_nascimento=data_nascimento;
@@ -19,10 +21,11 @@ int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector
 //    c.telefone=telefone;
 //    c.deletado=' ';
     
-    int tamanho= sizeof(listarClientes())/sizeof(Cliente);
-    c.codigo=tamanho;
+  //  int tamanho= sizeof(listarClientes())/sizeof(Cliente);
+  //  c.codigo=tamanho;
     
-    return inclusaoCliente(c);
+  //  return inclusaoCliente(c);
+    return 1;
 }
 
 int atualizaCliente(Cliente c){
@@ -33,12 +36,13 @@ int deletaCliente(int codigo){
     return excluirCliente(codigo);
 }
 
-vector listaClientes(){
+Cliente* listaClientes(){
     return listarClientes();
 }
 
 Cliente consultaCliente(int codigo){
     return consultarClientes(codigo);
 }
+
 
 

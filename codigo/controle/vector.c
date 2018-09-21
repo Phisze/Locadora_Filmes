@@ -11,7 +11,8 @@
 void vector_init(vector *v) {
     v->capacity = VECTOR_INIT_CAPACITY;
     v->total = 0;
-    v->items = malloc(sizeof (void *) * v->capacity);
+    v->items = calloc(sizeof (void *) * v->capacity,sizeof(void*));
+//    v->items = malloc(sizeof (void *) * v->capacity);
 }
 
 int vector_total(vector *v) {

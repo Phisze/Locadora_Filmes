@@ -35,7 +35,7 @@ int inclusaoCliente(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
-vector listarClientes();
+Cliente* listarClientes();
 
 /*
  **  Consultar Clientes em arquivo binario

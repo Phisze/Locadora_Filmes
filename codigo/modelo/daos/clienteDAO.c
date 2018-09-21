@@ -25,7 +25,7 @@ int inclusaoCliente(Cliente c) {
     
 }
 
-vector listarClientes() {
+Cliente* listarClientes() {
 //    int i = 0;
 //
 //    Cliente c;
