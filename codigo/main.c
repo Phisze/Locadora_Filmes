@@ -23,37 +23,48 @@
  */
 int main(int argc, char** argv) {
     Cliente c;
-  //  printf("%s",((Cliente) listarClientes[1]).nome);
-    c=VECTOR_GET(listaClientes(),Cliente*,1);
- //   printf("%s", VECTOR_GET(listaClientes(), char*, 1));
-//    c.nome.capacity = 4;
-//    c.nome.total = 0;
-//    c.nome.items = calloc(sizeof (void *) * c.nome.capacity, sizeof (void*));
-//    // VECTOR_INIT(c.nome);
-//    printf("Digite o nome: ");
-//    //    scanf("%s%*c", &c.nome);
-//    //    printf("\n%s", c.nome);
-//    //    printf("\n%d", sizeof c.nome);
-//    //    printf("\n%d", sizeof (Cliente));
-//
-//
-//    char nom[] = "    ";
-//    fgets(nom, 100, stdin);
-//
-//
-//    //scanf("%s%*c", &nom);
-//    //  printf("%s\n", nom);
-//    //    for(int i=0; i<;i++){
-//    //    }
-//    //  printf("%d", strlen(nom));
-//
-//    //  VECTOR_ADD(c.nome,(char *)&nom);
-//
-//    printf("%s", VECTOR_GET(c.nome, char*, 0));
-//    //    for(int z=1;z<=VECTOR_TOTAL(c.nome);z++){
-//    //        printf("%c",VECTOR_GET(c.nome,char *,z));
-//    //    }
-//
+    Cliente *cw;
+    c.codigo = 1;
+    strcpy(c.nome, "ASD");
+
+    //c.nome = "ASD";
+    //  printf("%s",((Cliente) listarClientes[1]).nome);
+    inclusaoCliente(c);
+    cw=lClientes();
+    int i;
+    //for (i = 0; i < 106; i++) {
+        printf("%s", cw[0].nome);
+    //}
+
+    //   printf("%s", VECTOR_GET(listaClientes(), char*, 1));
+    //    c.nome.capacity = 4;
+    //    c.nome.total = 0;
+    //    c.nome.items = calloc(sizeof (void *) * c.nome.capacity, sizeof (void*));
+    //    // VECTOR_INIT(c.nome);
+    //    printf("Digite o nome: ");
+    //    //    scanf("%s%*c", &c.nome);
+    //    //    printf("\n%s", c.nome);
+    //    //    printf("\n%d", sizeof c.nome);
+    //    //    printf("\n%d", sizeof (Cliente));
+    //
+    //
+    //    char nom[] = "    ";
+    //    fgets(nom, 100, stdin);
+    //
+    //
+    //    //scanf("%s%*c", &nom);
+    //    //  printf("%s\n", nom);
+    //    //    for(int i=0; i<;i++){
+    //    //    }
+    //    //  printf("%d", strlen(nom));
+    //
+    //    //  VECTOR_ADD(c.nome,(char *)&nom);
+    //
+    //    printf("%s", VECTOR_GET(c.nome, char*, 0));
+    //    //    for(int z=1;z<=VECTOR_TOTAL(c.nome);z++){
+    //    //        printf("%c",VECTOR_GET(c.nome,char *,z));
+    //    //    }
+    //
 
 
     return (EXIT_SUCCESS);

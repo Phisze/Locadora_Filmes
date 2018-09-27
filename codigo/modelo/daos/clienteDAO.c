@@ -13,7 +13,7 @@
 
 int inclusaoCliente(Cliente c) {
 
-    FILE *arq = fopen("cliente.pro", "ab");
+    FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
         return 0;
@@ -25,15 +25,15 @@ int inclusaoCliente(Cliente c) {
     
 }
 
-vector listarClientes() {
+Cliente* lClientes() {
     int i = 0;
 
     Cliente c;
     Cliente *cw = &c;
-    //Cliente * array = malloc(5 * sizeof c);
-    VECTOR_INIT(v);
+    Cliente *array = malloc(105 * sizeof c);
+   // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
-    FILE *arq = fopen("cliente.pro", "rb");
+    FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
@@ -43,20 +43,20 @@ vector listarClientes() {
     }
     while (fread(&c, sizeof (c), 1, arq)) {
         if (c.deletado != '*') {
-            //for (int i = 0; i < sizeof (c); i++) {
-            VECTOR_ADD(v,cw);
-            //  array[i].nome = c.nome;
-            //array++;
-            //}
+            
+           // VECTOR_ADD(v,c);
+           // array[i].nome = c.nome;
+            strcpy(array[i].nome, c.nome);
+           // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
             //VECTOR_ADD(clientes, cw);
-            //            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
+            //printf("Cod %s\n", c.nome);
             i++;
         }
     }
     fclose(arq);
-    return v;
+    return array;
 }
 
 Cliente consultarClientes(int cod) {
