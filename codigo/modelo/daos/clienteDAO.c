@@ -13,7 +13,9 @@
 
 int inclusaoCliente(Cliente c) {
 
-    FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
+
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
         return 0;
@@ -33,7 +35,7 @@ Cliente* lClientes() {
     Cliente *array = malloc(105 * sizeof c);
    // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
-    FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "rb");
+    FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
