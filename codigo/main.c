@@ -22,18 +22,27 @@
  * 
  */
 int main(int argc, char** argv) {
-    Cliente c;
-    Cliente *cw;
-    c.codigo = 1;
-    strcpy(c.nome, "ASD");
+    
+    Cliente c=listaClientes()[1];
+    printf("O nome é: %s",c.nome);
+   // printf("Digite o nome: ");
+  //  fgets(c.nome,30,stdin);
+  //  printf("O nome do cliente é: %s",c.nome);
+  //  salvaCliente(&c);
+    
+    
+//    Cliente c;
+//    Cliente *cw;
+//    c.codigo = 1;
+//    strcpy(c.nome, "ASD");
 
     //c.nome = "ASD";
     //  printf("%s",((Cliente) listarClientes[1]).nome);
-    inclusaoCliente(c);
-    cw=lClientes();
-    int i;
+//    inclusaoCliente(c);
+//    cw=lClientes();
+//    int i;
     //for (i = 0; i < 106; i++) {
-        printf("%s", cw[0].nome);
+//        printf("%s", cw[0].nome);
     //}
 
     //   printf("%s", VECTOR_GET(listaClientes(), char*, 1));

@@ -30,7 +30,7 @@ extern "C" {
 
 
 
-int salvaCliente(vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil, vector data_nascimento);
+int salvaCliente(Cliente*c);
 
 int atualizaCliente(Cliente c);
 

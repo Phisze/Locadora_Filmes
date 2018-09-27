@@ -1,3 +1,38 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+#include "../clienteDAO.h"
+//#include "../conCliente.h"
+
+int salvaCliente(Cliente * c){
+    Cliente j=*c;
+    
+    int tamanho= sizeof(listaClientes())/sizeof(Cliente);
+    c.codigo=tamanho+1;
+    
+    return inclusaoCliente(j);
+  ///  return 1;
+}
+
+int atualizaCliente(Cliente c){
+    return alterarCliente(c,c.codigo);
+}
+
+int deletaCliente(int codigo){
+    return excluirCliente(codigo);
+}
+
+Cliente* listaClientes(){
+    return lClientes();
+}
+
+Cliente consultaCliente(int codigo){
+    return consultarClientes(codigo);
+}
+
 ///*
 // * To change this license header, choose License Headers in Project Properties.
 // * To change this template file, choose Tools | Templates
@@ -44,5 +79,6 @@
 //    return consultarClientes(codigo);
 //}
 //
+
 
 
