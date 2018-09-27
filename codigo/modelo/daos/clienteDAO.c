@@ -25,38 +25,38 @@ int inclusaoCliente(Cliente c) {
     
 }
 
-Cliente* listarClientes() {
-//    int i = 0;
-//
-//    Cliente c;
-//    Cliente *cw = &c;
-//    Cliente * array = malloc(5 * sizeof c);
-//    VECTOR_INIT(v);
-//    //    Cliente *cli = &clientes;
-//    FILE *arq = fopen("cliente.pro", "rb");
-//    //printf("Arquivo xistente!");
-//
-//    if (arq == NULL) {
-//        printf("Arquivo inexistente!");
-//        
-//        return VECTOR_INIT(k);
-//    }
-//    while (fread(&c, sizeof (c), 1, arq)) {
-//        if (c.deletado != '*') {
-//            //for (int i = 0; i < sizeof (c); i++) {
-//            VECTOR_ADD(v,c);
-//            //  array[i].nome = c.nome;
-//            //array++;
-//            //}
-//            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
-//
-//            //VECTOR_ADD(clientes, cw);
-//            //            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
-//            i++;
-//        }
-//    }
-//    fclose(arq);
-//    return v;
+vector listarClientes() {
+    int i = 0;
+
+    Cliente c;
+    Cliente *cw = &c;
+    //Cliente * array = malloc(5 * sizeof c);
+    VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("cliente.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        printf("Arquivo inexistente!");
+        
+        return;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+        if (c.deletado != '*') {
+            //for (int i = 0; i < sizeof (c); i++) {
+            VECTOR_ADD(v,cw);
+            //  array[i].nome = c.nome;
+            //array++;
+            //}
+            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+            //VECTOR_ADD(clientes, cw);
+            //            printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", c.codigo, produtos.descricao, produtos.valor);
+            i++;
+        }
+    }
+    fclose(arq);
+    return v;
 }
 
 Cliente consultarClientes(int cod) {

@@ -83,7 +83,7 @@ typedef struct {
     char razao_social[20];
     char inscricao_estadual[20];
     char cnpj[14];
-    char endereco[[50]];
+    char endereco[50];
     char telefone[13];
     char email[25];
     char nome_responsavel[30];

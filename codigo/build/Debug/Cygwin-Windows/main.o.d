@@ -1,10 +1,10 @@
-build/Debug/Cygwin-Windows/main.o: main.c conCliente.h vector.h structs.h \
- Util.h
+build/Debug/Cygwin-Windows/main.o: main.c clienteDAO.h structs.h vector.h \
+ conCliente.h
 
-conCliente.h:
-
-vector.h:
+clienteDAO.h:
 
 structs.h:
 
-Util.h:
+vector.h:
+
+conCliente.h:
