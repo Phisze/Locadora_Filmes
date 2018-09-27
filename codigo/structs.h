@@ -33,7 +33,7 @@ typedef struct {
     char endereco[50];
     char cpf[11];
     char telefone[13];
-    char email[25];
+    char email[35];
     char sexo;
     char estado_civil[10];
     char data_nascimento[6];
@@ -62,7 +62,7 @@ typedef struct {
     char cargo[10];
     char endereco[50];
     char telefone[13];
-    char email[25];
+    char email[35];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Funcionario;
 
@@ -74,7 +74,7 @@ typedef struct {
     char cnpj[14];
     char endereco[50];
     char telefone[13];
-    char email[25];
+    char email[35];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Fornecedor;
 
@@ -85,7 +85,7 @@ typedef struct {
     char cnpj[14];
     char endereco[[50]];
     char telefone[13];
-    char email[25];
+    char email[35];
     char nome_responsavel[30];
     char tel_responsavel[13];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
