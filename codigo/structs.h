@@ -29,65 +29,65 @@ extern "C" {
 
 typedef struct {
     float codigo;
-    vector nome;
-    vector endereco;
-    vector cpf;
-    vector telefone;
-    vector email;
+    char nome[30];
+    char endereco[50];
+    char cpf[11];
+    char telefone[13];
+    char email[25];
     char sexo;
-    vector estado_civil;
-    vector data_nascimento;
+    char estado_civil[10];
+    char data_nascimento[6];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Cliente;
 
 typedef struct {
     float codigo;
-    vector descricao;
+    char descricao[100];
     float exemplares;
     float catCodigo;
-    char lingua;
+    char lingua[10];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Filme;
 
 typedef struct {
     float codigo;
-    float descricao;
+    char descricao[50];
     float valor_locacao;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Categoria;
 
 typedef struct {
     float codigo;
-    vector nome;
-    vector cargo;
-    vector endereco;
-    vector telefone;
-    vector email;
+    char nome[30];
+    char cargo[10];
+    char endereco[50];
+    char telefone[13];
+    char email[25];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Funcionario;
 
 typedef struct {
     float codigo;
-    vector nome;
-    vector razao_social;
-    vector inscricao_estadual;
-    vector cnpj;
-    vector endereco;
-    vector telefone;
-    vector email;
+    char nome[30];
+    char razao_social[20];
+    char inscricao_estadual[20];
+    char cnpj[14];
+    char endereco[50];
+    char telefone[13];
+    char email[25];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Fornecedor;
 
 typedef struct {
-    vector nome;
-    vector razao_social;
-    vector inscricao_estadual;
-    vector cnpj;
-    vector endereco;
-    vector telefone;
-    vector email;
-    vector nome_responsavel;
-    vector tel_responsavel;
+    char nome[30];
+    char razao_social[20];
+    char inscricao_estadual[20];
+    char cnpj[14];
+    char endereco[[50]];
+    char telefone[13];
+    char email[25];
+    char nome_responsavel[30];
+    char tel_responsavel[13];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Locadora;
 

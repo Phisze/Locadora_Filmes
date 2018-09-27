@@ -8,8 +8,6 @@
 
 #include "../vector.h"
 
-
-
 void vector_init(vector *v) {
     v->capacity = VECTOR_INIT_CAPACITY;
     v->total = 0;
