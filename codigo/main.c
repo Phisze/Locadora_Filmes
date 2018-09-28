@@ -27,14 +27,7 @@ int main(int argc, char** argv) {
     printf("Digite o nome do fulano: ");
     fgets(c.nome, 100, stdin);
 
-    int tamanho = getTamanhoCliente();
-    printf("Tamanho do cliente: %d\n", tamanho);
-    salvaCliente(&c);
 
-    tamanho = getTamanhoCliente();
-    printf("Tamanho do cliente: %d\n", tamanho);
-    printf("%s\n", listaClientes()[1].nome);
-    printf("%f", listaClientes()[1].codigo);
 
     // printf("Digite o nome: ");
     //  fgets(c.nome,30,stdin);

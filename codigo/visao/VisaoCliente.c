@@ -23,26 +23,31 @@ void clientemenu(int x){
             switch(x){
 
                 case 1:
-                    salvaCliente((vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil, vector data_nascimento);
+                  //  salvaCliente((vector nome,vector endereco,vector cpf, vector telefone, vector email, char sexo, vector estado_civil, vector data_nascimento);
                 break;
 
                 case 2:
-                    atualizaCliente(Cliente c);
+                //    atualizaCliente(Cliente c);
                 break;
 
                  case 3:
-                    deletaCliente(codigo);
+                 //   deletaCliente(codigo);
                 break;
 
                  case 4:
-                     listaClientes();
+                 //    listaClientes();
                 break;
 
                  case 5:
-                     consultaCliente(int codigo);
+                 //    consultaCliente(int codigo);
               break;
 
             }
             
             return 0;
+}
+
+int cadastroCliente(){
+
+
 }

@@ -27,67 +27,83 @@ extern "C" {
 
 #include "vector.h"
 
+#define NOME 30
+#define ENDERECO 50
+#define CPF 11
+#define TELEFONE 13
+#define EMAIL 35
+#define ESTADO_CIVIL 10
+#define DATA_NASCIMENTO 8
+#define DESCRICAO 100
+#define LINGUA 10
+#define CARGO 10
+#define RAZAO_SOCIAL 20
+#define INSCRICAO_ESTADUAL 20
+#define CNPJ 14
+
+
+
 typedef struct {
     float codigo;
-    char nome[30];
-    char endereco[50];
-    char cpf[11];
-    char telefone[13];
-    char email[35];
+    char nome[NOME];
+    char endereco[ENDERECO];
+    char cpf[CPF];
+    char telefone[TELEFONE];
+    char email[EMAIL];
     char sexo;
-    char estado_civil[10];
-    char data_nascimento[6];
+    char estado_civil[ESTADO_CIVIL];
+    char data_nascimento[DATA_NASCIMENTO];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Cliente;
 
 typedef struct {
     float codigo;
-    char descricao[100];
+    char descricao[DESCRICAO];
     float exemplares;
     float catCodigo;
-    char lingua[10];
+    char lingua[LINGUA];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Filme;
 
 typedef struct {
     float codigo;
-    char descricao[50];
+    char descricao[DESCRICAO];
     float valor_locacao;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Categoria;
 
 typedef struct {
     float codigo;
-    char nome[30];
-    char cargo[10];
-    char endereco[50];
-    char telefone[13];
-    char email[35];
+    char nome[NOME];
+    char cargo[CARGO];
+    char endereco[ENDERECO];
+    char telefone[TELEFONE];
+    char email[EMAIL];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Funcionario;
 
 typedef struct {
     float codigo;
-    char nome[30];
-    char razao_social[20];
-    char inscricao_estadual[20];
-    char cnpj[14];
-    char endereco[50];
-    char telefone[13];
-    char email[35];
+    char nome[NOME];
+    char razao_social[RAZAO_SOCIAL];
+    char inscricao_estadual[INSCRICAO_ESTADUAL];
+    char cnpj[CNPJ];
+    char endereco[ENDERECO];
+    char telefone[TELEFONE];
+    char email[EMAIL];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Fornecedor;
 
 typedef struct {
-    char nome[30];
-    char razao_social[20];
-    char inscricao_estadual[20];
-    char cnpj[14];
-    char endereco[50];
-    char telefone[13];
-    char email[35];
-    char nome_responsavel[30];
-    char tel_responsavel[13];
+    char nome[NOME];
+    char razao_social[RAZAO_SOCIAL];
+    char inscricao_estadual[INSCRICAO_ESTADUAL];
+    char cnpj[CNPJ];
+    char endereco[ENDERECO];
+    char telefone[TELEFONE];
+    char email[EMAIL];
+    char nome_responsavel[NOME];
+    char tel_responsavel[TELEFONE];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Locadora;
 
