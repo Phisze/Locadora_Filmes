@@ -7,6 +7,7 @@
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCliente.h</itemPath>
       <itemPath>structs.h</itemPath>
+      <itemPath>tamanho.h</itemPath>
       <itemPath>vector.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
@@ -15,6 +16,7 @@
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -66,7 +68,11 @@
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tamanho.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -103,7 +109,11 @@
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tamanho.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
       </item>

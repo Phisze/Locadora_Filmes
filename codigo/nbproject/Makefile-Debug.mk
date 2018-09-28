@@ -38,7 +38,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/modelo/daos/clienteDAO.o
+	${OBJECTDIR}/modelo/daos/clienteDAO.o \
+	${OBJECTDIR}/modelo/daos/tamanho.o
 
 
 # C Compiler Flags
@@ -84,6 +85,11 @@ ${OBJECTDIR}/modelo/daos/clienteDAO.o: modelo/daos/clienteDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDAO.o modelo/daos/clienteDAO.c
+
+${OBJECTDIR}/modelo/daos/tamanho.o: modelo/daos/tamanho.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/tamanho.o modelo/daos/tamanho.c
 
 # Subprojects
 .build-subprojects:

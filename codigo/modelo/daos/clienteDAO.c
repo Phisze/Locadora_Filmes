@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "./../../tamanho.h"
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,9 +23,10 @@ int inclusaoCliente(Cliente c) {
         printf("Erro ao abrir arquivo");
         return 0;
     }
-
+    
     fwrite(&c, sizeof (c), 1, arq);
     fclose(arq);
+    setTamanhoCliente(getTamanhoCliente()++);
     return 1;
     
 }
