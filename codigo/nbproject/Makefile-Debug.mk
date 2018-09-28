@@ -39,7 +39,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
-	${OBJECTDIR}/modelo/daos/tamanho.o
+	${OBJECTDIR}/modelo/daos/tamanho.o \
+	${OBJECTDIR}/visao/MenuPrincipal.o \
+	${OBJECTDIR}/visao/VisaoCategoria.o \
+	${OBJECTDIR}/visao/VisaoCliente.o \
+	${OBJECTDIR}/visao/VisaoFilmes.o \
+	${OBJECTDIR}/visao/VisaoFornecedores.o \
+	${OBJECTDIR}/visao/VisaoFuncionario.o
 
 
 # C Compiler Flags
@@ -90,6 +96,36 @@ ${OBJECTDIR}/modelo/daos/tamanho.o: modelo/daos/tamanho.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/tamanho.o modelo/daos/tamanho.c
+
+${OBJECTDIR}/visao/MenuPrincipal.o: visao/MenuPrincipal.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/MenuPrincipal.o visao/MenuPrincipal.c
+
+${OBJECTDIR}/visao/VisaoCategoria.o: visao/VisaoCategoria.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCategoria.o visao/VisaoCategoria.c
+
+${OBJECTDIR}/visao/VisaoCliente.o: visao/VisaoCliente.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCliente.o visao/VisaoCliente.c
+
+${OBJECTDIR}/visao/VisaoFilmes.o: visao/VisaoFilmes.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFilmes.o visao/VisaoFilmes.c
+
+${OBJECTDIR}/visao/VisaoFornecedores.o: visao/VisaoFornecedores.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFornecedores.o visao/VisaoFornecedores.c
+
+${OBJECTDIR}/visao/VisaoFuncionario.o: visao/VisaoFuncionario.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFuncionario.o visao/VisaoFuncionario.c
 
 # Subprojects
 .build-subprojects:
