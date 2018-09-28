@@ -11,17 +11,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-void setTamanhoCliente(int tamanho) {
+void setTamanhoCliente(float tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    FILE *arq = fopen("..\\..\\..\\..\\tamanhoCli.pro", "ab");
+    FILE *arq = fopen("tamanhoCli.pro", "ab");
 
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
     }
 
-    remove("..\\..\\..\\..\\tamanhoCli.pro");
+    remove("tamanhoCli.pro");
 
-    FILE *arqB = fopen("..\\..\\..\\..\\tamanhoCli.pro", "wb");
+    FILE *arqB = fopen("tamanhoCli.pro", "wb");
 
     fwrite(&tamanho, sizeof (tamanho), 1, arqB);
     fclose(arqB);
@@ -29,17 +29,17 @@ void setTamanhoCliente(int tamanho) {
 
 int getTamanhoCliente() {
 
-    int c;
-    int tamanho;
+    float c;
+    float tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
-    FILE *arq = fopen("..\\..\\..\\..\\tamanhoCli.pro", "rb");
+    FILE *arq = fopen("tamanhoCli.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-        printf("Arquivo inexistente!");
+       // printf("Arquivo inexistente!");
 
-        return;
+        return 0;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
 

@@ -1,6 +1,6 @@
 #include "../../vector.h"
 #include "../../structs.h"
-#include "../../clienteDAO.h"
+//#include "../../clienteDAO.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,9 +15,10 @@
 //Funcao Inclusao 
 
 int inclusaoCliente(Cliente c) {
-
+    printf("codcodcod %f ",c.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
+    //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
+    FILE *arq = fopen("cliente.pro", "ab");
 
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
@@ -26,10 +27,13 @@ int inclusaoCliente(Cliente c) {
     
     fwrite(&c, sizeof (c), 1, arq);
     fclose(arq);
-    setTamanhoCliente(getTamanhoCliente()++);
+    int tamanho = getTamanhoCliente();
+    tamanho++;
+    setTamanhoCliente(tamanho);
     return 1;
     
 }
+
 
 Cliente* lClientes() {
     int i = 0;
@@ -39,7 +43,7 @@ Cliente* lClientes() {
     Cliente *array = malloc(105 * sizeof c);
    // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
-    FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "rb");
+    FILE *arq = fopen("cliente.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
@@ -53,6 +57,7 @@ Cliente* lClientes() {
            // VECTOR_ADD(v,c);
            // array[i].nome = c.nome;
             strcpy(array[i].nome, c.nome);
+            array[i].codigo=c.codigo;
            // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 

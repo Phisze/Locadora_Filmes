@@ -24,9 +24,9 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-void setTamanhoCliente(int tamanho);
+void setTamanhoCliente(float tamanho);
 
-int getTamanhoCliente();
+float getTamanhoCliente();
 
 
 #endif /* TAMANHO_H */

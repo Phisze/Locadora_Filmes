@@ -6,12 +6,16 @@
  */
 #include "../clienteDAO.h"
 //#include "../conCliente.h"
+#include "../tamanho.h"
+#include <stdio.h>
 
 int salvaCliente(Cliente * c){
     Cliente j=*c;
-    
-    int tamanho= sizeof(listaClientes())/sizeof(Cliente);
-    c.codigo=tamanho+1;
+       
+
+    float tamanhoCli=getTamanhoCliente()+1;
+    j.codigo=tamanhoCli;
+    printf(" tamain cliente %f\n",j.codigo);
     
     return inclusaoCliente(j);
   ///  return 1;
