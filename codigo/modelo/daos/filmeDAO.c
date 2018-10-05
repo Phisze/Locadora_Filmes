@@ -1,6 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 #include "../../vector.h"
 #include "../../structs.h"
-//#include "../../clienteDAO.h"
+#include "../../filme.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,35 +20,35 @@
 
 //Funcao Inclusao 
 
-int inclusaoCliente(Cliente c) {
-    printf("codcodcod %f ", c.codigo);
+int inclusaoFilmes(Filme f) {
+    //printf("codcodcod %f ", f.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
-    FILE *arq = fopen("cliente.pro", "ab");
+    FILE *arq = fopen("filme.pro", "ab");
 
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
         return 0;
     }
 
-    fwrite(&c, sizeof (c), 1, arq);
+    fwrite(&f, sizeof (f), 1, arq);
     fclose(arq);
-    int tamanho = getTamanhoCliente();
+    int tamanho = getTamanhoFilme();
     tamanho++;
-    setTamanhoCliente(tamanho);
+    setTamanhoFilme(tamanho);
     return 1;
 
 }
 
-Cliente* lClientes() {
+Cliente* listarFilmes() {
     int i = 0;
 
-    Cliente c;
-    Cliente *cw = &c;
-    Cliente *array = malloc(getTamanhoCliente() * sizeof c);
+    Filme f;
+    Filme *fw = &f;
+    Filme *array = malloc(getTamanhoCliente() * sizeof f);
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
-    FILE *arq = fopen("cliente.pro", "rb");
+    FILE *arq = fopen("filme.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
@@ -50,20 +56,15 @@ Cliente* lClientes() {
 
         return;
     }
-    while (fread(&c, sizeof (c), 1, arq)) {
-        if (c.deletado != '*') {
+    while (fread(&f, sizeof (f), 1, arq)) {
+        if (f.deletado != '*') {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
-            array[i].codigo = c.codigo;
-            strcpy(array[i].nome, c.nome);
-            strcpy(array[i].endereco, c.endereco);
-            strcpy(array[i].cpf, c.cpf);
-            strcpy(array[i].telefone, c.telefone);
-            strcpy(array[i].email, c.email);
-            strcpy(array[i].sexo, c.sexo);
-            strcpy(array[i].estado_civil, c.estado_civil);
-            strcpy(array[i].data_nascimento, c.data_nascimento);
+            array[i].codigo = f.codigo;
+            strcpy(array[i].descricao, f.descricao);
+            array[i].exemplares = f.exemplares;
+            strcpy(array[i].lingua, f.lingua);
             // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
@@ -76,28 +77,28 @@ Cliente* lClientes() {
     return array;
 }
 
-Cliente consultarClientes(int cod) {
+Cliente consultarFilmes(int cod) {
 
-    FILE *arq = fopen("cliente.pro", "rb");
+    FILE *arq = fopen("filme.pro", "rb");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        Cliente v;
+        Filme v;
         return v;
     }
 
-    Cliente c;
+    Filme f;
 
     //int cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
     //scanf("%d", &cod);
 
-    while (fread(&c, sizeof (c), 1, arq)) {
-        if ((cod == c.codigo) && (c.deletado != '*')) {
+    while (fread(&f, sizeof (f), 1, arq)) {
+        if ((cod == f.codigo) && (f.deletado != '*')) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            return c;
+            return f;
         }
     }
 
@@ -105,25 +106,25 @@ Cliente consultarClientes(int cod) {
         printf("\nCodigo nao cadastrado!!\n");
     }
     fclose(arq);
-    Cliente v;
+    Filme v;
     return v;
 }
 
-int alterarCliente(Cliente clintes, int cod) {
-    FILE *arq = fopen("cliente.pro", "r+b");
+int alterarFilmes(Filme filme, int cod) {
+    FILE *arq = fopen("filme.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
         return 0;
     }
 
-    Cliente c;
+    Filme f;
     //int cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
 
-    while (fread(&c, sizeof (c), 1, arq)) {
-        if (cod == c.codigo) {
+    while (fread(&f, sizeof (f), 1, arq)) {
+        if (cod == f.codigo) {
             //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
@@ -134,8 +135,8 @@ int alterarCliente(Cliente clintes, int cod) {
             // printf("\nDigite o novo preco....: \n");
             //scanf("%f", &produtos.valor);
 
-            fwrite(&clintes, sizeof (clintes), 1, arq);
-            fseek(arq, sizeof (clintes)* 0, SEEK_END);
+            fwrite(&filme, sizeof (filme), 1, arq);
+            fseek(arq, sizeof (filme)* 0, SEEK_END);
             return 1;
         }
     }
@@ -147,23 +148,23 @@ int alterarCliente(Cliente clintes, int cod) {
     return 0;
 }
 
-int excluirCliente(int cod) {
+int excluirFilmes(int cod) {
 
-    FILE *arq = fopen("cliente.pro", "r+b");
+    FILE *arq = fopen("filme.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
         return 0;
     }
 
-    Cliente c;
+    Filme f;
     //int cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");
     // scanf("%d", &cod);
 
-    while (fread(&c, sizeof (c), 1, arq)) {
-        if (cod == c.codigo) {
+    while (fread(&f, sizeof (f), 1, arq)) {
+        if (cod == f.codigo) {
             //  printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
@@ -171,11 +172,11 @@ int excluirCliente(int cod) {
             fflush(stdin);
             scanf("%c", &certeza);
             if (certeza == 's') {
-                c.deletado = '*';
+                f.deletado = '*';
                 printf("\nProduto excluido com Sucesso! \n");
                 fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
-                fwrite(&c, sizeof (c), 1, arq);
-                fseek(arq, sizeof (c)* 0, SEEK_END);
+                fwrite(&f, sizeof (f), 1, arq);
+                fseek(arq, sizeof (f)* 0, SEEK_END);
                 return 1;
             } else if (certeza == 'n')
                 return 1;

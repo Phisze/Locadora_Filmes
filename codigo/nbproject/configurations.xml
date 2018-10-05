@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCliente.h</itemPath>
+      <itemPath>filme.h</itemPath>
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
       <itemPath>vector.h</itemPath>
@@ -21,6 +22,7 @@
       <itemPath>visao/VisaoFuncionario.c</itemPath>
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
+      <itemPath>modelo/daos/filmeDAO.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
@@ -70,9 +72,13 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="filme.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/filmeDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -123,9 +129,13 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="filme.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/filmeDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
       </item>
