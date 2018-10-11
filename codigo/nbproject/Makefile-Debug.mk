@@ -38,7 +38,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
+<<<<<<< Updated upstream
+=======
+	${OBJECTDIR}/modelo/daos/filmeDAO.o \
+	${OBJECTDIR}/modelo/daos/fornecedorDAO.o \
+	${OBJECTDIR}/modelo/daos/funcionarioDAO.o \
+	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
+>>>>>>> Stashed changes
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
 	${OBJECTDIR}/visao/VisaoCategoria.o \
@@ -87,11 +95,39 @@ ${OBJECTDIR}/main.o: main.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
+${OBJECTDIR}/modelo/daos/categoriaDAO.o: modelo/daos/categoriaDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/categoriaDAO.o modelo/daos/categoriaDAO.c
+
 ${OBJECTDIR}/modelo/daos/clienteDAO.o: modelo/daos/clienteDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDAO.o modelo/daos/clienteDAO.c
 
+<<<<<<< Updated upstream
+=======
+${OBJECTDIR}/modelo/daos/filmeDAO.o: modelo/daos/filmeDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/filmeDAO.o modelo/daos/filmeDAO.c
+
+${OBJECTDIR}/modelo/daos/fornecedorDAO.o: modelo/daos/fornecedorDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/fornecedorDAO.o modelo/daos/fornecedorDAO.c
+
+${OBJECTDIR}/modelo/daos/funcionarioDAO.o: modelo/daos/funcionarioDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/funcionarioDAO.o modelo/daos/funcionarioDAO.c
+
+${OBJECTDIR}/modelo/daos/locadoraDAO.o: modelo/daos/locadoraDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/locadoraDAO.o modelo/daos/locadoraDAO.c
+
+>>>>>>> Stashed changes
 ${OBJECTDIR}/modelo/daos/tamanho.o: modelo/daos/tamanho.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"

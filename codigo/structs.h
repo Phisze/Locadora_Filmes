@@ -95,6 +95,7 @@ typedef struct {
 } Fornecedor;
 
 typedef struct {
+    float codigo;
     char nome[NOME];
     char razao_social[RAZAO_SOCIAL];
     char inscricao_estadual[INSCRICAO_ESTADUAL];

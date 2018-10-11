@@ -4,8 +4,16 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>categoriaDAO.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCliente.h</itemPath>
+<<<<<<< Updated upstream
+=======
+      <itemPath>filmeDAO.h</itemPath>
+      <itemPath>fornecedorDAO.h</itemPath>
+      <itemPath>funcionarioDAO.h</itemPath>
+      <itemPath>locadoraDAO.h</itemPath>
+>>>>>>> Stashed changes
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
       <itemPath>vector.h</itemPath>
@@ -19,8 +27,16 @@
       <itemPath>visao/VisaoFilmes.c</itemPath>
       <itemPath>visao/VisaoFornecedores.c</itemPath>
       <itemPath>visao/VisaoFuncionario.c</itemPath>
+      <itemPath>modelo/daos/categoriaDAO.c</itemPath>
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
+<<<<<<< Updated upstream
+=======
+      <itemPath>modelo/daos/filmeDAO.c</itemPath>
+      <itemPath>modelo/daos/fornecedorDAO.c</itemPath>
+      <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
+      <itemPath>modelo/daos/locadoraDAO.c</itemPath>
+>>>>>>> Stashed changes
       <itemPath>main.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
@@ -62,6 +78,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
@@ -70,10 +88,34 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+<<<<<<< Updated upstream
+=======
+      <item path="filmeDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="fornecedorDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="funcionarioDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+>>>>>>> Stashed changes
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/categoriaDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
+<<<<<<< Updated upstream
+=======
+      <item path="modelo/daos/filmeDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/fornecedorDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/funcionarioDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/locadoraDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+>>>>>>> Stashed changes
       <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">
@@ -115,6 +157,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
@@ -123,10 +167,34 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+<<<<<<< Updated upstream
+=======
+      <item path="filmeDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="fornecedorDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="funcionarioDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+>>>>>>> Stashed changes
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/categoriaDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
       </item>
+<<<<<<< Updated upstream
+=======
+      <item path="modelo/daos/filmeDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/fornecedorDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/funcionarioDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/daos/locadoraDAO.c" ex="false" tool="0" flavor2="0">
+      </item>
+>>>>>>> Stashed changes
       <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="structs.h" ex="false" tool="3" flavor2="0">

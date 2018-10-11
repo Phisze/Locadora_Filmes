@@ -26,8 +26,28 @@ extern "C" {
 #endif
 void setTamanhoCliente(float tamanho);
 
-float getTamanhoCliente();
+int getTamanhoCliente();
 
 
+<<<<<<< Updated upstream
+=======
+int getTamanhoFilme();
+
+void setTamanhoCategoria(float tamanho);
+
+int getTamanhoCategoria();
+
+void setTamanhoFornecedor(float tamanho);
+
+int getTamanhoFornecedor();
+
+void setTamanhoFuncionario(float tamanho);
+
+int getTamanhoFuncionario();
+
+void setTamanhoLocadora(float tamanho);
+
+int getTamanhoLocadora();
+>>>>>>> Stashed changes
 #endif /* TAMANHO_H */
 
