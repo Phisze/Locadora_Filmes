@@ -1,108 +1,112 @@
 #include<stdio.h>
 #include "../conCliente.h"
+#include "../structs.h"
 #include <string.h>
-#include<strings.h>
+
 
 void clientemenu(){
          
     int x;
 
-        printf("Digite uma das opções:");
+        printf("Digite uma das opções: \n");
 
-            printf("0. Sair");
-            printf("1. Salvar Cliente");
-            printf("2. Atualizar Cliente"); 
-            printf("3. Deletar Cliente"); 
-            printf("4. Listar cliente");
-            printf("5. Consultar cliente");
-            printf("6. Voltar para o menu");
+            printf("0. Sair \n");
+            printf("1. Salvar Cliente \n");
+            printf("2. Atualizar Cliente \n"); 
+            printf("3. Deletar Cliente \n"); 
+            printf("4. Listar cliente \n");
+            printf("5. Consultar cliente \n");
+            printf("6. Voltar para o menu \n");
 
 
-        scanf("%d",&x);
+        scanf("%d%*c",&x);
+        char nome_atualizar[NOME];
 
-                        char *nome;
-                        char *endereco;
-                        char *cpf;
-                        char *telefone;
-                        char *email;
-                        char *sexo;
-                        char *estado_civil;
-                        char *data_nascimento;
-
-            switch(x){
-
-                case 1:
                        
+
+   switch(x){
+
+               Cliente cliente;
+               
+                case 1: //salva clientes
+                    
+                 
                                                
-                        printf ("Digite o nome: ");
-                        scanf("%[^\n]", nome); //Até o usuario dar enter
+                        printf ("Digite o nome: \n");
+                        scanf("%[^\n]%*c", cliente.nome); //Até o usuario dar enter
+                        fflush(stdin); //limpa
+                        
+                        printf("Digite o endereço: \n");
+                        scanf("%[^\n]%*c", cliente.endereco); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf("Digite o endereço: ");
-                        scanf("%[^\n]", endereco); //Até o usuario dar enter
+                        printf ("Digite o CPF: \n");
+                        scanf("%[^\n]%*c", cliente.cpf); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf ("Digite o CPF: ");
-                        scanf("%[^\n]", cpf); //Até o usuario dar enter
+                        printf ("Digite o Telefone: \n");
+                        scanf("%[^\n]%*c", cliente.telefone); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf ("Digite o Telefone: ");
-                        scanf("%[^\n]", telefone); //Até o usuario dar enter
+                        printf ("Digite o e-mail: \n");
+                        scanf("%[^\n]%*c", cliente.email); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf ("Digite o e-mail: ");
-                        scanf("%[^\n]", email); //Até o usuario dar enter
+                        printf ("Digite o sexo F para femino e M para masculino: \n");
+                        scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf ("Digite o sexo F para femino e M para masculino: ");
-                        scanf("%[^\n]", sexo); //Até o usuario dar enter
+                        printf ("Digite Estado Civil: \n");
+                        scanf("%[^\n]%*c", cliente.estado_civil); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf ("Digite Estado Civil: ");
-                        scanf("%[^\n]", estado_civil); //Até o usuario dar enter
+                        printf ("Digite o Ano de nascimento: \n");
+                        scanf("%[^\n]%*c", cliente.data_nascimento); //Até o usuario dar enter
                         fflush(stdin);
                         
-                        printf ("Digite o Ano de nascimento: ");
-                        scanf("%[^\n]", data_nascimento); //Até o usuario dar enter
-                        fflush(stdin);
-                        
-                        Cliente cliente;
-                        
-                        strcpy(cliente.nome,nome);
-                        strcpy(cliente.endereco,endereco);
-                        strcpy(cliente.cpf,cpf);
-                        strcpy(cliente.telefone,telefone);
-                        strcpy(cliente.email,email);
-                        strcpy(cliente.sexo,sexo);
-                        strcpy(cliente.estado_civil,estado_civil);
-                        strcpy(cliente.data_nascimento,data_nascimento);
-                        
-                      
+                                       
+                                         
                          
                          mensagem_operacao(salvaCliente(&cliente));
                 break;
 
-                //case 2:
-                  //  atualizaCliente();
-                //break;
+                case 2: //atualizar cliente 
+                    
+                                                        
+                break;
 
                  //case 3:
                 //    deletaCliente();
                 //break;
 
-                // case 4:
-                 //   listaClientes();
-               // break;
+                 case 4:
+                 // Listar cliente
+                     
+                    Cliente *p = lClientes(); //p vetor com todos os clientes 
+                    float tamanho = qtdCliente(); //quantidade de clientes do vetor
+                    
+                    for(float i = 0; i <=tamanho; i++){
+                        
+                        if(p[i].deletado!='*'){ //Não mostrar os deletados
+                        
+                            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s"
+
+                                   ", Data de Nascimento: %s. \n",p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email,
+                                    p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+                        }
+                    }
+                     
+                break;
 
                  //case 5:
-              //       consultaCliente();
+                  
                      
-              break;
+                   // break;
 
             }
             
             
-            return 0;
+     
 }
 
 int mensagem_operacao(int cod){

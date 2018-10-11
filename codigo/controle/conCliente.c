@@ -33,9 +33,13 @@ Cliente* listaClientes(){
     return lClientes();
 }
 
-Cliente consultaCliente(int codigo){
-    return consultarClientes(codigo);
+int qtdCliente(){
+    return getTamanhoCliente();
 }
+
+//Cliente consultaCliente(int codigo){
+ //   return consultarClientes(codigo);
+//}
 
 ///*
 // * To change this license header, choose License Headers in Project Properties.

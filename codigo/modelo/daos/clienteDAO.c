@@ -15,7 +15,9 @@
 //Funcao Inclusao 
 
 int inclusaoCliente(Cliente c) {
-    printf("codcodcod %f ", c.codigo);
+    int tamanho = getTamanhoCliente();
+    c.codigo=tamanho+1;
+    printf("codcodcod %f ",c.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
     FILE *arq = fopen("cliente.pro", "ab");
@@ -24,47 +26,41 @@ int inclusaoCliente(Cliente c) {
         printf("Erro ao abrir arquivo");
         return 0;
     }
-
+    
     fwrite(&c, sizeof (c), 1, arq);
     fclose(arq);
-    int tamanho = getTamanhoCliente();
+
     tamanho++;
     setTamanhoCliente(tamanho);
     return 1;
-
+    
 }
+
 
 Cliente* lClientes() {
     int i = 0;
 
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc(getTamanhoCliente() * sizeof c);
-    // VECTOR_INIT(v);
+    Cliente *array = malloc(105 * sizeof c);
+   // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-
+        
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
         if (c.deletado != '*') {
-
-            // VECTOR_ADD(v,c);
-            // array[i].nome = c.nome;
-            array[i].codigo = c.codigo;
+            
+           // VECTOR_ADD(v,c);
+           // array[i].nome = c.nome;
             strcpy(array[i].nome, c.nome);
-            strcpy(array[i].endereco, c.endereco);
-            strcpy(array[i].cpf, c.cpf);
-            strcpy(array[i].telefone, c.telefone);
-            strcpy(array[i].email, c.email);
-            strcpy(array[i].sexo, c.sexo);
-            strcpy(array[i].estado_civil, c.estado_civil);
-            strcpy(array[i].data_nascimento, c.data_nascimento);
-            // }
+            array[i].codigo=c.codigo;
+           // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
             //VECTOR_ADD(clientes, cw);
@@ -149,7 +145,7 @@ int alterarCliente(Cliente clintes, int cod) {
 
 int excluirCliente(int cod) {
 
-    FILE *arq = fopen("cliente.pro", "r+b");
+    FILE *arq = fopen("produtos.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
         return 0;

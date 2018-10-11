@@ -28,8 +28,6 @@ void setTamanhoCliente(float tamanho);
 
 float getTamanhoCliente();
 
-void setTamanhoFilme(float tamanho);
 
-float getTamanhoFilme();
 #endif /* TAMANHO_H */
 

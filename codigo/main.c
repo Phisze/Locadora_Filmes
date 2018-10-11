@@ -23,11 +23,11 @@
  * 
  */
 int main(int argc, char** argv) {
-    Cliente c;
-    printf("Digite o nome do fulano: ");
-    fgets(c.nome, 100, stdin);
+//    Cliente c;
+//    printf("Digite o nome do fulano: ");
+//    fgets(c.nome, 100, stdin);
 
-
+    clientemenu();
 
     // printf("Digite o nome: ");
     //  fgets(c.nome,30,stdin);
