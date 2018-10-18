@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
@@ -7,6 +7,7 @@
       <itemPath>categoriaDAO.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCliente.h</itemPath>
+      <itemPath>conFilme.h</itemPath>
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
@@ -27,6 +28,7 @@
       <itemPath>modelo/daos/categoriaDAO.c</itemPath>
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
+      <itemPath>controle/conFilme.c</itemPath>
       <itemPath>modelo/daos/filmeDAO.c</itemPath>
       <itemPath>modelo/daos/fornecedorDAO.c</itemPath>
       <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
@@ -78,7 +80,11 @@
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conFilme.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conFilme.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -151,7 +157,11 @@
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conFilme.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conFilme.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>

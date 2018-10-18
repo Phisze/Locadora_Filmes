@@ -9,22 +9,24 @@
 #include "../tamanho.h"
 #include <stdio.h>
 
+//funcionando ok
 int salvaCliente(Cliente * c){
     Cliente j=*c;
        
 
     float tamanhoCli=getTamanhoCliente()+1;
     j.codigo=tamanhoCli;
-    printf(" tamain cliente %f\n",j.codigo);
+    //printf(" tamain cliente %f\n",j.codigo);
     
     return inclusaoCliente(j);
   ///  return 1;
 }
-
+//funcionando ok
 int atualizaCliente(Cliente c){
     return alterarCliente(c,c.codigo);
 }
 
+//funcionando ok
 int deletaCliente(int codigo){
     return excluirCliente(codigo);
 }

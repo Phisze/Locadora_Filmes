@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/controle/conCliente.o \
+	${OBJECTDIR}/controle/conFilme.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
@@ -81,6 +82,11 @@ ${OBJECTDIR}/controle/conCliente.o: controle/conCliente.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCliente.o controle/conCliente.c
+
+${OBJECTDIR}/controle/conFilme.o: controle/conFilme.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFilme.o controle/conFilme.c
 
 ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle

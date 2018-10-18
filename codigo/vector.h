@@ -42,6 +42,15 @@ typedef struct vector {
     int total;
 } vector;
 
+typedef struct {
+    Cliente *items;
+    int capacity;
+    int total;
+} vectorCliente;
+
+
+
+
 void vector_init(vector *);
 int vector_total(vector *);
 static void vector_resize(vector *, int);
@@ -51,6 +60,12 @@ void *vector_get(vector *, int);
 void vector_delete(vector *, int);
 void vector_free(vector *);
 
-
+int vector_init_Cli(Cliente *);
+int vector_add_Cli(Cliente *, Cliente *);
+int vector_delete(Cliente *, int);
+Cliente *vector_get(Cliente *, int);
+int vector_set(Cliente *, int, Cliente *);
+int vector_free(Cliente *);
+static Cliente* vector_resize(vector *, int);
 
 #endif /* VECTOR_H */

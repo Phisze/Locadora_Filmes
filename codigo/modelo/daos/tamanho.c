@@ -58,8 +58,7 @@ int getTamanhoCliente() {
     }
     fclose(arq);
     return tamanho;
-<<<<<<< Updated upstream
-=======
+
 }
 
 void setTamanhoFilme(float tamanho) {
@@ -330,5 +329,5 @@ int getTamanhoLocadora() {
     }
     fclose(arq);
     return tamanho;
->>>>>>> Stashed changes
+
 }
