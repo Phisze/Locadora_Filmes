@@ -12,12 +12,14 @@
  * and open the template in the editor.
  */
 
+vector v = {NULL, 4, 0};
+
 //Funcao Inclusao 
 
 int inclusaoCliente(Cliente c) {
     int tamanho = getTamanhoCliente();
-    c.codigo=tamanho+1;
-    printf("codcodcod %f ",c.codigo);
+    c.codigo = tamanho + 1;
+    printf("codcodcod %f ", c.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
     FILE *arq = fopen("cliente.pro", "ab");
@@ -26,16 +28,15 @@ int inclusaoCliente(Cliente c) {
         printf("Erro ao abrir arquivo");
         return 0;
     }
-    
+
     fwrite(&c, sizeof (c), 1, arq);
     fclose(arq);
 
     tamanho++;
     setTamanhoCliente(tamanho);
     return 1;
-    
-}
 
+}
 
 Cliente* lClientes() {
     int i = 0;
@@ -43,24 +44,24 @@ Cliente* lClientes() {
     Cliente c;
     Cliente *cw = &c;
     Cliente *array = malloc(105 * sizeof c);
-   // VECTOR_INIT(v);
+    // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        
+
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
         if (c.deletado != '*') {
-            
-           // VECTOR_ADD(v,c);
-           // array[i].nome = c.nome;
+
+            // VECTOR_ADD(v,c);
+            // array[i].nome = c.nome;
             strcpy(array[i].nome, c.nome);
-            array[i].codigo=c.codigo;
-           // }
+            array[i].codigo = c.codigo;
+            // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
             //VECTOR_ADD(clientes, cw);

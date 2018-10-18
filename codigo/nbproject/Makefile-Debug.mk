@@ -40,13 +40,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
-<<<<<<< Updated upstream
-=======
 	${OBJECTDIR}/modelo/daos/filmeDAO.o \
 	${OBJECTDIR}/modelo/daos/fornecedorDAO.o \
 	${OBJECTDIR}/modelo/daos/funcionarioDAO.o \
 	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
->>>>>>> Stashed changes
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
 	${OBJECTDIR}/visao/VisaoCategoria.o \
@@ -105,8 +102,6 @@ ${OBJECTDIR}/modelo/daos/clienteDAO.o: modelo/daos/clienteDAO.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDAO.o modelo/daos/clienteDAO.c
 
-<<<<<<< Updated upstream
-=======
 ${OBJECTDIR}/modelo/daos/filmeDAO.o: modelo/daos/filmeDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
@@ -127,7 +122,6 @@ ${OBJECTDIR}/modelo/daos/locadoraDAO.o: modelo/daos/locadoraDAO.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/locadoraDAO.o modelo/daos/locadoraDAO.c
 
->>>>>>> Stashed changes
 ${OBJECTDIR}/modelo/daos/tamanho.o: modelo/daos/tamanho.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
