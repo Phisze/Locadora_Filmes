@@ -13,7 +13,7 @@
 
 //Funcao Inclusao 
 
-int inclusaoFuncionario(Funcionario f) {
+int inclusaoFuncionarios(Funcionario f) {
     //printf("codcodcod %f ", f.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
@@ -33,7 +33,7 @@ int inclusaoFuncionario(Funcionario f) {
 
 }
 
-Funcionario* listarFuncionario() {
+Funcionario* listarFuncionarios() {
     int i = 0;
 
     Funcionario f;
@@ -72,7 +72,7 @@ Funcionario* listarFuncionario() {
     return array;
 }
 
-Funcionario consultarFuncionario(int cod) {
+Funcionario consultarFuncionarios(int cod) {
 
     FILE *arq = fopen("funcionario.pro", "rb");
     if (arq == NULL) {
@@ -105,7 +105,7 @@ Funcionario consultarFuncionario(int cod) {
     return v;
 }
 
-int alterarFuncionario(Funcionario funcionario, int cod) {
+int alterarFuncionarios(Funcionario funcionario, int cod) {
     FILE *arq = fopen("funcionario.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -143,7 +143,7 @@ int alterarFuncionario(Funcionario funcionario, int cod) {
     return 0;
 }
 
-int excluirFuncionario(int cod) {
+int excluirFuncionarios(int cod) {
 
     FILE *arq = fopen("funcionario.pro", "r+b");
     if (arq == NULL) {
