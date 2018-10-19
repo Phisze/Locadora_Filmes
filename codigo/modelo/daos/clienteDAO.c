@@ -61,15 +61,23 @@ Cliente* lClientes() {
             // array[i].nome = c.nome;
             strcpy(array[i].nome, c.nome);
             array[i].codigo = c.codigo;
-            // }
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+            strcpy(array[i].endereco, c.endereco);
+            strcpy(array[i].cpf, c.cpf);
+            strcpy(array[i].telefone, c.telefone);
+            strcpy(array[i].email, c.email);
+            array[i].sexo=c.sexo;
+            strcpy(array[i].estado_civil, c.estado_civil);
+            strcpy(array[i].data_nascimento,c.data_nascimento);
+                    // }
+                    //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
-            //VECTOR_ADD(clientes, cw);
-            //printf("Cod %s\n", c.nome);
-            i++;
+                    //VECTOR_ADD(clientes, cw);
+                    //printf("Cod %s\n", c.nome);
+                    i++;
         }
     }
     fclose(arq);
+
     return array;
 }
 
@@ -78,16 +86,16 @@ Cliente consultarClientes(int cod) {
     FILE *arq = fopen("cliente.pro", "rb");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        Cliente v;
+                Cliente v;
         return v;
     }
 
     Cliente c;
 
-    //int cod;
-    int achei = 0;
-    //printf("\nDigite o codigo que procura: \n");
-    //scanf("%d", &cod);
+            //int cod;
+            int achei = 0;
+            //printf("\nDigite o codigo que procura: \n");
+            //scanf("%d", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if ((cod == c.codigo) && (c.deletado != '*')) {
@@ -102,7 +110,8 @@ Cliente consultarClientes(int cod) {
         printf("\nCodigo nao cadastrado!!\n");
     }
     fclose(arq);
-    Cliente v;
+            Cliente v;
+
     return v;
 }
 
@@ -114,35 +123,36 @@ int alterarCliente(Cliente clintes, int cod) {
     }
 
     Cliente c;
-    //int cod, 
-    int achei = 0;
-    //printf("\nDigite o codigo que deseja alterar: \n");
-    //scanf("%d", &cod);
+            //int cod, 
+            int achei = 0;
+            //printf("\nDigite o codigo que deseja alterar: \n");
+            //scanf("%d", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if (cod == c.codigo) {
             //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
-            fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
-            //  printf("\nDigite a nova descricao: \n");
-            fflush(stdin);
-            //  scanf("%s", produtos.descricao);
-            // printf("\nDigite o novo preco....: \n");
-            //scanf("%f", &produtos.valor);
+                    fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
+                    //  printf("\nDigite a nova descricao: \n");
+                    fflush(stdin);
+                    //  scanf("%s", produtos.descricao);
+                    // printf("\nDigite o novo preco....: \n");
+                    //scanf("%f", &produtos.valor);
 
-            fwrite(&clintes, sizeof (clintes), 1, arq);
-            fseek(arq, sizeof (clintes)* 0, SEEK_END);
+                    fwrite(&clintes, sizeof (clintes), 1, arq);
+                    fseek(arq, sizeof (clintes)* 0, SEEK_END);
             return 1;
         }
     }
 
     if (!achei)
-        printf("\nCodigo nao cadastrado!!\n");
+            printf("\nCodigo nao cadastrado!!\n");
 
-    fclose(arq);
-    return 0;
-}
+            fclose(arq);
+
+        return 0;
+    }
 
 int excluirCliente(int cod) {
 
@@ -153,35 +163,35 @@ int excluirCliente(int cod) {
     }
 
     Cliente c;
-    //int cod, 
-    int achei = 0;
-    char certeza;
-    // printf("\nDigite o codigo que deseja EXCLUIR: \n");
-    // scanf("%d", &cod);
+            //int cod, 
+            int achei = 0;
+            char certeza;
+            // printf("\nDigite o codigo que deseja EXCLUIR: \n");
+            // scanf("%d", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if (cod == c.codigo) {
             //  printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
-            printf("\nTem certeza que quer excluir este produto? s/n \n");
-            fflush(stdin);
-            scanf("%c", &certeza);
+                    printf("\nTem certeza que quer excluir este produto? s/n \n");
+                    fflush(stdin);
+                    scanf("%c", &certeza);
             if (certeza == 's') {
                 c.deletado = '*';
-                printf("\nProduto excluido com Sucesso! \n");
-                fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
-                fwrite(&c, sizeof (c), 1, arq);
-                fseek(arq, sizeof (c)* 0, SEEK_END);
+                        printf("\nProduto excluido com Sucesso! \n");
+                        fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
+                        fwrite(&c, sizeof (c), 1, arq);
+                        fseek(arq, sizeof (c)* 0, SEEK_END);
                 return 1;
             } else if (certeza == 'n')
                 return 1;
-        }
+            }
     }
 
     if (!achei)
-        printf("\nCodigo nao cadastrado!!\n");
+            printf("\nCodigo nao cadastrado!!\n");
 
-    fclose(arq);
-    return 0;
-}
+            fclose(arq);
+        return 0;
+    }
