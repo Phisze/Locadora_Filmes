@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../vector.h"
+#include "vector.h"
 
 void vector_init(vector *v) {
     v->capacity = VECTOR_INIT_CAPACITY;

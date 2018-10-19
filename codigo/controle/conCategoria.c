@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+#include "../categoriaDAO.h"
 #include "../tamanho.h"
+#include "../structs.h"
 
 int salvaCategoria(Categoria *f) {
 
@@ -28,7 +29,7 @@ Categoria* listaCategoria() {
 
 //implementar esse olhar se no codigo do wev tem
 
- consultaCategoria(int codigo) {
+Categoria consultaCategoria(int codigo) {
     return consultarCategoria(codigo);
 }
 

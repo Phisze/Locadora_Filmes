@@ -4,32 +4,35 @@
  * and open the template in the editor.
  */
 #include "../tamanho.h"
-
+#include "../structs.h"
+#include "../funcionarioDAO.h"
 
 int salvaFuncionario(Funcionario*f) {
-    
+
     float tamanhoFuncionario = getTamanhoFuncionario() + 1;
     (*f).codigo = tamanhoFuncionario;
-    return inclusaoFuncionario(*f);
+    return inclusaoFuncionarios(*f);
 }
 
-int atualizaFuncionario(Funcionario f){
-    return alterarFuncionarios(f,f.codigo);
+int atualizaFuncionario(Funcionario f) {
+    return alterarFuncionarios(f, f.codigo);
 
 }
-int deletaFuncionario(int codFun){
-    return deletaFuncionario(codFun);
+
+int deletaFuncionario(int codFun) {
+    return excluirFuncionario(codFun);
 }
 
-Funcionario* listaFuncionarios(){
-    return listaFuncionarios();
+Funcionario* listaFuncionarios() {
+    return listarFuncionarios();
 }
 
 //implementar esse olhar se no codigo do wev tem
-Funcionario consultaFuncionario(int codigo){
-    return consultarFuncionario(codigo);
+
+Funcionario consultaFuncionario(int codFun) {
+    return consultarFuncionario(codFun);
 }
 
-int qtdFuncionario(){
+int qtdFuncionario() {
     return qtdFuncionario();
 }

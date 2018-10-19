@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=Cygwin-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,13 +35,13 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/VisaoCliente.o \
 	${OBJECTDIR}/controle/conCategoria.o \
 	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/conFilme.o \
 	${OBJECTDIR}/controle/conFornecedcor.o \
 	${OBJECTDIR}/controle/conFuncionario.o \
 	${OBJECTDIR}/controle/conLocadora.o \
-	${OBJECTDIR}/controle/newfile.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
@@ -53,9 +53,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
 	${OBJECTDIR}/visao/VisaoCategoria.o \
-	${OBJECTDIR}/visao/VisaoCliente.o \
 	${OBJECTDIR}/visao/VisaoFilmes.o \
-	${OBJECTDIR}/visao/VisaoFornecedores.o \
 	${OBJECTDIR}/visao/VisaoFuncionario.o
 
 
@@ -77,11 +75,16 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/VisaoCliente.o: VisaoCliente.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VisaoCliente.o VisaoCliente.c
 
 ${OBJECTDIR}/controle/conCategoria.o: controle/conCategoria.c
 	${MKDIR} -p ${OBJECTDIR}/controle
@@ -112,11 +115,6 @@ ${OBJECTDIR}/controle/conLocadora.o: controle/conLocadora.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conLocadora.o controle/conLocadora.c
-
-${OBJECTDIR}/controle/newfile.o: controle/newfile.c
-	${MKDIR} -p ${OBJECTDIR}/controle
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/newfile.o controle/newfile.c
 
 ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle
@@ -173,20 +171,10 @@ ${OBJECTDIR}/visao/VisaoCategoria.o: visao/VisaoCategoria.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCategoria.o visao/VisaoCategoria.c
 
-${OBJECTDIR}/visao/VisaoCliente.o: visao/VisaoCliente.c
-	${MKDIR} -p ${OBJECTDIR}/visao
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCliente.o visao/VisaoCliente.c
-
 ${OBJECTDIR}/visao/VisaoFilmes.o: visao/VisaoFilmes.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFilmes.o visao/VisaoFilmes.c
-
-${OBJECTDIR}/visao/VisaoFornecedores.o: visao/VisaoFornecedores.c
-	${MKDIR} -p ${OBJECTDIR}/visao
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFornecedores.o visao/VisaoFornecedores.c
 
 ${OBJECTDIR}/visao/VisaoFuncionario.o: visao/VisaoFuncionario.c
 	${MKDIR} -p ${OBJECTDIR}/visao

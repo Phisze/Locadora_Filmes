@@ -11,6 +11,8 @@
  * Created on 19 de Outubro de 2018, 14:05
  */
 #include "../tamanho.h"
+#include "../structs.h"
+#include "../fornecedorDAO.h"
 
 int salvaFornecedor(Fornecedor *f) {
 

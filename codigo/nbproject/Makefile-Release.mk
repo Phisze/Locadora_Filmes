@@ -35,11 +35,26 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/VisaoCliente.o \
+	${OBJECTDIR}/controle/conCategoria.o \
 	${OBJECTDIR}/controle/conCliente.o \
+	${OBJECTDIR}/controle/conFilme.o \
+	${OBJECTDIR}/controle/conFornecedcor.o \
+	${OBJECTDIR}/controle/conFuncionario.o \
+	${OBJECTDIR}/controle/conLocadora.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/modelo/beans/structs.o \
-	${OBJECTDIR}/modelo/daos/clienteDAO.o
+	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
+	${OBJECTDIR}/modelo/daos/clienteDAO.o \
+	${OBJECTDIR}/modelo/daos/filmeDAO.o \
+	${OBJECTDIR}/modelo/daos/fornecedorDAO.o \
+	${OBJECTDIR}/modelo/daos/funcionarioDAO.o \
+	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
+	${OBJECTDIR}/modelo/daos/tamanho.o \
+	${OBJECTDIR}/visao/MenuPrincipal.o \
+	${OBJECTDIR}/visao/VisaoCategoria.o \
+	${OBJECTDIR}/visao/VisaoFilmes.o \
+	${OBJECTDIR}/visao/VisaoFuncionario.o
 
 
 # C Compiler Flags
@@ -66,10 +81,40 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/VisaoCliente.o: VisaoCliente.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VisaoCliente.o VisaoCliente.c
+
+${OBJECTDIR}/controle/conCategoria.o: controle/conCategoria.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCategoria.o controle/conCategoria.c
+
 ${OBJECTDIR}/controle/conCliente.o: controle/conCliente.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCliente.o controle/conCliente.c
+
+${OBJECTDIR}/controle/conFilme.o: controle/conFilme.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFilme.o controle/conFilme.c
+
+${OBJECTDIR}/controle/conFornecedcor.o: controle/conFornecedcor.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFornecedcor.o controle/conFornecedcor.c
+
+${OBJECTDIR}/controle/conFuncionario.o: controle/conFuncionario.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFuncionario.o controle/conFuncionario.c
+
+${OBJECTDIR}/controle/conLocadora.o: controle/conLocadora.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conLocadora.o controle/conLocadora.c
 
 ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle
@@ -81,15 +126,60 @@ ${OBJECTDIR}/main.o: main.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
-${OBJECTDIR}/modelo/beans/structs.o: modelo/beans/structs.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/beans
+${OBJECTDIR}/modelo/daos/categoriaDAO.o: modelo/daos/categoriaDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/beans/structs.o modelo/beans/structs.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/categoriaDAO.o modelo/daos/categoriaDAO.c
 
 ${OBJECTDIR}/modelo/daos/clienteDAO.o: modelo/daos/clienteDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDAO.o modelo/daos/clienteDAO.c
+
+${OBJECTDIR}/modelo/daos/filmeDAO.o: modelo/daos/filmeDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/filmeDAO.o modelo/daos/filmeDAO.c
+
+${OBJECTDIR}/modelo/daos/fornecedorDAO.o: modelo/daos/fornecedorDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/fornecedorDAO.o modelo/daos/fornecedorDAO.c
+
+${OBJECTDIR}/modelo/daos/funcionarioDAO.o: modelo/daos/funcionarioDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/funcionarioDAO.o modelo/daos/funcionarioDAO.c
+
+${OBJECTDIR}/modelo/daos/locadoraDAO.o: modelo/daos/locadoraDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/locadoraDAO.o modelo/daos/locadoraDAO.c
+
+${OBJECTDIR}/modelo/daos/tamanho.o: modelo/daos/tamanho.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/tamanho.o modelo/daos/tamanho.c
+
+${OBJECTDIR}/visao/MenuPrincipal.o: visao/MenuPrincipal.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/MenuPrincipal.o visao/MenuPrincipal.c
+
+${OBJECTDIR}/visao/VisaoCategoria.o: visao/VisaoCategoria.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCategoria.o visao/VisaoCategoria.c
+
+${OBJECTDIR}/visao/VisaoFilmes.o: visao/VisaoFilmes.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFilmes.o visao/VisaoFilmes.c
+
+${OBJECTDIR}/visao/VisaoFuncionario.o: visao/VisaoFuncionario.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFuncionario.o visao/VisaoFuncionario.c
 
 # Subprojects
 .build-subprojects:

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "../tamanho.h"
+#include "tamanho.h"
 
 int salvaLocadora(Locadora*f) {
 

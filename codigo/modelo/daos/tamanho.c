@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-#include "../../vector.h"
-#include "../../structs.h"
-#include "../../clienteDAO.h"
-#include "../../filmeDAO.h"
-#include "../../categoriaDAO.h"
-#include "../../fornecedorDAO.h"
-#include "../../funcionarioDAO.h"
+#include "vector.h"
+#include "structs.h"
+#include "clienteDAO.h"
+#include "filmeDAO.h"
+#include "categoriaDAO.h"
+#include "fornecedorDAO.h"
+#include "funcionarioDAO.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

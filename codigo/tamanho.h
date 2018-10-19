@@ -29,8 +29,7 @@ void setTamanhoCliente(float tamanho);
 int getTamanhoCliente();
 
 
-<<<<<<< Updated upstream
-=======
+
 int getTamanhoFilme();
 
 void setTamanhoCategoria(float tamanho);
@@ -48,6 +47,6 @@ int getTamanhoFuncionario();
 void setTamanhoLocadora(float tamanho);
 
 int getTamanhoLocadora();
->>>>>>> Stashed changes
+
 #endif /* TAMANHO_H */
 
