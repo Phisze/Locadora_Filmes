@@ -6,8 +6,12 @@
                    projectFiles="true">
       <itemPath>categoriaDAO.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
+      <itemPath>conCategoria.h</itemPath>
       <itemPath>conCliente.h</itemPath>
       <itemPath>conFilme.h</itemPath>
+      <itemPath>conFornecedor.h</itemPath>
+      <itemPath>conFuncionario.h</itemPath>
+      <itemPath>conLocadora.h</itemPath>
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
@@ -27,13 +31,18 @@
       <itemPath>visao/VisaoFuncionario.c</itemPath>
       <itemPath>modelo/daos/categoriaDAO.c</itemPath>
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
+      <itemPath>controle/conCategoria.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
       <itemPath>controle/conFilme.c</itemPath>
+      <itemPath>controle/conFornecedcor.c</itemPath>
+      <itemPath>controle/conFuncionario.c</itemPath>
+      <itemPath>controle/conLocadora.c</itemPath>
       <itemPath>modelo/daos/filmeDAO.c</itemPath>
       <itemPath>modelo/daos/fornecedorDAO.c</itemPath>
       <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
       <itemPath>modelo/daos/locadoraDAO.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>controle/newfile.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
     </logicalFolder>
@@ -78,13 +87,31 @@
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conCategoria.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conFilme.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conFornecedor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="conFuncionario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conFilme.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conFornecedcor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/newfile.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -155,13 +182,31 @@
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conCategoria.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conFilme.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conFornecedor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="conFuncionario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conFilme.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conFornecedcor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/newfile.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>

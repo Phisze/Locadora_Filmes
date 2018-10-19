@@ -13,7 +13,6 @@
 int salvaCliente(Cliente * c){
     Cliente j=*c;
        
-
     float tamanhoCli=getTamanhoCliente()+1;
     j.codigo=tamanhoCli;
     //printf(" tamain cliente %f\n",j.codigo);
@@ -39,9 +38,9 @@ int qtdCliente(){
     return getTamanhoCliente();
 }
 
-//Cliente consultaCliente(int codigo){
- //   return consultarClientes(codigo);
-//}
+Cliente consultaCliente(int codigo){
+   return consultarClientes(codigo);
+}
 
 ///*
 // * To change this license header, choose License Headers in Project Properties.

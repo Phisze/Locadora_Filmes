@@ -7,11 +7,12 @@
 #include "../filmeDAO.h"
 #include "../tamanho.h"
 
+
 int salvaFilme(Filme*f) {
     
     float tamanhoFilme = getTamanhoFilme() + 1;
     (*f).codigo = tamanhoFilme;
-    return inclusaoCliente(*f);
+    return inclusaoFilmes(*f);
 }
 
 int atualizaFilme(Filme f){
@@ -27,7 +28,9 @@ Filme* listaFilmes(){
 }
 
 //implementar esse olhar se no codigo do wev tem
-Filme consultaFilme(int codigo);
+Filme consultaFilme(int codigo){
+    return consultarFilmes(codigo);
+}
 
 int qtdFilme(){
     return qtdFilme();

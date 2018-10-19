@@ -35,8 +35,13 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/controle/conCategoria.o \
 	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/conFilme.o \
+	${OBJECTDIR}/controle/conFornecedcor.o \
+	${OBJECTDIR}/controle/conFuncionario.o \
+	${OBJECTDIR}/controle/conLocadora.o \
+	${OBJECTDIR}/controle/newfile.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
@@ -78,6 +83,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/controle/conCategoria.o: controle/conCategoria.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCategoria.o controle/conCategoria.c
+
 ${OBJECTDIR}/controle/conCliente.o: controle/conCliente.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
@@ -87,6 +97,26 @@ ${OBJECTDIR}/controle/conFilme.o: controle/conFilme.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFilme.o controle/conFilme.c
+
+${OBJECTDIR}/controle/conFornecedcor.o: controle/conFornecedcor.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFornecedcor.o controle/conFornecedcor.c
+
+${OBJECTDIR}/controle/conFuncionario.o: controle/conFuncionario.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conFuncionario.o controle/conFuncionario.c
+
+${OBJECTDIR}/controle/conLocadora.o: controle/conLocadora.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conLocadora.o controle/conLocadora.c
+
+${OBJECTDIR}/controle/newfile.o: controle/newfile.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/newfile.o controle/newfile.c
 
 ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle
