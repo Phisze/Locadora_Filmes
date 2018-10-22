@@ -1,10 +1,13 @@
-build/Debug/GNU-Linux/VisaoCliente.o: VisaoCliente.c conCliente.h \
- vector.h structs.h clienteDAO.h
+build/Debug/GNU-Linux/VisaoCliente.o: VisaoCliente.c \
+ ../codigo/conCliente.h ../codigo/vector.h ../codigo/structs.h \
+ ../codigo/structs.h ../codigo/clienteDAO.h
 
-conCliente.h:
+../codigo/conCliente.h:
 
-vector.h:
+../codigo/vector.h:
 
-structs.h:
+../codigo/structs.h:
 
-clienteDAO.h:
+../codigo/structs.h:
+
+../codigo/clienteDAO.h:

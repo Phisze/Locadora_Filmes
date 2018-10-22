@@ -1,9 +1,9 @@
-#include "vector.h"
-#include "structs.h"
+#include "../../vector.h"
+#include "../../structs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tamanho.h"
+#include "../../tamanho.h"
 
 /*
  * To change this license header, choose License Headers in Project Properties.

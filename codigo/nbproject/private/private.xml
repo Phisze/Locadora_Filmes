@@ -7,12 +7,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/master/codigo/conFilme.h</file>
-            <file>file:/E:/master/codigo/controle/conFilme.c</file>
-            <file>file:/E:/master/codigo/conCliente.h</file>
-            <file>file:/E:/master/codigo/vector.h</file>
-            <file>file:/E:/master/codigo/modelo/daos/tamanho.c</file>
-            <file>file:/E:/master/codigo/controle/conCliente.c</file>
+            <file>file:/home/alunos/Locadora_Filmes/codigo/VisaoCliente.c</file>
+            <file>file:/home/alunos/Locadora_Filmes/codigo/modelo/daos/categoriaDAO.c</file>
+            <file>file:/home/alunos/Locadora_Filmes/codigo/modelo/daos/clienteDAO.c</file>
+            <file>file:/home/alunos/Locadora_Filmes/codigo/structs.h</file>
+            <file>file:/home/alunos/Locadora_Filmes/codigo/controle/conCliente.c</file>
         </group>
     </open-files>
 </project-private>

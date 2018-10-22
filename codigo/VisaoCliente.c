@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include "conCliente.h"
-#include "structs.h"
-#include "clienteDAO.h"
+#include "../codigo/conCliente.h"
+#include "../codigo/structs.h"
+#include "../codigo/clienteDAO.h"
 #include <string.h>
 
 void clientemenu() {
@@ -67,7 +67,54 @@ void clientemenu() {
             break;
 
         case 2: //atualizar cliente 
-            printf("Tô funcionando");
+            
+//            printf("Digite o código do cliente que deseja atualizar: ");
+//            scanf();
+//            
+            fflush(stdin); //limpa                       
+            printf("Digite o nome: \n");
+            scanf("%[^\n]%*c", cliente.nome); //Até o usuario dar enter
+            strcpy(cliente.nome, cliente.nome);
+            fflush(stdin); //limpa
+
+            printf("Digite o endereço: \n");
+            scanf("%[^\n]%*c", cliente.endereco); //Até o usuario dar enter
+            strcpy(cliente.endereco, cliente.endereco);
+            fflush(stdin);
+
+            printf("Digite o CPF: \n");
+            scanf("%[^\n]%*c", cliente.cpf); //Até o usuario dar enter
+            strcpy(cliente.cpf, cliente.cpf);
+            fflush(stdin);
+
+            printf("Digite o Telefone: \n");
+            scanf("%[^\n]%*c", cliente.telefone); //Até o usuario dar enter
+            strcpy(cliente.telefone, cliente.telefone);
+            fflush(stdin);
+
+            printf("Digite o e-mail: \n");
+            scanf("%[^\n]%*c", cliente.email); //Até o usuario dar enter
+            strcpy(cliente.email, cliente.email);
+            fflush(stdin);
+
+            printf("Digite o sexo F para femino e M para masculino: \n");
+            scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
+            strcpy(cliente.sexo, cliente.sexo);
+            fflush(stdin);
+
+            printf("Digite Estado Civil: \n");
+            scanf("%[^\n]%*c", cliente.estado_civil); //Até o usuario dar enter
+            strcpy(cliente.estado_civil, cliente.estado_civil);
+            fflush(stdin);
+
+            printf("Digite o Ano de nascimento: \n");
+            scanf("%[^\n]%*c", cliente.data_nascimento); //Até o usuario dar enter
+            strcpy(cliente.data_nascimento, cliente.data_nascimento);
+            fflush(stdin);
+
+            
+            //mensagem_operacao(atualizaCliente(&cliente));
+            
 
             break;
 
@@ -109,3 +156,9 @@ void listaClie() {
         }
     }
 }
+//
+//void attCliente(){
+//    
+//   
+//    
+//}

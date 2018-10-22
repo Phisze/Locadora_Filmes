@@ -4,34 +4,34 @@
  * and open the template in the editor.
  */
 
-#include "tamanho.h"
+#include "../tamanho.h"
+//
+//int salvaLocadora(Locadora*f) {
+//
+//    float tamanhoLocadora= getTamanhoLocadora() + 1;
+//    (*f).codigo = tamanhoLocadora;
+//    return inclusaoLocadora(*f);
+//}
 
-int salvaLocadora(Locadora*f) {
+//int atualizaLocadora(Locadora f) {
+//    return alterarLocadora(f, f.codigo);
+//
+//}
 
-    float tamanhoLocadora= getTamanhoLocadora() + 1;
-    (*f).codigo = tamanhoLocadora;
-    return inclusaoLocadora(*f);
-}
-
-int atualizaLocadora(Locadora f) {
-    return alterarLocadora(f, f.codigo);
-
-}
-
-int deletaLocadora(int codLocadora) {
-    return deletaLocadora(codLocadora);
-}
-
-Locadora* listaLocadoras() {
-    return listaLocadoras();
-}
-
-//implementar esse olhar se no codigo do wev tem
-
-Locadora consultaLocadora(int codigo) {
-    return consultarLocadora(codigo);
-}
-
-int qtdLocadora() {
-    return qtdLocadora();
-}
+//int deletaLocadora(int codLocadora) {
+//    return deletaLocadora(codLocadora);
+//}
+//
+//Locadora* listaLocadoras() {
+//    return listaLocadoras();
+//}
+//
+////implementar esse olhar se no codigo do wev tem
+//
+//Locadora consultaLocadora(int codigo) {
+//    return consultarLocadora(codigo);
+//}
+//
+//int qtdLocadora() {
+//    return qtdLocadora();
+//}

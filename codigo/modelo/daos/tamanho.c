@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-#include "vector.h"
-#include "structs.h"
-#include "clienteDAO.h"
-#include "filmeDAO.h"
-#include "categoriaDAO.h"
-#include "fornecedorDAO.h"
-#include "funcionarioDAO.h"
+#include "../../vector.h"
+#include "../../structs.h"
+#include "../../clienteDAO.h"
+#include "../../filmeDAO.h"
+#include "../../categoriaDAO.h"
+#include "../../fornecedorDAO.h"
+#include "../../filmeDAO.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -196,66 +196,66 @@ int getTamanhoFornecedor() {
     return tamanho;
 }
 
-void setTamanhoFornecedor(float tamanho) {
-    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    FILE *arq = fopen("tamanhoFor.pro", "ab");
-
-    if (arq == NULL) {
-        printf("Erro ao abrir arquivo");
-    }
-
-    remove("tamanhoFor.pro");
-
-    FILE *arqB = fopen("tamanhoFor.pro", "wb");
-
-    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
-    fclose(arqB);
-}
-
-int getTamanhoFornecedor() {
-
-    float c;
-    float tamanho;
-    // VECTOR_INIT(v);
-    //    Cliente *cli = &clientes;
-    FILE *arq = fopen("tamanhoFor.pro", "rb");
-    //printf("Arquivo xistente!");
-
-    if (arq == NULL) {
-       // printf("Arquivo inexistente!");
-
-        return 0;
-    }
-    while (fread(&c, sizeof (c), 1, arq)) {
-
-        // VECTOR_ADD(v,c);
-        // array[i].nome = c.nome;
-        tamanho = c;
-        // }
-        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
-
-        //VECTOR_ADD(clientes, cw);
-        //printf("Cod %s\n", c.nome);
-    }
-    fclose(arq);
-    return tamanho;
-}
-
-void setTamanhoFuncionario(float tamanho) {
-    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    FILE *arq = fopen("tamanhoFun.pro", "ab");
-
-    if (arq == NULL) {
-        printf("Erro ao abrir arquivo");
-    }
-
-    remove("tamanhoFun.pro");
-
-    FILE *arqB = fopen("tamanhoFun.pro", "wb");
-
-    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
-    fclose(arqB);
-}
+//void setTamanhoFornecedor(float tamanho) {
+//    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+//    FILE *arq = fopen("tamanhoFor.pro", "ab");
+//
+//    if (arq == NULL) {
+//        printf("Erro ao abrir arquivo");
+//    }
+//
+//    remove("tamanhoFor.pro");
+//
+//    FILE *arqB = fopen("tamanhoFor.pro", "wb");
+//
+//    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+//    fclose(arqB);
+//}
+//
+//int getTamanhoFornecedor() {
+//
+//    float c;
+//    float tamanho;
+//    // VECTOR_INIT(v);
+//    //    Cliente *cli = &clientes;
+//    FILE *arq = fopen("tamanhoFor.pro", "rb");
+//    //printf("Arquivo xistente!");
+//
+//    if (arq == NULL) {
+//       // printf("Arquivo inexistente!");
+//
+//        return 0;
+//    }
+//    while (fread(&c, sizeof (c), 1, arq)) {
+//
+//        // VECTOR_ADD(v,c);
+//        // array[i].nome = c.nome;
+//        tamanho = c;
+//        // }
+//        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+//
+//        //VECTOR_ADD(clientes, cw);
+//        //printf("Cod %s\n", c.nome);
+//    }
+//    fclose(arq);
+//    return tamanho;
+//}
+//
+//void setTamanhoFuncionario(float tamanho) {
+//    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+//    FILE *arq = fopen("tamanhoFun.pro", "ab");
+//
+//    if (arq == NULL) {
+//        printf("Erro ao abrir arquivo");
+//    }
+//
+//    remove("tamanhoFun.pro");
+//
+//    FILE *arqB = fopen("tamanhoFun.pro", "wb");
+//
+//    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+//    fclose(arqB);
+//}
 
 int getTamanhoFuncionario() {
 

@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "clienteDAO.h"
-#include "vector.h"
-#include "conCliente.h"
-#include "tamanho.h"
+#include "../codigo/clienteDAO.h"
+#include "../codigo/vector.h"
+#include "../codigo/conCliente.h"
+#include "../codigo/tamanho.h"
 
 /*
  * 
