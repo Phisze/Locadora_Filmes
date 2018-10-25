@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
 //    printf("Digite o nome do fulano: ");
 //    fgets(c.nome, 100, stdin);
 
-    clientemenu();
+    menuPrincipal();
 
     // printf("Digite o nome: ");
     //  fgets(c.nome,30,stdin);

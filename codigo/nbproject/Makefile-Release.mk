@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux
-CND_DLIB_EXT=so
+CND_PLATFORM=Cygwin-Windows
+CND_DLIB_EXT=dll
 CND_CONF=Release
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/VisaoCliente.o \
 	${OBJECTDIR}/controle/conCategoria.o \
 	${OBJECTDIR}/controle/conCliente.o \
 	${OBJECTDIR}/controle/conFilme.o \
@@ -53,6 +52,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
 	${OBJECTDIR}/visao/VisaoCategoria.o \
+	${OBJECTDIR}/visao/VisaoCliente.o \
 	${OBJECTDIR}/visao/VisaoFilmes.o \
 	${OBJECTDIR}/visao/VisaoFuncionario.o \
 	${OBJECTDIR}/visao/visaoLocadora.o
@@ -76,16 +76,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/VisaoCliente.o: VisaoCliente.c
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VisaoCliente.o VisaoCliente.c
 
 ${OBJECTDIR}/controle/conCategoria.o: controle/conCategoria.c
 	${MKDIR} -p ${OBJECTDIR}/controle
@@ -171,6 +166,11 @@ ${OBJECTDIR}/visao/VisaoCategoria.o: visao/VisaoCategoria.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCategoria.o visao/VisaoCategoria.c
+
+${OBJECTDIR}/visao/VisaoCliente.o: visao/VisaoCliente.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCliente.o visao/VisaoCliente.c
 
 ${OBJECTDIR}/visao/VisaoFilmes.o: visao/VisaoFilmes.c
 	${MKDIR} -p ${OBJECTDIR}/visao

@@ -25,7 +25,7 @@
                    projectFiles="true">
       <itemPath>visao/MenuPrincipal.c</itemPath>
       <itemPath>visao/VisaoCategoria.c</itemPath>
-      <itemPath>VisaoCliente.c</itemPath>
+      <itemPath>visao/VisaoCliente.c</itemPath>
       <itemPath>visao/VisaoFilmes.c</itemPath>
       <itemPath>visao/VisaoFuncionario.c</itemPath>
       <itemPath>modelo/daos/categoriaDAO.c</itemPath>
@@ -82,8 +82,6 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="VisaoCliente.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
@@ -147,6 +145,8 @@
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoCategoria.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -175,8 +175,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="VisaoCliente.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
@@ -240,6 +238,8 @@
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoCategoria.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
       </item>

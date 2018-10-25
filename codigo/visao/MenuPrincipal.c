@@ -24,7 +24,7 @@ void menuPrincipal(){
             case 1: 
                 break;
             case 2:
-                clientemenu();
+                
                 break;
             case 3:
                 break;
