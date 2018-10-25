@@ -59,8 +59,15 @@ Cliente* lClientes() {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
-            strcpy(array[i].nome, c.nome);
             array[i].codigo = c.codigo;
+            strcpy(array[i].nome, c.nome);
+            strcpy(array[i].endereco, c.endereco);
+            strcpy(array[i].cpf, c.cpf);
+            strcpy(array[i].telefone, c.telefone);
+            strcpy(array[i].email, c.email);
+            array[i].sexo = c.sexo;
+            strcpy(array[i].estado_civil, c.estado_civil);
+            strcpy(array[i].data_nascimento, c.data_nascimento);
             // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
