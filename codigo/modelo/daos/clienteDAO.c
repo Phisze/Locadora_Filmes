@@ -19,7 +19,7 @@ vector v = {NULL, 4, 0};
 int inclusaoCliente(Cliente c) {
     int tamanho = getTamanhoCliente();
     c.codigo = tamanho + 1;
-    printf("codcodcod %f ", c.codigo);
+    //printf("codcodcod %f ", c.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
     FILE *arq = fopen("cliente.pro", "ab");

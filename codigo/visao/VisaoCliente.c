@@ -1,7 +1,8 @@
 #include<stdio.h>
-#include "../codigo/conCliente.h"
-#include "../codigo/structs.h"
-#include "../codigo/clienteDAO.h"
+#include "../conCliente.h"
+//#include "../codigo/conCliente.h"
+#include "../structs.h"
+#include "../clienteDAO.h"
 #include <string.h>
 
 void clientemenu() {
@@ -54,9 +55,9 @@ switch (x) {
 int mensagem_operacao(int cod) {
 
     if (cod == 1)
-        printf("Opereção feita com sucesso!");
+        printf("Opereção feita com sucesso!\n");
     else {
-        printf("Operação não realizada com sucesso!");
+        printf("Operação não realizada com sucesso!\n");
     }
 }
 
@@ -190,7 +191,7 @@ void consulteCliente(){
    
  }
 
-deletCliente(){
+int deletCliente(){
     
    Cliente cliente;
    Cliente *p = lClientes(); //p vetor com todos os clientes 
