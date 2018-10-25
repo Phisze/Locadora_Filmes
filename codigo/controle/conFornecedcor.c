@@ -41,7 +41,7 @@ Fornecedor consultaFornecedor(int codigo) {
 }
 
 int qtdFornecedor() {
-    return qtdFornecedor();
+    return getTamanhoFornecedor();
 }
 
 

@@ -34,5 +34,5 @@
 ////}
 //
 //int qtdFuncionario() {
-//    return qtdFuncionario();
+//    return getTamanhoFuncionario();
 //}

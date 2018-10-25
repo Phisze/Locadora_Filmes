@@ -33,6 +33,6 @@ Filme consultaFilme(int codigo){
 }
 
 int qtdFilme(){
-    return qtdFilme();
+    return getTamanhoFilme();
 }
 

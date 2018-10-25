@@ -34,5 +34,5 @@ Categoria consultaCategoria(int codigo) {
 }
 
 int qtdCategoria() {
-    return qtdCategoria();
+    return getTamanhoCategoria();
 }

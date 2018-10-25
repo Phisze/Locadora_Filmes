@@ -32,6 +32,6 @@
 //    return consultarLocadora(codigo);
 //}
 //
-//int qtdLocadora() {
-//    return qtdLocadora();
-//}
+int qtdLocadora() {
+    return getTamanhoLocadora();
+}
