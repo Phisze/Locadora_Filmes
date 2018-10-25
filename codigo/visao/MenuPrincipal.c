@@ -5,13 +5,11 @@
 
 #include "VisaoCliente.h"
 
-void menuPrincipal(){
-    
+void menuPrincipal() {
+
     int x;
-    printf("Digite uma das opções: ");
-    scanf("%d",&x);
-    
-    do{    
+
+    while (x!=6) {
         printf("MENU PRINCIPAL:\n");
         printf("1. LOCADORA \n");
         printf("2. CLIENTE \n");
@@ -20,10 +18,13 @@ void menuPrincipal(){
         printf("5. FORNECEDORES \n");
         printf("6. SAIR DO PROGRAMA \n");
 
+        
+        printf("Digite uma das opções: ");
+        scanf("%d%*c",&x);
 
-
-        switch (x){
-            case 1: 
+        switch (x) {
+            
+            case 1:
                 break;
             case 2:
                 clientemenu();
@@ -35,5 +36,5 @@ void menuPrincipal(){
             case 5:
                 break;
         }
-    }while(x != 6);      
+    }
 }
