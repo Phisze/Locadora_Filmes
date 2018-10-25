@@ -54,7 +54,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
 	${OBJECTDIR}/visao/VisaoCategoria.o \
 	${OBJECTDIR}/visao/VisaoFilmes.o \
-	${OBJECTDIR}/visao/VisaoFuncionario.o
+	${OBJECTDIR}/visao/VisaoFuncionario.o \
+	${OBJECTDIR}/visao/visaoLocadora.o
 
 
 # C Compiler Flags
@@ -180,6 +181,11 @@ ${OBJECTDIR}/visao/VisaoFuncionario.o: visao/VisaoFuncionario.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFuncionario.o visao/VisaoFuncionario.c
+
+${OBJECTDIR}/visao/visaoLocadora.o: visao/visaoLocadora.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/visaoLocadora.o visao/visaoLocadora.c
 
 # Subprojects
 .build-subprojects:

@@ -43,6 +43,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
+      <itemPath>visao/visaoLocadora.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Arquivos de Recurso"
@@ -151,6 +152,8 @@
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="visao/visaoLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -241,6 +244,8 @@
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/visaoLocadora.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>
