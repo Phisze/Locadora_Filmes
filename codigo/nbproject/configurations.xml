@@ -4,7 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
-      <itemPath>VisaoCliente.h</itemPath>
       <itemPath>categoriaDAO.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCategoria.h</itemPath>
@@ -20,6 +19,12 @@
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
       <itemPath>vector.h</itemPath>
+      <itemPath>vetorCategoria.h</itemPath>
+      <itemPath>vetorCliente.h</itemPath>
+      <itemPath>vetorFilme.h</itemPath>
+      <itemPath>vetorFornecedor.h</itemPath>
+      <itemPath>vetorFuncionario.h</itemPath>
+      <itemPath>vetorLocadora.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
@@ -44,6 +49,12 @@
       <itemPath>main.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
+      <itemPath>controle/vetorCategoria.c</itemPath>
+      <itemPath>controle/vetorCliente.c</itemPath>
+      <itemPath>controle/vetorFilme.c</itemPath>
+      <itemPath>controle/vetorFornecedor.c</itemPath>
+      <itemPath>controle/vetorFuncionario.c</itemPath>
+      <itemPath>controle/vetorLocadora.c</itemPath>
       <itemPath>visao/visaoLocadora.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -83,8 +94,6 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="VisaoCliente.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
@@ -115,6 +124,18 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="controle/vetorCategoria.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorCliente.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorFilme.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorFornecedor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="filmeDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="fornecedorDAO.h" ex="false" tool="3" flavor2="0">
@@ -144,6 +165,18 @@
       <item path="tamanho.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorCategoria.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorFilme.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorFornecedor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorFuncionario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -178,8 +211,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="VisaoCliente.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
@@ -210,6 +241,18 @@
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="controle/vetorCategoria.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorCliente.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorFilme.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorFornecedor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/vetorLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="filmeDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="fornecedorDAO.h" ex="false" tool="3" flavor2="0">
@@ -239,6 +282,18 @@
       <item path="tamanho.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorCategoria.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorFilme.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorFornecedor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorFuncionario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vetorLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>

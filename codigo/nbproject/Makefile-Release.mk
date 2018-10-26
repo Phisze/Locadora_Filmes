@@ -42,6 +42,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/conFuncionario.o \
 	${OBJECTDIR}/controle/conLocadora.o \
 	${OBJECTDIR}/controle/vector.o \
+	${OBJECTDIR}/controle/vetorCategoria.o \
+	${OBJECTDIR}/controle/vetorCliente.o \
+	${OBJECTDIR}/controle/vetorFilme.o \
+	${OBJECTDIR}/controle/vetorFornecedor.o \
+	${OBJECTDIR}/controle/vetorFuncionario.o \
+	${OBJECTDIR}/controle/vetorLocadora.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
@@ -116,6 +122,36 @@ ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vector.o controle/vector.c
+
+${OBJECTDIR}/controle/vetorCategoria.o: controle/vetorCategoria.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vetorCategoria.o controle/vetorCategoria.c
+
+${OBJECTDIR}/controle/vetorCliente.o: controle/vetorCliente.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vetorCliente.o controle/vetorCliente.c
+
+${OBJECTDIR}/controle/vetorFilme.o: controle/vetorFilme.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vetorFilme.o controle/vetorFilme.c
+
+${OBJECTDIR}/controle/vetorFornecedor.o: controle/vetorFornecedor.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vetorFornecedor.o controle/vetorFornecedor.c
+
+${OBJECTDIR}/controle/vetorFuncionario.o: controle/vetorFuncionario.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vetorFuncionario.o controle/vetorFuncionario.c
+
+${OBJECTDIR}/controle/vetorLocadora.o: controle/vetorLocadora.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/vetorLocadora.o controle/vetorLocadora.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}

@@ -41,8 +41,6 @@ extern "C" {
 #define INSCRICAO_ESTADUAL 20
 #define CNPJ 14
 
-
-
 typedef struct {
     float codigo;
     char nome[NOME];
@@ -107,5 +105,41 @@ typedef struct {
     char tel_responsavel[TELEFONE];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Locadora;
+
+typedef struct {
+    int tamanho;
+    Cliente* itens;
+    int total;
+} vetorCliente;
+
+typedef struct {
+    int tamanho;
+    Categoria* itens;
+    int total;
+} vetorCategoria;
+
+typedef struct {
+    int tamanho;
+    Filme* itens;
+    int total;
+} vetorFilme;
+
+typedef struct {
+    int tamanho;
+    Fornecedor* itens;
+    int total;
+} vetorFornecedor;
+
+typedef struct {
+    int tamanho;
+    Funcionario* itens;
+    int total;
+} vetorFuncionario;
+
+typedef struct {
+    int tamanho;
+    Locadora* itens;
+    int total;
+} vetorLocadora;
 
 #endif /* STRUCTS_H */
