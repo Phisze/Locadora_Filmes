@@ -24,7 +24,7 @@ void locadoraMenu(){
     switch(x){
         //Salva Locadora 
         case 1:
-            salveLocadora();
+            salveLoc();
             break;
         //Atualiza locadora
         case 2:
@@ -57,7 +57,7 @@ int mensagem_operacao(int cod) {
         printf("Operação não realizada com sucesso!\n");
     }
 }
-void salveLocadora(){
+void salveLoc(){
     
     Locadora locadora;
 
@@ -111,7 +111,7 @@ void salveLocadora(){
     
      mensagem_operacao(salvaLocadora(&locadora));
 }
-void attLocadora(){
+void attLoc(){
     
 //    Cliente *p = lClientes(); //p vetor com todas Locadoras
 //   int tamanho = qtdCliente(); //quantidade de clientes do vetor

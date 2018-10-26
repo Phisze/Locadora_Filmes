@@ -25,22 +25,22 @@ void clientemenu() {
         switch (x) {
 
             case 1: //salva clientes
-                salveclient();
+                salvecli();
                 break;
 
             case 2: //atualizar cliente 
-                attCliente();
+                attCli();
                 break;
 
             case 3: // deletar cliente
                 break;
 
             case 4: // Listar cliente
-                listaClie();
+                listaCli();
                 break;
 
             case 5:
-                consulteCliente();
+                consulteCli();
                 break;
 
             case 6: //Menu Principal
@@ -60,7 +60,7 @@ int mensagem_operacao(int cod) {
     }
 }
 
-void salveclient() {
+void salvecli() {
     Cliente cliente;
 
     fflush(stdin); //limpa                       
@@ -99,7 +99,7 @@ void salveclient() {
     mensagem_operacao(salvaCliente(&cliente));
 }
 
-void listaClie() {
+void listaCli() {
 
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
@@ -111,7 +111,7 @@ void listaClie() {
     }
 }
 
-void attCliente() {
+void attCli() {
 
     Cliente cliente;
     Cliente *p = lClientes(); //p vetor com todos os clientes 
@@ -171,7 +171,7 @@ void attCliente() {
     }
 }
 
-void consulteCliente() {
+void consulteCli() {
 
     Cliente cliente;
     Cliente *p = lClientes(); //p vetor com todos os clientes 
@@ -191,7 +191,7 @@ void consulteCliente() {
 
 }
 
-int deletCliente() {
+int deletCli() {
 
     Cliente cliente;
     Cliente *p = lClientes(); //p vetor com todos os clientes 
