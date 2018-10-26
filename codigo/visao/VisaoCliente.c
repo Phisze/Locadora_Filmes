@@ -105,9 +105,9 @@ void listaClie() {
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
 
     for (int i = 0; i <= tamanho; i++) {
-//        if (p[i].deletado != '*') { //Não mostrar os deletados
-//            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s, Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
-//        }
+        if (p[i].deletado != '*') { //Não mostrar os deletados
+            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s, Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+        }
     }
 }
 
@@ -167,7 +167,7 @@ void attCliente() {
 
         }
 
-        mensagem_operacao(salvaCliente(&cliente));
+        mensagem_operacao(atualizaCliente(&cliente));
     }
 }
 
@@ -187,6 +187,7 @@ void consulteCliente() {
         } else
             printf("Clinte Inexistente!");
     }
+    mensagem_operacao(consultaCliente(&cliente));
 
 }
 
@@ -205,6 +206,6 @@ int deletCliente() {
 
         }
     }
-
-
+    
+    mensagem_operacao(deletaCliente(&cliente));
 }

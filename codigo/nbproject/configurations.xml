@@ -30,9 +30,9 @@
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>visao/MenuPrincipal.c</itemPath>
-      <itemPath>visao/VisaoCategoria.c</itemPath>
       <itemPath>visao/VisaoCliente.c</itemPath>
       <itemPath>visao/VisaoFilmes.c</itemPath>
+      <itemPath>visao/VisaoFornecedor.c</itemPath>
       <itemPath>visao/VisaoFuncionario.c</itemPath>
       <itemPath>modelo/daos/categoriaDAO.c</itemPath>
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
@@ -180,11 +180,11 @@
       </item>
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/VisaoCategoria.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/VisaoFornecedor.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -297,11 +297,11 @@
       </item>
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/VisaoCategoria.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/VisaoFornecedor.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
