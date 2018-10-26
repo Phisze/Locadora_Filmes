@@ -33,6 +33,11 @@ extern "C" {
 int inclusaoCliente(Cliente c);
 
 /*
+ **  Inclui Clientes em arquivo texto
+ */
+int inclusaoClienteTexto(Cliente c);
+
+/*
  **  Lista Clientes em arquivo binario
  */
 Cliente* lClientes();

@@ -12,9 +12,10 @@
  * and open the template in the editor.
  */
 
-vector v = {NULL, 4, 0};
+//vector v = {NULL, 4, 0};
+const int controla = 1;
 
-//Funcao Inclusao 
+//Funcões de Inclusao 
 
 int inclusaoCliente(Cliente c) {
     int tamanho = getTamanhoCliente();
@@ -35,15 +36,25 @@ int inclusaoCliente(Cliente c) {
     tamanho++;
     setTamanhoCliente(tamanho);
     return 1;
-
 }
+
+int inclusaoClienteTexto(Cliente c) {
+    FILE *arquivo;
+    arquivo = fopen("cliente.txt", "wt");
+    c.data_nascimento = '/'
+            fprintf(arquivo, "%d %s %s %s %s %s %c %s %s %c\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento, c.deletado);
+    fclose(arquivo);
+    return 1;
+}
+
+//Funções de Listar
 
 Cliente* lClientes() {
     int i = 0;
 
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc(105 * sizeof c);
+    Cliente *array = malloc(getTamanhoCliente() * sizeof c);
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
@@ -80,6 +91,37 @@ Cliente* lClientes() {
     return array;
 }
 
+Cliente* Listar() {
+    int i = 0;
+    Cliente c;
+    FILE *arquivo;
+    Cliente *array = malloc(getTamanhoCliente() * sizeof c);
+    char nome[30];
+    int telefone;
+    //Cliente c;
+    arquivo = fopen("vendas.txt", "rt");
+
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        if (c.deletado != '*') {
+            array[i].codigo = c.codigo;
+            strcpy(array[i].nome, c.nome);
+            strcpy(array[i].endereco, c.endereco);
+            strcpy(array[i].cpf, c.cpf);
+            strcpy(array[i].telefone, c.telefone);
+            strcpy(array[i].email, c.email);
+            array[i].sexo = c.sexo;
+            strcpy(array[i].estado_civil, c.estado_civil);
+            strcpy(array[i].data_nascimento, c.data_nascimento);
+            i++;
+        }
+    }
+    fclose(arquivo);
+    return array;
+}
+
+//Funções de Consultar
+
 Cliente consultarClientes(int cod) {
 
     FILE *arq = fopen("cliente.pro", "rb");
@@ -113,6 +155,20 @@ Cliente consultarClientes(int cod) {
     return v;
 }
 
+Cliente Consultar(int cod) {
+    FILE *arquivo;
+    arquivo = fopen("vendas.txt", "rt");
+    Cliente c;
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%d %s %d ", &c.codigo, &c.nome, &c.telefone);
+        if (c.codigo == cod && c.deletado != '*') {
+            break;
+        }
+    }
+    return c;
+}
+
+//Funções de Alteração
 int alterarCliente(Cliente clintes, int cod) {
     FILE *arq = fopen("cliente.pro", "r+b");
     if (arq == NULL) {
@@ -150,6 +206,8 @@ int alterarCliente(Cliente clintes, int cod) {
     fclose(arq);
     return 0;
 }
+
+//Funcções de exclusão
 
 int excluirCliente(int cod) {
 
