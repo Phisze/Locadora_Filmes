@@ -24,7 +24,7 @@ int deletaFilme(int codFilme){
 }
 
 Filme* listaFilmes(){
-    return listaFilmes();
+    return listarFilmes();
 }
 
 //implementar esse olhar se no codigo do wev tem

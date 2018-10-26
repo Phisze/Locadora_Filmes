@@ -7,32 +7,32 @@
 #include "../structs.h"
 #include "../funcionarioDAO.h"
 
-//int salvaFuncionario(Funcionario*f) {
+int salvaFuncionario(Funcionario*f) {
+
+    float tamanhoFuncionario = getTamanhoFuncionario() + 1;
+    (*f).codigo = tamanhoFuncionario;
+    return inclusaoFuncionarios(*f);
+}
+
+int atualizaFuncionario(Funcionario f) {
+    return alterarFuncionarios(f, f.codigo);
+
+}
 //
-//    float tamanhoFuncionario = getTamanhoFuncionario() + 1;
-//    (*f).codigo = tamanhoFuncionario;
-//    return inclusaoFuncionarios(*f);
-//}
-//
-//int atualizaFuncionario(Funcionario f) {
-//    return alterarFuncionarios(f, f.codigo);
-//
-//}
-////
-////int deletaFuncionario(int codFun) {
-////    return excluirFuncionario(codFun);
-////}
-//
-//Funcionario* listaFuncionarios() {
-//    return listarFuncionarios();
-//}
-//
-////implementar esse olhar se no codigo do wev tem
-//
-////Funcionario consultaFuncionario(int codFun) {
-////    return consultarFuncionario(codFun);
-////}
-//
-//int qtdFuncionario() {
-//    return getTamanhoFuncionario();
-//}
+int deletaFuncionario(int codFun) {
+    return excluirFuncionarios(codFun);
+}
+
+Funcionario* listaFuncionarios() {
+    return listarFuncionarios();
+}
+
+//implementar esse olhar se no codigo do wev tem
+
+Funcionario consultaFuncionario(int codFun) {
+    return consultarFuncionarios(codFun);
+}
+
+int qtdFuncionario() {
+    return getTamanhoFuncionario();
+}
