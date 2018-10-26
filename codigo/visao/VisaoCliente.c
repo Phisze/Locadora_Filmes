@@ -9,11 +9,7 @@ void clientemenu() {
 
     int x;
 
-
-
     do {
-
-
 
         printf("0. Sair do programa \n");
         printf("1. Salvar Cliente \n");
@@ -25,8 +21,6 @@ void clientemenu() {
 
         printf("Digite uma das opções: \n");
         scanf("%d%*c", &x);
-
-
 
         switch (x) {
 
