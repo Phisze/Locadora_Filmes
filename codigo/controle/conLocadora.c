@@ -5,6 +5,8 @@
  */
 
 #include "../tamanho.h"
+#include "../structs.h"
+#include "../locadoraDAO.h"
 
 int salvaLocadora(Locadora*f) {
 

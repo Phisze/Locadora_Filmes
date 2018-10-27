@@ -31,29 +31,41 @@ extern "C" {
  **  Inclui Clientes em arquivo binario
  */
 int inclusaoCliente(Cliente c);
-
 /*
  **  Inclui Clientes em arquivo texto
  */
-int inclusaoClienteTexto(Cliente c);
-
+void inclusaoClienteTexto(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
 Cliente* lClientes();
-
-
+/*
+ **  Lista Clientes em arquivo binario
+ */
+Cliente* ListarClientesTexto();
 /*
  **  Consultar Clientes em arquivo binario
  */
 Cliente consultarClientes(int cod);
 /*
+ **  Consultar Clientes em arquivo texto
+ */
+Cliente ConsultarClientesTexto(int cod);
+/*
  **  Altera Clientes em arquivo binario
  */
 int alterarCliente(Cliente clintes, int cod);
 /*
+ **  Altera Clientes em arquivo texto
+ */
+void alterarClienteTexto(int cod, Cliente cli);
+/*
  **  Deleta Clientes em arquivo binario
  */
 int excluirCliente(int cod);
+/*
+ **  Deleta Clientes em arquivo texto
+ */
+void excluirClienteTexto(int cod);
 #endif /* CLIENTEDAO_H */
 

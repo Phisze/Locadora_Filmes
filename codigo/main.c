@@ -23,11 +23,22 @@
  * 
  */
 int main(int argc, char** argv) {
-//    Cliente c;
-//    printf("Digite o nome do fulano: ");
-//    fgets(c.nome, 100, stdin);
+    //    Cliente c;
+    //    printf("Digite o nome do fulano: ");
+    //    fgets(c.nome, 100, stdin);
 
-    menuPrincipal();
+    //menuPrincipal();
+    Cliente c;
+    c.codigo = 1;
+    strcpy(c.cpf, "123456");
+    strcpy(c.data_nascimento, "212131");
+    strcpy(c.email, "adsasd");
+    strcpy(c.endereco,"adasdsa");
+    strcpy(c.estado_civil, "esda");
+    strcpy(c.nome, "32weewq");
+    strcpy(c.telefone,"2312");
+    c.sexo = "M";
+    inclusaoClienteTexto(c);
 
     // printf("Digite o nome: ");
     //  fgets(c.nome,30,stdin);

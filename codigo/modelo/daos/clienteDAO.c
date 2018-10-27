@@ -16,7 +16,6 @@
 const int controla = 1;
 
 //Funcões de Inclusao 
-
 int inclusaoCliente(Cliente c) {
     int tamanho = getTamanhoCliente();
     //c.codigo = tamanho + 1;
@@ -38,13 +37,11 @@ int inclusaoCliente(Cliente c) {
     return 1;
 }
 
-int inclusaoClienteTexto(Cliente c) {
+void inclusaoClienteTexto(Cliente c) {
     FILE *arquivo;
     arquivo = fopen("cliente.txt", "wt");
-    c.data_nascimento = '/'
-            fprintf(arquivo, "%d %s %s %s %s %s %c %s %s %c\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento, c.deletado);
+    fprintf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
     fclose(arquivo);
-    return 1;
 }
 
 //Funções de Listar
@@ -91,15 +88,13 @@ Cliente* lClientes() {
     return array;
 }
 
-Cliente* Listar() {
+Cliente* ListarClientesTexto() {
     int i = 0;
     Cliente c;
     FILE *arquivo;
     Cliente *array = malloc(getTamanhoCliente() * sizeof c);
-    char nome[30];
-    int telefone;
     //Cliente c;
-    arquivo = fopen("vendas.txt", "rt");
+    arquivo = fopen("cliente.txt", "rt");
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
@@ -143,7 +138,7 @@ Cliente consultarClientes(int cod) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            return c;
+            break;
         }
     }
 
@@ -151,16 +146,15 @@ Cliente consultarClientes(int cod) {
         printf("\nCodigo nao cadastrado!!\n");
     }
     fclose(arq);
-    Cliente v;
-    return v;
+    return c;
 }
 
-Cliente Consultar(int cod) {
+Cliente ConsultarClientesTexto(int cod) {
     FILE *arquivo;
-    arquivo = fopen("vendas.txt", "rt");
+    arquivo = fopen("cliente.txt", "rt");
     Cliente c;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%d %s %d ", &c.codigo, &c.nome, &c.telefone);
+        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         if (c.codigo == cod && c.deletado != '*') {
             break;
         }
@@ -207,11 +201,33 @@ int alterarCliente(Cliente clintes, int cod) {
     return 0;
 }
 
-//Funcções de exclusão
 
+void alterarClienteTexto(int cod, Cliente cli) {
+    FILE *arquivo;
+    FILE *arq;
+    Cliente c;
+    arquivo = fopen("cliente.txt", "rt");
+    arq = fopen("clienteBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        if (cod == c.codigo && c.deletado != '*') {
+            c.telefone = cli.telefone;
+            strcpy(c.nome, cli.nome);
+            fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        } else {
+            fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("cliente.txt");
+    rename("clienteBackup.txt", "cliente.txt");
+}
+
+//Funcções de exclusão
 int excluirCliente(int cod) {
 
-    FILE *arq = fopen("produtos.pro", "r+b");
+    FILE *arq = fopen("cliente.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
         return 0;
@@ -249,4 +265,23 @@ int excluirCliente(int cod) {
 
     fclose(arq);
     return 0;
+}
+
+void excluirClienteTexto(int cod) {
+    FILE *arquivo;
+    FILE *arq;
+    Cliente c;
+    arquivo = fopen("cliente.txt", "rt");
+    arq = fopen("clienteBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        if (cod == c.codigo && c.deletado != '*') {
+        } else {
+            fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("cliente.txt");
+    rename("clienteBackup.txt", "cliente.txt");
 }

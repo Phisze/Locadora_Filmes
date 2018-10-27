@@ -14,6 +14,9 @@
 #ifndef LOCADORADAO_H
 #define LOCADORADAO_H
 
+#include "structs.h"
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -31,12 +34,12 @@ int inclusaoLocadora(Locadora l);
 /*
  **  Lista Locadora em arquivo binario
  */
-Fornecedor* listarLocadora();
+Locadora* listarLocadora();
 
 /*
  **  Consultar Locadora em arquivo binario
  */
-Fornecedor consultarLocadora(int cod);
+Locadora consultarLocadora(int cod);
 /*
  **  Altera Locadora em arquivo binario
  */

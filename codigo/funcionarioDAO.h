@@ -14,6 +14,9 @@
 #ifndef FUNCIONARIO_H
 #define FUNCIONARIO_H
 
+#include "structs.h"
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -31,12 +34,12 @@ int inclusaoFuncionarios(Funcionario f);
 /*
  **  Lista Fornecedor em arquivo binario
  */
-Fornecedor* listarFuncionarios();
+Funcionario* listarFuncionarios();
 
 /*
  **  Consultar Fornecedor em arquivo binario
  */
-Fornecedor consultarFuncionarios(int cod);
+Funcionario consultarFuncionarios(int cod);
 /*
  **  Altera Fornecedor em arquivo binario
  */
