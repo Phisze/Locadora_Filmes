@@ -15,25 +15,25 @@ int salvaLocadora(Locadora*f) {
     return inclusaoLocadora(*f);
 }
 
-int atualizaLocadora(Locadora f) {
-    return alterarLocadora(f, f.codigo);
-
-}
-
-int deletaLocadora(int codLocadora) {
-    return deletaLocadora(codLocadora);
-}
-
-Locadora* listaLocadoras() {
-    return listaLocadoras();
-}
-
-//implementar esse olhar se no codigo do wev tem
-
-Locadora consultaLocadora(int codigo) {
-    return consultarLocadora(codigo);
-}
-
-int qtdLocadora() {
-    return getTamanhoLocadora();
-}
+//int atualizaLocadora(Locadora f) {
+//    return alterarLocadora(f, f.codigo);
+//
+//}
+//
+//int deletaLocadora(int codLocadora) {
+//    return deletaLocadora(codLocadora);
+//}
+//
+//Locadora* listaLocadoras() {
+//    return listaLocadoras();
+//}
+//
+////implementar esse olhar se no codigo do wev tem
+//
+//Locadora consultaLocadora(int codigo) {
+//    return consultarLocadora(codigo);
+//}
+//
+//int qtdLocadora() {
+//    return getTamanhoLocadora();
+//}

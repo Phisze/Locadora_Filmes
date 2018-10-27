@@ -32,6 +32,10 @@ Filme consultaFilme(int codigo){
     return consultarFilmes(codigo);
 }
 
+Filme consultaFilmeNome(char*nome){
+    
+}
+
 int qtdFilme(){
     return getTamanhoFilme();
 }

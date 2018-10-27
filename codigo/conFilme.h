@@ -32,6 +32,7 @@ int atualizaFilme(Filme f);
 int deletaFilme(int codFilme);
 Filme* listaFilmes();
 Filme consultaFilme(int codigo);
+Filme consultaFilmeNome(char*nome);
 
 
 #endif /* CONFILME_H */

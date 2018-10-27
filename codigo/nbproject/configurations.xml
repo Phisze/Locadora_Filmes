@@ -4,10 +4,12 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>VisaoLocadora.h</itemPath>
       <itemPath>categoriaDAO.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
       <itemPath>conCategoria.h</itemPath>
       <itemPath>conCliente.h</itemPath>
+      <itemPath>conEntradaFilme.h</itemPath>
       <itemPath>conFilme.h</itemPath>
       <itemPath>conFornecedor.h</itemPath>
       <itemPath>conFuncionario.h</itemPath>
@@ -30,14 +32,15 @@
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>visao/MenuPrincipal.c</itemPath>
-      <itemPath>visao/VisaoCategoria.c</itemPath>
       <itemPath>visao/VisaoCliente.c</itemPath>
       <itemPath>visao/VisaoFilmes.c</itemPath>
+      <itemPath>visao/VisaoFornecedor.c</itemPath>
       <itemPath>visao/VisaoFuncionario.c</itemPath>
       <itemPath>modelo/daos/categoriaDAO.c</itemPath>
       <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCategoria.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
+      <itemPath>controle/conEntradaFilme.c</itemPath>
       <itemPath>controle/conFilme.c</itemPath>
       <itemPath>controle/conFornecedcor.c</itemPath>
       <itemPath>controle/conFuncionario.c</itemPath>
@@ -94,6 +97,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="VisaoLocadora.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
@@ -101,6 +106,8 @@
       <item path="conCategoria.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="conEntradaFilme.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conFilme.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -113,6 +120,8 @@
       <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conEntradaFilme.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conFilme.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -180,11 +189,11 @@
       </item>
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/VisaoCategoria.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/VisaoFornecedor.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -211,6 +220,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="VisaoLocadora.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="clienteDAO.h" ex="false" tool="3" flavor2="0">
@@ -218,6 +229,8 @@
       <item path="conCategoria.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conCliente.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="conEntradaFilme.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conFilme.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -230,6 +243,8 @@
       <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conEntradaFilme.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conFilme.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -297,11 +312,11 @@
       </item>
       <item path="visao/MenuPrincipal.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/VisaoCategoria.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFilmes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/VisaoFornecedor.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>

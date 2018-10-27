@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/controle/conCategoria.o \
 	${OBJECTDIR}/controle/conCliente.o \
+	${OBJECTDIR}/controle/conEntradaFilme.o \
 	${OBJECTDIR}/controle/conFilme.o \
 	${OBJECTDIR}/controle/conFornecedcor.o \
 	${OBJECTDIR}/controle/conFuncionario.o \
@@ -57,9 +58,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
-	${OBJECTDIR}/visao/VisaoCategoria.o \
 	${OBJECTDIR}/visao/VisaoCliente.o \
 	${OBJECTDIR}/visao/VisaoFilmes.o \
+	${OBJECTDIR}/visao/VisaoFornecedor.o \
 	${OBJECTDIR}/visao/VisaoFuncionario.o \
 	${OBJECTDIR}/visao/visaoLocadora.o
 
@@ -97,6 +98,11 @@ ${OBJECTDIR}/controle/conCliente.o: controle/conCliente.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCliente.o controle/conCliente.c
+
+${OBJECTDIR}/controle/conEntradaFilme.o: controle/conEntradaFilme.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conEntradaFilme.o controle/conEntradaFilme.c
 
 ${OBJECTDIR}/controle/conFilme.o: controle/conFilme.c
 	${MKDIR} -p ${OBJECTDIR}/controle
@@ -198,11 +204,6 @@ ${OBJECTDIR}/visao/MenuPrincipal.o: visao/MenuPrincipal.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/MenuPrincipal.o visao/MenuPrincipal.c
 
-${OBJECTDIR}/visao/VisaoCategoria.o: visao/VisaoCategoria.c
-	${MKDIR} -p ${OBJECTDIR}/visao
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoCategoria.o visao/VisaoCategoria.c
-
 ${OBJECTDIR}/visao/VisaoCliente.o: visao/VisaoCliente.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
@@ -212,6 +213,11 @@ ${OBJECTDIR}/visao/VisaoFilmes.o: visao/VisaoFilmes.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFilmes.o visao/VisaoFilmes.c
+
+${OBJECTDIR}/visao/VisaoFornecedor.o: visao/VisaoFornecedor.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFornecedor.o visao/VisaoFornecedor.c
 
 ${OBJECTDIR}/visao/VisaoFuncionario.o: visao/VisaoFuncionario.c
 	${MKDIR} -p ${OBJECTDIR}/visao

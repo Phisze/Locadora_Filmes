@@ -25,22 +25,22 @@ void clientemenu() {
         switch (x) {
 
             case 1: //salva clientes
-                salveclient();
+                salvecli();
                 break;
 
             case 2: //atualizar cliente 
-                attCliente();
+                attCli();
                 break;
 
             case 3: // deletar cliente
                 break;
 
             case 4: // Listar cliente
-                listaClie();
+                listaCli();
                 break;
 
             case 5:
-                consulteCliente();
+                consulteCli();
                 break;
 
             case 6: //Menu Principal
@@ -60,7 +60,7 @@ int mensagem_operacao(int cod) {
     }
 }
 
-void salveclient() {
+void salvecli() {
     Cliente cliente;
 
     fflush(stdin); //limpa                       
@@ -99,19 +99,19 @@ void salveclient() {
     mensagem_operacao(salvaCliente(&cliente));
 }
 
-void listaClie() {
+void listaCli() {
 
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
 
     for (int i = 0; i <= tamanho; i++) {
-//        if (p[i].deletado != '*') { //Não mostrar os deletados
-//            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s, Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
-//        }
+        if (p[i].deletado != '*') { //Não mostrar os deletados
+            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s, Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+        }
     }
 }
 
-void attCliente() {
+void attCli() {
 
     Cliente cliente;
     Cliente *p = lClientes(); //p vetor com todos os clientes 
@@ -167,11 +167,11 @@ void attCliente() {
 
         }
 
-        mensagem_operacao(salvaCliente(&cliente));
+        mensagem_operacao(atualizaCliente(&cliente));
     }
 }
 
-void consulteCliente() {
+void consulteCli() {
 
     Cliente cliente;
     Cliente *p = lClientes(); //p vetor com todos os clientes 
@@ -187,10 +187,11 @@ void consulteCliente() {
         } else
             printf("Clinte Inexistente!");
     }
+    mensagem_operacao(consultaCliente(&cliente));
 
 }
 
-int deletCliente() {
+int deletCli() {
 
     Cliente cliente;
     Cliente *p = lClientes(); //p vetor com todos os clientes 
@@ -205,6 +206,6 @@ int deletCliente() {
 
         }
     }
-
-
+    
+    mensagem_operacao(deletaCliente(&cliente));
 }

@@ -22,16 +22,16 @@ int atualizaFuncionario(Funcionario f) {
 int deletaFuncionario(int codFun) {
     return excluirFuncionarios(codFun);
 }
-
-Funcionario* listaFuncionarios() {
-    return listarFuncionarios();
-}
+//
+//Funcionario* listaFuncionarios() {
+//    return listarFuncionarios();
+//}
 
 //implementar esse olhar se no codigo do wev tem
 
-Funcionario consultaFuncionario(int codFun) {
-    return consultarFuncionarios(codFun);
-}
+//Funcionario consultaFuncionario(int codFun) {
+//    return consultarFuncionarios(codFun);
+//}
 
 int qtdFuncionario() {
     return getTamanhoFuncionario();
