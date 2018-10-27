@@ -106,6 +106,14 @@ typedef struct {
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Locadora;
 
+typedef struct{
+    float codigo;
+    float cliCodigo;
+    float valor;
+    float * parcelas;
+    
+} Conta;
+
 typedef struct {
     int tamanho;
     Cliente* itens;
