@@ -39,14 +39,14 @@ Funcionario* listarFuncionarios();
 /*
  **  Consultar Fornecedor em arquivo binario
  */
-Funcionario consultarFuncionarios(int cod);
+Funcionario consultarFuncionarios(float cod);
 /*
  **  Altera Fornecedor em arquivo binario
  */
-int alterarFuncionarios(Funcionario funcionario, int cod);
+int alterarFuncionarios(Funcionario funcionario, float cod);
 /*
  **  Deleta Filmes em arquivo binario
  */
-int excluirFuncionarios(int cod);
+int excluirFuncionarios(float cod);
 #endif /* FUNCIONARIO_H */
 

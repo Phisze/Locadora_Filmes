@@ -46,26 +46,26 @@ Cliente* ListarClientesTexto();
 /*
  **  Consultar Clientes em arquivo binario
  */
-Cliente consultarClientes(int cod);
+Cliente consultarClientes(float cod);
 /*
  **  Consultar Clientes em arquivo texto
  */
-Cliente ConsultarClientesTexto(int cod);
+Cliente ConsultarClientesTexto(float cod);
 /*
  **  Altera Clientes em arquivo binario
  */
-int alterarCliente(Cliente clintes, int cod);
+int alterarCliente(Cliente clintes, float cod);
 /*
  **  Altera Clientes em arquivo texto
  */
-void alterarClienteTexto(int cod, Cliente cli);
+void alterarClienteTexto(float cod, Cliente cli);
 /*
  **  Deleta Clientes em arquivo binario
  */
-int excluirCliente(int cod);
+int excluirCliente(float cod);
 /*
  **  Deleta Clientes em arquivo texto
  */
-void excluirClienteTexto(int cod);
+void excluirClienteTexto(float cod);
 #endif /* CLIENTEDAO_H */
 

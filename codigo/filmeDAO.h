@@ -39,14 +39,14 @@ Filme* listarFilmes();
 /*
  **  Consultar Filmes em arquivo binario
  */
-Filme consultarFilmes(int cod);
+Filme consultarFilmes(float cod);
 /*
  **  Altera Filmes em arquivo binario
  */
-int alterarFilmes(Filme filme, int cod);
+int alterarFilmes(Filme filme, float cod);
 /*
  **  Deleta Filmes em arquivo binario
  */
-int excluirFilmes(int cod);
+int excluirFilmes(float cod);
 #endif /* FILME_H */
 

@@ -36,14 +36,14 @@ Fornecedor* listarFornecedor();
 /*
  **  Consultar Fornecedor em arquivo binario
  */
-Fornecedor consultarFornecedor(int cod);
+Fornecedor consultarFornecedor(float cod);
 /*
  **  Altera Fornecedor em arquivo binario
  */
-int alterarFornecedor(Fornecedor fornecedor, int cod);
+int alterarFornecedor(Fornecedor fornecedor, float cod);
 /*
  **  Deleta Fornecedor em arquivo binario
  */
-int excluirFornecedor(int cod);
+int excluirFornecedor(float cod);
 #endif /* FORNECEDORDAO_H */
 

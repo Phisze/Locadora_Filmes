@@ -39,15 +39,15 @@ Locadora* listarLocadora();
 /*
  **  Consultar Locadora em arquivo binario
  */
-Locadora consultarLocadora(int cod);
+Locadora consultarLocadora(float cod);
 /*
  **  Altera Locadora em arquivo binario
  */
-int alterarLocadora(Locadora locadora, int cod);
+int alterarLocadora(Locadora locadora, float cod);
 /*
  **  Deleta Locadora em arquivo binario
  */
-int excluirLocadora(int cod);
+int excluirLocadora(float cod);
 
 #endif /* LOCADORADAO_H */
 
