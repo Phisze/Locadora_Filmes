@@ -188,7 +188,7 @@ void consulteCli() {
             printf("Clinte Inexistente!");
     }
     
-    mensagem_operacao(consultaCliente(cliente.codigo));
+    consultaCliente(cliente.codigo);
 
 }
 
