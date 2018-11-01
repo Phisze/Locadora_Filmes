@@ -25,15 +25,19 @@ void menuPrincipal() {
         switch (x) {
             
             case 1:
+                locadoraMenu();
                 break;
             case 2:
                 clientemenu();
                 break;
             case 3:
+                filmeMenu();
                 break;
             case 4:
+                funcionariomenu();
                 break;
             case 5:
+                fornecedorMenu();
                 break;
         }
     }

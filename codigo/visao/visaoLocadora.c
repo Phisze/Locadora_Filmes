@@ -49,14 +49,7 @@ void locadoraMenu(){
     }while(x!= 0);
     
  }
-int mensagem_operacao(int cod) {
 
-    if (cod == 1)
-        printf("Opereção feita com sucesso!\n");
-    else {
-        printf("Operação não realizada com sucesso!\n");
-    }
-}
 void salveLoc(){
     
     Locadora locadora;
