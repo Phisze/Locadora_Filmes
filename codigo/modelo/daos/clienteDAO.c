@@ -211,8 +211,15 @@ void alterarClienteTexto(int cod, Cliente cli) {
     while (!feof(arquivo)) {
         fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         if (cod == c.codigo && c.deletado != '*') {
-            c.telefone = cli.telefone;
+            c.codigo = cli.codigo;
             strcpy(c.nome, cli.nome);
+            strcpy(c.endereco, cli.endereco);
+            strcpy(c.cpf, cli.cpf);
+            strcpy(c.telefone, cli.telefone);
+            strcpy(c.email, cli.email);
+            c.sexo = cli.sexo;
+            strcpy(c.estado_civil, cli.estado_civil);
+            strcpy(c.data_nascimento, cli.data_nascimento);
             fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         } else {
             fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
