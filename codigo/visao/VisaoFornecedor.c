@@ -4,12 +4,9 @@
 #include "../conFilme.h"
 #include <string.h>
 
-void locadoraMenu(){
+void fornecedorMenu(){
     
     int x;
-    
-    printf("Digite uma das opções: \n");
-    scanf("%d%", &x); 
     
     do{
         
@@ -21,21 +18,24 @@ void locadoraMenu(){
     printf("5. Consultar Locadora \n");
     printf("6. Voltar para o menu principal \n");
     
+    printf("Digite uma das opções: \n");
+    scanf("%d%", &x); 
+    
     switch(x){
-        //Salva Locadora 
+        //Salva 
         case 1:
             salveFornecedor();
             break;
-        //Atualiza locadora
+        //Atualiza
         case 2:
             break;
-        //deletar locadora 
+        //deleta
         case 3:
             break;
-        //listar Locadora 
+        //lista
         case 4: 
             break;
-         //consultar Locadora
+         //consulta
         case 5:
             break;
         //Menu Principal

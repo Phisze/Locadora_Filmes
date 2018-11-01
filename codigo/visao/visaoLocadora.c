@@ -8,9 +8,6 @@ void locadoraMenu(){
     
     int x;
     
-    printf("Digite uma das opções: \n");
-    scanf("%d%", &x); 
-    
     do{
         
     printf("0. Sair \n");
@@ -20,6 +17,9 @@ void locadoraMenu(){
     printf("4. Listar Locadora  \n");
     printf("5. Consultar Locadora \n");
     printf("6. Voltar para o menu principal \n");
+    
+    printf("Digite uma das opções: \n");
+    scanf("%d%", &x); 
     
     switch(x){
         //Salva Locadora 

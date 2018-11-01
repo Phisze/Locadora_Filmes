@@ -5,12 +5,7 @@
 //#include <string.h>
 //
 //void filmeMenu(){
-//     
-//    Filme filme;
 //    int x;
-//    
-//    printf("Digite uma das opções: \n");
-//    scanf("%d%", &x); 
 //    
 //    do{
 //        
@@ -21,6 +16,10 @@
 //    printf("4. Listar Filme  \n");
 //    printf("5. Consultar Filme \n");
 //    printf("6. Voltar para o menu principal \n");
+
+//    printf("Digite uma das opções: \n");
+//    scanf("%d%", &x); 
+
 //    
 //    switch(x){
 //        case 0:
