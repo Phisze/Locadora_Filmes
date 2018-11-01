@@ -27,11 +27,11 @@ extern "C" {
 #endif
 
 
-int salvaFuncionario(Filme *f);
-int atualizaFuncionario(Filme f);
+int salvaFuncionario(Funcionario *f);
+int atualizaFuncionario(Funcionario f);
 int deletaFuncionario(float codFunc);
-Filme* listaFuncionarios();
-Filme consultaFilme(float codigo);
+Funcionario* listaFuncionarios();
+Funcionario consultaFilme(float codigo);
 
 #endif /* CONFUNCIONARIO_H */
 

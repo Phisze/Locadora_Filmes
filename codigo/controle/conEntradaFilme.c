@@ -12,7 +12,6 @@ int conEntraFilme(char * nomeFornecedor,float precoFrete,float imposto,Filme* fi
     while(qtdFilmes[index]!=0){
         
         //fazer um consulta filme por nome
-        
         //if
         //  atualizaFilme()  
         //else
