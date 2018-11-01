@@ -187,7 +187,10 @@ void consulteCli() {
         } else
             printf("Clinte Inexistente!");
     }
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
     consultaCliente(cliente.codigo);
 
 }
