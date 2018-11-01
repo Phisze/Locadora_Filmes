@@ -17,7 +17,7 @@ int add_vetorLocadora(vetorLocadora* initV, Locadora* c) {
 }
 
 int remove_vetorLocadora(vetorLocadora* initV, int codigo) {
-    Filme initC = {-1, "", -1,-1,' ','*'};
+    Locadora initC = {-1, "", -1,-1,' ','*'};
     if (codigo < initV->total) {
         //tamanho -1 pra ele não tentar mudar de posição um cliente fora do limite do array
         for (int i = codigo; i < initV->tamanho - 1; i++) {

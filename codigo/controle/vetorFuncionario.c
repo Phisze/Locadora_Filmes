@@ -17,7 +17,7 @@ int add_vetorFuncionario(vetorFuncionario* initV, Funcionario* c) {
 }
 
 int remove_vetorFuncionario(vetorFuncionario* initV, int codigo) {
-    Filme initC = {-1, "", -1,-1,' ','*'};
+    Funcionario initC = {-1, "", -1,-1,' ','*'};
     if (codigo < initV->total) {
         //tamanho -1 pra ele não tentar mudar de posição um cliente fora do limite do array
         for (int i = codigo; i < initV->tamanho - 1; i++) {

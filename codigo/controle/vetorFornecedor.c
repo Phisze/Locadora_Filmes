@@ -17,7 +17,7 @@ int add_vetorFornecedor(vetorFornecedor* initV, Fornecedor* c) {
 }
 
 int remove_vetorFornecedor(vetorFornecedor* initV, int codigo) {
-    Filme initC = {-1, "", -1,-1,' ','*'};
+    Fornecedor initC = {-1, "", "","","","","","","","",'*'};
     if (codigo < initV->total) {
         //tamanho -1 pra ele não tentar mudar de posição um cliente fora do limite do array
         for (int i = codigo; i < initV->tamanho - 1; i++) {
