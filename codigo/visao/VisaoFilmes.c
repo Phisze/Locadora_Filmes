@@ -107,6 +107,8 @@ void attFilmes(){
     scanf("%[^\n]%*c", p[i].lingua); //Até o usuario dar enter
     strcpy(filme.lingua,p[i].lingua);
     fflush(stdin); //limpa
+    
+    mensagem_operacao(atualizaFilme(filme));
     }
    }
       
@@ -123,7 +125,7 @@ void listarFilme(){
    
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, Descrição: %s, Quantidade de exemplares: %0f, Código da categoria: %0f, Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua;
+            printf("Codigo: %0f, Descrição: %s, Quantidade de exemplares: %0f, Código da categoria: %0f, Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }
     }
     

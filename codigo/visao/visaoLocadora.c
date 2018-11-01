@@ -9,43 +9,23 @@ void locadoraMenu(){
     int x;
     
     do{
-        
+    printf("MENU LOCADORA: \n\n");    
     printf("0. Sair \n");
     printf("1. Salvar Locadora \n");
-    printf("2. Atualizar Locadora \n");
-    printf("3. Deletar Locadora \n");
-    printf("4. Listar Locadora  \n");
-    printf("5. Consultar Locadora \n");
-    printf("6. Voltar para o menu principal \n");
+    printf("2. Voltar para o menu principal \n");
     
     printf("Digite uma das opções: \n");
     scanf("%d%", &x); 
     
     switch(x){
-        //Salva Locadora 
+       
         case 1:
             salveLoc();
             break;
-        //Atualiza locadora
         case 2:
-            break;
-        //deletar locadora 
-        case 3:
-            break;
-        //listar Locadora 
-        case 4: 
-            break;
-         //consultar Locadora
-        case 5:
-            break;
-        //Menu Principal
-        case 6:
             menuPrincipal();
             break;
-            
-    }
-    
-        
+    }        
     }while(x!= 0);
     
  }
@@ -104,11 +84,5 @@ void salveLoc(){
     
      mensagem_operacao(salvaLocadora(&locadora));
 }
-void attLoc(){
-    
-//    Cliente *p = lClientes(); //p vetor com todas Locadoras
-//   int tamanho = qtdCliente(); //quantidade de clientes do vetor
-}
-
 
 

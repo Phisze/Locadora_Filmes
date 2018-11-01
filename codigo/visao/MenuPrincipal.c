@@ -40,7 +40,7 @@ void menuPrincipal() {
                 fornecedorMenu();
                 break;
             case 6:
-                MenuPrincipal_1();
+                ;
                 break;
         }
     }

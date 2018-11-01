@@ -22,18 +22,19 @@ void funcionariomenu() {
 
         switch (x) {
 
-            case 1: //salva clientes
+            case 1: //salva 
                 salveFuncionario();
                 break;
 
-            case 2: //atualizar cliente 
+            case 2: //atualiza 
                 attFuncionario();
                 break;
 
-            case 3: // deletar cliente
+            case 3: // deleta
+                deletfuncionario();
                 break;
 
-            case 4: // Listar cliente
+            case 4: // Lista
                 listaFuncionario();
                 break;
 
@@ -147,7 +148,7 @@ void consulteFuncionario() {
     }
 
 }
-int deletCliente() {
+int deletfuncionario() {
     
     Funcionario funcionario;
     Funcionario *p = listarFuncionarios();
@@ -159,10 +160,10 @@ int deletCliente() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
+            deletaFuncionario(&funcionario);
 
         }
     }
-
-
+    mensagem_operacao(deletaFuncionario(&funcionario));
 }
 

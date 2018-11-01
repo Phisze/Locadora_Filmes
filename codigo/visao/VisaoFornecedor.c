@@ -28,15 +28,19 @@ void fornecedorMenu(){
             break;
         //Atualiza
         case 2:
+            attLocadora();
             break;
         //deleta
         case 3:
+           
             break;
         //lista
         case 4: 
+             listLocadora();
             break;
          //consulta
         case 5:
+            consulteFornecedor();
             break;
         //Menu Principal
         case 6:
@@ -151,7 +155,7 @@ void attLocadora(){
             strcpy(fornecedor.email, p[i].email);
             fflush(stdin); //limpa
 
-            mensagem_operacao(atualizaFornecedor(&fornecedor));
+            mensagem_operacao(atualizaFornecedor(fornecedor));
         }
     }
 }
@@ -165,7 +169,7 @@ void listLocadora() {
             printf("Codigo: %0f, Nome: %s, Razão social: %s, Inscrição Estadual: %s, CNPJ: %s, Endereço: %s, Telefone: %s, E-mail: %s \n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
         }
         }
-     mensagem_operacao(listarFornecedor(&Fornecedor));
+     mensagem_operacao(listarFornecedor(Fornecedor));
     }
 void consulteFornecedor() {
 
