@@ -40,7 +40,7 @@ int inclusaoCliente(Cliente c) {
 void inclusaoClienteTexto(Cliente c) {
     FILE *arquivo;
     arquivo = fopen("cliente.txt", "wt");
-    fprintf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+    fprintf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
     fclose(arquivo);
 }
 
@@ -97,7 +97,7 @@ Cliente* ListarClientesTexto() {
     arquivo = fopen("cliente.txt", "rt");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         if (c.deletado != '*') {
             array[i].codigo = c.codigo;
             strcpy(array[i].nome, c.nome);
@@ -131,12 +131,12 @@ Cliente consultarClientes(int cod) {
     //int cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
-    //scanf("%d", &cod);
+    //scanf("%f", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if ((cod == c.codigo) && (c.deletado != '*')) {
 
-            // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
+            // printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
             break;
         }
@@ -154,7 +154,7 @@ Cliente ConsultarClientesTexto(int cod) {
     arquivo = fopen("cliente.txt", "rt");
     Cliente c;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         if (c.codigo == cod && c.deletado != '*') {
             break;
         }
@@ -174,11 +174,11 @@ int alterarCliente(Cliente clintes, int cod) {
     //int cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
-    //scanf("%d", &cod);
+    //scanf("%f", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if (cod == c.codigo) {
-            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
+            //printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
@@ -209,7 +209,7 @@ void alterarClienteTexto(int cod, Cliente cli) {
     arquivo = fopen("cliente.txt", "rt");
     arq = fopen("clienteBackup.txt", "wt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         if (cod == c.codigo && c.deletado != '*') {
             c.codigo = cli.codigo;
             strcpy(c.nome, cli.nome);
@@ -220,9 +220,9 @@ void alterarClienteTexto(int cod, Cliente cli) {
             c.sexo = cli.sexo;
             strcpy(c.estado_civil, cli.estado_civil);
             strcpy(c.data_nascimento, cli.data_nascimento);
-            fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         } else {
-            fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         }
     }
     fclose(arquivo);
@@ -232,7 +232,7 @@ void alterarClienteTexto(int cod, Cliente cli) {
 }
 
 //Funcções de exclusão
-int excluirCliente(int cod) {
+int excluirCliente(float cod) {
 
     FILE *arq = fopen("cliente.pro", "r+b");
     if (arq == NULL) {
@@ -245,11 +245,11 @@ int excluirCliente(int cod) {
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");
-    // scanf("%d", &cod);
+    // scanf("%f", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if (cod == c.codigo) {
-            //  printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
+            //  printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             printf("\nTem certeza que quer excluir este produto? s/n \n");
@@ -274,17 +274,17 @@ int excluirCliente(int cod) {
     return 0;
 }
 
-void excluirClienteTexto(int cod) {
+void excluirClienteTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Cliente c;
     arquivo = fopen("cliente.txt", "rt");
     arq = fopen("clienteBackup.txt", "wt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         if (cod == c.codigo && c.deletado != '*') {
         } else {
-            fprintf(arq, "%d %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
         }
     }
     fclose(arquivo);

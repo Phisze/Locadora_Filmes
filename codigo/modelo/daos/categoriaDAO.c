@@ -66,7 +66,7 @@ Categoria* listarCategoria() {
     return array;
 }
 
-Categoria consultarCategoria(int cod) {
+Categoria consultarCategoria(float cod) {
 
     FILE *arq = fopen("categoria.pro", "rb");
     if (arq == NULL) {
@@ -77,15 +77,15 @@ Categoria consultarCategoria(int cod) {
 
     Categoria c;
 
-    //int cod;
+    //float cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
-    //scanf("%d", &cod);
+    //scanf("%f", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if ((cod == c.codigo) && (c.deletado != '*')) {
 
-            // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
+            // printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
             return c;
         }
@@ -99,7 +99,7 @@ Categoria consultarCategoria(int cod) {
     return v;
 }
 
-int alterarCategoria(Categoria categoria, int cod) {
+int alterarCategoria(Categoria categoria, float cod) {
     FILE *arq = fopen("categoria.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -107,14 +107,14 @@ int alterarCategoria(Categoria categoria, int cod) {
     }
 
     Categoria c;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
-    //scanf("%d", &cod);
+    //scanf("%f", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if (cod == c.codigo) {
-            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
+            //printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             fseek(arq, sizeof (Categoria)*-1, SEEK_CUR);
@@ -137,7 +137,7 @@ int alterarCategoria(Categoria categoria, int cod) {
     return 0;
 }
 
-int excluirCategoria(int cod) {
+int excluirCategoria(float cod) {
 
     FILE *arq = fopen("categoria.pro", "r+b");
     if (arq == NULL) {
@@ -146,15 +146,15 @@ int excluirCategoria(int cod) {
     }
 
     Categoria c;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");
-    // scanf("%d", &cod);
+    // scanf("%f", &cod);
 
     while (fread(&c, sizeof (c), 1, arq)) {
         if (cod == c.codigo) {
-            //  printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
+            //  printf("Cod %f --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             printf("\nTem certeza que quer excluir este produto? s/n \n");

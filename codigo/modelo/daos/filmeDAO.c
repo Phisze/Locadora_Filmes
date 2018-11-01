@@ -76,7 +76,7 @@ Filme* listarFilmes() {
     return array;
 }
 
-Filme consultarFilmes(int cod) {
+Filme consultarFilmes(float cod) {
 
     FILE *arq = fopen("filme.pro", "rb");
     if (arq == NULL) {
@@ -87,7 +87,7 @@ Filme consultarFilmes(int cod) {
 
     Filme f;
 
-    //int cod;
+    //float cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
     //scanf("%d", &cod);
@@ -109,7 +109,7 @@ Filme consultarFilmes(int cod) {
     return v;
 }
 
-int alterarFilmes(Filme filme, int cod) {
+int alterarFilmes(Filme filme, float cod) {
     FILE *arq = fopen("filme.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -117,7 +117,7 @@ int alterarFilmes(Filme filme, int cod) {
     }
 
     Filme f;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
@@ -147,7 +147,7 @@ int alterarFilmes(Filme filme, int cod) {
     return 0;
 }
 
-int excluirFilmes(int cod) {
+int excluirFilmes(float cod) {
 
     FILE *arq = fopen("filme.pro", "r+b");
     if (arq == NULL) {
@@ -156,7 +156,7 @@ int excluirFilmes(int cod) {
     }
 
     Filme f;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");

@@ -77,7 +77,7 @@ Locadora* listarLocadora() {
     return array;
 }
 
-Locadora consultarLocadora(int cod) {
+Locadora consultarLocadora(float cod) {
 
     FILE *arq = fopen("locadora.pro", "rb");
     if (arq == NULL) {
@@ -88,7 +88,7 @@ Locadora consultarLocadora(int cod) {
 
     Locadora l;
 
-    //int cod;
+    //float cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
     //scanf("%d", &cod);
@@ -110,7 +110,7 @@ Locadora consultarLocadora(int cod) {
     return v;
 }
 
-int alterarLocadora(Locadora locadora, int cod) {
+int alterarLocadora(Locadora locadora, float cod) {
     FILE *arq = fopen("locadora.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -118,7 +118,7 @@ int alterarLocadora(Locadora locadora, int cod) {
     }
 
     Locadora l;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
@@ -148,7 +148,7 @@ int alterarLocadora(Locadora locadora, int cod) {
     return 0;
 }
 
-int excluirLocadora(int cod) {
+int excluirLocadora(float cod) {
 
     FILE *arq = fopen("locadora.pro", "r+b");
     if (arq == NULL) {
@@ -157,7 +157,7 @@ int excluirLocadora(int cod) {
     }
 
     Locadora l;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");

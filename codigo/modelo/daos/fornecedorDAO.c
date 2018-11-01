@@ -75,7 +75,7 @@ Fornecedor* listarFornecedor() {
     return array;
 }
 
-Fornecedor consultarFornecedor(int cod) {
+Fornecedor consultarFornecedor(float cod) {
 
     FILE *arq = fopen("fornecedor.pro", "rb");
     if (arq == NULL) {
@@ -86,7 +86,7 @@ Fornecedor consultarFornecedor(int cod) {
 
     Fornecedor f;
 
-    //int cod;
+    //float cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
     //scanf("%d", &cod);
@@ -108,7 +108,7 @@ Fornecedor consultarFornecedor(int cod) {
     return v;
 }
 
-int alterarFornecedor(Fornecedor fornecedor, int cod) {
+int alterarFornecedor(Fornecedor fornecedor, float cod) {
     FILE *arq = fopen("fornecedor.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -116,7 +116,7 @@ int alterarFornecedor(Fornecedor fornecedor, int cod) {
     }
 
     Fornecedor f;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
@@ -146,7 +146,7 @@ int alterarFornecedor(Fornecedor fornecedor, int cod) {
     return 0;
 }
 
-int excluirFornecedor(int cod) {
+int excluirFornecedor(float cod) {
 
     FILE *arq = fopen("fornecedor.pro", "r+b");
     if (arq == NULL) {
@@ -155,7 +155,7 @@ int excluirFornecedor(int cod) {
     }
 
     Fornecedor f;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");

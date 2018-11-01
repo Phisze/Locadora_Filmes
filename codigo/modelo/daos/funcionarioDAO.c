@@ -72,7 +72,7 @@ Funcionario* listarFuncionarios() {
     return array;
 }
 
-Funcionario consultarFuncionarios(int cod) {
+Funcionario consultarFuncionarios(float cod) {
 
     FILE *arq = fopen("funcionario.pro", "rb");
     if (arq == NULL) {
@@ -83,7 +83,7 @@ Funcionario consultarFuncionarios(int cod) {
 
     Funcionario f;
 
-    //int cod;
+    //float cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
     //scanf("%d", &cod);
@@ -105,7 +105,7 @@ Funcionario consultarFuncionarios(int cod) {
     return v;
 }
 
-int alterarFuncionarios(Funcionario funcionario, int cod) {
+int alterarFuncionarios(Funcionario funcionario, float cod) {
     FILE *arq = fopen("funcionario.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -113,7 +113,7 @@ int alterarFuncionarios(Funcionario funcionario, int cod) {
     }
 
     Funcionario f;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
@@ -143,7 +143,7 @@ int alterarFuncionarios(Funcionario funcionario, int cod) {
     return 0;
 }
 
-int excluirFuncionarios(int cod) {
+int excluirFuncionarios(float cod) {
 
     FILE *arq = fopen("funcionario.pro", "r+b");
     if (arq == NULL) {
@@ -152,7 +152,7 @@ int excluirFuncionarios(int cod) {
     }
 
     Funcionario f;
-    //int cod, 
+    //float cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");
