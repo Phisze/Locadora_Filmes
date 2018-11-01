@@ -29,9 +29,9 @@ extern "C" {
 
 int salvaFuncionario(Filme *f);
 int atualizaFuncionario(Filme f);
-int deletaFuncionario(int codFunc);
+int deletaFuncionario(float codFunc);
 Filme* listaFuncionarios();
-Filme consultaFilme(int codigo);
+Filme consultaFilme(float codigo);
 
 #endif /* CONFUNCIONARIO_H */
 

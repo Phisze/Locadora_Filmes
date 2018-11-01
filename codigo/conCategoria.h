@@ -33,11 +33,11 @@ int salvaCategoria(Categoria*c);
 
 int atualizaCategoria(Categoria c);
 
-int deletaCategoria(int codCategoria);
+int deletaCategoria(float codCategoria);
 
 Categoria* listaCategorias();
 
-Categoria consultaCategoria(int codigo);
+Categoria consultaCategoria(float codigo);
 
 
 

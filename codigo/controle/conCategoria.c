@@ -19,7 +19,7 @@ int atualizaCategoria(Categoria f) {
 
 }
 
-int deletaCategoria(int codCategoria) {
+int deletaCategoria(float codCategoria) {
     return deletaCategoria(codCategoria);
 }
 
@@ -29,7 +29,7 @@ Categoria* listaCategoria() {
 
 //implementar esse olhar se no codigo do wev tem
 
-Categoria consultaCategoria(int codigo) {
+Categoria consultaCategoria(float codigo) {
     return consultarCategoria(codigo);
 }
 

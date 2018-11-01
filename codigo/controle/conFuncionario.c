@@ -19,7 +19,7 @@ int atualizaFuncionario(Funcionario f) {
 
 }
 //
-int deletaFuncionario(int codFun) {
+int deletaFuncionario(float codFun) {
     return excluirFuncionarios(codFun);
 }
 //

@@ -34,11 +34,11 @@ int salvaCliente(Cliente*c);
 
 int atualizaCliente(Cliente c);
 
-int deletaCliente(int codCliente);
+int deletaCliente(float codCliente);
 
 Cliente* listaClientes();
 
-Cliente consultaCliente(int codigo);
+Cliente consultaCliente(float codigo);
 
 
 

@@ -20,7 +20,7 @@ int atualizaLocadora(Locadora f) {
 
 }
 
-int deletaLocadora(int codLocadora) {
+int deletaLocadora(float codLocadora) {
     return deletaLocadora(codLocadora);
 }
 
@@ -30,7 +30,7 @@ Locadora* listaLocadoras() {
 
 //implementar esse olhar se no codigo do wev tem
 
-Locadora consultaLocadora(int codigo) {
+Locadora consultaLocadora(float codigo) {
     return consultarLocadora(codigo);
 }
 

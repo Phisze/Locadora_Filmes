@@ -28,9 +28,9 @@ extern "C" {
 
 int salvaFornecedor(Fornecedor*l);
 int atualizaFornecedor(Fornecedor l);
-int deletaFornecedor(int codFornecedor);
+int deletaFornecedor(float codFornecedor);
 Fornecedor* listaFornecedor();
-Fornecedor consultaFornecedor(int codigo);
+Fornecedor consultaFornecedor(float codigo);
 
 #endif /* CONFORNECEDOR_H */
 

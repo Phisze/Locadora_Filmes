@@ -41,15 +41,15 @@ Categoria* listarCategoria();
 /*
  **  Consultar Categoria em arquivo binario
  */
-Categoria consultarCategoria(int cod);
+Categoria consultarCategoria(float cod);
 /*
  **  Altera Categoria em arquivo binario
  */
-int alterarCategoria(Categoria categoria, int cod);
+int alterarCategoria(Categoria categoria, float cod);
 /*
  **  Deleta Categoria em arquivo binario
  */
-int excluirCategoria(int cod);
+int excluirCategoria(float cod);
 
 #endif /* CATEGORIADAO_H */
 

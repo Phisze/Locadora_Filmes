@@ -19,7 +19,7 @@ int atualizaFilme(Filme f){
     return alterarFilmes(f,f.codigo);
 
 }
-int deletaFilme(int codFilme){
+int deletaFilme(float codFilme){
     return deletaFilme(codFilme);
 }
 
@@ -28,7 +28,7 @@ Filme* listaFilmes(){
 }
 
 //implementar esse olhar se no codigo do wev tem
-Filme consultaFilme(int codigo){
+Filme consultaFilme(float codigo){
     return consultarFilmes(codigo);
 }
 

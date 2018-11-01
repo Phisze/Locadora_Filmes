@@ -26,7 +26,7 @@ extern "C" {
 #endif
 void attLoc();
 void salveLoc();
-int mensagem_operacao(int cod);
+int mensagem_operacao(int codOperacao);
 void locadoraMenu();
 
 

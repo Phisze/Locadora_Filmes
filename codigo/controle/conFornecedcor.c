@@ -26,7 +26,7 @@ int atualizaFornecedor(Fornecedor f) {
 
 }
 
-int deletaFornecedor(int codFornecedor) {
+int deletaFornecedor(float codFornecedor) {
     return deletaFornecedor(codFornecedor);
 }
 
@@ -36,7 +36,7 @@ Fornecedor* listaFornecedor() {
 
 //implementar esse olhar se no codigo do wev tem
 
-Fornecedor consultaFornecedor(int codigo) {
+Fornecedor consultaFornecedor(float codigo) {
     return consultarFornecedor(codigo);
 }
 

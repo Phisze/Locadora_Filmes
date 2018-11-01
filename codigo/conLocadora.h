@@ -29,9 +29,9 @@ extern "C" {
 
 int salvaLocadora(Locadora *l);
 int atualizaLocadora(Locadora l);
-int deletaLocadora(int codLoc);
+int deletaLocadora(float codLoc);
 Locadora* listaLocadoras();
-Locadora consultaFilme(int codigo);
+Locadora consultaFilme(float codigo);
 
 #endif /* CONLOCADORA_H */
 

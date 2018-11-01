@@ -29,9 +29,9 @@ extern "C" {
 
 int salvaFilme(Filme *f);
 int atualizaFilme(Filme f);
-int deletaFilme(int codFilme);
+int deletaFilme(float codFilme);
 Filme* listaFilmes();
-Filme consultaFilme(int codigo);
+Filme consultaFilme(float codigo);
 Filme consultaFilmeNome(char*nome);
 
 

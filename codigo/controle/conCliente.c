@@ -26,7 +26,7 @@ int atualizaCliente(Cliente c){
 }
 
 //funcionando ok
-int deletaCliente(int codigo){
+int deletaCliente(float codigo){
     return excluirCliente(codigo);
 }
 
@@ -38,7 +38,7 @@ int qtdCliente(){
     return getTamanhoCliente();
 }
 
-Cliente consultaCliente(int codigo){
+Cliente consultaCliente(float codigo){
    return consultarClientes(codigo);
 }
 
