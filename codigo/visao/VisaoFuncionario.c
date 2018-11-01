@@ -117,9 +117,9 @@ void attFuncionario(){
     
   }
 
-void listaClie() {
+void listaFuncionario() {
 
-    Cliente *p = listarFuncionarios(); //p vetor com todos os clientes 
+    Funcionario *p = listarFuncionarios(); //p vetor com todos os clientes 
     int tamanho = qtdFuncionario(); //quantidade de clientes do vetor
 
     for (int i = 0; i <= tamanho; i++) {

@@ -4,19 +4,19 @@
 #include<strings.h>
 #include "VisaoCliente.h"
 
-void menuPrincipal() {
+void menuTransacoes() {
 
     int x;
 
     while (x!=) {
         
-        printf("MENU PRINCIPAL DE CADASTRO E GESTÃO DE DADOS:\n\n");
-        printf("0. SAIR DO PROGRAMA \n");
-        printf("1. LOCADORA \n");
-        printf("2. CLIENTE \n");
-        printf("3. FILMES \n");
-        printf("4. FUNCIONARIOS \n");
-        printf("5. FORNECEDORES \n");
+        printf("MENU PRINCIPAL MÓDULO DE TRANSAÇOES:\n\n");
+        printf("0. SAIR DO PROGRAMA ");
+        printf("1. LOCAÇÃO DE FILMES \n");
+        printf("2. DEVOLUÇÃO DE FILMES \n");
+        printf("3. CONTAS A RECEBER \n");
+        printf("4. ENTRADA DE FILMES \n");
+        printf("CONTAS A PAGARA \n");
         printf("6. VOLTAR AO MENU PRINCIPAL \n\n");
 
         printf("Digite uma das opções: ");
@@ -25,22 +25,22 @@ void menuPrincipal() {
         switch (x) {
             
             case 1:
-                locadoraMenu();
+               
                 break;
             case 2:
-                clientemenu();
+               
                 break;
             case 3:
-                filmeMenu();
+             
                 break;
             case 4:
-                funcionariomenu();
+                
                 break;
             case 5:
-                fornecedorMenu();
+                
                 break;
             case 6:
-                MenuPrincipal_1();
+               
                 break;
         }
     }

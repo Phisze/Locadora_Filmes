@@ -51,9 +51,9 @@ void clientemenu() {
 
 }
 
-void mensagem_operacao(int codOperacao) {
+int mensagem_operacao(int cod) {
 
-    if (codOperacao == 1)
+    if (cod == 1)
         printf("Opereção feita com sucesso!\n");
     else {
         printf("Operação não realizada com sucesso!\n");
@@ -167,7 +167,7 @@ void attCli() {
 
         }
 
-        mensagem_operacao(atualizaCliente(cliente));
+        mensagem_operacao(atualizaCliente(&cliente));
     }
 }
 
@@ -187,11 +187,7 @@ void consulteCli() {
         } else
             printf("Clinte Inexistente!");
     }
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
-    consultaCliente(cliente.codigo);
+    mensagem_operacao(consultaCliente(&cliente));
 
 }
 
@@ -207,9 +203,10 @@ int deletCli() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
+            deletCli(&cliente);
 
         }
     }
     
-    mensagem_operacao(deletaCliente(cliente.codigo));
+    mensagem_operacao(deletaCliente(&cliente));
 }

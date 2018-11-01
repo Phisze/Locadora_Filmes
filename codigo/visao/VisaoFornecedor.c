@@ -165,7 +165,7 @@ void listLocadora() {
             printf("Codigo: %0f, Nome: %s, Razão social: %s, Inscrição Estadual: %s, CNPJ: %s, Endereço: %s, Telefone: %s, E-mail: %s \n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
         }
         }
-     //mensagem_operacao(listarFornecedor(p));
+     mensagem_operacao(listarFornecedor(&Fornecedor));
     }
 void consulteFornecedor() {
 
