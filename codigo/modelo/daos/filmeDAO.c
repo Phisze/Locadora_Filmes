@@ -20,9 +20,6 @@
 //Funcao Inclusao 
 
 int inclusaoFilmes(Filme f) {
-    //printf("codcodcod %f ", f.codigo);
-    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
     FILE *arq = fopen("filme.pro", "ab");
 
     if (arq == NULL) {
@@ -36,8 +33,16 @@ int inclusaoFilmes(Filme f) {
     tamanho++;
     setTamanhoFilme(tamanho);
     return 1;
-
 }
+
+void inclusaoFilmeTexto(Filme f) {
+    FILE *arquivo;
+    arquivo = fopen("filme.txt", "wt");
+    fprintf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+    fclose(arquivo);
+}
+
+//Funções de Listar
 
 Filme* listarFilmes() {
     int i = 0;
@@ -46,7 +51,6 @@ Filme* listarFilmes() {
     Filme *fw = &f;
     Filme *array = malloc(getTamanhoFilme() * sizeof f);
     // VECTOR_INIT(v);
-    //    Cliente *cli = &clientes;
     FILE *arq = fopen("filme.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -67,7 +71,6 @@ Filme* listarFilmes() {
             // }
             //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
-            //VECTOR_ADD(clientes, cw);
             //printf("Cod %s\n", c.nome);
             i++;
         }
@@ -76,8 +79,30 @@ Filme* listarFilmes() {
     return array;
 }
 
-Filme consultarFilmes(float cod) {
+Filme* ListarFilmesTexto() {
+    int i = 0;
+    Filme f;
+    FILE *arquivo;
+    Filme *array = malloc(getTamanhoFilme() * sizeof f);
+    arquivo = fopen("filme.txt", "rt");
 
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        if (f.deletado != '*') {
+            array[i].codigo = f.codigo;
+            strcpy(array[i].descricao, f.descricao);
+            array[i].exemplares = f.exemplares;
+            strcpy(array[i].lingua, f.lingua);
+            i++;
+        }
+    }
+    fclose(arquivo);
+    return array;
+}
+
+//Funções de Consultar
+
+Filme consultarFilmes(float cod) {
     FILE *arq = fopen("filme.pro", "rb");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -97,7 +122,7 @@ Filme consultarFilmes(float cod) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            return f;
+            break;
         }
     }
 
@@ -106,8 +131,23 @@ Filme consultarFilmes(float cod) {
     }
     fclose(arq);
     Filme v;
-    return v;
+    return f;
 }
+
+Filme ConsultarFilmesTexto(float cod) {
+    FILE *arquivo;
+    arquivo = fopen("filme.txt", "rt");
+    Filme f;
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        if (f.codigo == cod && f.deletado != '*') {
+            break;
+        }
+    }
+    return f;
+}
+
+//Funções de Alteração
 
 int alterarFilmes(Filme filme, float cod) {
     FILE *arq = fopen("filme.pro", "r+b");
@@ -147,8 +187,33 @@ int alterarFilmes(Filme filme, float cod) {
     return 0;
 }
 
-int excluirFilmes(float cod) {
+void alterarFilmeTexto(float cod, Filme fil) {
+    FILE *arquivo;
+    FILE *arq;
+    Filme f;
+    arquivo = fopen("filme.txt", "rt");
+    arq = fopen("filmeBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        if (cod == f.codigo && f.deletado != '*') {
+            f.codigo = fil.codigo;
+            strcpy(f.descricao, fil.descricao);
+            f.exemplares = fil.exemplares;
+            strcpy(f.lingua, fil.lingua);
+            fprintf(arq, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        } else {
+            fprintf(arq, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("filme.txt");
+    rename("filmeBackup.txt", "filme.txt");
+}
 
+//Funcções de exclusão
+
+int excluirFilmes(float cod) {
     FILE *arq = fopen("filme.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -173,7 +238,7 @@ int excluirFilmes(float cod) {
             if (certeza == 's') {
                 f.deletado = '*';
                 printf("\nProduto excluido com Sucesso! \n");
-                fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
+                fseek(arq, sizeof (Filme)*-1, SEEK_CUR);
                 fwrite(&f, sizeof (f), 1, arq);
                 fseek(arq, sizeof (f)* 0, SEEK_END);
                 return 1;
@@ -187,4 +252,23 @@ int excluirFilmes(float cod) {
 
     fclose(arq);
     return 0;
+}
+
+void excluirFilmeTexto(float cod) {
+    FILE *arquivo;
+    FILE *arq;
+    Filme f;
+    arquivo = fopen("filme.txt", "rt");
+    arq = fopen("filmeBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        if (cod == f.codigo && f.deletado != '*') {
+        } else {
+            fprintf(arq, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("filme.txt");
+    rename("filmeBackup.txt", "filme.txt");
 }

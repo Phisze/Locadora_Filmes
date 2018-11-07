@@ -34,22 +34,40 @@ extern "C" {
  */
 int inclusaoCategoria(Categoria c);
 /*
+ **  Inclui Categoria em arquivo Texto
+ */
+void inclusaoCategoriaTexto(Categoria c);
+/*
  **  Lista Categoria em arquivo binario
  */
 Categoria* listarCategoria();
-
+/*
+ **  Lista Categoria em arquivo Texto
+ */
+Categoria* ListarCategoriaTexto();
 /*
  **  Consultar Categoria em arquivo binario
  */
 Categoria consultarCategoria(float cod);
 /*
+ **  Consultar Categoria em arquivo Texto
+ */
+Categoria ConsultarCategoriaTexto(float cod);
+/*
  **  Altera Categoria em arquivo binario
  */
 int alterarCategoria(Categoria categoria, float cod);
 /*
+ **  Alterar Categoria em arquivo Texto
+ */
+void alterarCategoriaTexto(float cod, Categoria cat);
+/*
  **  Deleta Categoria em arquivo binario
  */
 int excluirCategoria(float cod);
-
+/*
+ **  Deleta Categoria em arquivo Texto
+ */
+void excluirCategoriaTexto(float cod);
 #endif /* CATEGORIADAO_H */
 

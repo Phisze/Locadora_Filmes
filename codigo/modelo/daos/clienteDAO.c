@@ -116,7 +116,6 @@ Cliente* ListarClientesTexto() {
 }
 
 //Funções de Consultar
-
 Cliente consultarClientes(int cod) {
 
     FILE *arq = fopen("cliente.pro", "rb");
@@ -149,7 +148,7 @@ Cliente consultarClientes(int cod) {
     return c;
 }
 
-Cliente ConsultarClientesTexto(int cod) {
+Cliente ConsultarClientesTexto(float cod) {
     FILE *arquivo;
     arquivo = fopen("cliente.txt", "rt");
     Cliente c;
@@ -163,7 +162,7 @@ Cliente ConsultarClientesTexto(int cod) {
 }
 
 //Funções de Alteração
-int alterarCliente(Cliente clintes, int cod) {
+int alterarCliente(Cliente clintes, float cod) {
     FILE *arq = fopen("cliente.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -202,7 +201,7 @@ int alterarCliente(Cliente clintes, int cod) {
 }
 
 
-void alterarClienteTexto(int cod, Cliente cli) {
+void alterarClienteTexto(float cod, Cliente cli) {
     FILE *arquivo;
     FILE *arq;
     Cliente c;
