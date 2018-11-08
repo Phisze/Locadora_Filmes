@@ -9,7 +9,8 @@ void fornecedorMenu(){
     int x;
     
     do{
-        
+    printf("MENU FORNECEDOR\n");
+    printf("---------------------------------------------\n");        
     printf("0. Sair \n");
     printf("1. Salvar Locadora \n");
     printf("2. Atualizar Locadora \n");
@@ -17,10 +18,11 @@ void fornecedorMenu(){
     printf("4. Listar Locadora  \n");
     printf("5. Consultar Locadora \n");
     printf("6. Voltar para o menu principal \n");
-    
+    printf("---------------------------------------------\n");        
     printf("Digite uma das opções: \n");
     scanf("%d%", &x); 
-    
+    printf("---------------------------------------------\n");        
+
     switch(x){
         //Salva 
         case 1:
@@ -53,14 +55,14 @@ void fornecedorMenu(){
     }while(x!= 0);
     
  }
-int mensagem_operacao(int cod) {
-
-    if (cod == 1)
-        printf("Opereção feita com sucesso!\n");
-    else {
-        printf("Operação não realizada com sucesso!\n");
-    }
-}
+//int mensagem_operacao(int cod) {
+//
+//    if (cod == 1)
+//        printf("Opereção feita com sucesso!\n");
+//    else {
+//        printf("Operação não realizada com sucesso!\n");
+//    }
+//}
 void salveFornecedor(){
     
     Fornecedor fornecedor;
@@ -166,26 +168,27 @@ void listLocadora() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, Nome: %s, Razão social: %s, Inscrição Estadual: %s, CNPJ: %s, Endereço: %s, Telefone: %s, E-mail: %s \n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
+            printf("Codigo: %0f, \t| Nome: %s, \t| Razão social: %s,\t| Inscrição Estadual: %s,\t| CNPJ: %s,\t| Endereço: %s,\t| Telefone: %s,\t| E-mail: %s \n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
         }
         }
-     mensagem_operacao(listarFornecedor(Fornecedor));
+//     mensagem_operacao(listarFornecedor(Fornecedor));
     }
 void consulteFornecedor() {
 
   Fornecedor fornecedor;
-  
   Fornecedor *p = listarFornecedor(); //p vetor com todas Fornecedores
   int tamanho = qtdFornecedor(); //quantidade de Fornecesores do vetor
   float cod;
 
-
+    printf("---------------------------------------------\n");        
     printf("Digite o codigo do clinte que deseja atualizar: \n");
     scanf("%f", &cod);
+    printf("---------------------------------------------\n");        
+
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
-            printf("Codigo: %0f, Nome: %s, Razão social: %s, Inscrição Estadual: %s, CNPJ: %s, Endereço: %s, Telefone: %s, E-mail: %s \n", p[i].codigo ,p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
+            printf("Codigo: %0f, \t| Nome: %s, \t| Razão social: %s, \t| Inscrição Estadual: %s, \t|CNPJ: %s, \t| Endereço: %s, \t| Telefone: %s, \t| E-mail: %s \n", p[i].codigo ,p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
         } else
             printf("Clinte Inexistente!");
     }

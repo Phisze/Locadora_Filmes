@@ -10,7 +10,8 @@ void clientemenu() {
     int x;
 
     do {
-
+        printf("MENU CLIENTE\n");
+        printf("---------------------------------------------\n");       
         printf("0. Sair do programa \n");
         printf("1. Salvar Cliente \n");
         printf("2. Atualizar Cliente \n");
@@ -18,9 +19,10 @@ void clientemenu() {
         printf("4. Listar cliente \n");
         printf("5. Consultar cliente \n");
         printf("6. Voltar para o menu principal \n");
-
+        printf("---------------------------------------------\n");        
         printf("Digite uma das opções: \n");
         scanf("%d%*c", &x);
+        printf("---------------------------------------------\n");        
 
         switch (x) {
 
@@ -106,7 +108,7 @@ void listaCli() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s, Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0f, \t| Nome: %s, \t| Endereço: %s, \t| CPF: %s, \t| Telefone: %s, \t| E-mail: %s, \t| Sexo: %c,\t| Estado civil: %s, \t| Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         }
     }
 }
@@ -167,7 +169,7 @@ void attCli() {
 
         }
 
-        mensagem_operacao(atualizaCliente(&cliente));
+       // mensagem_operacao(atualizaCliente(&cliente));
     }
 }
 
@@ -183,11 +185,11 @@ void consulteCli() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
-            printf("Codigo: %0f, Nome: %s, Endereço: %s, CPF: %s, Telefone: %s, E-mail: %s, Sexo: %c, Estado civil: %s, Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0f,\t| Nome: %s,\t| Endereço: %s,\t| CPF: %s,\t| Telefone: %s,\t| E-mail: %s,\t| Sexo: %c,\t| Estado civil: %s,\t| Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } else
             printf("Clinte Inexistente!");
     }
-    mensagem_operacao(consultaCliente(&cliente));
+//    mensagem_operacao(consultaCliente(&cliente));
 
 }
 
@@ -208,5 +210,5 @@ int deletCli() {
         }
     }
     
-    mensagem_operacao(deletaCliente(&cliente));
+//    mensagem_operacao(deletaCliente(&cliente));
 }

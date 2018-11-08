@@ -9,14 +9,16 @@ void locadoraMenu(){
     int x;
     
     do{
-    printf("MENU LOCADORA: \n\n");    
+    printf("MENU LOCADORA: \n");
+    printf("---------------------------------------------\n");        
     printf("0. Sair \n");
     printf("1. Salvar Locadora \n");
     printf("2. Voltar para o menu principal \n");
-    
+    printf("---------------------------------------------\n");        
     printf("Digite uma das opções: \n");
     scanf("%d%", &x); 
-    
+    printf("---------------------------------------------\n");        
+
     switch(x){
        
         case 1:

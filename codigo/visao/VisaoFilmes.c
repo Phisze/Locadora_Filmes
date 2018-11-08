@@ -8,7 +8,8 @@ void filmeMenu(){
     int x;
     
     do{
-        
+    printf("MENU FILME \n");
+    printf("---------------------------------------------\n");        
     printf("0. Sair \n");
     printf("1. Salvar Filme \n");
     printf("2. Atualizar Filme \n");
@@ -16,9 +17,10 @@ void filmeMenu(){
     printf("4. Listar Filme  \n");
     printf("5. Consultar Filme \n");
     printf("6. Voltar para o menu principal \n");
-
+    printf("---------------------------------------------\n");        
     printf("Digite uma das opções: \n");
     scanf("%d%", &x); 
+    printf("---------------------------------------------\n");        
 
     
     switch(x){
@@ -85,6 +87,7 @@ void attFilmes(){
    Filme filme;    
    Filme *p = listaFilmes(); //p vetor com todos os Filmes
    int tamanho = qtdFilme(); //quantidade de filmes do vetor
+   float cod;
    
    printf("Digite o codigo do filme que deseja atualizar: \n");
    scanf("%f%*c", &cod);
@@ -100,7 +103,7 @@ void attFilmes(){
     
     printf("Digite a quantidade de exemplares do filme na locadora: \n");
     scanf("%f", p[i].exemplares); //Até o usuario dar enter
-    filme.descricao = p[i].exemplares;
+//    (filme.descricao = p[i].exemplares);
     fflush(stdin); //limpa
     
     printf("Digite a linguagem Dublado (Digite D) ou Legandado (Digite L) \n");
@@ -125,7 +128,7 @@ void listarFilme(){
    
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, Descrição: %s, Quantidade de exemplares: %0f, Código da categoria: %0f, Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
+            printf("Codigo: %0f, \t| Descrição: %s, \t| Quantidade de exemplares: %0f, \t| Código da categoria: %0f, \t| Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }
     }
     
@@ -143,7 +146,7 @@ void consulteFilme(){
    
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { 
-            printf("Codigo: %0f, Descrição: %s, Quantidade de exemplares: %0f, Código da categoria: %0f, Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
+            printf("Codigo: %0f, \t|Descrição: %s, \t|Quantidade de exemplares: %0f,\t| Código da categoria: %0f,\t| Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }else 
             printf("Cliente inexistente!");
     }

@@ -10,14 +10,16 @@ void MenuPrincipal_1() {
 
     while (x!=5) {
         printf("MENU PRINCIPAL:\n\n");
+        printf("---------------------------------------------\n");        
         printf("0. SAIR DO PROGRAMA \n");
         printf("1 - MENU DE CADASTRO E GESTÃO DE DADOS:\n");
         printf("2. MENU DE MÓDULO DE TRANSAÇÕES \n");
         printf("3. MENU MÓDULO FEEDBACK");
         printf("4. MENU MÓDULO IMPORTAÇÃO/EXPORTAÇÃO DE DADOS \n\n");
-           
+        printf("---------------------------------------------\n");         
         printf("Digite uma das opções: ");
         scanf("%d%*c",&x);
+        printf("---------------------------------------------\n");        
 
         switch (x) {
             
