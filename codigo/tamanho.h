@@ -24,7 +24,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-void setTamanhoCliente(float tamanho);
+void setTamanhoCliente(int tamanho);
 
 int getTamanhoCliente();
 
@@ -32,19 +32,19 @@ int getTamanhoCliente();
 
 int getTamanhoFilme();
 
-void setTamanhoCategoria(float tamanho);
+void setTamanhoCategoria(int tamanho);
 
 int getTamanhoCategoria();
 
-void setTamanhoFornecedor(float tamanho);
+void setTamanhoFornecedor(int tamanho);
 
 int getTamanhoFornecedor();
 
-void setTamanhoFuncionario(float tamanho);
+void setTamanhoFuncionario(int tamanho);
 
 int getTamanhoFuncionario();
 
-void setTamanhoLocadora(float tamanho);
+void setTamanhoLocadora(int tamanho);
 
 int getTamanhoLocadora();
 

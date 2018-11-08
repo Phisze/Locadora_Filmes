@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void setTamanhoCliente(float tamanho) {
+void setTamanhoCliente(int tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     FILE *arq = fopen("tamanhoCli.pro", "ab");
 
@@ -33,8 +33,8 @@ void setTamanhoCliente(float tamanho) {
 
 int getTamanhoCliente() {
 
-    float c;
-    float tamanho;
+    int c;
+    int tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoCli.pro", "rb");
@@ -61,7 +61,7 @@ int getTamanhoCliente() {
 
 }
 
-void setTamanhoFilme(float tamanho) {
+void setTamanhoFilme(int tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     FILE *arq = fopen("tamanhoFil.pro", "ab");
 
@@ -79,8 +79,8 @@ void setTamanhoFilme(float tamanho) {
 
 int getTamanhoFilme() {
 
-    float c;
-    float tamanho;
+    int c;
+    int tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoFil.pro", "rb");
@@ -106,7 +106,7 @@ int getTamanhoFilme() {
     return tamanho;
 }
 
-void setTamanhoCategoria(float tamanho) {
+void setTamanhoCategoria(int tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     FILE *arq = fopen("tamanhoCat.pro", "ab");
 
@@ -124,8 +124,8 @@ void setTamanhoCategoria(float tamanho) {
 
 int getTamanhoCategoria() {
 
-    float c;
-    float tamanho;
+    int c;
+    int tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoCat.pro", "rb");
@@ -151,7 +151,7 @@ int getTamanhoCategoria() {
     return tamanho;
 }
 
-void setTamanhoFornecedor(float tamanho) {
+void setTamanhoFornecedor(int tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     FILE *arq = fopen("tamanhoFor.pro", "ab");
 
@@ -169,8 +169,8 @@ void setTamanhoFornecedor(float tamanho) {
 
 int getTamanhoFornecedor() {
 
-    float c;
-    float tamanho;
+    int c;
+    int tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoFor.pro", "rb");
@@ -196,7 +196,7 @@ int getTamanhoFornecedor() {
     return tamanho;
 }
 
-//void setTamanhoFornecedor(float tamanho) {
+//void setTamanhoFornecedor(int tamanho) {
 //    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
 //    FILE *arq = fopen("tamanhoFor.pro", "ab");
 //
@@ -211,11 +211,11 @@ int getTamanhoFornecedor() {
 //    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
 //    fclose(arqB);
 //}
-//
+
 //int getTamanhoFornecedor() {
 //
-//    float c;
-//    float tamanho;
+//    int c;
+//    int tamanho;
 //    // VECTOR_INIT(v);
 //    //    Cliente *cli = &clientes;
 //    FILE *arq = fopen("tamanhoFor.pro", "rb");
@@ -241,26 +241,26 @@ int getTamanhoFornecedor() {
 //    return tamanho;
 //}
 //
-//void setTamanhoFuncionario(float tamanho) {
-//    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-//    FILE *arq = fopen("tamanhoFun.pro", "ab");
-//
-//    if (arq == NULL) {
-//        printf("Erro ao abrir arquivo");
-//    }
-//
-//    remove("tamanhoFun.pro");
-//
-//    FILE *arqB = fopen("tamanhoFun.pro", "wb");
-//
-//    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
-//    fclose(arqB);
-//}
+void setTamanhoFuncionario(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoFun.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoFun.pro");
+
+    FILE *arqB = fopen("tamanhoFun.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
 
 int getTamanhoFuncionario() {
 
-    float c;
-    float tamanho;
+    int c;
+    int tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoFun.pro", "rb");
@@ -286,7 +286,7 @@ int getTamanhoFuncionario() {
     return tamanho;
 }
 
-void setTamanhoLocadora(float tamanho) {
+void setTamanhoLocadora(int tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     FILE *arq = fopen("tamanhoLoc.pro", "ab");
 
@@ -304,8 +304,8 @@ void setTamanhoLocadora(float tamanho) {
 
 int getTamanhoLocadora() {
 
-    float c;
-    float tamanho;
+    int c;
+    int tamanho;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoLoc.pro", "rb");

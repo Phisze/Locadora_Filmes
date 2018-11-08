@@ -262,7 +262,7 @@ int excluirLocadora(float cod) {
     return 0;
 }
 
-void excluirClienteTexto(float cod) {
+void excluirLocadoraTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Locadora l;
