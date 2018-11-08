@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux
-CND_DLIB_EXT=so
+CND_PLATFORM=Cygwin-Windows
+CND_DLIB_EXT=dll
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -50,6 +50,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/vetorFuncionario.o \
 	${OBJECTDIR}/controle/vetorLocadora.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/modelo/NotaFiscal.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
 	${OBJECTDIR}/modelo/daos/filmeDAO.o \
@@ -83,9 +84,9 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
@@ -163,6 +164,11 @@ ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/modelo/NotaFiscal.o: modelo/NotaFiscal.c
+	${MKDIR} -p ${OBJECTDIR}/modelo
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/NotaFiscal.o modelo/NotaFiscal.c
 
 ${OBJECTDIR}/modelo/daos/categoriaDAO.o: modelo/daos/categoriaDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos

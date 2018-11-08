@@ -32,6 +32,7 @@
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>visao/MenuPrincipal.c</itemPath>
+      <itemPath>modelo/NotaFiscal.c</itemPath>
       <itemPath>visao/VisaoCliente.c</itemPath>
       <itemPath>visao/VisaoFilmes.c</itemPath>
       <itemPath>visao/VisaoFornecedor.c</itemPath>
@@ -155,6 +156,8 @@
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="modelo/NotaFiscal.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="modelo/daos/categoriaDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
@@ -277,6 +280,8 @@
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/NotaFiscal.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/categoriaDAO.c" ex="false" tool="0" flavor2="0">
       </item>

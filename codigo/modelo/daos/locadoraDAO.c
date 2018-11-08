@@ -14,9 +14,6 @@
 //Funcao Inclusao 
 
 int inclusaoLocadora(Locadora l) {
-    //printf("codcodcod %f ", f.codigo);
-    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
     FILE *arq = fopen("locadora.pro", "ab");
 
     if (arq == NULL) {
@@ -30,8 +27,16 @@ int inclusaoLocadora(Locadora l) {
     tamanho++;
     setTamanhoLocadora(tamanho);
     return 1;
-
 }
+
+void inclusaoLocadoraTexto(Locadora l) {
+    FILE *arquivo;
+    arquivo = fopen("locadora.txt", "wt");
+    fprintf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+    fclose(arquivo);
+}
+
+//Funções de Listar
 
 Locadora* listarLocadora() {
     int i = 0;
@@ -39,8 +44,6 @@ Locadora* listarLocadora() {
     Locadora l;
     Locadora *fw = &l;
     Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
-    // VECTOR_INIT(v);
-    //    Cliente *cli = &clientes;
     FILE *arq = fopen("locadora.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -64,18 +67,41 @@ Locadora* listarLocadora() {
             strcpy(array[i].cnpj, l.cnpj);
             strcpy(array[i].nome_responsavel, l.nome_responsavel);
             strcpy(array[i].tel_responsavel, l.tel_responsavel);
-
-            // }
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
-
-            //VECTOR_ADD(clientes, cw);
-            //printf("Cod %s\n", c.nome);
             i++;
         }
     }
     fclose(arq);
     return array;
 }
+
+Locadora* ListarLocadoraTexto() {
+    int i = 0;
+    Locadora l;
+    FILE *arquivo;
+    Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
+    arquivo = fopen("locadora.txt", "rt");
+
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        if (l.deletado != '*') {
+            array[i].codigo = l.codigo;
+            strcpy(array[i].nome, l.nome);
+            strcpy(array[i].endereco, l.endereco);
+            strcpy(array[i].telefone, l.telefone);
+            strcpy(array[i].email, l.email);
+            strcpy(array[i].razao_social, l.razao_social);
+            strcpy(array[i].inscricao_estadual, l.inscricao_estadual);
+            strcpy(array[i].cnpj, l.cnpj);
+            strcpy(array[i].nome_responsavel, l.nome_responsavel);
+            strcpy(array[i].tel_responsavel, l.tel_responsavel);
+            i++;
+        }
+    }
+    fclose(arquivo);
+    return array;
+}
+
+//Funções de Consultar
 
 Locadora consultarLocadora(float cod) {
 
@@ -109,6 +135,21 @@ Locadora consultarLocadora(float cod) {
     Locadora v;
     return v;
 }
+
+Locadora ConsultarLocadoraTexto(float cod) {
+    FILE *arquivo;
+    arquivo = fopen("locadora.txt", "rt");
+    Locadora l;
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        if (l.codigo == cod && l.deletado != '*') {
+            break;
+        }
+    }
+    return l;
+}
+
+//Funções de Alteração
 
 int alterarLocadora(Locadora locadora, float cod) {
     FILE *arq = fopen("locadora.pro", "r+b");
@@ -148,6 +189,37 @@ int alterarLocadora(Locadora locadora, float cod) {
     return 0;
 }
 
+void alterarLocadoraTexto(float cod, Locadora loc) {
+    FILE *arquivo;
+    FILE *arq;
+    Locadora l;
+    arquivo = fopen("locadora.txt", "rt");
+    arq = fopen("locadoraBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        if (cod == l.codigo && l.deletado != '*') {
+            l.codigo = loc.codigo;
+            strcpy(l.nome, loc.nome);
+            strcpy(l.endereco, loc.endereco);
+            strcpy(l.telefone, loc.telefone);
+            strcpy(l.email, loc.email);
+            strcpy(l.razao_social, loc.razao_social);
+            strcpy(l.inscricao_estadual, loc.inscricao_estadual);
+            strcpy(l.cnpj, loc.cnpj);
+            strcpy(l.nome_responsavel, loc.nome_responsavel);
+            strcpy(l.tel_responsavel, loc.tel_responsavel);
+            fprintf(arq, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        } else {
+            fprintf(arq, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("locadora.txt");
+    rename("locadoraBackup.txt", "locadora.txt");
+}
+
+//Funcções de exclusão
 int excluirLocadora(float cod) {
 
     FILE *arq = fopen("locadora.pro", "r+b");
@@ -188,4 +260,23 @@ int excluirLocadora(float cod) {
 
     fclose(arq);
     return 0;
+}
+
+void excluirClienteTexto(float cod) {
+    FILE *arquivo;
+    FILE *arq;
+    Locadora l;
+    arquivo = fopen("locadora.txt", "rt");
+    arq = fopen("locadoraBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        if (cod == l.codigo && l.deletado != '*') {
+        } else {
+            fprintf(arq, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("locadora.txt");
+    rename("locadoraBackup.txt", "locadora.txt");
 }

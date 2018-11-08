@@ -14,9 +14,6 @@
 //Funcao Inclusao 
 
 int inclusaoFuncionarios(Funcionario f) {
-    //printf("codcodcod %f ", f.codigo);
-    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-    //FILE *arq = fopen("..\\..\\..\\..\\cliente.pro", "ab");
     FILE *arq = fopen("funcionario.pro", "ab");
 
     if (arq == NULL) {
@@ -33,14 +30,21 @@ int inclusaoFuncionarios(Funcionario f) {
 
 }
 
+void inclusaoFuncionarioTexto(Funcionario f) {
+    FILE *arquivo;
+    arquivo = fopen("funcionario.txt", "wt");
+    fprintf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+    fclose(arquivo);
+}
+
+//Funções de Listar
+
 Funcionario* listarFuncionarios() {
     int i = 0;
 
     Funcionario f;
     Funcionario *fw = &f;
     Funcionario *array = malloc(getTamanhoFuncionario() * sizeof f);
-    // VECTOR_INIT(v);
-    //    Cliente *cli = &clientes;
     FILE *arq = fopen("funcionario.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -60,17 +64,37 @@ Funcionario* listarFuncionarios() {
             strcpy(array[i].telefone, f.telefone);
             strcpy(array[i].email, f.email);
             strcpy(array[i].cargo, f.cargo);
-            // }
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
-
-            //VECTOR_ADD(clientes, cw);
-            //printf("Cod %s\n", c.nome);
             i++;
         }
     }
     fclose(arq);
     return array;
 }
+
+Funcionario* ListarFuncionarioTexto() {
+    int i = 0;
+    Funcionario f;
+    FILE *arquivo;
+    Funcionario *array = malloc(getTamanhoFuncionario() * sizeof f);
+    arquivo = fopen("funcionario.txt", "rt");
+
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        if (f.deletado != '*') {
+            array[i].codigo = f.codigo;
+            strcpy(array[i].nome, f.nome);
+            strcpy(array[i].endereco, f.endereco);
+            strcpy(array[i].telefone, f.telefone);
+            strcpy(array[i].email, f.email);
+            strcpy(array[i].cargo, f.cargo);
+            i++;
+        }
+    }
+    fclose(arquivo);
+    return array;
+}
+
+//Funções de Consultar
 
 Funcionario consultarFuncionarios(float cod) {
 
@@ -93,7 +117,7 @@ Funcionario consultarFuncionarios(float cod) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            return f;
+            break;
         }
     }
 
@@ -102,8 +126,23 @@ Funcionario consultarFuncionarios(float cod) {
     }
     fclose(arq);
     Funcionario v;
-    return v;
+    return f;
 }
+
+Funcionario ConsultarFuncionarioTexto(float cod) {
+    FILE *arquivo;
+    arquivo = fopen("funcionario.txt", "rt");
+    Funcionario f;
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        if (f.codigo == cod && f.deletado != '*') {
+            break;
+        }
+    }
+    return f;
+}
+
+//Funções de Alteração
 
 int alterarFuncionarios(Funcionario funcionario, float cod) {
     FILE *arq = fopen("funcionario.pro", "r+b");
@@ -143,6 +182,33 @@ int alterarFuncionarios(Funcionario funcionario, float cod) {
     return 0;
 }
 
+void alterarFuncionarioTexto(float cod, Funcionario fun) {
+    FILE *arquivo;
+    FILE *arq;
+    Funcionario f;
+    arquivo = fopen("funcionario.txt", "rt");
+    arq = fopen("funcionarioBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        if (cod == f.codigo && f.deletado != '*') {
+            f.codigo = f.codigo;
+            strcpy(f.nome, fun.nome);
+            strcpy(f.endereco, fun.endereco);
+            strcpy(f.telefone, fun.telefone);
+            strcpy(f.email, fun.email);
+            strcpy(f.cargo, fun.cargo);
+            fprintf(arq, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        } else {
+            fprintf(arq, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+    remove("funcionario.txt");
+    rename("funcionarioBackup.txt", "funcionario.txt");
+}
+
+//Funcções de exclusão
 int excluirFuncionarios(float cod) {
 
     FILE *arq = fopen("funcionario.pro", "r+b");
@@ -169,7 +235,7 @@ int excluirFuncionarios(float cod) {
             if (certeza == 's') {
                 f.deletado = '*';
                 printf("\nProduto excluido com Sucesso! \n");
-                fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
+                fseek(arq, sizeof (Funcionario)*-1, SEEK_CUR);
                 fwrite(&f, sizeof (f), 1, arq);
                 fseek(arq, sizeof (f)* 0, SEEK_END);
                 return 1;
@@ -183,4 +249,23 @@ int excluirFuncionarios(float cod) {
 
     fclose(arq);
     return 0;
+}
+
+void excluirFuncionarioTexto(float cod) {
+    FILE *arquivo;
+    FILE *arq;
+    Funcionario f;
+    arquivo = fopen("funcionario.txt", "rt");
+    arq = fopen("funcionarioBackup.txt", "wt");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        if (cod == f.codigo && f.deletado != '*') {
+        } else {
+            fprintf(arq, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        }
+    }
+    fclose(arquivo);
+    fclose(arq);
+remove("funcionario.txt");
+    rename("funcionarioBackup.txt", "funcionario.txt");
 }

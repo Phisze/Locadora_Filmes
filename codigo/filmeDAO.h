@@ -32,21 +32,40 @@ extern "C" {
  */
 int inclusaoFilmes(Filme f);
 /*
+ **  Inclui Filmes em arquivo Texto
+ */
+void inclusaoFilmeTexto(Filme f);
+/*
  **  Lista Filmes em arquivo binario
  */
 Filme* listarFilmes();
-
+/*
+ **  Lista Filmes em arquivo Texto
+ */
+Filme* ListarFilmesTexto();
 /*
  **  Consultar Filmes em arquivo binario
  */
 Filme consultarFilmes(float cod);
 /*
+ **  Consultar Filmes em arquivo Texto
+ */
+Filme ConsultarFilmesTexto(float cod);
+/*
  **  Altera Filmes em arquivo binario
  */
 int alterarFilmes(Filme filme, float cod);
 /*
+ **  Altera Filmes em arquivo Texto
+ */
+void alterarFilmeTexto(float cod, Filme fil);
+/*
  **  Deleta Filmes em arquivo binario
  */
 int excluirFilmes(float cod);
+/*
+ **  Deleta Filmes em arquivo Texto
+ */
+int excluirFilmesTexto(float cod);
 #endif /* FILME_H */
 
