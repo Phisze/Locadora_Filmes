@@ -50,6 +50,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/vetorFuncionario.o \
 	${OBJECTDIR}/controle/vetorLocadora.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/modelo/NotaFiscal.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
 	${OBJECTDIR}/modelo/daos/filmeDAO.o \
@@ -163,6 +164,11 @@ ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/modelo/NotaFiscal.o: modelo/NotaFiscal.c
+	${MKDIR} -p ${OBJECTDIR}/modelo
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/NotaFiscal.o modelo/NotaFiscal.c
 
 ${OBJECTDIR}/modelo/daos/categoriaDAO.o: modelo/daos/categoriaDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos

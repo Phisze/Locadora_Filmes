@@ -39,7 +39,6 @@ void inclusaoFornecedorTexto(Fornecedor f) {
 }
 
 //Funções de Listar
-
 Fornecedor* listarFornecedor() {
     int i = 0;
     Fornecedor f;
