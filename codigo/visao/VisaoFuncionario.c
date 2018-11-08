@@ -40,7 +40,7 @@ void funcionariomenu() {
                 listaFuncionario();
                 break;
 
-            case 5:
+            case 5://consulta
                 consulteFuncionario();
                 break;
 
@@ -52,7 +52,7 @@ void funcionariomenu() {
 
 }
 
-void salveFuncionario() {
+void salveFuncionario() { //salva funcionario
     Funcionario funcionario;
 
     fflush(stdin); //limpa                       
@@ -79,12 +79,15 @@ void salveFuncionario() {
     mensagem_operacao(salvaFuncionario(&funcionario));
 }
 
-void attFuncionario(){
+void attFuncionario(){ //atualiza funionario
     Funcionario funcionario;
     Funcionario *p = listarFuncionarios();
     int tamanho = qtdFuncionario();
     float cod;
-    
+    printf("---------------------------------------------\n");
+    printf("\t Digite o codigo do cliente que deseja deletar:");
+    scanf("%f", &cod);
+    printf("---------------------------------------------\n");  
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
             
@@ -162,10 +165,12 @@ int deletfuncionario() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-            deletaFuncionario(&funcionario);
+             mensagem_operacao(deletaFuncionario(p[i].codigo));
+            break;
 
-        }
+        } else
+            printf("Clinte Inexistente!");
     }
-    mensagem_operacao(deletaFuncionario(&funcionario));
-}
+ }
+
 

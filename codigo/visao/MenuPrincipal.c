@@ -10,7 +10,7 @@ void menuPrincipal() {
 
     while (x!=0) {
         
-        printf("MENU PRINCIPAL DE CADASTRO E GESTÃO DE DADOS:\n\n");
+        printf("\t MENU PRINCIPAL DE CADASTRO E GESTÃO DE DADOS:\n\n");
         printf("---------------------------------------------\n");
         printf("0. SAIR DO PROGRAMA \n");
         printf("1. LOCADORA \n");
@@ -26,6 +26,9 @@ void menuPrincipal() {
 
         switch (x) {
             
+            case 0:
+                printf("SAINDO!");
+                break;
             case 1:
                 locadoraMenu();
                 break;

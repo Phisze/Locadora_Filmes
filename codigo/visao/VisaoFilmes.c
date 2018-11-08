@@ -8,7 +8,7 @@ void filmeMenu(){
     int x;
     
     do{
-    printf("MENU FILME \n");
+    printf("\t MENU FILME \n");
     printf("---------------------------------------------\n");        
     printf("0. Sair \n");
     printf("1. Salvar Filme \n");
@@ -18,14 +18,14 @@ void filmeMenu(){
     printf("5. Consultar Filme \n");
     printf("6. Voltar para o menu principal \n");
     printf("---------------------------------------------\n");        
-    printf("Digite uma das opções: \n");
+    printf("\t Digite uma das opções: \n");
     scanf("%d%", &x); 
     printf("---------------------------------------------\n");        
 
     
     switch(x){
         case 0:
-            printf("Saindo!");
+            printf("SAINDO!");
             break;
         //Salva Filme 
         case 1:
@@ -117,7 +117,24 @@ void attFilmes(){
       
 }
 
-void deletFilme(){
+int deletFilme(){
+    
+    Filme filme;
+    Filme *p = listaFilmes(); //p vetor com todos os clientes 
+    int tamanho = qtdFilme(); //quantidade de clientes do vetor
+    float cod;
+    printf("---------------------------------------------\n");  
+    printf("\t Digite o codigo do clinte que deseja deletar: \n");
+    scanf("%f", &cod);
+    printf("---------------------------------------------\n");  
+    for (int i = 0; i <= tamanho; i++) {
+        if (p[i].codigo == cod) {
+            mensagem_operacao(deletaFilme(p[i].codigo));
+            break;
+
+        }else
+            printf("Clinte Inexistente!");
+    }
     
 }
 

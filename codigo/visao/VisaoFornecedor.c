@@ -34,7 +34,7 @@ void fornecedorMenu(){
             break;
         //deleta
         case 3:
-           
+           deletFornecedor();
             break;
         //lista
         case 4: 
@@ -170,8 +170,7 @@ void listLocadora() {
         if (p[i].deletado != '*') { //Não mostrar os deletados
             printf("Codigo: %0f, \t| Nome: %s, \t| Razão social: %s,\t| Inscrição Estadual: %s,\t| CNPJ: %s,\t| Endereço: %s,\t| Telefone: %s,\t| E-mail: %s \n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
         }
-        }
-//     mensagem_operacao(listarFornecedor(Fornecedor));
+    }
     }
 void consulteFornecedor() {
 
@@ -195,4 +194,22 @@ void consulteFornecedor() {
     mensagem_operacao(consultaFornecedor(&cod));
 
 }
+ int deletFornecedor(){
     
+    Fornecedor fornecedor;
+    Fornecedor *p = listaFornecedor(); //p vetor com todos os clientes 
+    int tamanho = qtdFornecedor(); //quantidade de clientes do vetor
+    float cod;
+    printf("---------------------------------------------\n");  
+    printf("\t Digite o codigo do clinte que deseja deletar: \n");
+    scanf("%f", &cod);
+    printf("---------------------------------------------\n");  
+    for (int i = 0; i <= tamanho; i++) {
+        if (p[i].codigo == cod) {
+            mensagem_operacao(deletaFornecedor(p[i].codigo));
+            break;
+
+        }else
+            printf("Clinte Inexistente!");
+    }
+}   

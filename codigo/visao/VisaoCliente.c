@@ -10,7 +10,7 @@ void clientemenu() {
     int x;
 
     do {
-        printf("MENU CLIENTE\n");
+        printf("\t MENU CLIENTE\n");
         printf("---------------------------------------------\n");       
         printf("0. Sair do programa \n");
         printf("1. Salvar Cliente \n");
@@ -20,12 +20,15 @@ void clientemenu() {
         printf("5. Consultar cliente \n");
         printf("6. Voltar para o menu principal \n");
         printf("---------------------------------------------\n");        
-        printf("Digite uma das opções: \n");
+        printf("\t Digite uma das opções: \n");
         scanf("%d%*c", &x);
         printf("---------------------------------------------\n");        
 
         switch (x) {
 
+            case 0:
+                printf("SAINDO!");
+                break;
             case 1: //salva clientes
                 salvecli();
                 break;
@@ -169,7 +172,7 @@ void attCli() {
 
         }
 
-       // mensagem_operacao(atualizaCliente(&cliente));
+        mensagem_operacao(atualizaCliente(&cliente));
     }
 }
 
@@ -189,7 +192,7 @@ void consulteCli() {
         } else
             printf("Clinte Inexistente!");
     }
-//    mensagem_operacao(consultaCliente(&cliente));
+    mensagem_operacao(consultaCliente(&cliente));
 
 }
 
@@ -199,16 +202,16 @@ int deletCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-
-    printf("Digite o codigo do clinte que deseja deletar: \n");
+    printf("---------------------------------------------\n");  
+    printf("\t Digite o codigo do clinte que deseja deletar: \n");
     scanf("%f", &cod);
-
+    printf("---------------------------------------------\n");  
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-            deletCli(&cliente);
+            mensagem_operacao(deletaCliente(p[i].codigo));
+            break;
 
-        }
+        }else
+            printf("Clinte Inexistente!");
     }
-    
-//    mensagem_operacao(deletaCliente(&cliente));
-}
+}   
