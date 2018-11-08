@@ -8,11 +8,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "structs.h"
-
+#include "../structs.h"
 //int i = 0;
 
-void notaFical(Fornecedor f, float frete, float imposto, Filme fil, float qtd, Conta c) {
+void notaFical(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd, float *valor) {
     FILE *arquivo;
     float somador = 0;
     float somadorQTD = 0;
@@ -24,12 +23,14 @@ void notaFical(Fornecedor f, float frete, float imposto, Filme fil, float qtd, C
     fprintf(arquivo, "CNPJ:  %s \n", f.cnpj);
     fprintf(arquivo, "Frete:  %.2f \t Imposto\n", frete, imposto);
     fprintf(arquivo, " \t\t Filmes \n");
-    //for
-    total = c.valor * qtd;
-    fprintf(arquivo, "Descrição: %s | Preço: %.2f | Quantidade: %.2f | Total: %.2f \n", fil.descricao, c.valor, qtd, total);
-    somador += total;
-    somadorQTD += qtd;
-    //}
+    int i = 0;
+    while (qtd[i] != 0) {
+        total = valor[i] * qtd[i];
+        fprintf(arquivo, "Descrição: %s | Preço: %.2f | Quantidade: %.2f | Total: %.2f \n", fil[i].descricao, qtd[i], valor[i], total);
+        somador += total;
+        somadorQTD += qtd[i];
+        i++;
+    }
     finalFrete = frete / somadorQTD;
     finalImposto = imposto / somadorQTD;
     fprintf(arquivo, "Total Nota(Filmes + Frete + Imposto): %d\n", finalFrete + finalImposto + total);
