@@ -172,7 +172,7 @@ void attCli() {
 
         }
 
-        mensagem_operacao(atualizaCliente(&cliente));
+        mensagem_operacao(atualizaCliente(cliente));
     }
 }
 
@@ -184,15 +184,16 @@ void consulteCli() {
     float cod;
 
     printf("Digite o codigo do clinte que deseja atualizar: \n");
-    scanf("%f", &cod);
+    scanf("%f",&cod);
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
+            cliente=p[i];
             printf("Codigo: %0f,\t| Nome: %s,\t| Endereço: %s,\t| CPF: %s,\t| Telefone: %s,\t| E-mail: %s,\t| Sexo: %c,\t| Estado civil: %s,\t| Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } else
             printf("Clinte Inexistente!");
     }
-    mensagem_operacao(consultaCliente(&cliente));
+    consultaCliente(cliente.codigo);
 
 }
 
