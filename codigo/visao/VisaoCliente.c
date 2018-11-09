@@ -126,19 +126,11 @@ void attCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-<<<<<<< HEAD
     printf("-------------------------------------------------------\n");
     printf("Digite o codigo do cliente que deseja atluaizar: ");
     scanf("%f%*c", &cod);
     fflush(stdin); //limpa 
     printf("-------------------------------------------------------\n"); 
-=======
-    printf("-------------------------------------------------------\n"); 
-    printf("Digite o codigo do cliente que deseja atluaizar: ");
-    scanf("%f%*c", &cod);
-    fflush(stdin); //limpa 
-    printf("------------------------------------------------------\n"); 
->>>>>>> cfc32bc304d5b5c6a68af352da5e03c45cc37a0f
     int achou= 0;
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
@@ -209,11 +201,7 @@ void consulteCli() {
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             cliente=p[i];
-<<<<<<< HEAD
             printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: % \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
-=======
-            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %, \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
->>>>>>> cfc32bc304d5b5c6a68af352da5e03c45cc37a0f
         } else
             printf("Clinte Inexistente!");
     }

@@ -154,13 +154,8 @@ void consulteFuncionario() {
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             printf("Codigo: %0.f\n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
-<<<<<<< HEAD
         } 
             
-=======
-        } else
-            printf("Clinte Inexistente!");
->>>>>>> cfc32bc304d5b5c6a68af352da5e03c45cc37a0f
     }
 
 }
