@@ -16,8 +16,8 @@
 int tamanhoClientes = 0;
 int tamanhoClientesListar = 0;
 Cliente *Clientes;
-int tamanho = 0;
-int tamanhoTexto = 0;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
 
 //Funcões de Inclusao 
 
@@ -70,10 +70,9 @@ void insereClienteArrayDinamico(Cliente c) {
 
 Cliente* lClientes() {
     int i = 0;
-
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc((getTamanhoCliente() - 1) * sizeof c);
+    Cliente *array = malloc((getTamanhoCliente()) * sizeof c);
     int cont=0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;

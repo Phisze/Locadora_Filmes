@@ -88,6 +88,6 @@ void excluirCategoriaTexto(float cod);
 /*
  **  Deleta Categoria em arquivo Array Dinamico
  */
-void excluirCategoriaArrayDinamico(int cod)
+void excluirCategoriaArrayDinamico(int cod);
 #endif /* CATEGORIADAO_H */
 

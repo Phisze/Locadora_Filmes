@@ -14,8 +14,8 @@
 int tamanhoFuncionarios = 0;
 int tamanhoFuncionariosListar = 0;
 Funcionario *Funcionarios;
-int tamanho = 0;
-int tamanhoTexto = 0;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
 
 //Funcao Inclusao 
 
@@ -64,7 +64,7 @@ Funcionario* listarFuncionarios() {
     int cont = 0;
     Funcionario f;
     Funcionario *fw = &f;
-    Funcionario *array = malloc(getTamanhoFuncionario() * sizeof f);
+    Funcionario *array = malloc((getTamanhoFuncionario()) * sizeof f);
     FILE *arq = fopen("funcionario.pro", "rb");
     //printf("Arquivo xistente!");
 

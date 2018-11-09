@@ -20,8 +20,8 @@
 int tamanhoFilmes = 0;
 int tamanhoFilmesListar = 0;
 Filme *Filmes;
-int tamanho = 0;
-int tamanhoTexto = 0;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
 
 //Funcao Inclusao 
 

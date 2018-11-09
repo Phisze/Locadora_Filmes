@@ -13,7 +13,7 @@
 #include "../tamanho.h"
 #include "../structs.h"
 #include "../fornecedorDAO.h"
-#include "../conPersistencia.h"
+//#include "../conPersistencia.h"
 
 int salvaFornecedor(Fornecedor *f) {
 

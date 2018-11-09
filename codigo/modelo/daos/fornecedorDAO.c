@@ -14,8 +14,8 @@
 int tamanhoFornecedors = 0;
 int tamanhoFornecedorsListar = 0;
 Fornecedor *Fornecedors;
-int tamanho = 0;
-int tamanhoTexto = 0;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
 
 //Funcao Inclusao 
 

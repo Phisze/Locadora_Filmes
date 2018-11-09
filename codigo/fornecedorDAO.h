@@ -84,6 +84,6 @@ void excluirFornecedorTexto(float cod);
 /*
  **  Deleta Fornecedor em Array Dinamico
  */
-void excluirFornecedorArrayDinamico(int cod)
+void excluirFornecedorArrayDinamico(int cod);
 #endif /* FORNECEDORDAO_H */
 

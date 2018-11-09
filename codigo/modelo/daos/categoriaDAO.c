@@ -12,8 +12,8 @@
 int tamanhoCategorias = 0;
 int tamanhoCategoriasListar = 0;
 Categoria *Categorias;
-int tamanho = 0;
-int tamanhoTexto = 0;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
 
 //Funções de Inclusão 
 
