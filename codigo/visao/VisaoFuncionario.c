@@ -23,7 +23,11 @@ void funcionariomenu() {
         scanf("%d%*c", &x);
         printf("---------------------------------------------\n");        
         switch (x) {
-
+            //enceerra
+            case 0:
+                printf("SAINDO!");
+                exit(1);
+                break;
             case 1: //salva 
                 salveFuncionario();
                 break;
@@ -130,7 +134,7 @@ void listaFuncionario() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f,\n Nome: %s,\n Cargo: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
+            printf("Codigo: %0.f \n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
         }
     }
 }
@@ -147,7 +151,7 @@ void consulteFuncionario() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
-            printf("Codigo: %0f,\n Nome: %s,\n Cargo: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
+            printf("Codigo: %0.f\n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
         } else
             printf("Clinte Inexistente!");
     }

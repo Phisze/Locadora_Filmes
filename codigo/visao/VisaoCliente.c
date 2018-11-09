@@ -26,8 +26,10 @@ void clientemenu() {
 
         switch (x) {
 
+            //enceerra
             case 0:
                 printf("SAINDO!");
+                exit(1);
                 break;
             case 1: //salva clientes
                 salvecli();
@@ -38,6 +40,7 @@ void clientemenu() {
                 break;
 
             case 3: // deletar cliente
+                deletCli();
                 break;
 
             case 4: // Listar cliente
@@ -97,7 +100,7 @@ void salvecli() {
     scanf("%[^\n]%*c", cliente.estado_civil); //Até o usuario dar enter
     fflush(stdin);
 
-    printf("Digite o Ano de nascimento: \n");
+    printf("Digite o data de nascimento: \n");
     scanf("%[^\n]%*c", cliente.data_nascimento); //Até o usuario dar enter
     fflush(stdin);
 
@@ -108,10 +111,10 @@ void listaCli() {
 
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
-    printf("---------------------------------------------\n"); 
+    printf("-------------------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, \n Nome: %s, \n Endereço: %s, \n CPF: %s, \n Telefone: %s, \n E-mail: %s, \n Sexo: %c,\n Estado civil: %s, \n Data de Nascimento: %s. \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %s \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         }
     }
 }
@@ -122,22 +125,21 @@ void attCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-    printf("---------------------------------------------\n"); 
+    printf("-------------------------------------------------------\n"); 
     printf("Digite o codigo do cliente que deseja atluaizar: ");
-    scanf("%f", &cod);
+    scanf("%f%*c", &cod);
     fflush(stdin); //limpa 
-    printf("---------------------------------------------\n"); 
+    printf("------------------------------------------------------\n"); 
+    int achou= 0;
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-            
+            achou =1;
             fflush(stdin); //limpa 
             cliente=p[i];
                                           
             printf("Digite o nome: \n");
-            fflush(stdin); //limpa
             scanf("%[^\n]%*c", p[i].nome); //Até o usuario dar enter
-            fflush(stdin); //limpa
-            //strcpy(cliente.nome, p[i].nome); //concatenação
+            strcpy(cliente.nome, p[i].nome); //concatenação
             fflush(stdin); //limpa
 
             printf("Digite o endereço: \n");
@@ -161,8 +163,8 @@ void attCli() {
             fflush(stdin);
 
             printf("Digite o sexo F para femino e M para masculino: \n");
-            scanf("%c%*c", p[i].sexo); //Até o usuario dar enter
-            strcpy(cliente.sexo, p[i].sexo); //concatenação
+            scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
+            //strcpy(cliente.sexo, p[i].sexo); //concatenação
             fflush(stdin);
 
             printf("Digite Estado Civil: \n");
@@ -178,7 +180,11 @@ void attCli() {
         }
 
         mensagem_operacao(atualizaCliente(cliente));
+        if(achou == 1)
+            break;
     }
+    if(achou == 0)
+        mensagem_operacao(achou);
 }
 
 void consulteCli() {
@@ -187,14 +193,14 @@ void consulteCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-    printf("---------------------------------------------\n"); 
-    printf("Digite o codigo do clinte que deseja atualizar: \n");
-    scanf("%f",&cod);
-    printf("---------------------------------------------\n"); 
+    printf("-------------------------------------------------------\n"); 
+    printf("Digite o codigo do clinte que deseja consultar: \n");
+    scanf("%f%*c",&cod);
+    printf("-------------------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             cliente=p[i];
-            printf("Codigo: %0f, \n Nome: %s, \n Endereço: %s, \n CPF: %s, \n Telefone: %s, \n E-mail: %s, \n Sexo: %c,\n Estado civil: %s, \n Data de Nascimento: %s. \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %, \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } else
             printf("Clinte Inexistente!");
     }
@@ -208,10 +214,10 @@ int deletCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-    printf("---------------------------------------------\n");  
+    printf("-------------------------------------------------------\n");  
     printf("\t Digite o codigo do clinte que deseja deletar: \n");
-    scanf("%f", &cod);
-    printf("---------------------------------------------\n");  
+    scanf("%f%*c", &cod);
+    printf("--------------------------------------------------------\n");  
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
             mensagem_operacao(deletaCliente(p[i].codigo));
