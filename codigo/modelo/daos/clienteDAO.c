@@ -13,11 +13,14 @@
  */
 
 //vector v = {NULL, 4, 0};
-const int controla = 1;
-
+int tamanhoClientes = 0;
+int tamanhoClientesListar = 0;
+Cliente *Clientes;
+int tamanho = 0;
 //Funcões de Inclusao 
+
 int inclusaoCliente(Cliente c) {
-    int tamanho = getTamanhoCliente();
+    tamanho = getTamanhoCliente();
     //c.codigo = tamanho + 1;
     //printf("codcodcod %f ", c.codigo);
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
@@ -44,6 +47,20 @@ void inclusaoClienteTexto(Cliente c) {
     fclose(arquivo);
 }
 
+void insereClienteArrayDinamico(Cliente c) {
+    tamanhoClientes++;
+    Clientes = realloc(Clientes, tamanhoClientes * sizeof (Cliente));
+    Clientes[tamanhoClientes - 1].codigo = c.codigo;
+    strcpy(Clientes[tamanhoClientes - 1].nome, c.nome);
+    strcpy(Clientes[tamanhoClientes - 1].endereco, c.endereco);
+    strcpy(Clientes[tamanhoClientes - 1].cpf, c.cpf);
+    strcpy(Clientes[tamanhoClientes - 1].telefone, c.telefone);
+    strcpy(Clientes[tamanhoClientes - 1].email, c.email);
+    Clientes[tamanhoClientes - 1].sexo = c.sexo;
+    strcpy(Clientes[tamanhoClientes - 1].estado_civil, c.estado_civil);
+    strcpy(Clientes[tamanhoClientes - 1].data_nascimento, c.data_nascimento);
+}
+
 //Funções de Listar
 
 Cliente* lClientes() {
@@ -51,7 +68,8 @@ Cliente* lClientes() {
 
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc(getTamanhoCliente() * sizeof c);
+    Cliente *array = malloc((getTamanhoCliente() - 1) * sizeof c);
+    int cont;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
@@ -64,7 +82,6 @@ Cliente* lClientes() {
     }
     while (fread(&c, sizeof (c), 1, arq)) {
         if (c.deletado != '*') {
-
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
             array[i].codigo = c.codigo;
@@ -82,6 +99,9 @@ Cliente* lClientes() {
             //VECTOR_ADD(clientes, cw);
             //printf("Cod %s\n", c.nome);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
         }
     }
     fclose(arq);
@@ -92,7 +112,7 @@ Cliente* ListarClientesTexto() {
     int i = 0;
     Cliente c;
     FILE *arquivo;
-    Cliente *array = malloc(getTamanhoCliente() * sizeof c);
+    Cliente *array = malloc((getTamanhoCliente() - 1) * sizeof c);
     //Cliente c;
     arquivo = fopen("cliente.txt", "rt");
 
@@ -115,7 +135,38 @@ Cliente* ListarClientesTexto() {
     return array;
 }
 
+Cliente* listarClienteArrayDinamico() {
+    Cliente *array = malloc((tamanhoClientes - 1) * sizeof (Cliente));
+    tamanhoClientes = tamanhoClientesListar;
+    int i;
+    int j = 0;
+    int cont = 0;
+    for (i = 0; i < tamanhoClientes; i++) {
+        if (Clientes[i].deletado != '*') {
+            array[j].codigo = Clientes[i].codigo;
+            strcpy(array[j].nome, Clientes[i].nome);
+            strcpy(array[j].endereco, Clientes[i].endereco);
+            strcpy(array[j].cpf, Clientes[i].cpf);
+            strcpy(array[j].telefone, Clientes[i].telefone);
+            strcpy(array[j].email, Clientes[i].email);
+            array[j].sexo = Clientes[i].sexo;
+            strcpy(array[j].estado_civil, Clientes[i].estado_civil);
+            strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
+            j++;
+        } else {
+            cont++;
+            tamanhoClientesListar -= cont;
+            array = realloc(array, (tamanhoClientesListar) * sizeof (Cliente));
+        }
+    }
+    //printf("Listar %c\n", array[0].sexo);
+
+    return array;
+}
+
+
 //Funções de Consultar
+
 Cliente consultarClientes(int cod) {
 
     FILE *arq = fopen("cliente.pro", "rb");
@@ -161,7 +212,15 @@ Cliente ConsultarClientesTexto(float cod) {
     return c;
 }
 
+Cliente consultaClienteArrayDinamico(int cod) {
+    if (Clientes[cod - 1].deletado != '*') {
+        return Clientes[cod - 1];
+    }
+    return;
+}
+
 //Funções de Alteração
+
 int alterarCliente(Cliente clintes, float cod) {
     FILE *arq = fopen("cliente.pro", "r+b");
     if (arq == NULL) {
@@ -200,7 +259,6 @@ int alterarCliente(Cliente clintes, float cod) {
     return 0;
 }
 
-
 void alterarClienteTexto(float cod, Cliente cli) {
     FILE *arquivo;
     FILE *arq;
@@ -230,7 +288,21 @@ void alterarClienteTexto(float cod, Cliente cli) {
     rename("clienteBackup.txt", "cliente.txt");
 }
 
+void alterarClienteArrayDinamico(int cod, Cliente c) {
+    Clientes[cod - 1].codigo = c.codigo;
+    strcpy(Clientes[cod - 1].nome, c.nome);
+    strcpy(Clientes[cod - 1].endereco, c.endereco);
+    strcpy(Clientes[cod - 1].cpf, c.cpf);
+    strcpy(Clientes[cod - 1].telefone, c.telefone);
+    strcpy(Clientes[cod - 1].email, c.email);
+    Clientes[cod - 1].sexo = c.sexo;
+    strcpy(Clientes[cod - 1].estado_civil, c.estado_civil);
+    strcpy(Clientes[cod - 1].data_nascimento, c.data_nascimento);
+    //printf("Alterar %c\n", Clientes[0].sexo);
+}
+
 //Funcções de exclusão
+
 int excluirCliente(float cod) {
 
     FILE *arq = fopen("cliente.pro", "r+b");
@@ -290,4 +362,8 @@ void excluirClienteTexto(float cod) {
     fclose(arq);
     remove("cliente.txt");
     rename("clienteBackup.txt", "cliente.txt");
+}
+
+void excluirClienteArrayDinamico(int cod) {
+    Clientes[cod - 1].deletado = '*';
 }
