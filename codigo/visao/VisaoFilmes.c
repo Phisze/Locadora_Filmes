@@ -6,7 +6,6 @@
 
 void filmeMenu(){
     int x;
-    
     do{
     printf("\t MENU FILME \n");
     printf("---------------------------------------------\n");        
@@ -19,9 +18,10 @@ void filmeMenu(){
     printf("6. Voltar para o menu principal \n");
     printf("---------------------------------------------\n");        
     printf("\t Digite uma das opções: \n");
-    scanf("%d%", &x); 
+    fflush(stdin); 
+    scanf("%d%*c", &x); 
+    fflush(stdin); 
     printf("---------------------------------------------\n");        
-
     
     switch(x){
         case 0:
@@ -52,7 +52,7 @@ void filmeMenu(){
             break;
                            
     }
-           
+          
     }while(x!= 0);
     
  }
@@ -60,23 +60,22 @@ void filmeMenu(){
 void salveFlimes(){
  
     Filme filme;
-
-    fflush(stdin); //limpa                       
+               
     printf("Digite a descrição do filme: \n");
     scanf("%[^\n]%*c", filme.descricao); //Até o usuario dar enter
-    fflush(stdin); //limpa
-    
+    fflush(stdin);
+ 
     printf("Digite a quantidade de exemplares do filme na locadora: \n");
     scanf("%f", &filme.exemplares); 
-    fflush(stdin); //limpa
-    
+    fflush(stdin);
+   
     printf("Digite a linguagem Dublado (Digite D) ou Legandado (Digite L) \n");
     scanf("%[^\n]%*c", filme.lingua); //Até o usuario dar enter
-    fflush(stdin); //limpa
+    fflush(stdin);
     
     printf("Digite a descrição do filme: \n");
     scanf("%[^\n]%*c", filme.descricao); //Até o usuario dar enter
-    fflush(stdin); //limpa
+    fflush(stdin);
 
      mensagem_operacao(salvaFilme(&filme));
 
@@ -145,7 +144,7 @@ void listarFilme(){
    
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, \t| Descrição: %s, \t| Quantidade de exemplares: %0f, \t| Código da categoria: %0f, \t| Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
+            printf("Codigo: %0f, \n Descrição: %s, \n Quantidade de exemplares: %0f, \n Código da categoria: %0f, \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }
     }
     
@@ -163,7 +162,7 @@ void consulteFilme(){
    
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { 
-            printf("Codigo: %0f, \t|Descrição: %s, \t|Quantidade de exemplares: %0f,\t| Código da categoria: %0f,\t| Lingua: %s", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
+            printf("Codigo: %0f, \n Descrição: %s, \n Quantidade de exemplares: %0f, \n Código da categoria: %0f, \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }else 
             printf("Cliente inexistente!");
     }

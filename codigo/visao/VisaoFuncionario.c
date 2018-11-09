@@ -130,7 +130,7 @@ void listaFuncionario() {
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f,\t| Nome: %s,\t| Cargo: %s,\t| Endereço: %s,\t| Telefone: %s,\t| E-mail: %s \n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
+            printf("Codigo: %0f,\n Nome: %s,\n Cargo: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
         }
     }
 }
@@ -143,11 +143,11 @@ void consulteFuncionario() {
     float cod;
 
     printf("Digite o codigo do clinte que deseja atualizar: \n");
-    scanf("%f", &cod);
+    scanf("%f*c", &cod);
 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
-            printf("Codigo: %0f,\t| Nome: %s,\t| Cargo: %s,\t| Endereço: %s,\t| Telefone: %s,\t| E-mail: %s \n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
+            printf("Codigo: %0f,\n Nome: %s,\n Cargo: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
         } else
             printf("Clinte Inexistente!");
     }

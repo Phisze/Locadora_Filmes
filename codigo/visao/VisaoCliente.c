@@ -108,10 +108,10 @@ void listaCli() {
 
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
-
+    printf("---------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, \t| Nome: %s, \t| Endereço: %s, \t| CPF: %s, \t| Telefone: %s, \t| E-mail: %s, \t| Sexo: %c,\t| Estado civil: %s, \t| Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0f, \n Nome: %s, \n Endereço: %s, \n CPF: %s, \n Telefone: %s, \n E-mail: %s, \n Sexo: %c,\n Estado civil: %s, \n Data de Nascimento: %s. \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         }
     }
 }
@@ -122,17 +122,22 @@ void attCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-
+    printf("---------------------------------------------\n"); 
     printf("Digite o codigo do cliente que deseja atluaizar: ");
     scanf("%f", &cod);
-
+    fflush(stdin); //limpa 
+    printf("---------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-
-            fflush(stdin); //limpa                       
+            
+            fflush(stdin); //limpa 
+            cliente=p[i];
+                                          
             printf("Digite o nome: \n");
+            fflush(stdin); //limpa
             scanf("%[^\n]%*c", p[i].nome); //Até o usuario dar enter
-            strcpy(cliente.nome, p[i].nome); //concatenação
+            fflush(stdin); //limpa
+            //strcpy(cliente.nome, p[i].nome); //concatenação
             fflush(stdin); //limpa
 
             printf("Digite o endereço: \n");
@@ -165,7 +170,7 @@ void attCli() {
             strcpy(cliente.estado_civil, p[i].estado_civil); //concatenação
             fflush(stdin);
 
-            printf("Digite o Ano de nascimento: \n");
+            printf("Digite a data de nascimento: \n");
             scanf("%[^\n]%*c", p[i].data_nascimento); //Até o usuario dar enter
             strcpy(cliente.data_nascimento, p[i].data_nascimento); //concatenação
             fflush(stdin);
@@ -182,14 +187,14 @@ void consulteCli() {
     Cliente *p = lClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
-
+    printf("---------------------------------------------\n"); 
     printf("Digite o codigo do clinte que deseja atualizar: \n");
     scanf("%f",&cod);
-
+    printf("---------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             cliente=p[i];
-            printf("Codigo: %0f,\t| Nome: %s,\t| Endereço: %s,\t| CPF: %s,\t| Telefone: %s,\t| E-mail: %s,\t| Sexo: %c,\t| Estado civil: %s,\t| Data de Nascimento: %s. \n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0f, \n Nome: %s, \n Endereço: %s, \n CPF: %s, \n Telefone: %s, \n E-mail: %s, \n Sexo: %c,\n Estado civil: %s, \n Data de Nascimento: %s. \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } else
             printf("Clinte Inexistente!");
     }

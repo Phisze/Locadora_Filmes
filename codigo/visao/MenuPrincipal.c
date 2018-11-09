@@ -30,7 +30,7 @@ void menuPrincipal() {
                 printf("SAINDO!");
                 break;
             case 1:
-                locadoraMenu();
+               // locadoraMenu();
                 break;
             case 2:
                 clientemenu();
