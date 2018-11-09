@@ -11,6 +11,13 @@
  * and open the template in the editor.
  */
 
+int tamanhoLocadoras = 0;
+int tamanhoLocadorasListar = 0;
+Locadora *Locadoras;
+int tamanho = 0;
+int tamanhoTexto = 0;
+
+
 //Funcao Inclusao 
 
 int inclusaoLocadora(Locadora l) {
@@ -23,7 +30,7 @@ int inclusaoLocadora(Locadora l) {
 
     fwrite(&l, sizeof (l), 1, arq);
     fclose(arq);
-    int tamanho = getTamanhoLocadora();
+    tamanho = getTamanhoLocadora();
     tamanho++;
     setTamanhoLocadora(tamanho);
     return 1;
@@ -34,13 +41,31 @@ void inclusaoLocadoraTexto(Locadora l) {
     arquivo = fopen("locadora.txt", "wt");
     fprintf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
     fclose(arquivo);
+    tamanhoTexto = getTamanhoLocadoraTexto();
+    tamanhoTexto++;
+    setTamanhoLocadoraTexto(tamanhoTexto);
 }
 
+void insereLocadoraArrayDinamico(Locadora c) {
+    tamanhoLocadoras++;
+    Locadoras = realloc(Locadoras, tamanhoLocadoras * sizeof (Locadora));
+    Locadoras[tamanhoLocadoras - 1].codigo = c.codigo;
+    strcpy(Locadoras[tamanhoLocadoras - 1].nome, c.nome);
+    strcpy(Locadoras[tamanhoLocadoras - 1].endereco, c.endereco);
+    strcpy(Locadoras[tamanhoLocadoras - 1].razao_social, c.razao_social);
+    strcpy(Locadoras[tamanhoLocadoras - 1].telefone, c.telefone);
+    strcpy(Locadoras[tamanhoLocadoras - 1].email, c.email);
+    strcpy(Locadoras[tamanhoLocadoras - 1].inscricao_estadual, c.inscricao_estadual);
+    strcpy(Locadoras[tamanhoLocadoras - 1].cnpj, c.cnpj);
+    strcpy(Locadoras[tamanhoLocadoras - 1].nome_responsavel, c.nome_responsavel);
+    strcpy(Locadoras[tamanhoLocadoras - 1].tel_responsavel, c.tel_responsavel);
+
+}
 //Funções de Listar
 
 Locadora* listarLocadora() {
     int i = 0;
-
+    int cont = 0;
     Locadora l;
     Locadora *fw = &l;
     Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
@@ -68,6 +93,9 @@ Locadora* listarLocadora() {
             strcpy(array[i].nome_responsavel, l.nome_responsavel);
             strcpy(array[i].tel_responsavel, l.tel_responsavel);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoLocadora() - 1) - cont) * sizeof (Locadora));
         }
     }
     fclose(arq);
@@ -76,6 +104,7 @@ Locadora* listarLocadora() {
 
 Locadora* ListarLocadoraTexto() {
     int i = 0;
+    int cont;
     Locadora l;
     FILE *arquivo;
     Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
@@ -95,9 +124,42 @@ Locadora* ListarLocadoraTexto() {
             strcpy(array[i].nome_responsavel, l.nome_responsavel);
             strcpy(array[i].tel_responsavel, l.tel_responsavel);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoLocadoraTexto() - 1) - cont) * sizeof (Locadora));
         }
     }
     fclose(arquivo);
+    return array;
+}
+
+Locadora* listarLocadoraArrayDinamico() {
+    Locadora *array = malloc((tamanhoLocadoras - 1) * sizeof (Locadora));
+    tamanhoLocadoras = tamanhoLocadorasListar;
+    int i;
+    int j = 0;
+    int cont = 0;
+    for (i = 0; i < tamanhoLocadoras; i++) {
+        if (Locadoras[i].deletado != '*') {
+            array[j].codigo = Locadoras[i].codigo;
+            strcpy(array[j].nome, Locadoras[i].nome);
+            strcpy(array[j].endereco, Locadoras[i].endereco);
+            strcpy(array[j].razao_social, Locadoras[i].razao_social);
+            strcpy(array[j].inscricao_estadual, Locadoras[i].inscricao_estadual);
+            strcpy(array[j].cnpj, Locadoras[i].cnpj);
+            strcpy(array[j].telefone, Locadoras[i].telefone);
+            strcpy(array[j].email, Locadoras[i].email);
+            strcpy(array[j].nome_responsavel, Locadoras[i].nome_responsavel);
+            strcpy(array[j].tel_responsavel, Locadoras[i].tel_responsavel);
+            j++;
+        } else {
+            cont++;
+            tamanhoLocadorasListar -= cont;
+            array = realloc(array, (tamanhoLocadorasListar) * sizeof (Locadora));
+        }
+    }
+    //printf("Listar %c\n", array[0].sexo);
+
     return array;
 }
 
@@ -147,6 +209,13 @@ Locadora ConsultarLocadoraTexto(float cod) {
         }
     }
     return l;
+}
+
+Locadora consultaLocadoraArrayDinamico(int cod) {
+    if (Locadoras[cod - 1].deletado != '*') {
+        return Locadoras[cod - 1];
+    }
+    return;
 }
 
 //Funções de Alteração
@@ -219,7 +288,21 @@ void alterarLocadoraTexto(float cod, Locadora loc) {
     rename("locadoraBackup.txt", "locadora.txt");
 }
 
+void alterarLocadoraArrayDinamico(int cod, Locadora c) {
+    Locadoras[cod - 1].codigo = c.codigo;
+    strcpy(Locadoras[cod - 1].nome, c.nome);
+    strcpy(Locadoras[cod - 1].endereco, c.endereco);
+    strcpy(Locadoras[cod - 1].cnpj, c.cnpj);
+    strcpy(Locadoras[cod - 1].telefone, c.telefone);
+    strcpy(Locadoras[cod - 1].email, c.email);
+    strcpy(Locadoras[cod - 1].inscricao_estadual, c.inscricao_estadual);
+    strcpy(Locadoras[cod - 1].nome_responsavel, c.nome_responsavel);
+    strcpy(Locadoras[cod - 1].razao_social, c.razao_social);
+    strcpy(Locadoras[cod - 1].tel_responsavel, c.tel_responsavel);
+}
+
 //Funcções de exclusão
+
 int excluirLocadora(float cod) {
 
     FILE *arq = fopen("locadora.pro", "r+b");
@@ -279,4 +362,8 @@ void excluirLocadoraTexto(float cod) {
     fclose(arq);
     remove("locadora.txt");
     rename("locadoraBackup.txt", "locadora.txt");
+}
+
+void excluirLocadoraArrayDinamico(int cod) {
+    Locadoras[cod - 1].deletado = '*';
 }

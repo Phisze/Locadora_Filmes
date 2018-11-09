@@ -36,6 +36,10 @@ int inclusaoFuncionarios(Funcionario f);
  */
 void inclusaoFuncionarioTexto(Funcionario f);
 /*
+ **  Inclui Fornecedor em Array Dinamico
+ */
+void insereFuncionarioArrayDinamico(Funcionario f);
+/*
  **  Lista Fornecedor em arquivo binario
  */
 Funcionario* listarFuncionarios();
@@ -43,6 +47,10 @@ Funcionario* listarFuncionarios();
  **  Lista Fornecedor em arquivo binario
  */
 Funcionario* ListarFuncionarioTexto();
+/*
+ **  Lista Fornecedor em Array Dinamico
+ */
+Funcionario* listarFuncionarioArrayDinamico();
 /*
  **  Consultar Fornecedor em arquivo binario
  */
@@ -52,6 +60,10 @@ Funcionario consultarFuncionarios(float cod);
  */
 Funcionario ConsultarFuncionarioTexto(float cod);
 /*
+ **  Consultar Fornecedor em Array Dinamico
+ */
+Funcionario consultaFuncionarioArrayDinamico(int cod);
+/*
  **  Altera Fornecedor em arquivo binario
  */
 int alterarFuncionarios(Funcionario funcionario, float cod);
@@ -60,6 +72,10 @@ int alterarFuncionarios(Funcionario funcionario, float cod);
  */
 void alterarFuncionarioTexto(float cod, Funcionario fun);
 /*
+ **  Deleta Filmes em Array Dinamico
+ */
+void alterarFuncionarioArrayDinamico(int cod, Funcionario c);
+/*
  **  Deleta Filmes em arquivo binario
  */
 int excluirFuncionarios(float cod);
@@ -67,5 +83,9 @@ int excluirFuncionarios(float cod);
  **  Deleta Filmes em arquivo Texto
  */
 void excluirFuncionarioTexto(float cod);
+/*
+ **  Deleta Filmes em Array Dinamico
+ */
+void excluirFuncionarioArrayDinamico(int cod);
 #endif /* FUNCIONARIO_H */
 

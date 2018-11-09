@@ -17,6 +17,8 @@ int tamanhoClientes = 0;
 int tamanhoClientesListar = 0;
 Cliente *Clientes;
 int tamanho = 0;
+int tamanhoTexto = 0;
+
 //Funcões de Inclusao 
 
 int inclusaoCliente(Cliente c) {
@@ -42,9 +44,12 @@ int inclusaoCliente(Cliente c) {
 
 void inclusaoClienteTexto(Cliente c) {
     FILE *arquivo;
+    tamanhoTexto = getTamanhoClienteTexto();
     arquivo = fopen("cliente.txt", "wt");
     fprintf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
     fclose(arquivo);
+    tamanhoTexto++;
+    setTamanhoClienteTexto(tamanhoTexto);
 }
 
 void insereClienteArrayDinamico(Cliente c) {
@@ -69,7 +74,7 @@ Cliente* lClientes() {
     Cliente c;
     Cliente *cw = &c;
     Cliente *array = malloc((getTamanhoCliente() - 1) * sizeof c);
-    int cont;
+    int cont=0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
@@ -111,8 +116,9 @@ Cliente* lClientes() {
 Cliente* ListarClientesTexto() {
     int i = 0;
     Cliente c;
+    int cont=0;
     FILE *arquivo;
-    Cliente *array = malloc((getTamanhoCliente() - 1) * sizeof c);
+    Cliente *array = malloc((getTamanhoClienteTexto() - 1) * sizeof (Cliente));
     //Cliente c;
     arquivo = fopen("cliente.txt", "rt");
 
@@ -129,6 +135,9 @@ Cliente* ListarClientesTexto() {
             strcpy(array[i].estado_civil, c.estado_civil);
             strcpy(array[i].data_nascimento, c.data_nascimento);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoClienteTexto() - 1) - cont) * sizeof (Cliente));
         }
     }
     fclose(arquivo);
@@ -166,7 +175,6 @@ Cliente* listarClienteArrayDinamico() {
 
 
 //Funções de Consultar
-
 Cliente consultarClientes(int cod) {
 
     FILE *arq = fopen("cliente.pro", "rb");
@@ -302,7 +310,6 @@ void alterarClienteArrayDinamico(int cod, Cliente c) {
 }
 
 //Funcções de exclusão
-
 int excluirCliente(float cod) {
 
     FILE *arq = fopen("cliente.pro", "r+b");
