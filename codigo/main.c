@@ -27,6 +27,8 @@ int main(int argc, char** argv) {
     //    fgets(c.nome, 100, stdin);
     
     menuPrincipal();
+    //setTamanhoFuncionario(1);
+   //printf("%d" ,getTamanhoFuncionario());
 //    Cliente c;
 //    c.codigo = 1;
 //    strcpy(c.cpf, "123456");

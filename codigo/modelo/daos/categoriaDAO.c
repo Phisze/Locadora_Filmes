@@ -9,7 +9,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+int tamanhoCategorias = 0;
+int tamanhoCategoriasListar = 0;
+Categoria *Categorias;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
 
 //Funções de Inclusão 
 
@@ -25,7 +29,7 @@ int inclusaoCategoria(Categoria c) {
 
     fwrite(&c, sizeof (c), 1, arq);
     fclose(arq);
-    int tamanho = getTamanhoCategoria();
+    tamanho = getTamanhoCategoria();
     tamanho++;
     setTamanhoCategoria(tamanho);
     return 1;
@@ -36,6 +40,16 @@ void inclusaoCategoriaTexto(Categoria c) {
     arquivo = fopen("categoria.txt", "wt");
     fprintf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
     fclose(arquivo);
+    tamanhoTexto = getTamanhoCategoriaTexto();
+    tamanhoTexto++;
+    setTamanhoCategoriaTexto(tamanhoTexto);
+}
+
+void insereCategoriaArrayDinamico(Categoria c) {
+    tamanhoCategorias++;
+    Categorias = realloc(Categorias, tamanhoCategorias * sizeof (Categoria));
+    Categorias[tamanhoCategorias - 1].codigo = c.codigo;
+    Categorias[tamanhoCategorias - 1].valor_locacao = c.valor_locacao;
 }
 
 //Funções de Listar
@@ -45,11 +59,11 @@ Categoria* listarCategoria() {
 
     Categoria c;
     Categoria *cw = &c;
-    Categoria *array = malloc(getTamanhoCategoria() * sizeof c);
+    Categoria *array = malloc(getTamanhoCategoria() * sizeof (Categoria));
     // VECTOR_INIT(v);
     FILE *arq = fopen("categoria.pro", "rb");
     //printf("Arquivo xistente!");
-
+    int cont = 0;
     if (arq == NULL) {
         printf("Arquivo inexistente!");
 
@@ -68,6 +82,9 @@ Categoria* listarCategoria() {
 
             //printf("Cod %s\n", c.nome);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoCategoria() - 1) - cont) * sizeof (Categoria));
         }
     }
     fclose(arq);
@@ -77,11 +94,11 @@ Categoria* listarCategoria() {
 Categoria* ListarCategoriaTexto() {
     int i = 0;
     Categoria c;
+    int cont = 0;
     FILE *arquivo;
     Categoria *array = malloc(getTamanhoCategoria() * sizeof c);
     //catente c;
     arquivo = fopen("categoria.txt", "rt");
-
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
         if (c.deletado != '*') {
@@ -89,16 +106,40 @@ Categoria* ListarCategoriaTexto() {
             strcpy(array[i].descricao, c.descricao);
             array[i].valor_locacao = c.valor_locacao;
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoCategoriaTexto() - 1) - cont) * sizeof (Categoria));
         }
     }
     fclose(arquivo);
     return array;
 }
 
+Categoria* listarCategoriaArrayDinamico() {
+    Categoria *array = malloc((tamanhoCategorias - 1) * sizeof (Categoria));
+    tamanhoCategorias = tamanhoCategoriasListar;
+    int i;
+    int j = 0;
+    int cont = 0;
+    for (i = 0; i < tamanhoCategorias; i++) {
+        if (Categorias[i].deletado != '*') {
+            array[j].codigo = Categorias[i].codigo;
+            strcpy(array[j].descricao, Categorias[i].descricao);
+            array[j].valor_locacao = Categorias[i].valor_locacao;
+            j++;
+        } else {
+            cont++;
+            tamanhoCategoriasListar -= cont;
+            array = realloc(array, (tamanhoCategoriasListar) * sizeof (Categoria));
+        }
+    }
+    //printf("Listar %c\n", array[0].sexo);
+    return array;
+}
+
 //Funções de Consultar
 
 Categoria consultarCategoria(float cod) {
-
     FILE *arq = fopen("categoria.pro", "rb");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
@@ -143,7 +184,15 @@ Categoria ConsultarCategoriaTexto(float cod) {
     return c;
 }
 
+Categoria consultaCategoriaArrayDinamico(int cod) {
+    if (Categorias[cod - 1].deletado != '*') {
+        return Categorias[cod - 1];
+    }
+    return;
+}
+
 //Funções de Alteração
+
 int alterarCategoria(Categoria categoria, float cod) {
     FILE *arq = fopen("categoria.pro", "r+b");
     if (arq == NULL) {
@@ -206,6 +255,13 @@ void alterarCategoriaTexto(float cod, Categoria cat) {
     rename("categoriaBackup.txt", "categoria.txt");
 }
 
+void alterarCategoriaArrayDinamico(int cod, Categoria c) {
+    Categorias[cod - 1].codigo = c.codigo;
+    strcpy(Categorias[cod - 1].descricao, c.descricao);
+    Categorias[cod - 1].valor_locacao = c.valor_locacao;
+    //printf("Alterar %c\n", Categorias[0].sexo);
+}
+
 //Funcções de exclusão
 int excluirCategoria(float cod) {
     FILE *arq = fopen("categoria.pro", "r+b");
@@ -265,4 +321,8 @@ void excluirCategoriaTexto(float cod) {
     fclose(arq);
     remove("categoria.txt");
     rename("categoriaBackup.txt", "categoria.txt");
+}
+
+void excluirCategoriaArrayDinamico(int cod) {
+    Categorias[cod - 1].deletado = '*';
 }

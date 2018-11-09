@@ -6,11 +6,11 @@
 #include "../categoriaDAO.h"
 #include "../tamanho.h"
 #include "../structs.h"
-#include "../conPersistencia.h"
+//#include "../conPersistencia.h"
 
 int salvaCategoria(Categoria *f) {
 
-    float tamanhoCategoria= getTamanhoCategoria() + 1;
+    float tamanhoCategoria = getTamanhoCategoria() + 1;
     (*f).codigo = tamanhoCategoria;
     return inclusaoCategoria(*f);
 }
@@ -34,6 +34,6 @@ Categoria consultaCategoria(float codigo) {
     return consultarCategoria(codigo);
 }
 
-int qtdCategoria() { 
+int qtdCategoria() {
     return getTamanhoCategoria();
 }

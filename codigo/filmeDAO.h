@@ -26,7 +26,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-
+extern int tamanhoFilmesListar;
 /*
  **  Inclui Filmes em arquivo binario
  */
@@ -36,6 +36,10 @@ int inclusaoFilmes(Filme f);
  */
 void inclusaoFilmeTexto(Filme f);
 /*
+ **  Inclui Filmes em Array Dinamico
+ */
+void insereFilmeArrayDinamico(Filme f);
+/*
  **  Lista Filmes em arquivo binario
  */
 Filme* listarFilmes();
@@ -43,6 +47,10 @@ Filme* listarFilmes();
  **  Lista Filmes em arquivo Texto
  */
 Filme* ListarFilmesTexto();
+/*
+ **  Lista Filmes em Array Dinamico
+ */
+Filme* listarFilmeArrayDinamico();
 /*
  **  Consultar Filmes em arquivo binario
  */
@@ -52,6 +60,10 @@ Filme consultarFilmes(float cod);
  */
 Filme ConsultarFilmesTexto(float cod);
 /*
+ **  Consultar Filmes em Array Dinamico
+ */
+Filme consultaFilmeArrayDinamico(int cod);
+/*
  **  Altera Filmes em arquivo binario
  */
 int alterarFilmes(Filme filme, float cod);
@@ -60,6 +72,10 @@ int alterarFilmes(Filme filme, float cod);
  */
 void alterarFilmeTexto(float cod, Filme fil);
 /*
+ **  Altera Filmes em Array Dinamico
+ */
+void alterarFilmeArrayDinamico(int cod, Filme c);
+/*
  **  Deleta Filmes em arquivo binario
  */
 int excluirFilmes(float cod);
@@ -67,5 +83,9 @@ int excluirFilmes(float cod);
  **  Deleta Filmes em arquivo Texto
  */
 int excluirFilmesTexto(float cod);
+/*
+ **  Deleta Filmes em Array Dinamico
+ */
+void excluirFilmeArrayDinamico(int cod);
 #endif /* FILME_H */
 

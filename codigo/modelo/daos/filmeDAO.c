@@ -17,6 +17,12 @@
  * and open the template in the editor.
  */
 
+int tamanhoFilmes = 0;
+int tamanhoFilmesListar = 0;
+Filme *Filmes;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
+
 //Funcao Inclusao 
 
 int inclusaoFilmes(Filme f) {
@@ -29,7 +35,7 @@ int inclusaoFilmes(Filme f) {
 
     fwrite(&f, sizeof (f), 1, arq);
     fclose(arq);
-    int tamanho = getTamanhoFilme();
+    tamanho = getTamanhoFilme();
     tamanho++;
     setTamanhoFilme(tamanho);
     return 1;
@@ -40,6 +46,19 @@ void inclusaoFilmeTexto(Filme f) {
     arquivo = fopen("filme.txt", "wt");
     fprintf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
     fclose(arquivo);
+    tamanhoTexto = getTamanhoFilmeTexto();
+    tamanhoTexto++;
+    setTamanhoFilme(tamanhoTexto);
+}
+
+void insereFilmeArrayDinamico(Filme f) {
+    tamanhoFilmes++;
+    Filmes = realloc(Filmes, tamanhoFilmes * sizeof (Filme));
+    Filmes[tamanhoFilmes - 1].codigo = f.codigo;
+    strcpy(Filmes[tamanhoFilmes - 1].descricao, f.descricao);
+    strcpy(Filmes[tamanhoFilmes - 1].lingua, f.lingua);
+    Filmes[tamanhoFilmes - 1].exemplares = f.exemplares;
+    Filmes[tamanhoFilmes - 1].catCodigo = f.catCodigo;
 }
 
 //Funções de Listar
@@ -53,7 +72,7 @@ Filme* listarFilmes() {
     // VECTOR_INIT(v);
     FILE *arq = fopen("filme.pro", "rb");
     //printf("Arquivo xistente!");
-
+    int cont = 0;
     if (arq == NULL) {
         printf("Arquivo inexistente!");
 
@@ -63,16 +82,19 @@ Filme* listarFilmes() {
         if (f.deletado != '*') {
 
             // VECTOR_ADD(v,c);
-            // array[i].nome = c.nome;
+            // array[i].nome = f.nome;
             array[i].codigo = f.codigo;
             strcpy(array[i].descricao, f.descricao);
             array[i].exemplares = f.exemplares;
             strcpy(array[i].lingua, f.lingua);
             // }
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+            //printf("Cod %f --- Descricao: %s\n", f.codigo, f.nome);
 
-            //printf("Cod %s\n", c.nome);
+            //printf("Cod %s\n", f.nome);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoFilmeTexto() - 1) - cont) * sizeof (Filme));
         }
     }
     fclose(arq);
@@ -82,6 +104,7 @@ Filme* listarFilmes() {
 Filme* ListarFilmesTexto() {
     int i = 0;
     Filme f;
+    int cont = 0;
     FILE *arquivo;
     Filme *array = malloc(getTamanhoFilme() * sizeof f);
     arquivo = fopen("filme.txt", "rt");
@@ -94,12 +117,38 @@ Filme* ListarFilmesTexto() {
             array[i].exemplares = f.exemplares;
             strcpy(array[i].lingua, f.lingua);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoFilmeTexto() - 1) - cont) * sizeof (Filme));
         }
     }
     fclose(arquivo);
     return array;
 }
 
+Filme* listarFilmeArrayDinamico() {
+    Filme *array = malloc((tamanhoFilmes - 1) * sizeof (Filme));
+    tamanhoFilmes = tamanhoFilmesListar;
+    int i;
+    int j = 0;
+    int cont = 0;
+    for (i = 0; i < tamanhoFilmes; i++) {
+        if (Filmes[i].deletado != '*') {
+            array[j].codigo = Filmes[i].codigo;
+            strcpy(array[j].descricao, Filmes[i].descricao);
+            strcpy(array[j].lingua, Filmes[i].lingua);
+            array[j].exemplares = Filmes[i].exemplares;
+            j++;
+        } else {
+            cont++;
+            tamanhoFilmesListar -= cont;
+            array = realloc(array, (tamanhoFilmesListar) * sizeof (Filme));
+        }
+    }
+    //printf("Listar %c\n", array[0].sexo);
+
+    return array;
+}
 //Funções de Consultar
 
 Filme consultarFilmes(float cod) {
@@ -147,6 +196,13 @@ Filme ConsultarFilmesTexto(float cod) {
     return f;
 }
 
+Filme consultaFilmeArrayDinamico(int cod) {
+    if (Filmes[cod - 1].deletado != '*') {
+        return Filmes[cod - 1];
+    }
+    return;
+}
+
 //Funções de Alteração
 
 int alterarFilmes(Filme filme, float cod) {
@@ -164,7 +220,7 @@ int alterarFilmes(Filme filme, float cod) {
 
     while (fread(&f, sizeof (f), 1, arq)) {
         if (cod == f.codigo) {
-            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
+            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", f.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             fseek(arq, sizeof (Filme)*-1, SEEK_CUR);
@@ -209,6 +265,13 @@ void alterarFilmeTexto(float cod, Filme fil) {
     fclose(arq);
     remove("filme.txt");
     rename("filmeBackup.txt", "filme.txt");
+}
+
+void alterarFilmeArrayDinamico(int cod, Filme f) {
+    Filmes[cod - 1].codigo = f.codigo;
+    strcpy(Filmes[cod - 1].descricao, f.descricao);
+    strcpy(Filmes[cod - 1].lingua, f.lingua);
+    Filmes[cod - 1].exemplares = f.exemplares;
 }
 
 //Funcções de exclusão
@@ -271,4 +334,8 @@ void excluirFilmeTexto(float cod) {
     fclose(arq);
     remove("filme.txt");
     rename("filmeBackup.txt", "filme.txt");
+}
+
+void excluirFilmeArrayDinamico(int cod) {
+    Filmes[cod - 1].deletado = '*';
 }

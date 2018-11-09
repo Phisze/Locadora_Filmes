@@ -1,7 +1,6 @@
 #include<stdio.h>
-#include "../filmeDAO.h"
 #include "../structs.h"
-#include "../conFilme.h"
+#include "../conFornecedor.h"
 #include <string.h>
 
 void fornecedorMenu(){
@@ -42,7 +41,7 @@ void fornecedorMenu(){
             break;
         //lista
         case 4: 
-             listLocadora();
+             listfornecedor();
             break;
          //consulta
         case 5:
@@ -164,7 +163,7 @@ void attLocadora(){
         }
     }
 }
-void listLocadora() {
+void listfornecedor() {
 
     Fornecedor *p = listarFornecedor(); //p vetor com todos os clientes 
     int tamanho = qtdFornecedor(); //quantidade de clientes do vetor
@@ -178,13 +177,13 @@ void listLocadora() {
 void consulteFornecedor() {
 
   Fornecedor fornecedor;
-  Fornecedor *p = listarFornecedor(); //p vetor com todas Fornecedores
+  Fornecedor *p = listaFornecedor(); //p vetor com todas Fornecedores
   int tamanho = qtdFornecedor(); //quantidade de Fornecesores do vetor
   float cod;
 
     printf("---------------------------------------------\n");        
     printf("Digite o codigo do clinte que deseja atualizar: \n");
-    scanf("%f", &cod);
+    scanf("%f%*c", &cod);
     printf("---------------------------------------------\n");        
 
 
@@ -194,7 +193,7 @@ void consulteFornecedor() {
         } else
             printf("Clinte Inexistente!");
     }
-    mensagem_operacao(consultaFornecedor(&cod));
+    mensagem_operacao(consultaFornecedor(cod));
 
 }
  int deletFornecedor(){

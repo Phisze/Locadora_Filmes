@@ -28,7 +28,7 @@ extern "C" {
 }
 #endif
 
-
+extern int tamanhoCategoriasListar;
 /*
  **  Inclui Categoria em arquivo binario
  */
@@ -38,6 +38,10 @@ int inclusaoCategoria(Categoria c);
  */
 void inclusaoCategoriaTexto(Categoria c);
 /*
+ **  Inclui Categoria em Array Dinamico
+ */
+void insereCategoriaArrayDinamico(Categoria c);
+/*
  **  Lista Categoria em arquivo binario
  */
 Categoria* listarCategoria();
@@ -45,6 +49,10 @@ Categoria* listarCategoria();
  **  Lista Categoria em arquivo Texto
  */
 Categoria* ListarCategoriaTexto();
+/*
+ **  Lista Categoria em Array Dinamico
+ */
+Categoria* listarCategoriaArrayDinamico();
 /*
  **  Consultar Categoria em arquivo binario
  */
@@ -54,6 +62,10 @@ Categoria consultarCategoria(float cod);
  */
 Categoria ConsultarCategoriaTexto(float cod);
 /*
+ **  Consultar Categoria em Array Dinamico
+ */
+Categoria consultaCategoriaArrayDinamico(int cod);
+/*
  **  Altera Categoria em arquivo binario
  */
 int alterarCategoria(Categoria categoria, float cod);
@@ -61,6 +73,10 @@ int alterarCategoria(Categoria categoria, float cod);
  **  Alterar Categoria em arquivo Texto
  */
 void alterarCategoriaTexto(float cod, Categoria cat);
+/*
+ **  Alterar Categoria em Array Dinamico
+ */
+void alterarCategoriaArrayDinamico(int cod, Categoria c);
 /*
  **  Deleta Categoria em arquivo binario
  */
@@ -72,5 +88,6 @@ void excluirCategoriaTexto(float cod);
 /*
  **  Deleta Categoria em arquivo Array Dinamico
  */
+void excluirCategoriaArrayDinamico(int cod);
 #endif /* CATEGORIADAO_H */
 

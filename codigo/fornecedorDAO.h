@@ -24,6 +24,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+extern int tamanhoFornecedorsListar;
 /*
  **  Inclui Fornecedor em arquivo binario
  */
@@ -33,6 +34,10 @@ int inclusaoFornecedor(Fornecedor f);
  */
 void inclusaoFornecedorTexto(Fornecedor f);
 /*
+ **  Inclui Fornecedor em Array Dinamico
+ */
+void insereFornecedorArrayDinamico(Fornecedor f);
+/*
  **  Lista Fornecedor em arquivo binario
  */
 Fornecedor* listarFornecedor();
@@ -40,6 +45,10 @@ Fornecedor* listarFornecedor();
  **  Lista Fornecedor em arquivo Texto
  */
 Fornecedor* ListarFornecedorTexto();
+/*
+ **  Lista Fornecedor em Array Dinamico
+ */
+Fornecedor* listarFornecedorArrayDinamico();
 /*
  **  Consultar Fornecedor em arquivo binario
  */
@@ -49,6 +58,10 @@ Fornecedor consultarFornecedor(float cod);
  */
 Fornecedor ConsultarFornecedorTexto(float cod);
 /*
+ **  Consultar Fornecedor em Array Dinamico
+ */
+Fornecedor consultaFornecedorArrayDinamico(int cod);
+/*
  **  Altera Fornecedor em arquivo binario
  */
 int alterarFornecedor(Fornecedor fornecedor, float cod);
@@ -57,6 +70,10 @@ int alterarFornecedor(Fornecedor fornecedor, float cod);
  */
 void alterarFornecedorTexto(float cod, Fornecedor forn);
 /*
+ **  Altera Fornecedor em Array Dinamico
+ */
+void alterarFornecedorArrayDinamico(int cod, Fornecedor f);
+/*
  **  Deleta Fornecedor em arquivo binario
  */
 int excluirFornecedor(float cod);
@@ -64,5 +81,9 @@ int excluirFornecedor(float cod);
  **  Deleta Fornecedor em arquivo binario
  */
 void excluirFornecedorTexto(float cod);
+/*
+ **  Deleta Fornecedor em Array Dinamico
+ */
+void excluirFornecedorArrayDinamico(int cod);
 #endif /* FORNECEDORDAO_H */
 

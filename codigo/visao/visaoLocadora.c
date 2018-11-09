@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include "../filmeDAO.h"
+#include "../locadoraDAO.h"
 #include "../structs.h"
-#include "../conFilme.h"
+#include "../conLocadora.h"
 #include <string.h>
 
 void locadoraMenu(){
@@ -172,7 +172,7 @@ void lisLoc() {
 int deletLoc() {
 
     Locadora locadora;
-    Locadora *p = listLocadora(); //p vetor com todos os clientes 
+    Locadora *p = listaLocadoras(); //p vetor com todos os clientes 
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
     float cod;
     printf("-------------------------------------------------------\n");  
@@ -191,7 +191,7 @@ int deletLoc() {
 void consulteLoc() {
 
     Locadora locadora;
-    Locadora *p = listLocadora(); //p vetor com todos os clientes 
+    Locadora *p = listaLocadoras(); //p vetor com todos os clientes 
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
     float cod;
     printf("-------------------------------------------------------\n"); 

@@ -11,6 +11,12 @@
  * and open the template in the editor.
  */
 
+int tamanhoFuncionarios = 0;
+int tamanhoFuncionariosListar = 0;
+Funcionario *Funcionarios;
+int static tamanho = 0;
+int static tamanhoTexto = 0;
+
 //Funcao Inclusao 
 
 int inclusaoFuncionarios(Funcionario f) {
@@ -23,7 +29,7 @@ int inclusaoFuncionarios(Funcionario f) {
 
     fwrite(&f, sizeof (f), 1, arq);
     fclose(arq);
-    int tamanho = getTamanhoFuncionario();
+    tamanho = getTamanhoFuncionario();
     tamanho++;
     setTamanhoFuncionario(tamanho);
     return 1;
@@ -35,16 +41,30 @@ void inclusaoFuncionarioTexto(Funcionario f) {
     arquivo = fopen("funcionario.txt", "wt");
     fprintf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
     fclose(arquivo);
+    tamanhoTexto = getTamanhoFuncionarioTexto();
+    tamanhoTexto++;
+    setTamanhoFuncionarioTexto(tamanhoTexto);
+}
+
+void insereFuncionarioArrayDinamico(Funcionario f) {
+    tamanhoFuncionarios++;
+    Funcionarios = realloc(Funcionarios, tamanhoFuncionarios * sizeof (Funcionario));
+    Funcionarios[tamanhoFuncionarios - 1].codigo = f.codigo;
+    strcpy(Funcionarios[tamanhoFuncionarios - 1].nome, f.nome);
+    strcpy(Funcionarios[tamanhoFuncionarios - 1].endereco, f.endereco);
+    strcpy(Funcionarios[tamanhoFuncionarios - 1].cargo, f.cargo);
+    strcpy(Funcionarios[tamanhoFuncionarios - 1].telefone, f.telefone);
+    strcpy(Funcionarios[tamanhoFuncionarios - 1].email, f.email);
 }
 
 //Funções de Listar
 
 Funcionario* listarFuncionarios() {
     int i = 0;
-
+    int cont = 0;
     Funcionario f;
     Funcionario *fw = &f;
-    Funcionario *array = malloc(getTamanhoFuncionario() * sizeof f);
+    Funcionario *array = malloc((getTamanhoFuncionario()) * sizeof f);
     FILE *arq = fopen("funcionario.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -57,7 +77,7 @@ Funcionario* listarFuncionarios() {
         if (f.deletado != '*') {
 
             // VECTOR_ADD(v,c);
-            // array[i].nome = c.nome;
+            // array[i].nome = nome;
             array[i].codigo = f.codigo;
             strcpy(array[i].nome, f.nome);
             strcpy(array[i].endereco, f.endereco);
@@ -65,6 +85,9 @@ Funcionario* listarFuncionarios() {
             strcpy(array[i].email, f.email);
             strcpy(array[i].cargo, f.cargo);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoFuncionario() - 1) - cont) * sizeof (Funcionario));
         }
     }
     fclose(arq);
@@ -73,6 +96,7 @@ Funcionario* listarFuncionarios() {
 
 Funcionario* ListarFuncionarioTexto() {
     int i = 0;
+    int cont = 0;
     Funcionario f;
     FILE *arquivo;
     Funcionario *array = malloc(getTamanhoFuncionario() * sizeof f);
@@ -88,10 +112,36 @@ Funcionario* ListarFuncionarioTexto() {
             strcpy(array[i].email, f.email);
             strcpy(array[i].cargo, f.cargo);
             i++;
+        } else {
+            cont++;
+            array = realloc(array, ((getTamanhoFuncionarioTexto() - 1) - cont) * sizeof (Funcionario));
         }
     }
     fclose(arquivo);
     return array;
+}
+
+Funcionario* listarFuncionarioArrayDinamico() {
+    Funcionario *array = malloc((tamanhoFuncionarios - 1) * sizeof (Funcionario));
+    tamanhoFuncionarios = tamanhoFuncionariosListar;
+    int i;
+    int j = 0;
+    int cont = 0;
+    for (i = 0; i < tamanhoFuncionarios; i++) {
+        if (Funcionarios[i].deletado != '*') {
+            array[j].codigo = Funcionarios[i].codigo;
+            strcpy(array[j].nome, Funcionarios[i].nome);
+            strcpy(array[j].endereco, Funcionarios[i].endereco);
+            strcpy(array[j].cargo, Funcionarios[i].cargo);
+            strcpy(array[j].telefone, Funcionarios[i].telefone);
+            strcpy(array[j].email, Funcionarios[i].email);
+            j++;
+        } else {
+            cont++;
+            tamanhoFuncionariosListar -= cont;
+            array = realloc(array, (tamanhoFuncionariosListar) * sizeof (Funcionario));
+        }
+    }
 }
 
 //Funções de Consultar
@@ -142,6 +192,13 @@ Funcionario ConsultarFuncionarioTexto(float cod) {
     return f;
 }
 
+Funcionario consultaFuncionarioArrayDinamico(int cod) {
+    if (Funcionarios[cod - 1].deletado != '*') {
+        return Funcionarios[cod - 1];
+    }
+    return;
+}
+
 //Funções de Alteração
 
 int alterarFuncionarios(Funcionario funcionario, float cod) {
@@ -159,7 +216,7 @@ int alterarFuncionarios(Funcionario funcionario, float cod) {
 
     while (fread(&f, sizeof (f), 1, arq)) {
         if (cod == f.codigo) {
-            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
+            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             fseek(arq, sizeof (Funcionario)*-1, SEEK_CUR);
@@ -208,7 +265,18 @@ void alterarFuncionarioTexto(float cod, Funcionario fun) {
     rename("funcionarioBackup.txt", "funcionario.txt");
 }
 
+void alterarFuncionarioArrayDinamico(int cod, Funcionario c) {
+    Funcionarios[cod - 1].codigo = c.codigo;
+    strcpy(Funcionarios[cod - 1].nome, c.nome);
+    strcpy(Funcionarios[cod - 1].endereco, c.endereco);
+    strcpy(Funcionarios[cod - 1].cargo, c.cargo);
+    strcpy(Funcionarios[cod - 1].telefone, c.telefone);
+    strcpy(Funcionarios[cod - 1].email, c.email);
+    //printf("Alterar %c\n", Funcionarios[0].sexo);
+}
+
 //Funcções de exclusão
+
 int excluirFuncionarios(float cod) {
 
     FILE *arq = fopen("funcionario.pro", "r+b");
@@ -266,6 +334,10 @@ void excluirFuncionarioTexto(float cod) {
     }
     fclose(arquivo);
     fclose(arq);
-remove("funcionario.txt");
+    remove("funcionario.txt");
     rename("funcionarioBackup.txt", "funcionario.txt");
+}
+
+void excluirFuncionarioArrayDinamico(int cod) {
+    Funcionarios[cod - 1].deletado = '*';
 }

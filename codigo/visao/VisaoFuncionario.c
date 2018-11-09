@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include "../structs.h"
 #include "../conFuncionario.h"
+#include "../funcionarioDAO.h"
 #include <string.h>
 
 void funcionariomenu() {

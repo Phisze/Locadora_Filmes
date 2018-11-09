@@ -36,6 +36,10 @@ int inclusaoLocadora(Locadora l);
  */
 void inclusaoLocadoraTexto(Locadora l);
 /*
+ **  Inclui Locadora em Array Dinamico
+ */
+void insereLocadoraArrayDinamico(Locadora c);
+/*
  **  Lista Locadora em arquivo binario
  */
 Locadora* listarLocadora();
@@ -43,6 +47,10 @@ Locadora* listarLocadora();
  **  Lista Locadora em arquivo Texto
  */
 Locadora* ListarLocadoraTexto();
+/*
+ **  Lista Locadora em Array Dinamico
+ */
+Locadora* listarLocadoraArrayDinamico();
 /*
  **  Consultar Locadora em arquivo binario
  */
@@ -52,6 +60,10 @@ Locadora consultarLocadora(float cod);
  */
 Locadora ConsultarLocadoraTexto(float cod);
 /*
+ **  Consultar Locadora em Array Dinamico
+ */
+Locadora consultaLocadoraArrayDinamico(int cod);
+/*
  **  Altera Locadora em arquivo binario
  */
 int alterarLocadora(Locadora locadora, float cod);
@@ -60,6 +72,10 @@ int alterarLocadora(Locadora locadora, float cod);
  */
 void alterarLocadoraTexto(float cod, Locadora loc);
 /*
+ **  Altera Locadora em arquivo Array Dinamico
+ */
+void alterarLocadoraArrayDinamico(int cod, Locadora c);
+/*
  **  Deleta Locadora em arquivo binario
  */
 int excluirLocadora(float cod);
@@ -67,5 +83,9 @@ int excluirLocadora(float cod);
  **  Deleta Locadora em arquivo Texto
  */
 int excluirLocadoraTexto(float cod);
+/*
+ **  Deleta Locadora em Array Dinamico
+ */
+void excluirLocadoraArrayDinamico(int cod);
 #endif /* LOCADORADAO_H */
 

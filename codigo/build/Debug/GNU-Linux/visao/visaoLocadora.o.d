@@ -1,8 +1,8 @@
 build/Debug/GNU-Linux/visao/visaoLocadora.o: visao/visaoLocadora.c \
- visao/../filmeDAO.h visao/../structs.h visao/../vector.h \
- visao/../structs.h visao/../conFilme.h
+ visao/../locadoraDAO.h visao/../structs.h visao/../vector.h \
+ visao/../structs.h visao/../conLocadora.h
 
-visao/../filmeDAO.h:
+visao/../locadoraDAO.h:
 
 visao/../structs.h:
 
@@ -10,4 +10,4 @@ visao/../vector.h:
 
 visao/../structs.h:
 
-visao/../conFilme.h:
+visao/../conLocadora.h:
