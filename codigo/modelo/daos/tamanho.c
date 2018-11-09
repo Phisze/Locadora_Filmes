@@ -41,7 +41,53 @@ int getTamanhoCliente() {
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-       // printf("Arquivo inexistente!");
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+
+}
+
+void setTamanhoClienteTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoClitxt.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoClitxt.pro");
+
+    FILE *arqB = fopen("tamanhoClitxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoClienteTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoClitxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
 
         return 0;
     }
@@ -87,7 +133,52 @@ int getTamanhoFilme() {
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-       // printf("Arquivo inexistente!");
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+}
+
+void setTamanhoFilmeTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoFiltxt.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoFiltxt.pro");
+
+    FILE *arqB = fopen("tamanhoFiltxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoFilmeTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoFiltxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
 
         return 0;
     }
@@ -132,7 +223,52 @@ int getTamanhoCategoria() {
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-       // printf("Arquivo inexistente!");
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+}
+
+void setTamanhoCategoriaTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoCattxt.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoCattxt.pro");
+
+    FILE *arqB = fopen("tamanhoCattxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoCategoriaTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoCattxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
 
         return 0;
     }
@@ -177,7 +313,7 @@ int getTamanhoFornecedor() {
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-       // printf("Arquivo inexistente!");
+        // printf("Arquivo inexistente!");
 
         return 0;
     }
@@ -196,51 +332,51 @@ int getTamanhoFornecedor() {
     return tamanho;
 }
 
-//void setTamanhoFornecedor(int tamanho) {
-//    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
-//    FILE *arq = fopen("tamanhoFor.pro", "ab");
-//
-//    if (arq == NULL) {
-//        printf("Erro ao abrir arquivo");
-//    }
-//
-//    remove("tamanhoFor.pro");
-//
-//    FILE *arqB = fopen("tamanhoFor.pro", "wb");
-//
-//    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
-//    fclose(arqB);
-//}
+void setTamanhoFornecedorTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoFor.pro", "ab");
 
-//int getTamanhoFornecedor() {
-//
-//    int c;
-//    int tamanho;
-//    // VECTOR_INIT(v);
-//    //    Cliente *cli = &clientes;
-//    FILE *arq = fopen("tamanhoFor.pro", "rb");
-//    //printf("Arquivo xistente!");
-//
-//    if (arq == NULL) {
-//       // printf("Arquivo inexistente!");
-//
-//        return 0;
-//    }
-//    while (fread(&c, sizeof (c), 1, arq)) {
-//
-//        // VECTOR_ADD(v,c);
-//        // array[i].nome = c.nome;
-//        tamanho = c;
-//        // }
-//        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
-//
-//        //VECTOR_ADD(clientes, cw);
-//        //printf("Cod %s\n", c.nome);
-//    }
-//    fclose(arq);
-//    return tamanho;
-//}
-//
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoFortxt.pro");
+
+    FILE *arqB = fopen("tamanhoFortxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoFornecedorTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoFortxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+}
+
 void setTamanhoFuncionario(int tamanho) {
     //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
     FILE *arq = fopen("tamanhoFun.pro", "ab");
@@ -267,7 +403,52 @@ int getTamanhoFuncionario() {
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-       // printf("Arquivo inexistente!");
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+}
+
+void setTamanhoFuncionarioTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoFuntxt.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoFuntxt.pro");
+
+    FILE *arqB = fopen("tamanhoFuntxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoFuncionarioTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoFuntxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
 
         return 0;
     }
@@ -312,7 +493,7 @@ int getTamanhoLocadora() {
     //printf("Arquivo xistente!");
 
     if (arq == NULL) {
-       // printf("Arquivo inexistente!");
+        // printf("Arquivo inexistente!");
 
         return 0;
     }
@@ -329,5 +510,49 @@ int getTamanhoLocadora() {
     }
     fclose(arq);
     return tamanho;
+}
 
+void setTamanhoLocadoraTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoLoctxt.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoLoctxt.pro");
+
+    FILE *arqB = fopen("tamanhoLoctxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoLocadoraTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoLoctxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
 }

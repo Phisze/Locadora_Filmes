@@ -28,7 +28,7 @@ void setTamanhoCliente(int tamanho);
 
 int getTamanhoCliente();
 
-
+void setTamanhoFilme(int tamanho);
 
 int getTamanhoFilme();
 
@@ -47,6 +47,30 @@ int getTamanhoFuncionario();
 void setTamanhoLocadora(int tamanho);
 
 int getTamanhoLocadora();
+
+void setTamanhoClienteTexto(int tamanho);
+
+int getTamanhoClienteTexto();
+
+void setTamanhoFilmeTexto(int tamanho);
+
+int getTamanhoFilmeTexto();
+
+void setTamanhoCategoriaTexto(int tamanho);
+
+int getTamanhoCategoriaTexto();
+
+void setTamanhoFornecedorTexto(int tamanho);
+
+int getTamanhoFornecedorTexto();
+
+void setTamanhoFuncionarioTexto(int tamanho);
+
+int getTamanhoFuncionarioTexto();
+
+void setTamanhoLocadoraTexto(int tamanho);
+
+int getTamanhoLocadoraTexto();
 
 #endif /* TAMANHO_H */
 

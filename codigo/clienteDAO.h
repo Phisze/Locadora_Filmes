@@ -28,6 +28,10 @@ extern "C" {
 }
 #endif
 /*
+ * *Variavel para saber o tamanho do array dinamico
+ */ 
+extern int tamanhoClientesListar;
+/*
  **  Inclui Clientes em arquivo binario
  */
 int inclusaoCliente(Cliente c);

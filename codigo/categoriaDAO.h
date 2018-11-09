@@ -53,8 +53,6 @@ Categoria consultarCategoria(float cod);
  **  Consultar Categoria em arquivo Texto
  */
 Categoria ConsultarCategoriaTexto(float cod);
-
-Cliente consultaClienteArrayDinamico(int cod);
 /*
  **  Altera Categoria em arquivo binario
  */
@@ -74,6 +72,5 @@ void excluirCategoriaTexto(float cod);
 /*
  **  Deleta Categoria em arquivo Array Dinamico
  */
-void excluirClienteArrayDinamico(float cod);
 #endif /* CATEGORIADAO_H */
 
