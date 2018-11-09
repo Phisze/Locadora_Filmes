@@ -69,5 +69,8 @@ int excluirCategoria(float cod);
  **  Deleta Categoria em arquivo Texto
  */
 void excluirCategoriaTexto(float cod);
+/*
+ **  Deleta Categoria em arquivo Array Dinamico
+ */
 #endif /* CATEGORIADAO_H */
 

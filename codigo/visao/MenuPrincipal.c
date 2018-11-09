@@ -12,6 +12,7 @@ void menuPrincipal() {
         printf("-------------------------------------------------------\n");
         printf("\t MENU PRINCIPAL DE CADASTRO E GESTÃO DE DADOS:\n\n");
         printf("-------------------------------------------------------\n");
+<<<<<<< HEAD
         printf("0 . SAIR DO PROGRAMA \n");
         printf("1 . LOCADORA \n");
         printf("2 . CLIENTE \n");
@@ -23,6 +24,19 @@ void menuPrincipal() {
         printf("\t Digite uma das opções: ");
         scanf("%d%*c",&x);
         printf("-------------------------------------------------------\n");       
+=======
+        printf("0 _ SAIR DO PROGRAMA \n");
+        printf("1 _ LOCADORA \n");
+        printf("2 _ CLIENTE \n");
+        printf("3 _ FILMES \n");
+        printf("4 _ FUNCIONARIOS \n");
+        printf("5 _ FORNECEDORES \n");
+        printf("6 _ VOLTAR AO MENU PRINCIPAL \n\n");
+        printf("-------------------------------------------------------\n");
+        printf("\t Digite uma das opções: ");
+        scanf("%d%*c",&x);
+        printf("-------------------------------------------------------\n");        
+>>>>>>> cfc32bc304d5b5c6a68af352da5e03c45cc37a0f
 
         switch (x) {
             

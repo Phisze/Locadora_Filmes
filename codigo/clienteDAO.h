@@ -28,6 +28,10 @@ extern "C" {
 }
 #endif
 /*
+ * *Variavel para saber o tamanho do array dinamico
+ */ 
+extern int tamanhoClientesListar;
+/*
  **  Inclui Clientes em arquivo binario
  */
 int inclusaoCliente(Cliente c);
@@ -35,6 +39,10 @@ int inclusaoCliente(Cliente c);
  **  Inclui Clientes em arquivo texto
  */
 void inclusaoClienteTexto(Cliente c);
+/*
+ **  Inclui Clientes em Array Dinamico
+ */
+void insereClienteArrayDinamico(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
@@ -44,6 +52,10 @@ Cliente* lClientes();
  */
 Cliente* ListarClientesTexto();
 /*
+ **  Consultar Clientes em Array Dinamico
+ */
+Cliente* listarClienteArrayDinamico();
+/*
  **  Consultar Clientes em arquivo binario
  */
 Cliente consultarClientes(float cod);
@@ -51,6 +63,10 @@ Cliente consultarClientes(float cod);
  **  Consultar Clientes em arquivo texto
  */
 Cliente ConsultarClientesTexto(float cod);
+/*
+ **  Altera Clientes em arquivo Array Dinamico
+ */
+Cliente consultaClienteArrayDinamico(int cod);
 /*
  **  Altera Clientes em arquivo binario
  */
@@ -60,12 +76,16 @@ int alterarCliente(Cliente clintes, float cod);
  */
 void alterarClienteTexto(float cod, Cliente cli);
 /*
+ **  Altera Clientes em Array Dinamico
+ */
+void alterarClienteArrayDinamico(int cod, Cliente c);
+/*
  **  Deleta Clientes em arquivo binario
  */
 int excluirCliente(float cod);
 /*
- **  Deleta Clientes em arquivo texto
+ **  Deleta Clientes em Array Dinamico
  */
-void excluirClienteTexto(float cod);
+void excluirClienteTexto(int cod);
 #endif /* CLIENTEDAO_H */
 
