@@ -23,6 +23,11 @@ void fornecedorMenu(){
     printf("---------------------------------------------\n");        
 
     switch(x){
+        //enceerra
+        case 0:
+            printf("SAINDO!");
+            exit(1);
+            break;
         //Salva 
         case 1:
             salveFornecedor();

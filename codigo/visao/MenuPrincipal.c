@@ -9,28 +9,30 @@ void menuPrincipal() {
     int x=1;
 
     while (x!=0) {
-        
+        printf("-------------------------------------------------------\n");
         printf("\t MENU PRINCIPAL DE CADASTRO E GESTÃO DE DADOS:\n\n");
-        printf("---------------------------------------------\n");
-        printf("0. SAIR DO PROGRAMA \n");
-        printf("1. LOCADORA \n");
-        printf("2. CLIENTE \n");
-        printf("3. FILMES \n");
-        printf("4. FUNCIONARIOS \n");
-        printf("5. FORNECEDORES \n");
-        printf("6. VOLTAR AO MENU PRINCIPAL \n\n");
-        printf("---------------------------------------------\n");
-        printf("Digite uma das opções: ");
+        printf("-------------------------------------------------------\n");
+        printf("0 . SAIR DO PROGRAMA \n");
+        printf("1 . LOCADORA \n");
+        printf("2 . CLIENTE \n");
+        printf("3 . FILMES \n");
+        printf("4 . FUNCIONARIOS \n");
+        printf("5 . FORNECEDORES \n");
+        printf("6 . VOLTAR AO MENU PRINCIPAL \n\n");
+        printf("-------------------------------------------------------\n");
+        printf("\t Digite uma das opções: ");
         scanf("%d%*c",&x);
-        printf("---------------------------------------------\n");        
+        printf("-------------------------------------------------------\n");       
 
         switch (x) {
             
+                //enceerra
             case 0:
                 printf("SAINDO!");
+                exit(1);
                 break;
             case 1:
-               // locadoraMenu();
+                locadoraMenu();
                 break;
             case 2:
                 clientemenu();

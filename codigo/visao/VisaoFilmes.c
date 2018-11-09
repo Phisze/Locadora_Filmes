@@ -8,7 +8,7 @@ void filmeMenu(){
     int x;
     do{
     printf("\t MENU FILME \n");
-    printf("---------------------------------------------\n");        
+    printf("-------------------------------------------------------\n");        
     printf("0. Sair \n");
     printf("1. Salvar Filme \n");
     printf("2. Atualizar Filme \n");
@@ -16,12 +16,12 @@ void filmeMenu(){
     printf("4. Listar Filme  \n");
     printf("5. Consultar Filme \n");
     printf("6. Voltar para o menu principal \n");
-    printf("---------------------------------------------\n");        
+    printf("-------------------------------------------------------\n");        
     printf("\t Digite uma das opções: \n");
     fflush(stdin); 
     scanf("%d%*c", &x); 
     fflush(stdin); 
-    printf("---------------------------------------------\n");        
+    printf("-------------------------------------------------------\n");      
     
     switch(x){
         case 0:
@@ -66,7 +66,7 @@ void salveFlimes(){
     fflush(stdin);
  
     printf("Digite a quantidade de exemplares do filme na locadora: \n");
-    scanf("%f", &filme.exemplares); 
+    scanf("%f%*c", &filme.exemplares); 
     fflush(stdin);
    
     printf("Digite a linguagem Dublado (Digite D) ou Legandado (Digite L) \n");
@@ -87,10 +87,10 @@ void attFilmes(){
    Filme *p = listaFilmes(); //p vetor com todos os Filmes
    int tamanho = qtdFilme(); //quantidade de filmes do vetor
    float cod;
-   
+   printf("-------------------------------------------------------\n");
    printf("Digite o codigo do filme que deseja atualizar: \n");
    scanf("%f%*c", &cod);
-   
+   printf("-------------------------------------------------------\n");
    for (int i = 0; i <= tamanho; i++) {
     if (p[i].codigo == cod) {
         
@@ -105,7 +105,7 @@ void attFilmes(){
 //    (filme.descricao = p[i].exemplares);
     fflush(stdin); //limpa
     
-    printf("Digite a linguagem Dublado (Digite D) ou Legandado (Digite L) \n");
+    printf("Digite a linguagem Dublado ou Legandado \n");
     scanf("%[^\n]%*c", p[i].lingua); //Até o usuario dar enter
     strcpy(filme.lingua,p[i].lingua);
     fflush(stdin); //limpa
@@ -122,10 +122,10 @@ int deletFilme(){
     Filme *p = listaFilmes(); //p vetor com todos os clientes 
     int tamanho = qtdFilme(); //quantidade de clientes do vetor
     float cod;
-    printf("---------------------------------------------\n");  
-    printf("\t Digite o codigo do clinte que deseja deletar: \n");
+    printf("-------------------------------------------------------\n");  
+    printf("\t Digite o codigo do cliente que deseja deletar: \n");
     scanf("%f", &cod);
-    printf("---------------------------------------------\n");  
+    printf("-------------------------------------------------------\n");
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
             mensagem_operacao(deletaFilme(p[i].codigo));
@@ -144,7 +144,7 @@ void listarFilme(){
    
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0f, \n Descrição: %s, \n Quantidade de exemplares: %0f, \n Código da categoria: %0f, \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
+            printf("Codigo: %0.f \n Descrição: %s \n Quantidade de exemplares: %0.f \n Código da categoria: %0.f \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }
     }
     
@@ -156,15 +156,15 @@ void consulteFilme(){
    Filme *p = listaFilmes(); //p vetor com todos os Filmes
    int tamanho = qtdFilme(); //quantidade de filmes do vetor
    float cod;
-   
+   printf("-------------------------------------------------------\n");
    printf("Digite o codigo do clinte que deseja atualizar: \n");
    scanf("%f", &cod);
-   
+   printf("-------------------------------------------------------\n");
    for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { 
-            printf("Codigo: %0f, \n Descrição: %s, \n Quantidade de exemplares: %0f, \n Código da categoria: %0f, \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
-        }else 
-            printf("Cliente inexistente!");
+            printf("Codigo: %0.f \n Descrição: %s \n Quantidade de exemplares: %0.f \n Código da categoria: %0.f \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
+        } 
+            
     }
     
 }

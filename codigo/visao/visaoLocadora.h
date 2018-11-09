@@ -26,7 +26,10 @@ extern "C" {
 #endif
 void locadoraMenu();
 void salveLoc();
-
+void attLocadora();
+int deletLoc();
+void consulteLoc();
+void consulteLoc();
 
 #endif /* VISAOLOCADORA_H */
 

@@ -24,7 +24,7 @@ void menufeedback() {
         switch (x) {
             
             case 1:
-                locadoraMenu();
+                
                 break;
             case 2:
                
