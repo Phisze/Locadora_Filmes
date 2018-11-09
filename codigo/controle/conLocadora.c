@@ -7,7 +7,7 @@
 #include "../tamanho.h"
 #include "../structs.h"
 #include "../locadoraDAO.h"
-
+#include "../conPersistencia.h"
 int salvaLocadora(Locadora*f) {
 
     float tamanhoLocadora= getTamanhoLocadora() + 1;

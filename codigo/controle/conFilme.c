@@ -6,6 +6,7 @@
 
 #include "../filmeDAO.h"
 #include "../tamanho.h"
+#include "../conPersistencia.h"
 
 
 int salvaFilme(Filme*f) {

@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/conFornecedcor.o \
 	${OBJECTDIR}/controle/conFuncionario.o \
 	${OBJECTDIR}/controle/conLocadora.o \
+	${OBJECTDIR}/controle/conPersistencia.o \
 	${OBJECTDIR}/controle/vector.o \
 	${OBJECTDIR}/controle/vetorCategoria.o \
 	${OBJECTDIR}/controle/vetorCliente.o \
@@ -124,6 +125,11 @@ ${OBJECTDIR}/controle/conLocadora.o: controle/conLocadora.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conLocadora.o controle/conLocadora.c
+
+${OBJECTDIR}/controle/conPersistencia.o: controle/conPersistencia.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conPersistencia.o controle/conPersistencia.c
 
 ${OBJECTDIR}/controle/vector.o: controle/vector.c
 	${MKDIR} -p ${OBJECTDIR}/controle

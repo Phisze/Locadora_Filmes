@@ -18,7 +18,6 @@
 #include "../codigo/vector.h"
 #include "../codigo/conCliente.h"
 #include "../codigo/tamanho.h"
-
 /*
  * 
  */
@@ -26,7 +25,7 @@ int main(int argc, char** argv) {
     //    Cliente c;
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
-
+    
     menuPrincipal();
 //    Cliente c;
 //    c.codigo = 1;

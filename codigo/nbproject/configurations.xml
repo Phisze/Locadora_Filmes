@@ -14,6 +14,7 @@
       <itemPath>conFornecedor.h</itemPath>
       <itemPath>conFuncionario.h</itemPath>
       <itemPath>conLocadora.h</itemPath>
+      <itemPath>conPersistencia.h</itemPath>
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
@@ -46,6 +47,7 @@
       <itemPath>controle/conFornecedcor.c</itemPath>
       <itemPath>controle/conFuncionario.c</itemPath>
       <itemPath>controle/conLocadora.c</itemPath>
+      <itemPath>controle/conPersistencia.c</itemPath>
       <itemPath>modelo/daos/filmeDAO.c</itemPath>
       <itemPath>modelo/daos/fornecedorDAO.c</itemPath>
       <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
@@ -118,6 +120,8 @@
       </item>
       <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conPersistencia.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
@@ -131,6 +135,8 @@
       <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conPersistencia.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -243,6 +249,8 @@
       </item>
       <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="conPersistencia.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conCliente.c" ex="false" tool="0" flavor2="0">
@@ -256,6 +264,8 @@
       <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conPersistencia.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>

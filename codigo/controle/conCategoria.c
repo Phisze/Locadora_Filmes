@@ -6,6 +6,7 @@
 #include "../categoriaDAO.h"
 #include "../tamanho.h"
 #include "../structs.h"
+#include "../conPersistencia.h"
 
 int salvaCategoria(Categoria *f) {
 
@@ -33,6 +34,6 @@ Categoria consultaCategoria(float codigo) {
     return consultarCategoria(codigo);
 }
 
-int qtdCategoria() {
+int qtdCategoria() { 
     return getTamanhoCategoria();
 }

@@ -6,6 +6,7 @@
 #include "../tamanho.h"
 #include "../structs.h"
 #include "../funcionarioDAO.h"
+#include "../conPersistencia.h"
 
 int salvaFuncionario(Funcionario*f) {
 
