@@ -11,11 +11,11 @@ void fornecedorMenu(){
     printf("\t MENU FORNECEDOR\n");
     printf("---------------------------------------------\n");        
     printf("0. Sair \n");
-    printf("1. Salvar Locadora \n");
-    printf("2. Atualizar Locadora \n");
-    printf("3. Deletar Locadora \n");
-    printf("4. Listar Locadora  \n");
-    printf("5. Consultar Locadora \n");
+    printf("1. Salvar fornecedor \n");
+    printf("2. Atualizar fornecedor \n");
+    printf("3. Deletar fornecedor \n");
+    printf("4. Listar fornecedor \n");
+    printf("5. Consultar fornecedor \n");
     printf("6. Voltar para o menu principal \n");
     printf("---------------------------------------------\n");        
     printf("Digite uma das opções: \n");

@@ -110,7 +110,7 @@ void salvecli() {
 
 void listaCli() {
 
-    Cliente *p = lClientes(); //p vetor com todos os clientes 
+    Cliente *p = listaClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     printf("-------------------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {

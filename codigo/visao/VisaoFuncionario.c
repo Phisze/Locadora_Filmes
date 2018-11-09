@@ -1,7 +1,6 @@
 #include<stdio.h>
-#include "../filmeDAO.h"
 #include "../structs.h"
-#include "../conFilme.h"
+#include "../conFuncionario.h"
 #include <string.h>
 
 void funcionariomenu() {
@@ -42,7 +41,7 @@ void funcionariomenu() {
                 break;
 
             case 4: // Lista
-                listaFuncionario();
+                listaFunci();
                 break;
 
             case 5://consulta
@@ -123,21 +122,21 @@ void attFuncionario(){ //atualiza funionario
             strcpy(funcionario.telefone, p[i].telefone);
             fflush(stdin);
 
-         mensagem_operacao(salvaFuncionario(funcionario));   
+         mensagem_operacao(salvaFuncionario(&funcionario));   
         }
     }
     
   }
 
-void listaFuncionario() {
+void listaFunci() {
 
-    Funcionario *p = listarFuncionarios(); //p vetor com todos os clientes 
+    Funcionario *j;
+    j = listaFuncionarios(); //p vetor com todos os clientes 
     int tamanho = qtdFuncionario(); //quantidade de clientes do vetor
 
     for (int i = 0; i <= tamanho; i++) {
-        if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0.f \n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
-        }
+            printf("Codigo: %0.f \n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", j[i].codigo, j[i].nome,j[i].cargo, j[i].endereco, j[i].telefone, j[i].email);
+        
     }
 }
 
@@ -152,7 +151,7 @@ void consulteFuncionario() {
     scanf("%f%*c", &cod);
     printf("-------------------------------------------------------\n");
     for (int i = 0; i <= tamanho; i++) {
-        if (p[i].codigo == cod) { //Não mostrar os deletados
+        if (p[i].codigo == cod) { 
             printf("Codigo: %0.f\n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", p[i].codigo, p[i].nome,p[i].cargo, p[i].endereco, p[i].telefone, p[i].email);
         } 
             

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 #include "../tamanho.h"
 #include "../structs.h"
 #include "../funcionarioDAO.h"
@@ -25,7 +21,8 @@ int deletaFuncionario(float codFun) {
 }
 //
 Funcionario* listaFuncionarios() {
-    return listarFuncionarios();
+    Funcionario * pepe=listarFuncionarios();
+    return pepe;
 }
 
 //implementar esse olhar se no codigo do wev tem
