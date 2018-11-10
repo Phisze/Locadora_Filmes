@@ -11,9 +11,13 @@
  */
 int tamanhoCategorias = 0;
 int tamanhoCategoriasListar = 0;
-Categoria static *Categorias =  malloc(sizeof (Categoria));
+Categoria *Categorias; //=  malloc(sizeof (Categoria));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
+
+void criaArrayCategoria() {
+    Categorias = malloc(sizeof (Categoria));
+}
 
 //Funções de Inclusão 
 

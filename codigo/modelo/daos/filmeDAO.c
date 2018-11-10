@@ -19,9 +19,13 @@
 
 int tamanhoFilmes = 0;
 int tamanhoFilmesListar = 0;
-Filme static *Filmes = malloc(sizeof (Filme));
+Filme *Filmes;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
+
+void criaArrayFilme(){
+    Filmes = malloc(sizeof (Filme));
+}
 
 //Funcao Inclusao 
 

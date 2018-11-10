@@ -13,9 +13,13 @@
 
 int tamanhoFornecedors = 0;
 int tamanhoFornecedorsListar = 0;
-Fornecedor static *Fornecedors = malloc(sizeof (Fornecedor));
+Fornecedor *Fornecedors;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
+
+void criaArrayFornecedor(){
+    Fornecedors = malloc(sizeof (Fornecedor));
+}
 
 //Funcao Inclusao 
 

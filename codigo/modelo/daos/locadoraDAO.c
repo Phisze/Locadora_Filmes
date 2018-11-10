@@ -13,16 +13,17 @@
 
 int tamanhoLocadoras = 0;
 int tamanhoLocadorasListar = 0;
-Locadora static *Locadoras = malloc(sizeof (Locadora));
+Locadora static *Locadoras;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
 
+void criaArrayFornecedor(){
+Locadoras = malloc(sizeof (Locadora));}
 //Funcao Inclusao 
 
 int inclusaoLocadora(Locadora l) {
     FILE *arq = fopen("locadora.pro", "ab");
-
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
         return 0;

@@ -15,9 +15,13 @@
 //vector v = {NULL, 4, 0};
 int tamanhoClientes = 0;
 int tamanhoClientesListar = 0;
-Cliente static *Clientes = malloc(sizeof (Cliente));
+Cliente *Clientes;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
+
+void criaArrayFornecedor() {
+    Clientes = malloc(sizeof (Clientes));
+}
 
 //Funcões de Inclusao 
 
@@ -73,7 +77,7 @@ Cliente* lClientes() {
     Cliente c;
     Cliente *cw = &c;
     Cliente *array = malloc((getTamanhoCliente()) * sizeof c);
-    int cont=0;
+    int cont = 0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
@@ -115,7 +119,7 @@ Cliente* lClientes() {
 Cliente* ListarClientesTexto() {
     int i = 0;
     Cliente c;
-    int cont=0;
+    int cont = 0;
     FILE *arquivo;
     Cliente *array = malloc((getTamanhoClienteTexto() - 1) * sizeof (Cliente));
     //Cliente c;
@@ -174,6 +178,7 @@ Cliente* listarClienteArrayDinamico() {
 
 
 //Funções de Consultar
+
 Cliente consultarClientes(int cod) {
 
     FILE *arq = fopen("cliente.pro", "rb");
@@ -309,6 +314,7 @@ void alterarClienteArrayDinamico(int cod, Cliente c) {
 }
 
 //Funcções de exclusão
+
 int excluirCliente(float cod) {
 
     FILE *arq = fopen("cliente.pro", "r+b");

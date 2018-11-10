@@ -13,9 +13,14 @@
 
 int tamanhoFuncionarios = 0;
 int tamanhoFuncionariosListar = 0;
-Funcionario static *Funcionarios = malloc(sizeof (Funcionario));
+Funcionario *Funcionarios;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
+
+void criaArrayFornecedor() {
+    Funcionarios = malloc(sizeof (Funcionario));
+}
+
 
 //Funcao Inclusao 
 
