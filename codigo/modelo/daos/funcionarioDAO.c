@@ -17,7 +17,7 @@ Funcionario *Funcionarios;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
-void criaArrayFornecedor() {
+void criaArrayFuncionario() {
     Funcionarios = malloc(sizeof (Funcionario));
 }
 

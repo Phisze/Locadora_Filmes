@@ -18,7 +18,7 @@ int static tamanho = 0;
 int static tamanhoTexto = 0;
 
 
-void criaArrayFornecedor(){
+void criaArrayLocadora(){
 Locadoras = malloc(sizeof (Locadora));}
 //Funcao Inclusao 
 

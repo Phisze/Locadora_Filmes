@@ -19,7 +19,7 @@ Cliente *Clientes;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
-void criaArrayFornecedor() {
+void criaArrayCliente() {
     Clientes = malloc(sizeof (Clientes));
 }
 
