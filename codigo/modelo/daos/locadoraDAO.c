@@ -69,7 +69,7 @@ Locadora* listarLocadora() {
     int cont = 0;
     Locadora l;
     Locadora *fw = &l;
-    Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
+    Locadora *array = malloc((getTamanhoLocadora()-1) * sizeof l);
     FILE *arq = fopen("locadora.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -79,7 +79,7 @@ Locadora* listarLocadora() {
         return;
     }
     while (fread(&l, sizeof (l), 1, arq)) {
-        if (l.deletado != '*') {
+//        if (l.deletado != '*') {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
@@ -94,10 +94,10 @@ Locadora* listarLocadora() {
             strcpy(array[i].nome_responsavel, l.nome_responsavel);
             strcpy(array[i].tel_responsavel, l.tel_responsavel);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoLocadora() - 1) - cont) * sizeof (Locadora));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoLocadora() - 1) - cont) * sizeof (Locadora));
+//        }
     }
     fclose(arq);
     return array;

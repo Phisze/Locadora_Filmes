@@ -134,6 +134,8 @@ void attCli() {
     int achou= 0;
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
+            cliente.codigo = cod;
+            
             achou =1;
             fflush(stdin); //limpa 
             cliente=p[i];
@@ -201,11 +203,11 @@ void consulteCli() {
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             cliente=p[i];
-            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: % \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %s \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } else
             printf("Clinte Inexistente!");
     }
-    consultaCliente(cliente.codigo);
+    consultaCliente(cod);
 
 }
 
@@ -221,7 +223,7 @@ int deletCli() {
     printf("--------------------------------------------------------\n");  
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-            mensagem_operacao(deletaCliente(p[i].codigo));
+            mensagem_operacao(deletaCliente(cod));
             break;
 
         }else

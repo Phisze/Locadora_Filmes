@@ -110,7 +110,7 @@ void attLoc(){
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
             locadora =p[i];
-
+            locadora.codigo = cod;
             printf("Digite o nome fantasia da locadora: \n");
             scanf("%[^\n]%*c", p[i].nome); //Até o usuario dar enter
             strcpy(locadora.nome, p[i].nome);

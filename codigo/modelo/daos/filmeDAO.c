@@ -72,7 +72,7 @@ Filme* listarFilmes() {
 
     Filme f;
     Filme *fw = &f;
-    Filme *array = malloc(getTamanhoFilme() * sizeof f);
+    Filme *array = malloc((getTamanhoFilme()-1) * sizeof f);
     // VECTOR_INIT(v);
     FILE *arq = fopen("filme.pro", "rb");
     //printf("Arquivo xistente!");
@@ -83,7 +83,7 @@ Filme* listarFilmes() {
         return;
     }
     while (fread(&f, sizeof (f), 1, arq)) {
-        if (f.deletado != '*') {
+      //  if (f.deletado != '*') {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = f.nome;
@@ -96,10 +96,10 @@ Filme* listarFilmes() {
 
             //printf("Cod %s\n", f.nome);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoFilmeTexto() - 1) - cont) * sizeof (Filme));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoFilmeTexto() - 1) - cont) * sizeof (Filme));
+//        }
     }
     fclose(arq);
     return array;

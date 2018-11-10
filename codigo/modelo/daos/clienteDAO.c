@@ -76,7 +76,7 @@ Cliente* lClientes() {
     int i = 0;
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc((getTamanhoCliente()) * sizeof c);
+    Cliente *array = malloc((getTamanhoCliente()-1) * sizeof c);
     int cont = 0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
@@ -89,7 +89,7 @@ Cliente* lClientes() {
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
-        if (c.deletado != '*') {
+      //  if (c.deletado != '*') {
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
             array[i].codigo = c.codigo;
@@ -107,10 +107,10 @@ Cliente* lClientes() {
             //VECTOR_ADD(clientes, cw);
             //printf("Cod %s\n", c.nome);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
+//        }
     }
     fclose(arq);
     return array;

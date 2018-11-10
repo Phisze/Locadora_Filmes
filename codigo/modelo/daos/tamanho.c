@@ -395,8 +395,8 @@ void setTamanhoFuncionario(int tamanho) {
 
 int getTamanhoFuncionario() {
 
-    int c;
-    int tamanho;
+    int c =0;
+    int tamanho=0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("tamanhoFun.pro", "rb");

@@ -32,5 +32,6 @@ Funcionario consultaFuncionario(int codFun) {
 }
 
 int qtdFuncionario() {
-    return getTamanhoFuncionario();
+    int x = getTamanhoFuncionario();
+    return x;
 }

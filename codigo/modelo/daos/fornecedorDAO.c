@@ -82,7 +82,7 @@ Fornecedor* listarFornecedor() {
         return;
     }
     while (fread(&f, sizeof (f), 1, arq)) {
-        if (f.deletado != '*') {
+       // if (f.deletado != '*') {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = f.nome;
@@ -95,10 +95,10 @@ Fornecedor* listarFornecedor() {
             strcpy(array[i].inscricao_estadual, f.inscricao_estadual);
             strcpy(array[i].cnpj, f.cnpj);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoFornecedor() - 1) - cont) * sizeof (Fornecedor));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoFornecedor() - 1) - cont) * sizeof (Fornecedor));
+//        }
     }
     fclose(arq);
     return array;
