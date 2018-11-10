@@ -13,7 +13,7 @@
 
 int tamanhoFornecedors = 0;
 int tamanhoFornecedorsListar = 0;
-Fornecedor *Fornecedors;
+Fornecedor static *Fornecedors = malloc(sizeof (Fornecedor));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 

@@ -13,7 +13,7 @@
 
 int tamanhoFuncionarios = 0;
 int tamanhoFuncionariosListar = 0;
-Funcionario *Funcionarios;
+Funcionario static *Funcionarios = malloc(sizeof (Funcionario));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 

@@ -15,7 +15,7 @@
 //vector v = {NULL, 4, 0};
 int tamanhoClientes = 0;
 int tamanhoClientesListar = 0;
-Cliente *Clientes;
+Cliente static *Clientes = malloc(sizeof (Cliente));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 

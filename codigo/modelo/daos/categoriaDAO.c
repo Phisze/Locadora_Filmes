@@ -11,7 +11,7 @@
  */
 int tamanhoCategorias = 0;
 int tamanhoCategoriasListar = 0;
-Categoria *Categorias;
+Categoria static *Categorias =  malloc(sizeof (Categoria));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
@@ -263,6 +263,7 @@ void alterarCategoriaArrayDinamico(int cod, Categoria c) {
 }
 
 //Funcções de exclusão
+
 int excluirCategoria(float cod) {
     FILE *arq = fopen("categoria.pro", "r+b");
     if (arq == NULL) {

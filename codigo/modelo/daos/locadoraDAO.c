@@ -13,7 +13,7 @@
 
 int tamanhoLocadoras = 0;
 int tamanhoLocadorasListar = 0;
-Locadora *Locadoras;
+Locadora static *Locadoras = malloc(sizeof (Locadora));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 

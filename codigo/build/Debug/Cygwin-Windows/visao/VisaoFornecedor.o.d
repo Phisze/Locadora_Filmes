@@ -1,13 +1,11 @@
 build/Debug/Cygwin-Windows/visao/VisaoFornecedor.o: \
- visao/VisaoFornecedor.c visao/../filmeDAO.h visao/../structs.h \
- visao/../vector.h visao/../structs.h visao/../conFilme.h
-
-visao/../filmeDAO.h:
+ visao/VisaoFornecedor.c visao/../structs.h visao/../vector.h \
+ visao/../conFornecedor.h visao/../structs.h
 
 visao/../structs.h:
 
 visao/../vector.h:
 
-visao/../structs.h:
+visao/../conFornecedor.h:
 
-visao/../conFilme.h:
+visao/../structs.h:

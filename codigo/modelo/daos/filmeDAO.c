@@ -19,7 +19,7 @@
 
 int tamanhoFilmes = 0;
 int tamanhoFilmesListar = 0;
-Filme *Filmes;
+Filme static *Filmes = malloc(sizeof (Filme));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
