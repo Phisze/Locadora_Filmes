@@ -134,6 +134,8 @@ void attCli() {
     int achou= 0;
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
+            cliente.codigo = cod;
+            
             achou =1;
             fflush(stdin); //limpa 
             cliente=p[i];
@@ -205,7 +207,7 @@ void consulteCli() {
         } else
             printf("Clinte Inexistente!");
     }
-    consultaCliente(cliente.codigo);
+    consultaCliente(cod);
 
 }
 
@@ -221,7 +223,7 @@ int deletCli() {
     printf("--------------------------------------------------------\n");  
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-            mensagem_operacao(deletaCliente(p[i].codigo));
+            mensagem_operacao(deletaCliente(cod));
             break;
 
         }else

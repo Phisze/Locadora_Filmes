@@ -19,6 +19,10 @@ Cliente *Clientes;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
+void criaArrayCliente() {
+    Clientes = malloc(sizeof (Clientes));
+}
+
 //Funcões de Inclusao 
 
 int inclusaoCliente(Cliente c) {
@@ -72,8 +76,8 @@ Cliente* lClientes() {
     int i = 0;
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc((getTamanhoCliente()) * sizeof c);
-    int cont=0;
+    Cliente *array = malloc((getTamanhoCliente()-1) * sizeof c);
+    int cont = 0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;
     FILE *arq = fopen("cliente.pro", "rb");
@@ -85,7 +89,7 @@ Cliente* lClientes() {
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
-        if (c.deletado != '*') {
+      //  if (c.deletado != '*') {
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
             array[i].codigo = c.codigo;
@@ -103,10 +107,10 @@ Cliente* lClientes() {
             //VECTOR_ADD(clientes, cw);
             //printf("Cod %s\n", c.nome);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
+//        }
     }
     fclose(arq);
     return array;
@@ -115,7 +119,7 @@ Cliente* lClientes() {
 Cliente* ListarClientesTexto() {
     int i = 0;
     Cliente c;
-    int cont=0;
+    int cont = 0;
     FILE *arquivo;
     Cliente *array = malloc((getTamanhoClienteTexto() - 1) * sizeof (Cliente));
     //Cliente c;
@@ -174,6 +178,7 @@ Cliente* listarClienteArrayDinamico() {
 
 
 //Funções de Consultar
+
 Cliente consultarClientes(int cod) {
 
     FILE *arq = fopen("cliente.pro", "rb");
@@ -309,6 +314,7 @@ void alterarClienteArrayDinamico(int cod, Cliente c) {
 }
 
 //Funcções de exclusão
+
 int excluirCliente(float cod) {
 
     FILE *arq = fopen("cliente.pro", "r+b");

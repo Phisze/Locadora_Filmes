@@ -17,6 +17,10 @@ Funcionario *Funcionarios;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
+void criaArrayFuncionario() {
+    Funcionarios = malloc(sizeof (Funcionario));
+}
+
 //Funcao Inclusao 
 
 int inclusaoFuncionarios(Funcionario f) {
@@ -64,7 +68,8 @@ Funcionario* listarFuncionarios() {
     int cont = 0;
     Funcionario f;
     Funcionario *fw = &f;
-    Funcionario *array = malloc((getTamanhoFuncionario()) * sizeof f);
+    int tana = getTamanhoFuncionario();
+    Funcionario *array = malloc((tana-1) * sizeof (Funcionario));
     FILE *arq = fopen("funcionario.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -74,7 +79,7 @@ Funcionario* listarFuncionarios() {
         return;
     }
     while (fread(&f, sizeof (f), 1, arq)) {
-        if (f.deletado != '*') {
+        //if (f.deletado != '*') {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = nome;
@@ -85,12 +90,13 @@ Funcionario* listarFuncionarios() {
             strcpy(array[i].email, f.email);
             strcpy(array[i].cargo, f.cargo);
             i++;
-        } else {
+       // } else {
             cont++;
-            array = realloc(array, ((getTamanhoFuncionario() - 1) - cont) * sizeof (Funcionario));
-        }
+        //}
     }
-    fclose(arq);
+   // array = realloc(array, ((tana-1) - cont) * sizeof (Funcionario));
+
+    // fclose(arq);
     return array;
 }
 

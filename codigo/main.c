@@ -26,8 +26,8 @@ int main(int argc, char** argv) {
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
     
-    menuPrincipal();
-    //setTamanhoFuncionario(1);
+   menuPrincipal();
+   //setTamanhoFuncionario(5);
    //printf("%d" ,getTamanhoFuncionario());
 //    Cliente c;
 //    c.codigo = 1;

@@ -4,6 +4,7 @@
         <activeConfTypeElem>1</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
@@ -17,6 +18,17 @@
             <file>file:/home/duda/Área%20de%20trabalho/Locadora_Filmes/codigo/tamanhoFun.pro</file>
             <file>file:/home/duda/Área%20de%20trabalho/Locadora_Filmes/codigo/controle/conFornecedcor.c</file>
             <file>file:/home/duda/Área%20de%20trabalho/Locadora_Filmes/codigo/funcionario.pro</file>
+=======
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/visao/MenuPrincipal.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/modelo/daos/clienteDAO.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/visao/VisaoFuncionario.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/controle/conFuncionario.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/main.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/modelo/daos/categoriaDAO.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/Locadora_Filmes/codigo/modelo/daos/funcionarioDAO.c</file>
+>>>>>>> fb36e12fcd3de237ed25889b2ae4185b49a189a0
         </group>
     </open-files>
 </project-private>

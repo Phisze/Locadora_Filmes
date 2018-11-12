@@ -11,9 +11,13 @@
  */
 int tamanhoCategorias = 0;
 int tamanhoCategoriasListar = 0;
-Categoria *Categorias;
+Categoria *Categorias; //=  malloc(sizeof (Categoria));
 int static tamanho = 0;
 int static tamanhoTexto = 0;
+
+void criaArrayCategoria() {
+    Categorias = malloc(sizeof (Categoria));
+}
 
 //Funções de Inclusão 
 
@@ -59,18 +63,18 @@ Categoria* listarCategoria() {
 
     Categoria c;
     Categoria *cw = &c;
-    Categoria *array = malloc(getTamanhoCategoria() * sizeof (Categoria));
+    Categoria *array = malloc((getTamanhoCategoria()-1) * sizeof (Categoria));
     // VECTOR_INIT(v);
     FILE *arq = fopen("categoria.pro", "rb");
     //printf("Arquivo xistente!");
-    int cont = 0;
+//    int cont = 0;
     if (arq == NULL) {
         printf("Arquivo inexistente!");
 
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
-        if (c.deletado != '*') {
+      //  if (c.deletado != '*') {
 
             // VECTOR_ADD(v,c);
             // array[i].nome = c.nome;
@@ -82,10 +86,10 @@ Categoria* listarCategoria() {
 
             //printf("Cod %s\n", c.nome);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoCategoria() - 1) - cont) * sizeof (Categoria));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoCategoria() - 1) - cont) * sizeof (Categoria));
+//        };
     }
     fclose(arq);
     return array;
@@ -263,6 +267,7 @@ void alterarCategoriaArrayDinamico(int cod, Categoria c) {
 }
 
 //Funcções de exclusão
+
 int excluirCategoria(float cod) {
     FILE *arq = fopen("categoria.pro", "r+b");
     if (arq == NULL) {
