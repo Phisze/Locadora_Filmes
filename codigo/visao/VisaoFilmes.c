@@ -2,6 +2,7 @@
 #include "../filmeDAO.h"
 #include "../structs.h"
 #include "../conFilme.h"
+#include "VisaoCliente.h"
 #include <string.h>
 
 void filmeMenu(){
@@ -91,27 +92,33 @@ void attFilmes(){
    printf("Digite o codigo do filme que deseja atualizar: \n");
    scanf("%f%*c", &cod);
    printf("-------------------------------------------------------\n");
+   int achou = 0;
    for (int i = 0; i <= tamanho; i++) {
-    if (p[i].codigo == cod) {
-        
-    fflush(stdin); //limpa                       
-    printf("Digite a descrição do filme: \n");
-    scanf("%[^\n]%*c", p[i].descricao); //Até o usuario dar enter
-    strcpy(filme.descricao,p[i].descricao);
-    fflush(stdin); //limpa
+    if (p[i].codigo == cod) { 
+        achou=1;
+        filme=p[i];
+         fflush(stdin); //limpa                       
+         printf("Digite a descrição do filme: \n");
+         scanf("%[^\n]%*c", p[i].descricao); //Até o usuario dar enter
+         strcpy(filme.descricao,p[i].descricao);
+         fflush(stdin); //limpa
+
+         printf("Digite a quantidade de exemplares do filme na locadora: \n");
+         scanf("%f", p[i].exemplares); //Até o usuario dar enter
+     //    (filme.descricao = p[i].exemplares);
+         fflush(stdin); //limpa
+
+         printf("Digite a linguagem Dublado ou Legandado \n");
+         scanf("%[^\n]%*c", p[i].lingua); //Até o usuario dar enter
+         strcpy(filme.lingua,p[i].lingua);
+         fflush(stdin); //limpa
+          mensagem_operacao(atualizaFilme(filme));
     
-    printf("Digite a quantidade de exemplares do filme na locadora: \n");
-    scanf("%f", p[i].exemplares); //Até o usuario dar enter
-//    (filme.descricao = p[i].exemplares);
-    fflush(stdin); //limpa
-    
-    printf("Digite a linguagem Dublado ou Legandado \n");
-    scanf("%[^\n]%*c", p[i].lingua); //Até o usuario dar enter
-    strcpy(filme.lingua,p[i].lingua);
-    fflush(stdin); //limpa
-    
-    mensagem_operacao(atualizaFilme(filme));
-    }
+    }if ( achou == 1)
+        break;
+       
+   }if (achou == 0){
+       mensagem_operacao(achou);
    }
       
 }

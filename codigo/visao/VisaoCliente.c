@@ -14,14 +14,14 @@ void clientemenu() {
         printf("\t MENU CLIENTE\n");
         printf("-------------------------------------------------------\n");       
         printf("0. Sair do programa \n");
-        printf("1. Salvar Cliente \n");
+        printf("1. Salvar Cliente \n"); //ok
         printf("2. Atualizar Cliente \n");
         printf("3. Deletar Cliente \n");
         printf("4. Listar cliente \n");
         printf("5. Consultar cliente \n");
         printf("6. Voltar para o menu principal \n");
         printf("-------------------------------------------------------\n");       
-        printf("\t Digite uma das opções: \n");
+        printf("\t Digite uma das opções: ");
         scanf("%d%*c", &x);
         printf("-------------------------------------------------------\n");       
 
@@ -93,7 +93,7 @@ void salvecli() {
     scanf("%[^\n]%*c", cliente.email); //Até o usuario dar enter
     fflush(stdin);
 
-    printf("Digite o sexo F para femino e M para masculino: \n");
+    printf("Digite o sexo (F para femino e M para masculino): \n");
     scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
     fflush(stdin);
 
@@ -163,7 +163,7 @@ void attCli() {
             strcpy(cliente.email, p[i].email); //concatenação
             fflush(stdin);
 
-            printf("Digite o sexo F para femino e M para masculino: \n");
+            printf("Digite o sexo (F para femino e M para masculino): \n");
             scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
             //strcpy(cliente.sexo, p[i].sexo); //concatenação
             fflush(stdin);
@@ -201,7 +201,7 @@ void consulteCli() {
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             cliente=p[i];
-            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: % \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
+            printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %s \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } else
             printf("Clinte Inexistente!");
     }
