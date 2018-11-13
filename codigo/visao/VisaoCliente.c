@@ -14,14 +14,14 @@ void clientemenu() {
         printf("\t MENU CLIENTE\n");
         printf("-------------------------------------------------------\n");       
         printf("0. Sair do programa \n");
-        printf("1. Salvar Cliente \n"); //ok
+        printf("1. Salvar Cliente \n");
         printf("2. Atualizar Cliente \n");
         printf("3. Deletar Cliente \n");
         printf("4. Listar cliente \n");
         printf("5. Consultar cliente \n");
         printf("6. Voltar para o menu principal \n");
         printf("-------------------------------------------------------\n");       
-        printf("\t Digite uma das opções: ");
+        printf("\t Digite uma das opções: \n");
         scanf("%d%*c", &x);
         printf("-------------------------------------------------------\n");       
 
@@ -93,7 +93,7 @@ void salvecli() {
     scanf("%[^\n]%*c", cliente.email); //Até o usuario dar enter
     fflush(stdin);
 
-    printf("Digite o sexo (F para femino e M para masculino): \n");
+    printf("Digite o sexo F para femino e M para masculino: \n");
     scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
     fflush(stdin);
 
@@ -165,7 +165,7 @@ void attCli() {
             strcpy(cliente.email, p[i].email); //concatenação
             fflush(stdin);
 
-            printf("Digite o sexo (F para femino e M para masculino): \n");
+            printf("Digite o sexo F para femino e M para masculino: \n");
             scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
             //strcpy(cliente.sexo, p[i].sexo); //concatenação
             fflush(stdin);
