@@ -12,11 +12,11 @@ void funcionariomenu() {
         printf("\tMENU FUNCIONARIO\n");
         printf("-------------------------------------------------------\n");
         printf("0. Sair do programa \n");
-        printf("1. Salvar Funcionario \n");
-        printf("2. Atualizar Funcionario \n");
-        printf("3. Deletar Funcionario \n");
-        printf("4. Listar Funcionario \n");
-        printf("5. Consultar Funcionario \n");
+        printf("1. Salvar Funcionario \n"); //ok
+        printf("2. Atualizar Funcionario \n"); //ok
+        printf("3. Deletar Funcionario \n"); //(ñ deleta porem dá operação feita com sucesso)
+        printf("4. Listar Funcionario \n"); //ok
+        printf("5. Consultar Funcionario \n"); //ok
         printf("6. Voltar para o menu principal \n");
         printf("-------------------------------------------------------\n");
         printf("\tDigite uma das opções: \n");

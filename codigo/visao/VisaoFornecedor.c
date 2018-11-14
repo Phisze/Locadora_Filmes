@@ -10,11 +10,11 @@ void fornecedorMenu(){
     printf("\t MENU FORNECEDOR\n");
     printf("---------------------------------------------\n");        
     printf("0. Sair \n");
-    printf("1. Salvar fornecedor \n");
-    printf("2. Atualizar fornecedor \n");
-    printf("3. Deletar fornecedor \n");
-    printf("4. Listar fornecedor \n");
-    printf("5. Consultar fornecedor \n");
+    printf("1. Salvar fornecedor \n"); //ok
+    printf("2. Atualizar fornecedor \n");//ok
+    printf("3. Deletar fornecedor \n"); //ñ
+    printf("4. Listar fornecedor \n"); //ok
+    printf("5. Consultar fornecedor \n"); //ok
     printf("6. Voltar para o menu principal \n");
     printf("---------------------------------------------\n");        
     printf("Digite uma das opções: \n");
@@ -182,20 +182,16 @@ void consulteFornecedor() {
   Fornecedor *p = listaFornecedor(); //p vetor com todas Fornecedores
   int tamanho = qtdFornecedor(); //quantidade de Fornecesores do vetor
   float cod;
-
     printf("---------------------------------------------\n");        
-    printf("Digite o codigo do clinte que deseja atualizar: \n");
+    printf("Digite o codigo do clinte que deseja consultar: \n");
     scanf("%f%*c", &cod);
     printf("---------------------------------------------\n");        
-
-
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
             printf("Codigo: %0f, \n Nome: %s, \n Razão social: %s,\n Inscrição Estadual: %s,\n CNPJ: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n -------------------------------------------------\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
-        } else
-            printf("Clinte Inexistente!");
+        } 
     }
-    mensagem_operacao(consultaFornecedor(cod));
+//    mensagem_operacao(consultaFornecedor(cod));
 
 }
  int deletFornecedor(){

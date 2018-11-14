@@ -10,11 +10,11 @@ void filmeMenu() {
         printf("\t MENU FILME \n");
         printf("-------------------------------------------------------\n");
         printf("0. Sair \n");
-        printf("1. Salvar Filme \n");
-        printf("2. Atualizar Filme \n");
-        printf("3. Deletar Filme \n");
-        printf("4. Listar Filme  \n");
-        printf("5. Consultar Filme \n");
+        printf("1. Salvar Filme \n");//OK
+        printf("2. Atualizar Filme \n");//OK
+        printf("3. Deletar Filme \n");//ñ
+        printf("4. Listar Filme  \n");//OK
+        printf("5. Consultar Filme \n");//OK
         printf("6. Voltar para o menu principal \n");
         printf("-------------------------------------------------------\n");
         printf("\t Digite uma das opções: \n");
@@ -158,7 +158,7 @@ void consulteFilme() {
     int tamanho = qtdFilme(); //quantidade de filmes do vetor
     float cod;
     printf("-------------------------------------------------------\n");
-    printf("Digite o codigo do clinte que deseja atualizar: \n");
+    printf("Digite o codigo do clinte que deseja consultar: \n");
     scanf("%f", &cod);
     printf("-------------------------------------------------------\n");
     for (int i = 0; i <= tamanho; i++) {
