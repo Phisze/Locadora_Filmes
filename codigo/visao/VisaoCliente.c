@@ -212,20 +212,20 @@ void consulteCli() {
 
 int deletCli() {
 
-    Cliente cliente;
-    Cliente *p = lClientes(); //p vetor com todos os clientes 
-    int tamanho = qtdCliente(); //quantidade de clientes do vetor
+//    Cliente cliente;
+//    Cliente *p = lClientes(); //p vetor com todos os clientes 
+//    int tamanho = qtdCliente(); //quantidade de clientes do vetor
     float cod;
     printf("-------------------------------------------------------\n");  
     printf("\t Digite o codigo do clinte que deseja deletar: \n");
     scanf("%f%*c", &cod);
     printf("--------------------------------------------------------\n"); 
-        for (int i = 0; i <= tamanho; i++) {
-    if (p[i].codigo == cod) {
+//        for (int i = 0; i <= tamanho; i++) {
+//    if (p[i].codigo == cod) {
             mensagem_operacao(deletaCliente(cod));
-            break;
-
-        }else
-         printf("Clinte Inexistente!");
-    }
+//            break;
+//
+//        }else
+//         printf("Clinte Inexistente!");
+//    }
 }   
