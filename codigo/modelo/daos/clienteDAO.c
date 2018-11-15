@@ -76,7 +76,7 @@ Cliente* lClientes() {
     int i = 0;
     Cliente c;
     Cliente *cw = &c;
-    Cliente *array = malloc((getTamanhoCliente()-1) * sizeof c);
+    Cliente *array = malloc((getTamanhoCliente()) * sizeof c);
     int cont = 0;
     // VECTOR_INIT(v);
     //    Cliente *cli = &clientes;

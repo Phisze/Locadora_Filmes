@@ -51,6 +51,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/vetorFuncionario.o \
 	${OBJECTDIR}/controle/vetorLocadora.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/modelo/Ex_Importacao.o \
 	${OBJECTDIR}/modelo/NotaFiscal.o \
 	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
 	${OBJECTDIR}/modelo/daos/clienteDAO.o \
@@ -170,6 +171,11 @@ ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/modelo/Ex_Importacao.o: modelo/Ex_Importacao.c
+	${MKDIR} -p ${OBJECTDIR}/modelo
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/Ex_Importacao.o modelo/Ex_Importacao.c
 
 ${OBJECTDIR}/modelo/NotaFiscal.o: modelo/NotaFiscal.c
 	${MKDIR} -p ${OBJECTDIR}/modelo

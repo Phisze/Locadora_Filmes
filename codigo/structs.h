@@ -33,7 +33,7 @@ extern "C" {
 #define TELEFONE 13
 #define EMAIL 35
 #define ESTADO_CIVIL 10
-#define DATA_NASCIMENTO 8
+#define DATA_NASCIMENTO 11
 #define DESCRICAO 100
 #define LINGUA 10
 #define CARGO 10
@@ -111,7 +111,7 @@ typedef struct{
     float cliCodigo;
     float valor;
     float * parcelas;
-    
+    char data[DATA_NASCIMENTO];
 } Conta;
 
 typedef struct {

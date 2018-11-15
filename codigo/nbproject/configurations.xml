@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>Ex_Importacao.h</itemPath>
       <itemPath>VisaoLocadora.h</itemPath>
       <itemPath>categoriaDAO.h</itemPath>
       <itemPath>clienteDAO.h</itemPath>
@@ -32,6 +33,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>modelo/Ex_Importacao.c</itemPath>
       <itemPath>visao/MenuPrincipal.c</itemPath>
       <itemPath>modelo/NotaFiscal.c</itemPath>
       <itemPath>visao/VisaoCliente.c</itemPath>
@@ -100,6 +102,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Ex_Importacao.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VisaoLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
@@ -161,6 +165,8 @@
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/Ex_Importacao.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/NotaFiscal.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -229,6 +235,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Ex_Importacao.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VisaoLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="categoriaDAO.h" ex="false" tool="3" flavor2="0">
@@ -290,6 +298,8 @@
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="modelo/Ex_Importacao.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/NotaFiscal.c" ex="false" tool="0" flavor2="0">
       </item>

@@ -18,6 +18,8 @@
 #include "../codigo/vector.h"
 #include "../codigo/conCliente.h"
 #include "../codigo/tamanho.h"
+#include "Ex_Importacao.h"
+
 /*
  * 
  */
@@ -26,7 +28,14 @@ int main(int argc, char** argv) {
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
     
-   menuPrincipal();
+  menuPrincipal();
+    
+//    exportacaoCliente(2);
+//    int i;
+//    for (i = 0; i < 4; i++) {
+//       printf("%.0f",lClientes()[i].codigo);
+//    }
+//
    //setTamanhoFuncionario(5);
    //printf("%d" ,getTamanhoFuncionario());
 //    Cliente c;
