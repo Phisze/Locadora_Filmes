@@ -72,7 +72,7 @@ Filme* listarFilmes() {
 
     Filme f;
     Filme *fw = &f;
-    Filme *array = malloc((getTamanhoFilme()-1) * sizeof f);
+    Filme *array = malloc((getTamanhoFilme()) * sizeof f);
     // VECTOR_INIT(v);
     FILE *arq = fopen("filme.pro", "rb");
     //printf("Arquivo xistente!");
@@ -115,43 +115,43 @@ Filme* ListarFilmesTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
-        if (f.deletado != '*') {
+        //if (f.deletado != '*') {
             array[i].codigo = f.codigo;
             strcpy(array[i].descricao, f.descricao);
             array[i].exemplares = f.exemplares;
             strcpy(array[i].lingua, f.lingua);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoFilmeTexto() - 1) - cont) * sizeof (Filme));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoFilmeTexto() - 1) - cont) * sizeof (Filme));
+//        };
     }
     fclose(arquivo);
     return array;
 }
 
 Filme* listarFilmeArrayDinamico() {
-    Filme *array = malloc((tamanhoFilmes - 1) * sizeof (Filme));
-    tamanhoFilmes = tamanhoFilmesListar;
-    int i;
-    int j = 0;
-    int cont = 0;
-    for (i = 0; i < tamanhoFilmes; i++) {
-        if (Filmes[i].deletado != '*') {
-            array[j].codigo = Filmes[i].codigo;
-            strcpy(array[j].descricao, Filmes[i].descricao);
-            strcpy(array[j].lingua, Filmes[i].lingua);
-            array[j].exemplares = Filmes[i].exemplares;
-            j++;
-        } else {
-            cont++;
-            tamanhoFilmesListar -= cont;
-            array = realloc(array, (tamanhoFilmesListar) * sizeof (Filme));
-        }
-    }
+//    Filme *array = malloc((tamanhoFilmes) * sizeof (Filme));
+//    tamanhoFilmes = tamanhoFilmesListar;
+//    int i;
+//    int j = 0;
+//    int cont = 0;
+//    for (i = 0; i < tamanhoFilmes; i++) {
+//   //     if (Filmes[i].deletado != '*') {
+//            array[j].codigo = Filmes[i].codigo;
+//            strcpy(array[j].descricao, Filmes[i].descricao);
+//            strcpy(array[j].lingua, Filmes[i].lingua);
+//            array[j].exemplares = Filmes[i].exemplares;
+//            j++;
+//        } else {
+//            cont++;
+//            tamanhoFilmesListar -= cont;
+//            array = realloc(array, (tamanhoFilmesListar) * sizeof (Filme));
+//        };
+    //}
     //printf("Listar %c\n", array[0].sexo);
 
-    return array;
+    return Filmes;
 }
 //Funções de Consultar
 
@@ -338,6 +338,9 @@ void excluirFilmeTexto(float cod) {
     fclose(arq);
     remove("filme.txt");
     rename("filmeBackup.txt", "filme.txt");
+    tamanhoTexto = getTamanhoFilmeTexto();
+    tamanhoTexto--;
+    setTamanhoFilmeTexto(tamanhoTexto);
 }
 
 void excluirFilmeArrayDinamico(int cod) {

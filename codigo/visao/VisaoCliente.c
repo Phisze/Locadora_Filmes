@@ -113,8 +113,8 @@ void listaCli() {
     Cliente *p = listaClientes(); //p vetor com todos os clientes 
     int tamanho = qtdCliente(); //quantidade de clientes do vetor
     printf("-------------------------------------------------------\n"); 
-    for (int i = 0; i <= tamanho; i++) {
-        if (p[i].deletado != '*') { //Não mostrar os deletados
+    for (int i = 0; i < tamanho; i++) {
+        if (p[i].deletado != '*') { //Não mostrar os deletados EU FALEI PARA TIRAR MAS FIZ MUDANÇAS NÃ0 TIRA
             printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %s \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         }
     }

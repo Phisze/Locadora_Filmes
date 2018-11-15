@@ -137,8 +137,8 @@ void listaFunci() {
     j = listaFuncionarios(); //p vetor com todos os clientes 
     int tamanho = qtdFuncionario(); //quantidade de clientes do vetor
 
-    for (int i = 0; i <= (tamanho - 1); i++) {
-        if (j[i].deletado != '*') {
+    for (int i = 0; i < (tamanho); i++) {
+        if (j[i].deletado != '*') { // EU FALEI PARA TIRAR MAS FIZ MUDANÇAS NÃ0 TIRA
             printf("Codigo: %0.f \n Nome: %s\n Cargo: %s\n Endereço: %s\n Telefone: %s\n E-mail: %s \n____________________________________________\n", j[i].codigo, j[i].nome, j[i].cargo, j[i].endereco, j[i].telefone, j[i].email);
         }
     }

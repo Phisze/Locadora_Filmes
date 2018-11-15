@@ -121,13 +121,13 @@ Cliente* ListarClientesTexto() {
     Cliente c;
     int cont = 0;
     FILE *arquivo;
-    Cliente *array = malloc((getTamanhoClienteTexto() - 1) * sizeof (Cliente));
+    Cliente *array = malloc((getTamanhoClienteTexto()) * sizeof (Cliente));
     //Cliente c;
     arquivo = fopen("cliente.txt", "rt");
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
-        if (c.deletado != '*') {
+       // if (c.deletado != '*') {
             array[i].codigo = c.codigo;
             strcpy(array[i].nome, c.nome);
             strcpy(array[i].endereco, c.endereco);
@@ -138,42 +138,42 @@ Cliente* ListarClientesTexto() {
             strcpy(array[i].estado_civil, c.estado_civil);
             strcpy(array[i].data_nascimento, c.data_nascimento);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoClienteTexto() - 1) - cont) * sizeof (Cliente));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoClienteTexto() - 1) - cont) * sizeof (Cliente));
+//        };
     }
     fclose(arquivo);
     return array;
 }
 
 Cliente* listarClienteArrayDinamico() {
-    Cliente *array = malloc((tamanhoClientes - 1) * sizeof (Cliente));
-    tamanhoClientes = tamanhoClientesListar;
-    int i;
-    int j = 0;
-    int cont = 0;
-    for (i = 0; i < tamanhoClientes; i++) {
-        if (Clientes[i].deletado != '*') {
-            array[j].codigo = Clientes[i].codigo;
-            strcpy(array[j].nome, Clientes[i].nome);
-            strcpy(array[j].endereco, Clientes[i].endereco);
-            strcpy(array[j].cpf, Clientes[i].cpf);
-            strcpy(array[j].telefone, Clientes[i].telefone);
-            strcpy(array[j].email, Clientes[i].email);
-            array[j].sexo = Clientes[i].sexo;
-            strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-            strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
-            j++;
-        } else {
-            cont++;
-            tamanhoClientesListar -= cont;
-            array = realloc(array, (tamanhoClientesListar) * sizeof (Cliente));
-        }
-    }
+//    Cliente *array = realloc((tamanhoClientes) * sizeof (Cliente));;
+//    tamanhoClientes = tamanhoClientesListar;
+//    int i;
+//    int j = 0;
+//    int cont = 0;
+//    for (i = 0; i < tamanhoClientes; i++) {
+//      //  if (Clientes[i].deletado != '*') {
+//            array[j].codigo = Clientes[i].codigo;
+//            strcpy(array[j].nome, Clientes[i].nome);
+//            strcpy(array[j].endereco, Clientes[i].endereco);
+//            strcpy(array[j].cpf, Clientes[i].cpf);
+//            strcpy(array[j].telefone, Clientes[i].telefone);
+//            strcpy(array[j].email, Clientes[i].email);
+//            array[j].sexo = Clientes[i].sexo;
+//            strcpy(array[j].estado_civil, Clientes[i].estado_civil);
+//            strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
+//            j++;
+//        } else {
+//            cont++;
+//            tamanhoClientesListar -= cont;
+//            array = realloc(array, (tamanhoClientesListar) * sizeof (Cliente));
+//        };
+ //   }
     //printf("Listar %c\n", array[0].sexo);
 
-    return array;
+    return Clientes;
 }
 
 
@@ -374,6 +374,9 @@ void excluirClienteTexto(float cod) {
     fclose(arq);
     remove("cliente.txt");
     rename("clienteBackup.txt", "cliente.txt");
+    tamanhoTexto = getTamanhoClienteTexto();
+    tamanhoTexto--;
+    setTamanhoClienteTexto(tamanhoTexto);
 }
 
 void excluirClienteArrayDinamico(int cod) {

@@ -69,7 +69,7 @@ Funcionario* listarFuncionarios() {
     Funcionario f;
     Funcionario *fw = &f;
     int tana = getTamanhoFuncionario();
-    Funcionario *array = malloc((tana-1) * sizeof (Funcionario));
+    Funcionario *array = malloc((tana) * sizeof (Funcionario));
     FILE *arq = fopen("funcionario.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -91,7 +91,7 @@ Funcionario* listarFuncionarios() {
             strcpy(array[i].cargo, f.cargo);
             i++;
        // } else {
-            cont++;
+        //    cont++;
         //}
     }
    // array = realloc(array, ((tana-1) - cont) * sizeof (Funcionario));
@@ -110,7 +110,7 @@ Funcionario* ListarFuncionarioTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
-        if (f.deletado != '*') {
+//        if (f.deletado != '*') {
             array[i].codigo = f.codigo;
             strcpy(array[i].nome, f.nome);
             strcpy(array[i].endereco, f.endereco);
@@ -118,36 +118,37 @@ Funcionario* ListarFuncionarioTexto() {
             strcpy(array[i].email, f.email);
             strcpy(array[i].cargo, f.cargo);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoFuncionarioTexto() - 1) - cont) * sizeof (Funcionario));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoFuncionarioTexto() - 1) - cont) * sizeof (Funcionario));
+//        }
     }
     fclose(arquivo);
     return array;
 }
 
 Funcionario* listarFuncionarioArrayDinamico() {
-    Funcionario *array = malloc((tamanhoFuncionarios - 1) * sizeof (Funcionario));
-    tamanhoFuncionarios = tamanhoFuncionariosListar;
-    int i;
-    int j = 0;
-    int cont = 0;
-    for (i = 0; i < tamanhoFuncionarios; i++) {
-        if (Funcionarios[i].deletado != '*') {
-            array[j].codigo = Funcionarios[i].codigo;
-            strcpy(array[j].nome, Funcionarios[i].nome);
-            strcpy(array[j].endereco, Funcionarios[i].endereco);
-            strcpy(array[j].cargo, Funcionarios[i].cargo);
-            strcpy(array[j].telefone, Funcionarios[i].telefone);
-            strcpy(array[j].email, Funcionarios[i].email);
-            j++;
-        } else {
-            cont++;
-            tamanhoFuncionariosListar -= cont;
-            array = realloc(array, (tamanhoFuncionariosListar) * sizeof (Funcionario));
-        }
-    }
+//    Funcionario *array = malloc((tamanhoFuncionarios ) * sizeof (Funcionario));
+//    tamanhoFuncionarios = tamanhoFuncionariosListar;
+//    int i;
+//    int j = 0;
+//    int cont = 0;
+//    for (i = 0; i < tamanhoFuncionarios; i++) {
+////        if (Funcionarios[i].deletado != '*') {
+//            array[j].codigo = Funcionarios[i].codigo;
+//            strcpy(array[j].nome, Funcionarios[i].nome);
+//            strcpy(array[j].endereco, Funcionarios[i].endereco);
+//            strcpy(array[j].cargo, Funcionarios[i].cargo);
+//            strcpy(array[j].telefone, Funcionarios[i].telefone);
+//            strcpy(array[j].email, Funcionarios[i].email);
+          //  j++;
+//        } else {
+//            cont++;
+//            tamanhoFuncionariosListar -= cont;
+//            array = realloc(array, (tamanhoFuncionariosListar) * sizeof (Funcionario));
+//        }
+    //}
+    return Funcionarios;
 }
 
 //Funções de Consultar
@@ -342,6 +343,9 @@ void excluirFuncionarioTexto(float cod) {
     fclose(arq);
     remove("funcionario.txt");
     rename("funcionarioBackup.txt", "funcionario.txt");
+    tamanhoTexto = getTamanhoFuncionarioTexto();
+    tamanhoTexto--;
+    setTamanhoFuncionarioTexto(tamanhoTexto);
 }
 
 void excluirFuncionarioArrayDinamico(int cod) {

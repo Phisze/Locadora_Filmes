@@ -143,8 +143,8 @@ void listarFilme() {
     Filme *p = listaFilmes(); //p vetor com todos os Filmes
     int tamanho = qtdFilme(); //quantidade de filmes do vetor
 
-    for (int i = 0; i <= tamanho; i++) {
-        if (p[i].deletado != '*') { //Não mostrar os deletados
+    for (int i = 0; i < tamanho; i++) {
+        if (p[i].deletado != '*') { //Não mostrar os deletados EU FALEI PARA TIRAR MAS FIZ MUDANÇAS NÃ0 TIRA
             printf("Codigo: %0.f \n Descrição: %s \n Quantidade de exemplares: %0.f \n Código da categoria: %0.f \n Lingua: %s\n --------------------------------------------------\n", p[i].codigo, p[i].descricao, p[i].exemplares, p[i].catCodigo, p[i].lingua);
         }
     }

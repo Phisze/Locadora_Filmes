@@ -69,7 +69,7 @@ Locadora* listarLocadora() {
     int cont = 0;
     Locadora l;
     Locadora *fw = &l;
-    Locadora *array = malloc((getTamanhoLocadora()-1) * sizeof l);
+    Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
     FILE *arq = fopen("locadora.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -113,7 +113,7 @@ Locadora* ListarLocadoraTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
-        if (l.deletado != '*') {
+      //  if (l.deletado != '*') {
             array[i].codigo = l.codigo;
             strcpy(array[i].nome, l.nome);
             strcpy(array[i].endereco, l.endereco);
@@ -125,43 +125,43 @@ Locadora* ListarLocadoraTexto() {
             strcpy(array[i].nome_responsavel, l.nome_responsavel);
             strcpy(array[i].tel_responsavel, l.tel_responsavel);
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoLocadoraTexto() - 1) - cont) * sizeof (Locadora));
-        }
+//        } else {
+//            cont++;
+//            array = realloc(array, ((getTamanhoLocadoraTexto() - 1) - cont) * sizeof (Locadora));
+//        }
     }
     fclose(arquivo);
     return array;
 }
 
 Locadora* listarLocadoraArrayDinamico() {
-    Locadora *array = malloc((tamanhoLocadoras - 1) * sizeof (Locadora));
-    tamanhoLocadoras = tamanhoLocadorasListar;
-    int i;
-    int j = 0;
-    int cont = 0;
-    for (i = 0; i < tamanhoLocadoras; i++) {
-        if (Locadoras[i].deletado != '*') {
-            array[j].codigo = Locadoras[i].codigo;
-            strcpy(array[j].nome, Locadoras[i].nome);
-            strcpy(array[j].endereco, Locadoras[i].endereco);
-            strcpy(array[j].razao_social, Locadoras[i].razao_social);
-            strcpy(array[j].inscricao_estadual, Locadoras[i].inscricao_estadual);
-            strcpy(array[j].cnpj, Locadoras[i].cnpj);
-            strcpy(array[j].telefone, Locadoras[i].telefone);
-            strcpy(array[j].email, Locadoras[i].email);
-            strcpy(array[j].nome_responsavel, Locadoras[i].nome_responsavel);
-            strcpy(array[j].tel_responsavel, Locadoras[i].tel_responsavel);
-            j++;
-        } else {
-            cont++;
-            tamanhoLocadorasListar -= cont;
-            array = realloc(array, (tamanhoLocadorasListar) * sizeof (Locadora));
-        }
-    }
+//    Locadora *array = malloc((tamanhoLocadoras) * sizeof (Locadora));
+//    tamanhoLocadoras = tamanhoLocadorasListar;
+//    int i;
+//    int j = 0;
+//    int cont = 0;
+//    for (i = 0; i < tamanhoLocadoras; i++) {
+//    //    if (Locadoras[i].deletado != '*') {
+//            array[j].codigo = Locadoras[i].codigo;
+//            strcpy(array[j].nome, Locadoras[i].nome);
+//            strcpy(array[j].endereco, Locadoras[i].endereco);
+//            strcpy(array[j].razao_social, Locadoras[i].razao_social);
+//            strcpy(array[j].inscricao_estadual, Locadoras[i].inscricao_estadual);
+//            strcpy(array[j].cnpj, Locadoras[i].cnpj);
+//            strcpy(array[j].telefone, Locadoras[i].telefone);
+//            strcpy(array[j].email, Locadoras[i].email);
+//            strcpy(array[j].nome_responsavel, Locadoras[i].nome_responsavel);
+//            strcpy(array[j].tel_responsavel, Locadoras[i].tel_responsavel);
+//            j++;
+//        } else {
+//            cont++;
+//            tamanhoLocadorasListar -= cont;
+//            array = realloc(array, (tamanhoLocadorasListar) * sizeof (Locadora));
+//        };
+ //   }
     //printf("Listar %c\n", array[0].sexo);
 
-    return array;
+    return Locadoras;
 }
 
 //Funções de Consultar
@@ -363,6 +363,9 @@ void excluirLocadoraTexto(float cod) {
     fclose(arq);
     remove("locadora.txt");
     rename("locadoraBackup.txt", "locadora.txt");
+    tamanhoTexto = getTamanhoLocadoraTexto();
+    tamanhoTexto--;
+    setTamanhoLocadoraTexto(tamanhoTexto);
 }
 
 void excluirLocadoraArrayDinamico(int cod) {

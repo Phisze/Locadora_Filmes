@@ -63,7 +63,7 @@ Categoria* listarCategoria() {
 
     Categoria c;
     Categoria *cw = &c;
-    Categoria *array = malloc((getTamanhoCategoria()-1) * sizeof (Categoria));
+    Categoria *array = malloc((getTamanhoCategoria()) * sizeof (Categoria));
     // VECTOR_INIT(v);
     FILE *arq = fopen("categoria.pro", "rb");
     //printf("Arquivo xistente!");
@@ -105,40 +105,40 @@ Categoria* ListarCategoriaTexto() {
     arquivo = fopen("categoria.txt", "rt");
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
-        if (c.deletado != '*') {
+       // if (c.deletado != '*') {
             array[i].codigo = c.codigo;
             strcpy(array[i].descricao, c.descricao);
             array[i].valor_locacao = c.valor_locacao;
             i++;
-        } else {
-            cont++;
-            array = realloc(array, ((getTamanhoCategoriaTexto() - 1) - cont) * sizeof (Categoria));
-        }
+//        } else {;
+//            cont++;
+//            array = realloc(array, ((getTamanhoCategoriaTexto() - 1) - cont) * sizeof (Categoria));
+//        }
     }
     fclose(arquivo);
     return array;
 }
 
 Categoria* listarCategoriaArrayDinamico() {
-    Categoria *array = malloc((tamanhoCategorias - 1) * sizeof (Categoria));
-    tamanhoCategorias = tamanhoCategoriasListar;
-    int i;
-    int j = 0;
-    int cont = 0;
-    for (i = 0; i < tamanhoCategorias; i++) {
-        if (Categorias[i].deletado != '*') {
-            array[j].codigo = Categorias[i].codigo;
-            strcpy(array[j].descricao, Categorias[i].descricao);
-            array[j].valor_locacao = Categorias[i].valor_locacao;
-            j++;
-        } else {
-            cont++;
-            tamanhoCategoriasListar -= cont;
-            array = realloc(array, (tamanhoCategoriasListar) * sizeof (Categoria));
-        }
-    }
+//    Categoria *array = malloc((tamanhoCategorias) * sizeof (Categoria));
+//    tamanhoCategorias = tamanhoCategoriasListar;
+//    int i;
+//    int j = 0;
+//    int cont = 0;
+//    for (i = 0; i < tamanhoCategorias; i++) {
+//    //    if (Categorias[i].deletado != '*') {
+//            array[j].codigo = Categorias[i].codigo;
+//            strcpy(array[j].descricao, Categorias[i].descricao);
+//            array[j].valor_locacao = Categorias[i].valor_locacao;
+//            j++;
+//        } else {
+//            cont++;
+//            tamanhoCategoriasListar -= cont;
+//            array = realloc(array, (tamanhoCategoriasListar) * sizeof (Categoria));
+//        };
+  //  }
     //printf("Listar %c\n", array[0].sexo);
-    return array;
+    return Categorias;
 }
 
 //Funções de Consultar
@@ -326,6 +326,9 @@ void excluirCategoriaTexto(float cod) {
     fclose(arq);
     remove("categoria.txt");
     rename("categoriaBackup.txt", "categoria.txt");
+    tamanhoTexto = getTamanhoCategoriaTexto();
+    tamanhoTexto--;
+    setTamanhoCategoriaTexto(tamanhoTexto);
 }
 
 void excluirCategoriaArrayDinamico(int cod) {

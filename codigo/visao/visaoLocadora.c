@@ -14,7 +14,7 @@ void locadoraMenu(){
     printf("2. Atualizar locadora \n");//OK
     printf("3. Deletar locadora \n");//Ñ
     printf("4. Listar locadora \n");//OK
-    printf("5. Consultar fornedor \n");//Ñ
+    printf("5. Consultar locadora \n");//Ñ
     printf("6. Voltar para o menu principal \n");
     printf("---------------------------------------------\n");
     printf("Digite uma das opções: \n");
@@ -163,7 +163,7 @@ void lisLoc() {
     Locadora *p = listarLocadora(); //p vetor com todos os clientes
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
     printf("-------------------------------------------------------\n"); 
-    for (int i = 0; i <= tamanho; i++) {
+    for (int i = 0; i < tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
             printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s Nome do responsavel: %s Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
         }
