@@ -49,7 +49,7 @@ int inclusaoCliente(Cliente c) {
 void inclusaoClienteTexto(Cliente c) {
     FILE *arquivo;
     tamanhoTexto = getTamanhoClienteTexto();
-    arquivo = fopen("cliente.txt", "wt");
+    arquivo = fopen("cliente.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
     fclose(arquivo);
     tamanhoTexto++;

@@ -27,29 +27,33 @@ int main(int argc, char** argv) {
     //    Cliente c;
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
-    
-  menuPrincipal();
-    
-//    exportacaoCliente(2);
-//    int i;
-//    for (i = 0; i < 4; i++) {
-//       printf("%.0f",lClientes()[i].codigo);
-//    }
-//
-   //setTamanhoFuncionario(5);
-   //printf("%d" ,getTamanhoFuncionario());
-//    Cliente c;
-//    c.codigo = 1;
-//    strcpy(c.cpf, "123456");
-//    strcpy(c.data_nascimento, "212131");
-//    strcpy(c.email, "adsasd");
-//    strcpy(c.endereco,"adasdsa");
-//    strcpy(c.estado_civil, "esda");
-//    strcpy(c.nome, "32weewq");
-//    strcpy(c.telefone,"2312");
-//    c.sexo = "M";
-//    inclusaoClienteTexto(c);
 
+    //menuPrincipal();
+
+    importacaoCliente();
+    //[
+
+    //    int i;
+    //        for (i = 0; i < 4; i++) {
+    //           printf("%.0f",listaClientes()[i].codigo);
+    //        }
+
+    //setTamanhoFuncionario(5);
+    //printf("%d" ,getTamanhoFuncionario());
+    Cliente c;
+    //[
+//    for (int i = 0; i < 4; i++) {
+//        c.codigo = i;
+//        strcpy(c.cpf, "123456");
+//        strcpy(c.data_nascimento, "212131");
+//        strcpy(c.email, "adsasd");
+//        strcpy(c.endereco, "adasdsa");
+//        strcpy(c.estado_civil, "esda");
+//        strcpy(c.nome, "32weewq");
+//        strcpy(c.telefone, "2312");
+//        c.sexo = "M";
+//        inclusaoCliente(c);
+//    }
     // printf("Digite o nome: ");
     //  fgets(c.nome,30,stdin);
     //  printf("O nome do cliente é: %s",c.nome);
