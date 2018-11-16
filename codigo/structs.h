@@ -40,6 +40,7 @@ extern "C" {
 #define RAZAO_SOCIAL 20
 #define INSCRICAO_ESTADUAL 20
 #define CNPJ 14
+#define TIPO_COMPRA 7 
 
 typedef struct {
     float codigo;
@@ -110,9 +111,22 @@ typedef struct{
     float codigo;
     float cliCodigo;
     float valor;
+    int tipo; //0=A receber ou 1 = A pagar
     float * parcelas;
     char data[DATA_NASCIMENTO];
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Conta;
+
+typedef struct{
+    float codigo;
+    Cliente cliCodigo;
+    Filme *filCodigo;
+    int tipo;// 0 = A vista ou 1 = A prazo
+    char data[DATA_NASCIMENTO];
+    float valor;
+    int qtde_Filmes_Locados;
+    char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
+} Locacoes;
 
 typedef struct {
     int tamanho;

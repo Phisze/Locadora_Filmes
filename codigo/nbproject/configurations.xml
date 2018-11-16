@@ -16,6 +16,7 @@
       <itemPath>conFuncionario.h</itemPath>
       <itemPath>conLocadora.h</itemPath>
       <itemPath>conPersistencia.h</itemPath>
+      <itemPath>feedback.h</itemPath>
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
@@ -50,6 +51,7 @@
       <itemPath>controle/conFuncionario.c</itemPath>
       <itemPath>controle/conLocadora.c</itemPath>
       <itemPath>controle/conPersistencia.c</itemPath>
+      <itemPath>controle/feedback.c</itemPath>
       <itemPath>modelo/daos/filmeDAO.c</itemPath>
       <itemPath>modelo/daos/fornecedorDAO.c</itemPath>
       <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
@@ -142,6 +144,8 @@
       </item>
       <item path="controle/conPersistencia.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="controle/feedback.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vetorCategoria.c" ex="false" tool="0" flavor2="0">
@@ -155,6 +159,8 @@
       <item path="controle/vetorFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vetorLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="feedback.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filmeDAO.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -275,6 +281,8 @@
       </item>
       <item path="controle/conPersistencia.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="controle/feedback.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vetorCategoria.c" ex="false" tool="0" flavor2="0">
@@ -288,6 +296,8 @@
       <item path="controle/vetorFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vetorLocadora.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="feedback.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filmeDAO.h" ex="false" tool="3" flavor2="0">
       </item>

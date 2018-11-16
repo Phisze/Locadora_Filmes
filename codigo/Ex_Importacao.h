@@ -27,5 +27,25 @@ extern "C" {
 void importacaoCliente();
 
 void exportacaoCliente(int qtde);
+
+void importacaoCategoria();
+
+void exportacaoCategoria(int qtde);
+
+void importacaoFilme();
+
+void exportacaoFilme(int qtde);
+
+void importacaoFornecedor();
+
+void exportacaoFornecedor(int qtde);
+
+void importacaoFuncionario();
+
+void exportacaoFuncionario(int qtde);
+
+void importacaoLocadora();
+
+void exportacaoLocadora(int qtde);
 #endif /* EX_IMPORTACAO_H */
 

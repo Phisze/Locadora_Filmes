@@ -1,20 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Ex_Importacao.c
- * Author: wever
- *
- * Created on 13 de Novembro de 2018, 14:49
- */
-
-#include <stdio.h>
-#include <stdlib.h>
-
-/*
  * 
  */
 /*
@@ -156,7 +140,7 @@ void importacaoFilme() {
 void exportacaoFilme(int qtde) {
     FILE *arquivo;
     Filme *c;
-    arquivo = fopen("importacaoFilme.xml", "wt");
+    arquivo = fopen("importacaoFil.xml", "wt");
     fprintf(arquivo, "<dados>\n");
     fprintf(arquivo, "   <tabela=filme>\n");
     for (int i = 0; i < qtde; i++) {

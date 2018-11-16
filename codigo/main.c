@@ -28,9 +28,9 @@ int main(int argc, char** argv) {
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
 
-    //menuPrincipal();
+    menuPrincipal();
 
-    importacaoCliente();
+    //importacaoCliente();
     //[
 
     //    int i;
