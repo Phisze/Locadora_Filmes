@@ -46,6 +46,6 @@ Conta * contasReceberCodigoFeedback(int cod1, int cod2);
 
 Conta * contasPagarDataFeedback(char *data1, char *data2);
 
-Conta * contasPagarCodigoFeedback(int cod1, int cod2)
+Conta * contasPagarCodigoFeedback(int cod1, int cod2);
 #endif /* FEEDBACK_H */
 
