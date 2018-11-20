@@ -119,14 +119,18 @@ typedef struct{
 
 typedef struct{
     float codigo;
-    Cliente cliCodigo;
-    Filme *filCodigo;
+    float cliCodigo;
+    //na ultima posicao tem -1
+    float * filCodigo;
     int tipo;// 0 = A vista ou 1 = A prazo
     char data[DATA_NASCIMENTO];
     float valor;
-    int qtde_Filmes_Locados;
+    //na ultima pos -1 pra saber quando 
+    int *qtde_Filmes_Locados;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
-} Locacoes;
+    //na ultima tem -1
+    float * parcelas;
+} Locacao;
 
 typedef struct {
     int tamanho;

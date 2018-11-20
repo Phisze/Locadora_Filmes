@@ -49,6 +49,7 @@
       <itemPath>controle/conFilme.c</itemPath>
       <itemPath>controle/conFornecedcor.c</itemPath>
       <itemPath>controle/conFuncionario.c</itemPath>
+      <itemPath>controle/conLocacaoFilme.c</itemPath>
       <itemPath>controle/conLocadora.c</itemPath>
       <itemPath>controle/conPersistencia.c</itemPath>
       <itemPath>controle/feedback.c</itemPath>
@@ -139,6 +140,8 @@
       <item path="controle/conFornecedcor.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conLocacaoFilme.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conLocadora.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -276,6 +279,8 @@
       <item path="controle/conFornecedcor.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="controle/conLocacaoFilme.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conLocadora.c" ex="false" tool="0" flavor2="0">
       </item>

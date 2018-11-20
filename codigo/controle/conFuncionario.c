@@ -26,7 +26,6 @@ Funcionario* listaFuncionarios() {
 }
 
 //implementar esse olhar se no codigo do wev tem
-
 Funcionario consultaFuncionario(int codFun) {
     return consultarFuncionarios(codFun);
 }

@@ -31,7 +31,7 @@ int salvaLocadora(Locadora *l);
 int atualizaLocadora(Locadora l);
 int deletaLocadora(float codLoc);
 Locadora* listaLocadoras();
-Locadora consultaFilme(float codigo);
+Locadora consultaLocadora(float codigo);
 
 #endif /* CONLOCADORA_H */
 

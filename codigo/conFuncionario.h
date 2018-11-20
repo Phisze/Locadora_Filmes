@@ -31,7 +31,7 @@ int salvaFuncionario(Funcionario *f);
 int atualizaFuncionario(Funcionario f);
 int deletaFuncionario(float codFunc);
 Funcionario* listaFuncionarios();
-Funcionario consultaFilme(float codigo);
+Funcionario consultaFuncionario(float codigo);
 
 #endif /* CONFUNCIONARIO_H */
 

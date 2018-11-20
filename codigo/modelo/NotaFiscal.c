@@ -9,6 +9,7 @@
 #include <string.h>
 #include <math.h>
 #include "../structs.h"
+#include "../conFilme.h"
 //int i = 0;
 
 void notaFical(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd, float *valor) {
@@ -24,11 +25,17 @@ void notaFical(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd,
     fprintf(arquivo, "Frete:  %.2f \t Imposto\n", frete, imposto);
     fprintf(arquivo, " \t\t Filmes \n");
     int i = 0;
+    //DEIXA MEUS COMENTÁRIO EM PAZ
+    //Qtd 0 indica que para de ler por que no fim do vetor tem que vir esse 0
     while (qtd[i] != 0) {
         total = valor[i] * qtd[i];
         fprintf(arquivo, "Descrição: %s | Preço: %.2f | Quantidade: %.2f | Total: %.2f \n", fil[i].descricao, qtd[i], valor[i], total);
         somador += total;
         somadorQTD += qtd[i];
+        
+        
+        atualizaFilme((consultaFilme(fil[i].codigo)).exemplares+=qtd[i]);     
+        
         i++;
     }
     finalFrete = frete / somadorQTD;
