@@ -126,7 +126,7 @@ typedef struct{
     char data[DATA_NASCIMENTO];
     float valor;
     //na ultima pos -1 pra saber quando 
-    int *qtde_Filmes_Locados;
+    int qtde_Filmes_Locados;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
     //na ultima tem -1
     float * parcelas;

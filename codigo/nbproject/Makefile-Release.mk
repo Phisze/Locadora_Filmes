@@ -60,6 +60,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/modelo/daos/filmeDAO.o \
 	${OBJECTDIR}/modelo/daos/fornecedorDAO.o \
 	${OBJECTDIR}/modelo/daos/funcionarioDAO.o \
+	${OBJECTDIR}/modelo/daos/locacaoDAO.o \
 	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
@@ -218,6 +219,11 @@ ${OBJECTDIR}/modelo/daos/funcionarioDAO.o: modelo/daos/funcionarioDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/funcionarioDAO.o modelo/daos/funcionarioDAO.c
+
+${OBJECTDIR}/modelo/daos/locacaoDAO.o: modelo/daos/locacaoDAO.c
+	${MKDIR} -p ${OBJECTDIR}/modelo/daos
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/locacaoDAO.o modelo/daos/locacaoDAO.c
 
 ${OBJECTDIR}/modelo/daos/locadoraDAO.o: modelo/daos/locadoraDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos

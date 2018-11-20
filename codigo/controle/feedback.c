@@ -135,6 +135,7 @@ Locacao * locacoesCodigoFeedback(int tipo) {
                 array[j].codigo = Locacoess[i].codigo;
                 array[j].cliCodigo = Locacoess[i].cliCodigo;
                 //Filme é um array
+                w = 0;
                 while (Locacoess[i].filCodigo[w] != -1) {
                     array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
                     w++;
@@ -144,12 +145,6 @@ Locacao * locacoesCodigoFeedback(int tipo) {
                 array[j].valor = Locacoess[i].valor;
                 strcpy(array[j].data, Locacoess[i].data);
                 j++;
-                array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
-                array[j].tipo = Locacoess[i].tipo;
-                array[j].valor = Locacoess[i].valor;
-                strcpy(array[j].data, Locacoess[i].data);
-                j++;
-
             }
         }
     }
@@ -171,15 +166,11 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
                 array[j].codigo = Locacoess[i].codigo;
                 array[j].cliCodigo = Locacoess[i].cliCodigo;
                 //Filme é um array
+                w = 0;
                 while (Locacoess[i].filCodigo[w] != -1) {
                     array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
                     w++;
                 }
-                array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
-                array[j].tipo = Locacoess[i].tipo;
-                array[j].valor = Locacoess[i].valor;
-                strcpy(array[j].data, Locacoess[i].data);
-                j++;
                 array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 array[j].tipo = Locacoess[i].tipo;
                 array[j].valor = Locacoess[i].valor;
@@ -192,22 +183,55 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
     return array;
 }
 
-Locacao * movimentacaoCaixaFeedback(char *data1, char *data2) {
+//Locacao * movimentacaoCaixaFeedbackLocacao(char *data1, char *data2) {
+//    Locacao *Locacoess;
+//    //Locacoess = listaLocacoes();
+//    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+//    time_t d1 = to_seconds(data1);
+//    time_t d2 = to_seconds(data2);
+//    time_t dataLocacoes;
+//    int w = 0;
+//    int j = 0;
+//    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+//        dataLocacoes = to_seconds(Locacoess[i].data);
+//        if (d1 > dataLocacoes && d2 < dataLocacoes) {
+//            if (Locacoess[i].deletado != '*') {
+//                array[j].codigo = Locacoess[i].codigo;
+//                array[j].cliCodigo = Locacoess[i].cliCodigo;
+//                //Filme é um array
+//                while (Locacoess[i].filCodigo[w] != -1) {
+//                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
+//                    w++;
+//                }
+//                array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
+//                array[j].tipo = Locacoess[i].tipo;
+//                array[j].valor = Locacoess[i].valor;
+//                strcpy(array[j].data, Locacoess[i].data);
+//                j++;
+//            }
+//        }
+//    }
+//    array = realloc(array, j * sizeof (Locacao));
+//    return array;
+//}
+
+Locacao * contasReceberDataFeedback(char *data1, char *data2) {
     Locacao *Locacoess;
-    //Locacoess = listaLocacoes();
-    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+    //Locacoess = listaConta();
+    Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
     time_t dataLocacoes;
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
-        dataLocacoes = to_seconds(Locacoess[i].data);
+    for (int i = 0; i < 2/*(qtdConta())*/; i++) {
+        dataLocacoes = to_seconds(Locacao[i].data);
         if (d1 > dataLocacoes && d2 < dataLocacoes) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;
                 array[j].cliCodigo = Locacoess[i].cliCodigo;
                 //Filme é um array
+                w = 0;
                 while (Locacoess[i].filCodigo[w] != -1) {
                     array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
                     w++;
@@ -215,6 +239,7 @@ Locacao * movimentacaoCaixaFeedback(char *data1, char *data2) {
                 array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 array[j].tipo = Locacoess[i].tipo;
                 array[j].valor = Locacoess[i].valor;
+                array[j].parcelas = Locacoess[i].parcelas;
                 strcpy(array[j].data, Locacoess[i].data);
                 j++;
             }
@@ -224,57 +249,29 @@ Locacao * movimentacaoCaixaFeedback(char *data1, char *data2) {
     return array;
 }
 
-Conta * contasReceberDataFeedback(char *data1, char *data2) {
-    Conta *Contas;
+Locacao * contasReceberCodigoFeedback(int cod1, int cod2) {
+    Locacao *Locacoess;
     //Locacoess = listaConta();
-    Conta *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
-    time_t d1 = to_seconds(data1);
-    time_t d2 = to_seconds(data2);
-    time_t dataLocacoes;
-    int w = 0;
+    Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
     int j = 0;
+    int w;
     for (int i = 0; i < 2/*(qtdConta())*/; i++) {
-        if (Contas[i].tipo == 0) {
-            dataLocacoes = to_seconds(Contas[i].data);
-            if (d1 > dataLocacoes && d2 < dataLocacoes) {
-                if (Contas[i].deletado != '*') {
-                    array[j].codigo = Contas[i].codigo;
-                    strcpy(array[j].data, Contas[i].data);
-                    array[j].tipo = array[i].tipo;
-                    array[j].valor = array[i].valor;
-                    //Perguntar o Thomas como ele sabe o numero de parcelas
-                    while (Contas[i].parcelas[w] != -1) {
-                        array[j].parcelas[w] = Contas[i].parcelas[w];
+        if (Locacoess[i].tipo == 0) {
+            if (cod1 > Locacoess[i].codigo && cod2 < Locacoess[i].codigo) {
+                if (Locacoess[i].deletado != '*') {
+                    array[j].codigo = Locacoess[i].codigo;
+                    array[j].cliCodigo = Locacoess[i].cliCodigo;
+                    //Filme é um array
+                    w = 0;
+                    while (Locacoess[i].filCodigo[w] != -1) {
+                        array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
                         w++;
                     }
-                    j++;
-                }
-            }
-        }
-    }
-    array = realloc(array, j * sizeof (Conta));
-    return array;
-}
-
-Conta * contasReceberCodigoFeedback(int cod1, int cod2) {
-    Conta *Contas;
-    //Locacoess = listaConta();
-    Conta *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
-    int w = 0;
-    int j = 0;
-    for (int i = 0; i < 2/*(qtdConta())*/; i++) {
-        if (Contas[i].tipo == 0) {
-            if (cod1 > Contas[i].codigo && cod2 < Contas[i].codigo) {
-                if (Contas[i].deletado != '*') {
-                    array[j].codigo = Contas[i].codigo;
-                    strcpy(array[j].data, Contas[i].data);
-                    array[j].tipo = array[i].tipo;
-                    array[j].valor = array[i].valor;
-                    //Perguntar o Thomas como ele sabe o numero de parcelas
-                    while (Contas[i].parcelas[w] != -1) {
-                        array[j].parcelas[w] = Contas[i].parcelas[w];
-                        w++;
-                    }
+                    array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
+                    array[j].tipo = Locacoess[i].tipo;
+                    array[j].valor = Locacoess[i].valor;
+                    array[j].parcelas = Locacoess[i].parcelas;
+                    strcpy(array[j].data, Locacoess[i].data);
                     j++;
                 }
             }
@@ -303,6 +300,7 @@ Conta * contasPagarDataFeedback(char *data1, char *data2) {
                     array[j].tipo = array[i].tipo;
                     array[j].valor = array[i].valor;
                     //Perguntar o Thomas como ele sabe o numero de parcelas
+                    w = 0;
                     while (Contas[i].parcelas[w] != -1) {
                         array[j].parcelas[w] = Contas[i].parcelas[w];
                         w++;
@@ -331,6 +329,7 @@ Conta * contasPagarCodigoFeedback(int cod1, int cod2) {
                     array[j].tipo = array[i].tipo;
                     array[j].valor = array[i].valor;
                     //Perguntar o Thomas como ele sabe o numero de parcelas
+                    w = 0;
                     while (Contas[i].parcelas[w] != -1) {
                         array[j].parcelas[w] = Contas[i].parcelas[w];
                         w++;
