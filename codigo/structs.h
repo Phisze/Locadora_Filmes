@@ -33,7 +33,7 @@ extern "C" {
 #define TELEFONE 13
 #define EMAIL 35
 #define ESTADO_CIVIL 10
-#define DATA_NASCIMENTO 11
+#define DATA_NASCIMENTO 10
 #define DESCRICAO 100
 #define LINGUA 10
 #define CARGO 10
