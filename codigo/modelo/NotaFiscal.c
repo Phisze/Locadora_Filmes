@@ -34,7 +34,7 @@ void notaFical(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd,
         somadorQTD += qtd[i];
         
         
-        atualizaFilme((consultaFilme(fil[i].codigo)).exemplares+=qtd[i]);     
+//        atualizaFilme((consultaFilme(fil[i].codigo)).exemplares+=qtd[i]);     
         
         i++;
     }

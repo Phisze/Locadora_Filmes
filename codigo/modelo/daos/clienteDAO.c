@@ -89,28 +89,29 @@ Cliente* lClientes() {
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
-      //  if (c.deletado != '*') {
-            // VECTOR_ADD(v,c);
-            // array[i].nome = c.nome;
-            array[i].codigo = c.codigo;
-            strcpy(array[i].nome, c.nome);
-            strcpy(array[i].endereco, c.endereco);
-            strcpy(array[i].cpf, c.cpf);
-            strcpy(array[i].telefone, c.telefone);
-            strcpy(array[i].email, c.email);
-            array[i].sexo = c.sexo;
-            strcpy(array[i].estado_civil, c.estado_civil);
-            strcpy(array[i].data_nascimento, c.data_nascimento);
-            // }
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+        //  if (c.deletado != '*') {
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        array[i].codigo = c.codigo;
+        strcpy(array[i].nome, c.nome);
+        strcpy(array[i].endereco, c.endereco);
+        strcpy(array[i].cpf, c.cpf);
+        strcpy(array[i].telefone, c.telefone);
+        strcpy(array[i].email, c.email);
+        array[i].sexo = c.sexo;
+        strcpy(array[i].estado_civil, c.estado_civil);
+        strcpy(array[i].data_nascimento, c.data_nascimento);
+        array[i].deletado = c.deletado;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
-            //VECTOR_ADD(clientes, cw);
-            //printf("Cod %s\n", c.nome);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
-//        }
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoCliente() - 1) - cont) * sizeof (Cliente));
+        //        }
     }
     fclose(arq);
     return array;
@@ -127,50 +128,52 @@ Cliente* ListarClientesTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
-       // if (c.deletado != '*') {
-            array[i].codigo = c.codigo;
-            strcpy(array[i].nome, c.nome);
-            strcpy(array[i].endereco, c.endereco);
-            strcpy(array[i].cpf, c.cpf);
-            strcpy(array[i].telefone, c.telefone);
-            strcpy(array[i].email, c.email);
-            array[i].sexo = c.sexo;
-            strcpy(array[i].estado_civil, c.estado_civil);
-            strcpy(array[i].data_nascimento, c.data_nascimento);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoClienteTexto() - 1) - cont) * sizeof (Cliente));
-//        };
+        // if (c.deletado != '*') {
+        array[i].codigo = c.codigo;
+        strcpy(array[i].nome, c.nome);
+        strcpy(array[i].endereco, c.endereco);
+        strcpy(array[i].cpf, c.cpf);
+        strcpy(array[i].telefone, c.telefone);
+        strcpy(array[i].email, c.email);
+        array[i].sexo = c.sexo;
+        strcpy(array[i].estado_civil, c.estado_civil);
+        strcpy(array[i].data_nascimento, c.data_nascimento);
+        
+
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoClienteTexto() - 1) - cont) * sizeof (Cliente));
+        //        };
     }
     fclose(arquivo);
     return array;
 }
 
 Cliente* listarClienteArrayDinamico() {
-//    Cliente *array = realloc((tamanhoClientes) * sizeof (Cliente));;
-//    tamanhoClientes = tamanhoClientesListar;
-//    int i;
-//    int j = 0;
-//    int cont = 0;
-//    for (i = 0; i < tamanhoClientes; i++) {
-//      //  if (Clientes[i].deletado != '*') {
-//            array[j].codigo = Clientes[i].codigo;
-//            strcpy(array[j].nome, Clientes[i].nome);
-//            strcpy(array[j].endereco, Clientes[i].endereco);
-//            strcpy(array[j].cpf, Clientes[i].cpf);
-//            strcpy(array[j].telefone, Clientes[i].telefone);
-//            strcpy(array[j].email, Clientes[i].email);
-//            array[j].sexo = Clientes[i].sexo;
-//            strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-//            strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
-//            j++;
-//        } else {
-//            cont++;
-//            tamanhoClientesListar -= cont;
-//            array = realloc(array, (tamanhoClientesListar) * sizeof (Cliente));
-//        };
- //   }
+    //    Cliente *array = realloc((tamanhoClientes) * sizeof (Cliente));;
+    //    tamanhoClientes = tamanhoClientesListar;
+    //    int i;
+    //    int j = 0;
+    //    int cont = 0;
+    //    for (i = 0; i < tamanhoClientes; i++) {
+    //      //  if (Clientes[i].deletado != '*') {
+    //            array[j].codigo = Clientes[i].codigo;
+    //            strcpy(array[j].nome, Clientes[i].nome);
+    //            strcpy(array[j].endereco, Clientes[i].endereco);
+    //            strcpy(array[j].cpf, Clientes[i].cpf);
+    //            strcpy(array[j].telefone, Clientes[i].telefone);
+    //            strcpy(array[j].email, Clientes[i].email);
+    //            array[j].sexo = Clientes[i].sexo;
+    //            strcpy(array[j].estado_civil, Clientes[i].estado_civil);
+    //            strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
+    //            j++;
+    //        } else {
+    //            cont++;
+    //            tamanhoClientesListar -= cont;
+    //            array = realloc(array, (tamanhoClientesListar) * sizeof (Cliente));
+    //        };
+    //   }
     //printf("Listar %c\n", array[0].sexo);
 
     return Clientes;
@@ -344,15 +347,14 @@ int excluirCliente(float cod) {
                 fseek(arq, sizeof (Cliente)*-1, SEEK_CUR);
                 fwrite(&c, sizeof (c), 1, arq);
                 fseek(arq, sizeof (c)* 0, SEEK_END);
-                return 1;
-            } else if (certeza == 'n')
-                return 1;
+                // return 1;
+            }
         }
     }
 
-    if (!achei)
+    if (!achei) {
         printf("\nCodigo nao cadastrado!!\n");
-
+    }
     fclose(arq);
     return 0;
 }

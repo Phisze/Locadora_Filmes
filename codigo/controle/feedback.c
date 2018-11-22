@@ -102,7 +102,7 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
     Locacao *Locacoess;
     float qtde;
     //Locacoess = listaLocacoes();
-    //Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
     Filme f;
     float j = 0;
     for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
@@ -225,7 +225,7 @@ Locacao * contasReceberDataFeedback(char *data1, char *data2) {
     int w = 0;
     int j = 0;
     for (int i = 0; i < 2/*(qtdConta())*/; i++) {
-        dataLocacoes = to_seconds(Locacao[i].data);
+        dataLocacoes = to_seconds(Locacoess[i].data);
         if (d1 > dataLocacoes && d2 < dataLocacoes) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;

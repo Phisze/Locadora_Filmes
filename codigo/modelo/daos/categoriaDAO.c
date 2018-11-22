@@ -67,29 +67,30 @@ Categoria* listarCategoria() {
     // VECTOR_INIT(v);
     FILE *arq = fopen("categoria.pro", "rb");
     //printf("Arquivo xistente!");
-//    int cont = 0;
+    //    int cont = 0;
     if (arq == NULL) {
         printf("Arquivo inexistente!");
 
         return;
     }
     while (fread(&c, sizeof (c), 1, arq)) {
-      //  if (c.deletado != '*') {
+        //  if (c.deletado != '*') {
 
-            // VECTOR_ADD(v,c);
-            // array[i].nome = c.nome;
-            array[i].codigo = c.codigo;
-            strcpy(array[i].descricao, c.descricao);
-            array[i].valor_locacao = c.valor_locacao;
-            // }
-            //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        array[i].codigo = c.codigo;
+        strcpy(array[i].descricao, c.descricao);
+        array[i].valor_locacao = c.valor_locacao;
+        array[i].deletado = c.deletado;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
 
-            //printf("Cod %s\n", c.nome);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoCategoria() - 1) - cont) * sizeof (Categoria));
-//        };
+        //printf("Cod %s\n", c.nome);
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoCategoria() - 1) - cont) * sizeof (Categoria));
+        //        };
     }
     fclose(arq);
     return array;
@@ -105,38 +106,38 @@ Categoria* ListarCategoriaTexto() {
     arquivo = fopen("categoria.txt", "rt");
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
-       // if (c.deletado != '*') {
-            array[i].codigo = c.codigo;
-            strcpy(array[i].descricao, c.descricao);
-            array[i].valor_locacao = c.valor_locacao;
-            i++;
-//        } else {;
-//            cont++;
-//            array = realloc(array, ((getTamanhoCategoriaTexto() - 1) - cont) * sizeof (Categoria));
-//        }
+        // if (c.deletado != '*') {
+        array[i].codigo = c.codigo;
+        strcpy(array[i].descricao, c.descricao);
+        array[i].valor_locacao = c.valor_locacao;
+        i++;
+        //        } else {;
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoCategoriaTexto() - 1) - cont) * sizeof (Categoria));
+        //        }
     }
     fclose(arquivo);
     return array;
 }
 
 Categoria* listarCategoriaArrayDinamico() {
-//    Categoria *array = malloc((tamanhoCategorias) * sizeof (Categoria));
-//    tamanhoCategorias = tamanhoCategoriasListar;
-//    int i;
-//    int j = 0;
-//    int cont = 0;
-//    for (i = 0; i < tamanhoCategorias; i++) {
-//    //    if (Categorias[i].deletado != '*') {
-//            array[j].codigo = Categorias[i].codigo;
-//            strcpy(array[j].descricao, Categorias[i].descricao);
-//            array[j].valor_locacao = Categorias[i].valor_locacao;
-//            j++;
-//        } else {
-//            cont++;
-//            tamanhoCategoriasListar -= cont;
-//            array = realloc(array, (tamanhoCategoriasListar) * sizeof (Categoria));
-//        };
-  //  }
+    //    Categoria *array = malloc((tamanhoCategorias) * sizeof (Categoria));
+    //    tamanhoCategorias = tamanhoCategoriasListar;
+    //    int i;
+    //    int j = 0;
+    //    int cont = 0;
+    //    for (i = 0; i < tamanhoCategorias; i++) {
+    //    //    if (Categorias[i].deletado != '*') {
+    //            array[j].codigo = Categorias[i].codigo;
+    //            strcpy(array[j].descricao, Categorias[i].descricao);
+    //            array[j].valor_locacao = Categorias[i].valor_locacao;
+    //            j++;
+    //        } else {
+    //            cont++;
+    //            tamanhoCategoriasListar -= cont;
+    //            array = realloc(array, (tamanhoCategoriasListar) * sizeof (Categoria));
+    //        };
+    //  }
     //printf("Listar %c\n", array[0].sexo);
     return Categorias;
 }
@@ -296,11 +297,11 @@ int excluirCategoria(float cod) {
                 fseek(arq, sizeof (Categoria)*-1, SEEK_CUR);
                 fwrite(&c, sizeof (c), 1, arq);
                 fseek(arq, sizeof (c)* 0, SEEK_END);
-                return 1;
-            } else if (certeza == 'n')
-                return 1;
+                //return 1;
+            }
         }
     }
+
 
     if (!achei)
         printf("\nCodigo nao cadastrado!!\n");

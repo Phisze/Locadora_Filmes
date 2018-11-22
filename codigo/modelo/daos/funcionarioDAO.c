@@ -81,20 +81,22 @@ Funcionario* listarFuncionarios() {
     while (fread(&f, sizeof (f), 1, arq)) {
         //if (f.deletado != '*') {
 
-            // VECTOR_ADD(v,c);
-            // array[i].nome = nome;
-            array[i].codigo = f.codigo;
-            strcpy(array[i].nome, f.nome);
-            strcpy(array[i].endereco, f.endereco);
-            strcpy(array[i].telefone, f.telefone);
-            strcpy(array[i].email, f.email);
-            strcpy(array[i].cargo, f.cargo);
-            i++;
-       // } else {
+        // VECTOR_ADD(v,c);
+        // array[i].nome = nome;
+        array[i].codigo = f.codigo;
+        strcpy(array[i].nome, f.nome);
+        strcpy(array[i].endereco, f.endereco);
+        strcpy(array[i].telefone, f.telefone);
+        strcpy(array[i].email, f.email);
+        strcpy(array[i].cargo, f.cargo);
+        array[i].deletado = f.deletado;
+
+        i++;
+        // } else {
         //    cont++;
         //}
     }
-   // array = realloc(array, ((tana-1) - cont) * sizeof (Funcionario));
+    // array = realloc(array, ((tana-1) - cont) * sizeof (Funcionario));
 
     // fclose(arq);
     return array;
@@ -110,43 +112,43 @@ Funcionario* ListarFuncionarioTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
-//        if (f.deletado != '*') {
-            array[i].codigo = f.codigo;
-            strcpy(array[i].nome, f.nome);
-            strcpy(array[i].endereco, f.endereco);
-            strcpy(array[i].telefone, f.telefone);
-            strcpy(array[i].email, f.email);
-            strcpy(array[i].cargo, f.cargo);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoFuncionarioTexto() - 1) - cont) * sizeof (Funcionario));
-//        }
+        //        if (f.deletado != '*') {
+        array[i].codigo = f.codigo;
+        strcpy(array[i].nome, f.nome);
+        strcpy(array[i].endereco, f.endereco);
+        strcpy(array[i].telefone, f.telefone);
+        strcpy(array[i].email, f.email);
+        strcpy(array[i].cargo, f.cargo);
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoFuncionarioTexto() - 1) - cont) * sizeof (Funcionario));
+        //        }
     }
     fclose(arquivo);
     return array;
 }
 
 Funcionario* listarFuncionarioArrayDinamico() {
-//    Funcionario *array = malloc((tamanhoFuncionarios ) * sizeof (Funcionario));
-//    tamanhoFuncionarios = tamanhoFuncionariosListar;
-//    int i;
-//    int j = 0;
-//    int cont = 0;
-//    for (i = 0; i < tamanhoFuncionarios; i++) {
-////        if (Funcionarios[i].deletado != '*') {
-//            array[j].codigo = Funcionarios[i].codigo;
-//            strcpy(array[j].nome, Funcionarios[i].nome);
-//            strcpy(array[j].endereco, Funcionarios[i].endereco);
-//            strcpy(array[j].cargo, Funcionarios[i].cargo);
-//            strcpy(array[j].telefone, Funcionarios[i].telefone);
-//            strcpy(array[j].email, Funcionarios[i].email);
-          //  j++;
-//        } else {
-//            cont++;
-//            tamanhoFuncionariosListar -= cont;
-//            array = realloc(array, (tamanhoFuncionariosListar) * sizeof (Funcionario));
-//        }
+    //    Funcionario *array = malloc((tamanhoFuncionarios ) * sizeof (Funcionario));
+    //    tamanhoFuncionarios = tamanhoFuncionariosListar;
+    //    int i;
+    //    int j = 0;
+    //    int cont = 0;
+    //    for (i = 0; i < tamanhoFuncionarios; i++) {
+    ////        if (Funcionarios[i].deletado != '*') {
+    //            array[j].codigo = Funcionarios[i].codigo;
+    //            strcpy(array[j].nome, Funcionarios[i].nome);
+    //            strcpy(array[j].endereco, Funcionarios[i].endereco);
+    //            strcpy(array[j].cargo, Funcionarios[i].cargo);
+    //            strcpy(array[j].telefone, Funcionarios[i].telefone);
+    //            strcpy(array[j].email, Funcionarios[i].email);
+    //  j++;
+    //        } else {
+    //            cont++;
+    //            tamanhoFuncionariosListar -= cont;
+    //            array = realloc(array, (tamanhoFuncionariosListar) * sizeof (Funcionario));
+    //        }
     //}
     return Funcionarios;
 }
@@ -313,7 +315,7 @@ int excluirFuncionarios(float cod) {
                 fseek(arq, sizeof (Funcionario)*-1, SEEK_CUR);
                 fwrite(&f, sizeof (f), 1, arq);
                 fseek(arq, sizeof (f)* 0, SEEK_END);
-                return 1;
+                //  return 1;
             } else if (certeza == 'n')
                 return 1;
         }

@@ -113,6 +113,7 @@ Locacao * listarLocacaos() {
         array[i].tipo = f.tipo;
         array[i].valor = f.valor;
         array[i].parcelas = f.parcelas;
+        array[i].deletado = f.deletado;
         i++;
         // } else {
         //    cont++;
@@ -260,6 +261,7 @@ Locacao consultaLocacaoArrayDinamico(int cod) {
 }
 
 //Funções de Alteração
+Locacao k;
 
 int alterarLocacaos(Locacao Locacao, float cod) {
     FILE *arq = fopen("Locacao.pro", "r+b");
@@ -267,15 +269,12 @@ int alterarLocacaos(Locacao Locacao, float cod) {
         printf("Arquivo inexistente!");
         return 0;
     }
-
-    Locacao f;
-    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
 
-    while (fread(&f, sizeof (f), 1, arq)) {
-        if (cod == f.codigo) {
+    while (fread(&k, sizeof (k), 1, arq)) {
+        if (cod == k.codigo) {
             //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
@@ -376,7 +375,7 @@ void alterarLocacaoArrayDinamico(int cod, Locacao f) {
     Locacaos[cod - 1].cliCodigo = f.cliCodigo;
     Locacaos[cod - 1].filCodigo = f.filCodigo;
     while (Locacaos[cod - 1].filCodigo[i] != -1) {
-        Locacaos[cod - 1].filCodigo[i] = f.filCodigo;
+        Locacaos[cod - 1].filCodigo[i] = f.filCodigo[i];
         i++;
     }
     i = 0;
@@ -421,7 +420,7 @@ int excluirLocacaos(float cod) {
                 fseek(arq, sizeof (Locacao)*-1, SEEK_CUR);
                 fwrite(&f, sizeof (f), 1, arq);
                 fseek(arq, sizeof (f)* 0, SEEK_END);
-                return 1;
+               // return 1;
             } else if (certeza == 'n')
                 return 1;
         }

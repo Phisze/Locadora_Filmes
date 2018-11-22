@@ -17,9 +17,9 @@ Locadora static *Locadoras;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
-
-void criaArrayLocadora(){
-Locadoras = malloc(sizeof (Locadora));}
+void criaArrayLocadora() {
+    Locadoras = malloc(sizeof (Locadora));
+}
 //Funcao Inclusao 
 
 int inclusaoLocadora(Locadora l) {
@@ -79,25 +79,25 @@ Locadora* listarLocadora() {
         return;
     }
     while (fread(&l, sizeof (l), 1, arq)) {
-//        if (l.deletado != '*') {
+        //        if (l.deletado != '*') {
 
-            // VECTOR_ADD(v,c);
-            // array[i].nome = c.nome;
-            array[i].codigo = l.codigo;
-            strcpy(array[i].nome, l.nome);
-            strcpy(array[i].endereco, l.endereco);
-            strcpy(array[i].telefone, l.telefone);
-            strcpy(array[i].email, l.email);
-            strcpy(array[i].razao_social, l.razao_social);
-            strcpy(array[i].inscricao_estadual, l.inscricao_estadual);
-            strcpy(array[i].cnpj, l.cnpj);
-            strcpy(array[i].nome_responsavel, l.nome_responsavel);
-            strcpy(array[i].tel_responsavel, l.tel_responsavel);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoLocadora() - 1) - cont) * sizeof (Locadora));
-//        }
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        array[i].codigo = l.codigo;
+        strcpy(array[i].nome, l.nome);
+        strcpy(array[i].endereco, l.endereco);
+        strcpy(array[i].telefone, l.telefone);
+        strcpy(array[i].email, l.email);
+        strcpy(array[i].razao_social, l.razao_social);
+        strcpy(array[i].inscricao_estadual, l.inscricao_estadual);
+        strcpy(array[i].cnpj, l.cnpj);
+        strcpy(array[i].nome_responsavel, l.nome_responsavel);
+        strcpy(array[i].tel_responsavel, l.tel_responsavel);
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoLocadora() - 1) - cont) * sizeof (Locadora));
+        //        }
     }
     fclose(arq);
     return array;
@@ -113,52 +113,53 @@ Locadora* ListarLocadoraTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
-      //  if (l.deletado != '*') {
-            array[i].codigo = l.codigo;
-            strcpy(array[i].nome, l.nome);
-            strcpy(array[i].endereco, l.endereco);
-            strcpy(array[i].telefone, l.telefone);
-            strcpy(array[i].email, l.email);
-            strcpy(array[i].razao_social, l.razao_social);
-            strcpy(array[i].inscricao_estadual, l.inscricao_estadual);
-            strcpy(array[i].cnpj, l.cnpj);
-            strcpy(array[i].nome_responsavel, l.nome_responsavel);
-            strcpy(array[i].tel_responsavel, l.tel_responsavel);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoLocadoraTexto() - 1) - cont) * sizeof (Locadora));
-//        }
+        //  if (l.deletado != '*') {
+        array[i].codigo = l.codigo;
+        strcpy(array[i].nome, l.nome);
+        strcpy(array[i].endereco, l.endereco);
+        strcpy(array[i].telefone, l.telefone);
+        strcpy(array[i].email, l.email);
+        strcpy(array[i].razao_social, l.razao_social);
+        strcpy(array[i].inscricao_estadual, l.inscricao_estadual);
+        strcpy(array[i].cnpj, l.cnpj);
+        strcpy(array[i].nome_responsavel, l.nome_responsavel);
+        strcpy(array[i].tel_responsavel, l.tel_responsavel);
+        array[i].deletado = l.deletado;
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoLocadoraTexto() - 1) - cont) * sizeof (Locadora));
+        //        }
     }
     fclose(arquivo);
     return array;
 }
 
 Locadora* listarLocadoraArrayDinamico() {
-//    Locadora *array = malloc((tamanhoLocadoras) * sizeof (Locadora));
-//    tamanhoLocadoras = tamanhoLocadorasListar;
-//    int i;
-//    int j = 0;
-//    int cont = 0;
-//    for (i = 0; i < tamanhoLocadoras; i++) {
-//    //    if (Locadoras[i].deletado != '*') {
-//            array[j].codigo = Locadoras[i].codigo;
-//            strcpy(array[j].nome, Locadoras[i].nome);
-//            strcpy(array[j].endereco, Locadoras[i].endereco);
-//            strcpy(array[j].razao_social, Locadoras[i].razao_social);
-//            strcpy(array[j].inscricao_estadual, Locadoras[i].inscricao_estadual);
-//            strcpy(array[j].cnpj, Locadoras[i].cnpj);
-//            strcpy(array[j].telefone, Locadoras[i].telefone);
-//            strcpy(array[j].email, Locadoras[i].email);
-//            strcpy(array[j].nome_responsavel, Locadoras[i].nome_responsavel);
-//            strcpy(array[j].tel_responsavel, Locadoras[i].tel_responsavel);
-//            j++;
-//        } else {
-//            cont++;
-//            tamanhoLocadorasListar -= cont;
-//            array = realloc(array, (tamanhoLocadorasListar) * sizeof (Locadora));
-//        };
- //   }
+    //    Locadora *array = malloc((tamanhoLocadoras) * sizeof (Locadora));
+    //    tamanhoLocadoras = tamanhoLocadorasListar;
+    //    int i;
+    //    int j = 0;
+    //    int cont = 0;
+    //    for (i = 0; i < tamanhoLocadoras; i++) {
+    //    //    if (Locadoras[i].deletado != '*') {
+    //            array[j].codigo = Locadoras[i].codigo;
+    //            strcpy(array[j].nome, Locadoras[i].nome);
+    //            strcpy(array[j].endereco, Locadoras[i].endereco);
+    //            strcpy(array[j].razao_social, Locadoras[i].razao_social);
+    //            strcpy(array[j].inscricao_estadual, Locadoras[i].inscricao_estadual);
+    //            strcpy(array[j].cnpj, Locadoras[i].cnpj);
+    //            strcpy(array[j].telefone, Locadoras[i].telefone);
+    //            strcpy(array[j].email, Locadoras[i].email);
+    //            strcpy(array[j].nome_responsavel, Locadoras[i].nome_responsavel);
+    //            strcpy(array[j].tel_responsavel, Locadoras[i].tel_responsavel);
+    //            j++;
+    //        } else {
+    //            cont++;
+    //            tamanhoLocadorasListar -= cont;
+    //            array = realloc(array, (tamanhoLocadorasListar) * sizeof (Locadora));
+    //        };
+    //   }
     //printf("Listar %c\n", array[0].sexo);
 
     return Locadoras;
@@ -333,7 +334,7 @@ int excluirLocadora(float cod) {
                 fseek(arq, sizeof (Locadora)*-1, SEEK_CUR);
                 fwrite(&l, sizeof (l), 1, arq);
                 fseek(arq, sizeof (l)* 0, SEEK_END);
-                return 1;
+               // return 1;
             } else if (certeza == 'n')
                 return 1;
         }

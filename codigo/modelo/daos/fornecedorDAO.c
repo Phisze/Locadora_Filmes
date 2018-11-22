@@ -17,7 +17,7 @@ Fornecedor *Fornecedors;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
-void criaArrayFornecedor(){
+void criaArrayFornecedor() {
     Fornecedors = malloc(sizeof (Fornecedor));
 }
 
@@ -71,7 +71,7 @@ Fornecedor* listarFornecedor() {
     Fornecedor f;
     Fornecedor *fw = &f;
     int cont = 0;
-    Fornecedor *array = malloc((getTamanhoFornecedor())* sizeof f);
+    Fornecedor *array = malloc((getTamanhoFornecedor()) * sizeof f);
     // VECTOR_INIT(v);
     FILE *arq = fopen("fornecedor.pro", "rb");
     //printf("Arquivo xistente!");
@@ -82,23 +82,24 @@ Fornecedor* listarFornecedor() {
         return;
     }
     while (fread(&f, sizeof (f), 1, arq)) {
-       // if (f.deletado != '*') {
+        // if (f.deletado != '*') {
 
-            // VECTOR_ADD(v,c);
-            // array[i].nome = f.nome;
-            array[i].codigo = f.codigo;
-            strcpy(array[i].nome, f.nome);
-            strcpy(array[i].endereco, f.endereco);
-            strcpy(array[i].telefone, f.telefone);
-            strcpy(array[i].email, f.email);
-            strcpy(array[i].razao_social, f.razao_social);
-            strcpy(array[i].inscricao_estadual, f.inscricao_estadual);
-            strcpy(array[i].cnpj, f.cnpj);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoFornecedor() - 1) - cont) * sizeof (Fornecedor));
-//        }
+        // VECTOR_ADD(v,c);
+        // array[i].nome = f.nome;
+        array[i].codigo = f.codigo;
+        strcpy(array[i].nome, f.nome);
+        strcpy(array[i].endereco, f.endereco);
+        strcpy(array[i].telefone, f.telefone);
+        strcpy(array[i].email, f.email);
+        strcpy(array[i].razao_social, f.razao_social);
+        strcpy(array[i].inscricao_estadual, f.inscricao_estadual);
+        strcpy(array[i].cnpj, f.cnpj);
+        array[i].deletado = f.deletado;
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoFornecedor() - 1) - cont) * sizeof (Fornecedor));
+        //        }
     }
     fclose(arq);
     return array;
@@ -114,48 +115,48 @@ Fornecedor* ListarFornecedorTexto() {
 
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s %s %s\n", f.codigo, f.nome, f.razao_social, f.inscricao_estadual, f.cnpj, f.endereco, f.telefone, f.email);
-     //   if (f.deletado != '*') {
-            array[i].codigo = f.codigo;
-            strcpy(array[i].nome, f.nome);
-            strcpy(array[i].endereco, f.endereco);
-            strcpy(array[i].telefone, f.telefone);
-            strcpy(array[i].email, f.email);
-            strcpy(array[i].razao_social, f.razao_social);
-            strcpy(array[i].inscricao_estadual, f.inscricao_estadual);
-            strcpy(array[i].cnpj, f.cnpj);
-            i++;
-//        } else {
-//            cont++;
-//            array = realloc(array, ((getTamanhoFornecedorTexto() - 1) - cont) * sizeof (Fornecedor));
-//        }
+        //   if (f.deletado != '*') {
+        array[i].codigo = f.codigo;
+        strcpy(array[i].nome, f.nome);
+        strcpy(array[i].endereco, f.endereco);
+        strcpy(array[i].telefone, f.telefone);
+        strcpy(array[i].email, f.email);
+        strcpy(array[i].razao_social, f.razao_social);
+        strcpy(array[i].inscricao_estadual, f.inscricao_estadual);
+        strcpy(array[i].cnpj, f.cnpj);
+        i++;
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoFornecedorTexto() - 1) - cont) * sizeof (Fornecedor));
+        //        }
     }
     fclose(arquivo);
     return array;
 }
 
 Fornecedor* listarFornecedorArrayDinamico() {
-//    Fornecedor *array = malloc((tamanhoFornecedors) * sizeof (Fornecedor));
-//    tamanhoFornecedors = tamanhoFornecedorsListar;
-//    int i;
-//    int j = 0;
-//    int cont = 0;
-//    for (i = 0; i < tamanhoFornecedors; i++) {
-//     //   if (Fornecedors[i].deletado != '*') {
-//            array[j].codigo = Fornecedors[i].codigo;
-//            strcpy(array[j].nome, Fornecedors[i].nome);
-//            strcpy(array[j].endereco, Fornecedors[i].endereco);
-//            strcpy(array[j].telefone, Fornecedors[i].telefone);
-//            strcpy(array[j].email, Fornecedors[i].email);
-//            strcpy(array[j].razao_social, Fornecedors[i].razao_social);
-//            strcpy(array[j].inscricao_estadual, Fornecedors[i].inscricao_estadual);
-//            strcpy(array[j].cnpj, Fornecedors[i].cnpj);
-//            j++;
-//        } else {
-//            cont++;
-//            tamanhoFornecedorsListar -= cont;
-//            array = realloc(array, (tamanhoFornecedorsListar) * sizeof (Fornecedor));
-//        }
-   // }
+    //    Fornecedor *array = malloc((tamanhoFornecedors) * sizeof (Fornecedor));
+    //    tamanhoFornecedors = tamanhoFornecedorsListar;
+    //    int i;
+    //    int j = 0;
+    //    int cont = 0;
+    //    for (i = 0; i < tamanhoFornecedors; i++) {
+    //     //   if (Fornecedors[i].deletado != '*') {
+    //            array[j].codigo = Fornecedors[i].codigo;
+    //            strcpy(array[j].nome, Fornecedors[i].nome);
+    //            strcpy(array[j].endereco, Fornecedors[i].endereco);
+    //            strcpy(array[j].telefone, Fornecedors[i].telefone);
+    //            strcpy(array[j].email, Fornecedors[i].email);
+    //            strcpy(array[j].razao_social, Fornecedors[i].razao_social);
+    //            strcpy(array[j].inscricao_estadual, Fornecedors[i].inscricao_estadual);
+    //            strcpy(array[j].cnpj, Fornecedors[i].cnpj);
+    //            j++;
+    //        } else {
+    //            cont++;
+    //            tamanhoFornecedorsListar -= cont;
+    //            array = realloc(array, (tamanhoFornecedorsListar) * sizeof (Fornecedor));
+    //        }
+    // }
     //printf("Listar %c\n", array[0].sexo);
 
     return Fornecedors;
@@ -327,7 +328,7 @@ int excluirFornecedor(float cod) {
                 fseek(arq, sizeof (Fornecedor)*-1, SEEK_CUR);
                 fwrite(&f, sizeof (f), 1, arq);
                 fseek(arq, sizeof (f)* 0, SEEK_END);
-                return 1;
+               // return 1;
             } else if (certeza == 'n')
                 return 1;
         }

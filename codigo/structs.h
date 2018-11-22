@@ -121,7 +121,7 @@ typedef struct{
     float codigo;
     float cliCodigo;
     //na ultima posicao tem -1
-    float * filCodigo;
+    int * filCodigo;
     int tipo;// 0 = A vista ou 1 = A prazo
     char data[DATA_NASCIMENTO];
     float valor;
