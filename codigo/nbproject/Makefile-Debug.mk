@@ -42,7 +42,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/controle/conFornecedcor.o \
 	${OBJECTDIR}/controle/conFuncionario.o \
 	${OBJECTDIR}/controle/conImportacao.o \
-	${OBJECTDIR}/controle/conLocacao.o \
 	${OBJECTDIR}/controle/conLocacaoFilme.o \
 	${OBJECTDIR}/controle/conLocadora.o \
 	${OBJECTDIR}/controle/conPersistencia.o \
@@ -131,11 +130,6 @@ ${OBJECTDIR}/controle/conImportacao.o: controle/conImportacao.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conImportacao.o controle/conImportacao.c
-
-${OBJECTDIR}/controle/conLocacao.o: controle/conLocacao.c
-	${MKDIR} -p ${OBJECTDIR}/controle
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conLocacao.o controle/conLocacao.c
 
 ${OBJECTDIR}/controle/conLocacaoFilme.o: controle/conLocacaoFilme.c
 	${MKDIR} -p ${OBJECTDIR}/controle

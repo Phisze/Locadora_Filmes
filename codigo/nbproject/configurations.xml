@@ -17,7 +17,6 @@
       <itemPath>conFornecedor.h</itemPath>
       <itemPath>conFuncionario.h</itemPath>
       <itemPath>conImportacao.h</itemPath>
-      <itemPath>conLocacao.h</itemPath>
       <itemPath>conLocadora.h</itemPath>
       <itemPath>conPersistencia.h</itemPath>
       <itemPath>feedback.h</itemPath>
@@ -54,7 +53,6 @@
       <itemPath>controle/conFornecedcor.c</itemPath>
       <itemPath>controle/conFuncionario.c</itemPath>
       <itemPath>controle/conImportacao.c</itemPath>
-      <itemPath>controle/conLocacao.c</itemPath>
       <itemPath>controle/conLocacaoFilme.c</itemPath>
       <itemPath>controle/conLocadora.c</itemPath>
       <itemPath>controle/conPersistencia.c</itemPath>
@@ -138,8 +136,6 @@
       </item>
       <item path="conImportacao.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="conLocacao.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conPersistencia.h" ex="false" tool="3" flavor2="0">
@@ -157,8 +153,6 @@
       <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conImportacao.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="controle/conLocacao.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conLocacaoFilme.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -291,8 +285,6 @@
       </item>
       <item path="conImportacao.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="conLocacao.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conPersistencia.h" ex="false" tool="3" flavor2="0">
@@ -310,8 +302,6 @@
       <item path="controle/conFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conImportacao.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="controle/conLocacao.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/conLocacaoFilme.c" ex="false" tool="0" flavor2="0">
       </item>

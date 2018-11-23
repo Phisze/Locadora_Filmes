@@ -71,6 +71,12 @@ int locaFilmes(float cliCodigo, float* filmesCod, int * qtdFilme, float totalPag
 //            i++;
 //        }
 }
+int devolveFilmes(){
+    
+    
+    
+    
+}
 int deletaLocacao(float codLoc){}
 Locacao* listaLocacoes(){}
 Locacao consultaLocacao(float codigo){}

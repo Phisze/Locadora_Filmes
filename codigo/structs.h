@@ -112,7 +112,9 @@ typedef struct{
     float cliCodigo;
     float valor;
     int tipo; //0=A receber ou 1 = A pagar
-    float * parcelas;
+    int qtdParcelaInicial;
+    int qtdParcela;
+    float valorParcela;
     char data[DATA_NASCIMENTO];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Conta;
@@ -121,7 +123,9 @@ typedef struct{
     float codigo;
     float cliCodigo;
     //na ultima posicao tem -1
-    int * filCodigo;
+    int filCodigo1;
+    int filCodigo2;
+    int filCodigo3;
     int tipo;// 0 = A vista ou 1 = A prazo
     char data[DATA_NASCIMENTO];
     float valor;
@@ -129,7 +133,10 @@ typedef struct{
     int qtde_Filmes_Locados;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
     //na ultima tem -1
-    float * parcelas;
+    int qtdParcelaInicial;
+    int qtdParcela;
+    float valorParcela;
+    //float * parcelas;
 } Locacao;
 
 typedef struct {
