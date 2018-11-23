@@ -27,7 +27,10 @@ extern "C" {
 }
 #endif
 
-int locaFilmes(float cliCodigo, float* filmesCod, int * qtdFilme, float totalPago, int tipo, int numParcela, float entrada);
+int locaFilmes(float cliCodigo, float* filmesCod, float totalPago, int tipo, int numParcela, float entrada);
+int deletaLocacao(float codLoc);
+Locacao* listaLocacoes();
+Locacao consultaLocacao(float codigo);
 
 #endif /* CONLOCACAOFILME_H */
 

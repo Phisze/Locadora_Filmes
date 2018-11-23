@@ -8,11 +8,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//<<<<<<< HEAD
+
 #include "../structs.h"
 
 //int locaFilmes(float cliCodigo,Filme* filmes,int * Qtd,float totalPago,int tipo,int numParcela,float entrada){
-//=======
+
 int locaFilmes(float cliCodigo, float* filmesCod, int * qtdFilme, float totalPago, int tipo, int numParcela, float entrada) {
 
 
@@ -33,8 +33,7 @@ int locaFilmes(float cliCodigo, float* filmesCod, int * qtdFilme, float totalPag
     sprintf(mes,"%d",tm.tm_mon);
     char ano[snprintf(NULL,0,"%d",tm.tm_year+1900)+1];
     sprintf(ano,"%d",tm.tm_year+1900);
-//>>>>>>> master
-    
+
     l.data[0]=dia[0];
     l.data[1]=dia[1];
     l.data[2]='/';
@@ -72,3 +71,6 @@ int locaFilmes(float cliCodigo, float* filmesCod, int * qtdFilme, float totalPag
 //            i++;
 //        }
 }
+int deletaLocacao(float codLoc){}
+Locacao* listaLocacoes(){}
+Locacao consultaLocacao(float codigo){}

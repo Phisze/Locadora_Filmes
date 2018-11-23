@@ -12,7 +12,7 @@
 #include "../conFilme.h"
 //int i = 0;
 
-void notaFical(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd, float *valor) {
+void notaFiscal(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd, float *valor) {
     FILE *arquivo;
     float somador = 0;
     float somadorQTD = 0;
@@ -33,8 +33,7 @@ void notaFical(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd,
         somador += total;
         somadorQTD += qtd[i];
         
-        
-//        atualizaFilme((consultaFilme(fil[i].codigo)).exemplares+=qtd[i]);     
+ 
         
         i++;
     }
