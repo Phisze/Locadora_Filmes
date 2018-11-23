@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./../../tamanho.h"
+#include "../../tamanho.h"
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,85 +13,66 @@
 
 int tamanhoLocacaos = 0;
 int tamanhoLocacaosListar = 0;
-Locacao *Locacaos;
+Locacao static *Locacaos;
 int static tamanho = 0;
 int static tamanhoTexto = 0;
 
 void criaArrayLocacao() {
     Locacaos = malloc(sizeof (Locacao));
 }
-
 //Funcao Inclusao 
-//Lebre-se de pensar sobre isso
 
-int inclusaoLocacaos(Locacao f) {
+int inclusaoLocacao(Locacao l) {
     FILE *arq = fopen("Locacao.pro", "ab");
-
     if (arq == NULL) {
         printf("Erro ao abrir arquivo");
         return 0;
     }
 
-    fwrite(&f, sizeof (f), 1, arq);
+    fwrite(&l, sizeof (l), 1, arq);
     fclose(arq);
     tamanho = getTamanhoLocacao();
     tamanho++;
     setTamanhoLocacao(tamanho);
     return 1;
-
 }
 
-void inclusaoLocacaoTexto(Locacao f) {
+void inclusaoLocacaoTexto(Locacao l) {
     FILE *arquivo;
-    int i = 0;
-    arquivo = fopen("Locacao.txt", "wt");
-    fprintf(arquivo, "%f %f %s %f", f.codigo, f.cliCodigo, f.data);
-    while (f.filCodigo[i] != -1) {
-        fprintf(arquivo, "%f ", f.filCodigo);
-        i++;
-    }
-    i = 0;
-    while (f.parcelas[i] != -1) {
-        fprintf(arquivo, "%f ", f.parcelas);
-        i++;
-    }
-    fprintf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
+    arquivo = fopen("Locacao.txt", "a");
+    fprintf(arquivo, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
     fclose(arquivo);
     tamanhoTexto = getTamanhoLocacaoTexto();
     tamanhoTexto++;
     setTamanhoLocacaoTexto(tamanhoTexto);
 }
 
-void insereLocacaoArrayDinamico(Locacao f) {
-    int i = 0;
+void insereLocacaoArrayDinamico(Locacao c) {
     tamanhoLocacaos++;
     Locacaos = realloc(Locacaos, tamanhoLocacaos * sizeof (Locacao));
-    Locacaos[tamanhoLocacaos - 1].codigo = f.codigo;
-    strcpy(Locacaos[tamanhoLocacaos - 1].data, f.data);
-    Locacaos[tamanhoLocacaos - 1].cliCodigo = f.cliCodigo;
-    while (Locacaos[tamanhoLocacaos - 1].filCodigo[i] != -1) {
-        Locacaos[tamanhoLocacaos - 1].filCodigo[i] = f.filCodigo;
-        i++;
-    }
-    i = 0;
-    while (Locacaos[tamanhoLocacaos - 1].parcelas[i] != -1) {
-        Locacaos[tamanhoLocacaos - 1].parcelas[i] = f.parcelas[i];
-        i++;
-    }
-    Locacaos[tamanhoLocacaos - 1].qtde_Filmes_Locados = f.qtde_Filmes_Locados;
-    Locacaos[tamanhoLocacaos - 1].tipo = f.tipo;
-    Locacaos[tamanhoLocacaos - 1].valor = f.valor;
-}
+    Locacaos[tamanhoLocacaos - 1].codigo = c.codigo;
+    strcpy(Locacaos[tamanhoLocacaos - 1].data, c.data);
+    Locacaos[tamanhoLocacaos - 1].cliCodigo = c.cliCodigo;
+    Locacaos[tamanhoLocacaos - 1].deletado = c.deletado;
+    Locacaos[tamanhoLocacaos - 1].filCodigo1 = c.filCodigo1;
+    Locacaos[tamanhoLocacaos - 1].filCodigo2 = c.filCodigo2;
+    Locacaos[tamanhoLocacaos - 1].filCodigo3 = c.filCodigo3;
+    Locacaos[tamanhoLocacaos - 1].qtdParcela = c.qtdParcela;
+    Locacaos[tamanhoLocacaos - 1].qtdParcelaInicial = c.qtdParcelaInicial;
+    Locacaos[tamanhoLocacaos - 1].qtde_Filmes_Locados = c.qtde_Filmes_Locados;
+    Locacaos[tamanhoLocacaos - 1].tipo = c.tipo;
+    Locacaos[tamanhoLocacaos - 1].valor = c.valor;
+    Locacaos[tamanhoLocacaos - 1].valorParcela c.valorParcela;
 
+}
 //Funções de Listar
 
-Locacao * listarLocacaos() {
+Locacao* listarLocacao() {
     int i = 0;
     int cont = 0;
-    Locacao f;
-    Locacao *fw = &f;
-    int tana = getTamanhoLocacao();
-    Locacao *array = malloc((tana) * sizeof (Locacao));
+    Locacao l;
+    Locacao *fw = &l;
+    Locacao *array = malloc(getTamanhoLocacao() * sizeof l);
     FILE *arq = fopen("Locacao.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -100,69 +81,58 @@ Locacao * listarLocacaos() {
 
         return;
     }
-    while (fread(&f, sizeof (f), 1, arq)) {
-        //if (f.deletado != '*') {
+    while (fread(&l, sizeof (l), 1, arq)) {
+        //        if (l.deletado != '*') {
 
         // VECTOR_ADD(v,c);
-        // array[i].nome = nome;
-        array[i].codigo = f.codigo;
-        strcpy(array[i].data, f.data);
-        array[i].cliCodigo = f.cliCodigo;
-        array[i].filCodigo = f.filCodigo;
-        array[i].qtde_Filmes_Locados = f.qtde_Filmes_Locados;
-        array[i].tipo = f.tipo;
-        array[i].valor = f.valor;
-        array[i].parcelas = f.parcelas;
-        array[i].deletado = f.deletado;
+        // array[i].nome = c.nome;
+        array[i].codigo = l.codigo;
+        strcpy(array[i].data, l.data);
+        array[i].cliCodigo = l.cliCodigo;
+        array[i].deletado = l.deletado;
+        array[i].filCodigo1 = l.filCodigo1;
+        array[i].filCodigo2 = l.filCodigo2;
+        array[i].filCodigo3 = l.filCodigo3;
+        array[i].qtdParcela = l.qtdParcela;
+        array[i].qtdParcelaInicial = l.qtdParcelaInicial;
+        array[i].qtde_Filmes_Locados = l.qtde_Filmes_Locados;
+        array[i].tipo = l.tipo;
+        array[i].valor = l.valor;
+        array[i].valorParcela = l.valorParcela;
         i++;
-        // } else {
-        //    cont++;
-        //}
+        //        } else {
+        //            cont++;
+        //            array = realloc(array, ((getTamanhoLocacao() - 1) - cont) * sizeof (Locacao));
+        //        }
     }
-    // array = realloc(array, ((tana-1) - cont) * sizeof (Locacao));
-
-    // fclose(arq);
+    fclose(arq);
     return array;
 }
 
-Locacao * ListarLocacaoTexto() {
+Locacao* ListarLocacaoTexto() {
     int i = 0;
-    int cont = 0;
-    Locacao f;
+    int cont;
+    Locacao l;
     FILE *arquivo;
-    Locacao *array = malloc(getTamanhoLocacao() * sizeof f);
+    Locacao *array = malloc(getTamanhoLocacaoTexto() * sizeof l);
     arquivo = fopen("Locacao.txt", "rt");
-    int w;
+
     while (!feof(arquivo)) {
-        w = 0;
-        fscanf(arquivo, "%f %f %s ", f.codigo, f.cliCodigo, f.data);
-        while (f.filCodigo[i] != -1) {
-            fscanf(arquivo, "%f ", f.filCodigo[w]);
-            w++;
-        }
-        w = 0;
-        while (f.parcelas[w] != -1) {
-            fscanf(arquivo, "%f ", f.parcelas[w]);
-            w++;
-        }
-        fscanf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
-        //        if (f.deletado != '*') {
-        array[i].codigo = f.codigo;
-        strcpy(array[i].data, f.data);
-        array[i].cliCodigo = f.cliCodigo;
-        w = 0;
-        while (f.filCodigo[i] != -1) {
-            array[i].filCodigo = f.filCodigo;
-            w++;
-        }
-        array[i].qtde_Filmes_Locados = f.qtde_Filmes_Locados;
-        array[i].tipo = f.tipo;
-        array[i].valor = f.valor;
-        w = 0;
-        while (f.parcelas[w] != -1) {
-            array[i].parcelas = f.parcelas;
-            w++;
-        }
+        fscanf(arquivo, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
+        //  if (l.deletado != '*') {
+        array[i].codigo = l.codigo;
+        strcpy(array[i].data, l.data);
+        array[i].cliCodigo = l.cliCodigo;
+        array[i].deletado = l.deletado;
+        array[i].filCodigo1 = l.filCodigo1;
+        array[i].filCodigo2 = l.filCodigo2;
+        array[i].filCodigo3 = l.filCodigo3;
+        array[i].qtdParcela = l.qtdParcela;
+        array[i].qtdParcelaInicial = l.qtdParcelaInicial;
+        array[i].qtde_Filmes_Locados = l.qtde_Filmes_Locados;
+        array[i].tipo = l.tipo;
+        array[i].valor = l.valor;
+        array[i].valorParcela = l.valorParcela;
         i++;
         //        } else {
         //            cont++;
@@ -173,33 +143,39 @@ Locacao * ListarLocacaoTexto() {
     return array;
 }
 
-Locacao * listarLocacaoArrayDinamico() {
-    //    Locacao *array = malloc((tamanhoLocacaos ) * sizeof (Locacao));
+Locacao* listarLocacaoArrayDinamico() {
+    //    Locacao *array = malloc((tamanhoLocacaos) * sizeof (Locacao));
     //    tamanhoLocacaos = tamanhoLocacaosListar;
     //    int i;
     //    int j = 0;
     //    int cont = 0;
     //    for (i = 0; i < tamanhoLocacaos; i++) {
-    ////        if (Locacaos[i].deletado != '*') {
+    //    //    if (Locacaos[i].deletado != '*') {
     //            array[j].codigo = Locacaos[i].codigo;
     //            strcpy(array[j].nome, Locacaos[i].nome);
     //            strcpy(array[j].endereco, Locacaos[i].endereco);
-    //            strcpy(array[j].cargo, Locacaos[i].cargo);
+    //            strcpy(array[j].razao_social, Locacaos[i].razao_social);
+    //            strcpy(array[j].inscricao_estadual, Locacaos[i].inscricao_estadual);
+    //            strcpy(array[j].cnpj, Locacaos[i].cnpj);
     //            strcpy(array[j].telefone, Locacaos[i].telefone);
     //            strcpy(array[j].email, Locacaos[i].email);
-    //  j++;
+    //            strcpy(array[j].nome_responsavel, Locacaos[i].nome_responsavel);
+    //            strcpy(array[j].tel_responsavel, Locacaos[i].tel_responsavel);
+    //            j++;
     //        } else {
     //            cont++;
     //            tamanhoLocacaosListar -= cont;
     //            array = realloc(array, (tamanhoLocacaosListar) * sizeof (Locacao));
-    //        }
-    //}
+    //        };
+    //   }
+    //printf("Listar %c\n", array[0].sexo);
+
     return Locacaos;
 }
 
 //Funções de Consultar
 
-Locacao consultarLocacaos(float cod) {
+Locacao consultarLocacao(float cod) {
 
     FILE *arq = fopen("Locacao.pro", "rb");
     if (arq == NULL) {
@@ -208,19 +184,19 @@ Locacao consultarLocacaos(float cod) {
         return v;
     }
 
-    Locacao f;
+    Locacao l;
 
     //float cod;
     int achei = 0;
     //printf("\nDigite o codigo que procura: \n");
     //scanf("%d", &cod);
 
-    while (fread(&f, sizeof (f), 1, arq)) {
-        if ((cod == f.codigo) && (f.deletado != '*')) {
+    while (fread(&l, sizeof (l), 1, arq)) {
+        if ((cod == l.codigo) && (l.deletado != '*')) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            break;
+            return l;
         }
     }
 
@@ -229,28 +205,20 @@ Locacao consultarLocacaos(float cod) {
     }
     fclose(arq);
     Locacao v;
-    return f;
+    return v;
 }
 
 Locacao ConsultarLocacaoTexto(float cod) {
     FILE *arquivo;
-    int i;
     arquivo = fopen("Locacao.txt", "rt");
-    Locacao f;
+    Locacao l;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %f %s ", f.codigo, f.cliCodigo, f.data, f.filCodigo);
-        i = 0;
-
-        while (f.parcelas[i] != -1) {
-            fscanf(arquivo, "%f ", f.parcelas);
-            i++;
-        }
-        fscanf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
-        if (f.codigo == cod && f.deletado != '*') {
+        fscanf(arquivo, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
+        if (l.codigo == cod && l.deletado != '*') {
             break;
         }
     }
-    return f;
+    return l;
 }
 
 Locacao consultaLocacaoArrayDinamico(int cod) {
@@ -261,21 +229,23 @@ Locacao consultaLocacaoArrayDinamico(int cod) {
 }
 
 //Funções de Alteração
-Locacao k;
 
-int alterarLocacaos(Locacao Locacao, float cod) {
+int alterarLocacao(Locacao Locacao, float cod) {
     FILE *arq = fopen("Locacao.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
         return 0;
     }
+
+    Locacao l;
+    //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");
     //scanf("%d", &cod);
 
-    while (fread(&k, sizeof (k), 1, arq)) {
-        if (cod == k.codigo) {
-            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", codigo, produtos.descricao, produtos.valor);
+    while (fread(&l, sizeof (l), 1, arq)) {
+        if (cod == l.codigo) {
+            //printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", c.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
             fseek(arq, sizeof (Locacao)*-1, SEEK_CUR);
@@ -298,68 +268,32 @@ int alterarLocacaos(Locacao Locacao, float cod) {
     return 0;
 }
 
-void alterarLocacaoTexto(float cod, Locacao fun) {
+void alterarLocacaoTexto(float cod, Locacao loc) {
     FILE *arquivo;
     FILE *arq;
-    Locacao f;
-    int i;
+    Locacao l;
     arquivo = fopen("Locacao.txt", "rt");
     arq = fopen("LocacaoBackup.txt", "wt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %f %s ", f.codigo, f.cliCodigo, f.data, f.filCodigo);
-        i = 0;
-
-        while (f.parcelas[i] != -1) {
-            fscanf(arquivo, "%f ", f.parcelas);
-            i++;
-        }
-        fscanf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
-        if (cod == f.codigo && f.deletado != '*') {
-            f.codigo = fun.codigo;
-            strcpy(f.data, fun.data);
-            f.cliCodigo = fun.cliCodigo;
-            i = 0;
-            while (Locacaos[i].filCodigo[i] != -1) {
-                f.filCodigo[i] = fun.filCodigo[i];
-                i++;
-            }
-            i = 0;
-            while (f.parcelas[i] != -1) {
-                f.parcelas[i] = fun.parcelas[i];
-                i++;
-            }
-            f.qtde_Filmes_Locados = fun.qtde_Filmes_Locados;
-            f.tipo = fun.tipo;
-            f.valor = fun.valor;
-
-            //asdasd
-            fprintf(arquivo, "%f %f %s %f", f.codigo, f.cliCodigo, f.data);
-            i = 0;
-            while (f.filCodigo[i] != -1) {
-                fprintf(arquivo, "%f ", f.filCodigo);
-                i++;
-            }
-
-            i = 0;
-
-            i = 0;
-            while (f.parcelas[i] != -1) {
-                fprintf(arquivo, "%f ", f.parcelas);
-                i++;
-            }
-            fprintf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
+        fscanf(arquivo, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
+        if (cod == l.codigo && l.deletado != '*') {
+            l.codigo = loc.codigo;
+            l.codigo = loc.codigo;
+            strcpy(l.data, loc.data);
+            l.cliCodigo = loc.cliCodigo;
+            l.deletado = loc.deletado;
+            l.filCodigo1 = loc.filCodigo1;
+            l.filCodigo2 = loc.filCodigo2;
+            l.filCodigo3 = loc.filCodigo3;
+            l.qtdParcela = loc.qtdParcela;
+            l.qtdParcelaInicial = loc.qtdParcelaInicial;
+            l.qtde_Filmes_Locados = loc.qtde_Filmes_Locados;
+            l.tipo = loc.tipo;
+            l.valor = loc.valor;
+            l.valorParcela = loc.valorParcela;
+            fprintf(arq, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
         } else {
-            fprintf(arquivo, "%f %f %s %f", f.codigo, f.cliCodigo, f.data);
-            while (f.filCodigo[i] != -1) {
-                fprintf(arquivo, "%f ", f.filCodigo);
-                i++;
-            }
-            i = 0;
-            while (f.parcelas[i] != -1) {
-                fprintf(arquivo, "%f ", f.parcelas);
-                i++;
-            }
-            fprintf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
+            fprintf(arq, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
         }
     }
     fclose(arquivo);
@@ -368,30 +302,25 @@ void alterarLocacaoTexto(float cod, Locacao fun) {
     rename("LocacaoBackup.txt", "Locacao.txt");
 }
 
-void alterarLocacaoArrayDinamico(int cod, Locacao f) {
-    int i = 0;
-    Locacaos[cod - 1].codigo = f.codigo;
-    strcpy(Locacaos[cod - 1].data, f.data);
-    Locacaos[cod - 1].cliCodigo = f.cliCodigo;
-    Locacaos[cod - 1].filCodigo = f.filCodigo;
-    while (Locacaos[cod - 1].filCodigo[i] != -1) {
-        Locacaos[cod - 1].filCodigo[i] = f.filCodigo[i];
-        i++;
-    }
-    i = 0;
-    while (Locacaos[cod - 1].parcelas[i] != -1) {
-        Locacaos[cod - 1].parcelas[i] = f.parcelas[i];
-        i++;
-    }
-    Locacaos[cod - 1].qtde_Filmes_Locados = f.qtde_Filmes_Locados;
-    Locacaos[cod - 1].tipo = f.tipo;
-    Locacaos[cod - 1].valor = f.valor;
+void alterarLocacaoArrayDinamico(int cod, Locacao c) {
+    Locacaos[cod - 1].codigo = c.codigo;
+    strcpy(Locacaos[cod - 1].data, c.data);
+    Locacaos[cod - 1].cliCodigo = c.cliCodigo;
+    Locacaos[cod - 1].deletado = c.deletado;
+    Locacaos[cod - 1].filCodigo1 = c.filCodigo1;
+    Locacaos[cod - 1].filCodigo2 = c.filCodigo2;
+    Locacaos[cod - 1].filCodigo3 = c.filCodigo3;
+    Locacaos[cod - 1].qtdParcela = c.qtdParcela;
+    Locacaos[cod - 1].qtdParcelaInicial = c.qtdParcelaInicial;
+    Locacaos[cod - 1].qtde_Filmes_Locados = c.qtde_Filmes_Locados;
+    Locacaos[cod - 1].tipo = c.tipo;
+    Locacaos[cod - 1].valor = c.valor;
+    Locacaos[cod - 1].valorParcela = c.valorParcela;
 }
-//printf("Alterar %c\n", Locacaos[0].sexo);
 
 //Funcções de exclusão
 
-int excluirLocacaos(float cod) {
+int excluirLocacao(float cod) {
 
     FILE *arq = fopen("Locacao.pro", "r+b");
     if (arq == NULL) {
@@ -399,15 +328,15 @@ int excluirLocacaos(float cod) {
         return 0;
     }
 
-    Locacao f;
+    Locacao l;
     //float cod, 
     int achei = 0;
     char certeza;
     // printf("\nDigite o codigo que deseja EXCLUIR: \n");
     // scanf("%d", &cod);
 
-    while (fread(&f, sizeof (f), 1, arq)) {
-        if (cod == f.codigo) {
+    while (fread(&l, sizeof (l), 1, arq)) {
+        if (cod == l.codigo) {
             //  printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
 
@@ -415,12 +344,12 @@ int excluirLocacaos(float cod) {
             fflush(stdin);
             scanf("%c", &certeza);
             if (certeza == 's') {
-                f.deletado = '*';
+                l.deletado = '*';
                 printf("\nProduto excluido com Sucesso! \n");
                 fseek(arq, sizeof (Locacao)*-1, SEEK_CUR);
-                fwrite(&f, sizeof (f), 1, arq);
-                fseek(arq, sizeof (f)* 0, SEEK_END);
-               // return 1;
+                fwrite(&l, sizeof (l), 1, arq);
+                fseek(arq, sizeof (l)* 0, SEEK_END);
+                // return 1;
             } else if (certeza == 'n')
                 return 1;
         }
@@ -436,46 +365,16 @@ int excluirLocacaos(float cod) {
 void excluirLocacaoTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
-    Locacao f;
+    Locacao l;
     arquivo = fopen("Locacao.txt", "rt");
     arq = fopen("LocacaoBackup.txt", "wt");
-    int i = 0;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %f %s ", f.codigo, f.cliCodigo, f.data, f.filCodigo);
-        i = 0;
-
-        while (f.parcelas[i] != -1) {
-            fscanf(arquivo, "%f ", f.parcelas);
-            i++;
-        }
-        fscanf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
-        if (cod == f.codigo && f.deletado != '*') {
-            fprintf(arquivo, "%f %f %s %f", f.codigo, f.cliCodigo, f.data);
-            while (f.filCodigo[i] != -1) {
-                fprintf(arquivo, "%f ", f.filCodigo);
-                i++;
-            }
-            i = 0;
-            while (f.parcelas[i] != -1) {
-                fprintf(arquivo, "%f ", f.parcelas);
-                i++;
-            }
-            fprintf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
+        fscanf(arquivo, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
+        if (cod == l.codigo && l.deletado != '*') {
         } else {
-            fprintf(arquivo, "%f %f %s %f", f.codigo, f.cliCodigo, f.data);
-            while (f.filCodigo[i] != -1) {
-                fprintf(arquivo, "%f ", f.filCodigo);
-                i++;
-            }
-            i = 0;
-            while (f.parcelas[i] != -1) {
-                fprintf(arquivo, "%f ", f.parcelas);
-                i++;
-            }
-            fprintf(arquivo, "%d %d %f\n", f.qtde_Filmes_Locados, f.tipo, f.valor);
+            fprintf(arq, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
         }
     }
-
     fclose(arquivo);
     fclose(arq);
     remove("Locacao.txt");

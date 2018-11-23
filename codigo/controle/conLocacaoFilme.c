@@ -18,7 +18,7 @@ int locaFilmes(float cliCodigo, float* filmesCod, int * qtdFilme, float totalPag
 
     Locacao l;
     //apontar para o ponteiro
-    l.filCodigo = filmesCod;
+  //  l.filCodigo = filmesCod;
     //mas aqui o qtd vai com o -1 no final pra saber quando para
     l.qtde_Filmes_Locados = qtdFilme;
     l.cliCodigo = cliCodigo;

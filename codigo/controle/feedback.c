@@ -101,14 +101,18 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
     //Não entendi isso aqui não
     Locacao *Locacoess;
     float qtde;
-    //Locacoess = listaLocacoes();
+    Locacoess = listaLocacoes();
     Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
     Filme f;
+    Filme f1;
+    Filme f2;
     float j = 0;
     for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
         for (int w = 0; w < Locacoess[i].qtde_Filmes_Locados; w++) {
-            f = consultaFilme(Locacoess[i].filCodigo[w]);
-            if (cod == f.codigo) {
+            f = consultaFilme(Locacoess[i].filCodigo1);
+            f1 = consultaFilme(Locacoess[i].filCodigo2);
+            f2 = consultaFilme(Locacoess[i].filCodigo3);
+            if (cod == f.codigo || cod == f1.codigo || cod == f2.codigo) {
                 if (Locacoess[i].deletado != '*') {
                     j++;
                 }
@@ -125,7 +129,7 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
 
 Locacao * locacoesCodigoFeedback(int tipo) {
     Locacao *Locacoess;
-    //Locacoess = listaLocacoes();
+    Locacoess = listaLocacoes();
     Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
     int j = 0;
     int w = 0;
@@ -134,12 +138,18 @@ Locacao * locacoesCodigoFeedback(int tipo) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;
                 array[j].cliCodigo = Locacoess[i].cliCodigo;
+                array[i].filCodigo1 = Locacoess[i].filCodigo1;
+                array[i].filCodigo1 = Locacoess[i].filCodigo2;
+                array[i].filCodigo1 = Locacoess[i].filCodigo3;
+                array[i].qtdParcela = Locacoess[i].qtdParcela;
+                array[i].qtdParcelaInicial = Locacoess[i].qtdParcelaInicial;
+                array[i].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 //Filme é um array
                 w = 0;
-                while (Locacoess[i].filCodigo[w] != -1) {
-                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
-                    w++;
-                }
+                //                while (Locacoess[i].filCodigo[w] != -1) {
+                //                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
+                //                    w++;
+                //                }
                 array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 array[j].tipo = Locacoess[i].tipo;
                 array[j].valor = Locacoess[i].valor;
@@ -154,7 +164,7 @@ Locacao * locacoesCodigoFeedback(int tipo) {
 
 Locacao * locacoesNomeFeedback(Cliente cli) {
     Locacao *Locacoess;
-    //Locacoess = listaLocacoes();
+    Locacoess = listaLocacoes();
     Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
     Cliente c;
     int w = 0;
@@ -165,12 +175,18 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;
                 array[j].cliCodigo = Locacoess[i].cliCodigo;
+                array[i].filCodigo1 = Locacoess[i].filCodigo1;
+                array[i].filCodigo1 = Locacoess[i].filCodigo2;
+                array[i].filCodigo1 = Locacoess[i].filCodigo3;
+                array[i].qtdParcela = Locacoess[i].qtdParcela;
+                array[i].qtdParcelaInicial = Locacoess[i].qtdParcelaInicial;
+                array[i].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 //Filme é um array
                 w = 0;
-                while (Locacoess[i].filCodigo[w] != -1) {
-                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
-                    w++;
-                }
+                //                while (Locacoess[i].filCodigo[w] != -1) {
+                //                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
+                //                    w++;
+                //                }
                 array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 array[j].tipo = Locacoess[i].tipo;
                 array[j].valor = Locacoess[i].valor;
@@ -217,7 +233,7 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
 
 Locacao * contasReceberDataFeedback(char *data1, char *data2) {
     Locacao *Locacoess;
-    //Locacoess = listaConta();
+    Locacoess = listaConta();
     Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
@@ -230,16 +246,22 @@ Locacao * contasReceberDataFeedback(char *data1, char *data2) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;
                 array[j].cliCodigo = Locacoess[i].cliCodigo;
+                array[i].filCodigo1 = Locacoess[i].filCodigo1;
+                array[i].filCodigo1 = Locacoess[i].filCodigo2;
+                array[i].filCodigo1 = Locacoess[i].filCodigo3;
+                array[i].qtdParcela = Locacoess[i].qtdParcela;
+                array[i].qtdParcelaInicial = Locacoess[i].qtdParcelaInicial;
+                array[i].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 //Filme é um array
                 w = 0;
-                while (Locacoess[i].filCodigo[w] != -1) {
-                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
-                    w++;
-                }
+                //                while (Locacoess[i].filCodigo[w] != -1) {
+                //                    array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
+                //                    w++;
+                //                }
                 array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                 array[j].tipo = Locacoess[i].tipo;
                 array[j].valor = Locacoess[i].valor;
-                array[j].parcelas = Locacoess[i].parcelas;
+                //                array[j].parcelas = Locacoess[i].parcelas;
                 strcpy(array[j].data, Locacoess[i].data);
                 j++;
             }
@@ -251,7 +273,7 @@ Locacao * contasReceberDataFeedback(char *data1, char *data2) {
 
 Locacao * contasReceberCodigoFeedback(int cod1, int cod2) {
     Locacao *Locacoess;
-    //Locacoess = listaConta();
+    Locacoess = listaConta();
     Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
     int j = 0;
     int w;
@@ -261,16 +283,22 @@ Locacao * contasReceberCodigoFeedback(int cod1, int cod2) {
                 if (Locacoess[i].deletado != '*') {
                     array[j].codigo = Locacoess[i].codigo;
                     array[j].cliCodigo = Locacoess[i].cliCodigo;
+                    array[i].filCodigo1 = Locacoess[i].filCodigo1;
+                    array[i].filCodigo1 = Locacoess[i].filCodigo2;
+                    array[i].filCodigo1 = Locacoess[i].filCodigo3;
+                    array[i].qtdParcela = Locacoess[i].qtdParcela;
+                    array[i].qtdParcelaInicial = Locacoess[i].qtdParcelaInicial;
+                    array[i].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                     //Filme é um array
                     w = 0;
-                    while (Locacoess[i].filCodigo[w] != -1) {
-                        array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
-                        w++;
-                    }
+                    //                    while (Locacoess[i].filCodigo[w] != -1) {
+                    //                        array[j].filCodigo[w] = Locacoess[i].filCodigo[w];
+                    //                        w++;
+                    //                    }
                     array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
                     array[j].tipo = Locacoess[i].tipo;
                     array[j].valor = Locacoess[i].valor;
-                    array[j].parcelas = Locacoess[i].parcelas;
+                    //                    array[j].parcelas = Locacoess[i].parcelas;
                     strcpy(array[j].data, Locacoess[i].data);
                     j++;
                 }
@@ -299,12 +327,16 @@ Conta * contasPagarDataFeedback(char *data1, char *data2) {
                     strcpy(array[j].data, Contas[i].data);
                     array[j].tipo = array[i].tipo;
                     array[j].valor = array[i].valor;
+                    array[j].qtdParcelaInicial = array[i].qtdParcelaInicial;
+                    array[j].qtdParcela = array[i].qtdParcela;
+                    array[j].valorParcela = array[i].valorParcela;
+
                     //Perguntar o Thomas como ele sabe o numero de parcelas
                     w = 0;
-                    while (Contas[i].parcelas[w] != -1) {
-                        array[j].parcelas[w] = Contas[i].parcelas[w];
-                        w++;
-                    }
+                    //                    while (Contas[i].parcelas[w] != -1) {
+                    //                        array[j].parcelas[w] = Contas[i].parcelas[w];
+                    //   w++;
+                    // }
                     j++;
                 }
             }
@@ -328,12 +360,16 @@ Conta * contasPagarCodigoFeedback(int cod1, int cod2) {
                     strcpy(array[j].data, Contas[i].data);
                     array[j].tipo = array[i].tipo;
                     array[j].valor = array[i].valor;
+                    array[j].qtdParcelaInicial = array[i].qtdParcelaInicial;
+                    array[j].qtdParcela = array[i].qtdParcela;
+                    array[j].valorParcela = array[i].valorParcela;
+
                     //Perguntar o Thomas como ele sabe o numero de parcelas
                     w = 0;
-                    while (Contas[i].parcelas[w] != -1) {
-                        array[j].parcelas[w] = Contas[i].parcelas[w];
-                        w++;
-                    }
+                    //                    while (Contas[i].parcelas[w] != -1) {
+                    //                        array[j].parcelas[w] = Contas[i].parcelas[w];
+                    //                        w++;
+                    //                    }
                     j++;
                 }
             }

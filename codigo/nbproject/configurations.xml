@@ -23,6 +23,7 @@
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
+      <itemPath>locacoesDAO.h</itemPath>
       <itemPath>locadoraDAO.h</itemPath>
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
@@ -44,8 +45,6 @@
       <itemPath>visao/VisaoFilmes.c</itemPath>
       <itemPath>visao/VisaoFornecedor.c</itemPath>
       <itemPath>visao/VisaoFuncionario.c</itemPath>
-      <itemPath>modelo/daos/categoriaDAO.c</itemPath>
-      <itemPath>modelo/daos/clienteDAO.c</itemPath>
       <itemPath>controle/conCategoria.c</itemPath>
       <itemPath>controle/conCliente.c</itemPath>
       <itemPath>controle/conEntradaFilme.c</itemPath>
@@ -56,12 +55,8 @@
       <itemPath>controle/conLocacaoFilme.c</itemPath>
       <itemPath>controle/conLocadora.c</itemPath>
       <itemPath>controle/conPersistencia.c</itemPath>
+      <itemPath>modelo/daos/contaDAO.c</itemPath>
       <itemPath>controle/feedback.c</itemPath>
-      <itemPath>modelo/daos/filmeDAO.c</itemPath>
-      <itemPath>modelo/daos/fornecedorDAO.c</itemPath>
-      <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
-      <itemPath>modelo/daos/locacaoDAO.c</itemPath>
-      <itemPath>modelo/daos/locadoraDAO.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
@@ -184,6 +179,8 @@
       </item>
       <item path="funcionarioDAO.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="locacoesDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
@@ -192,19 +189,7 @@
       </item>
       <item path="modelo/NotaFiscal.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/daos/categoriaDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/filmeDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/fornecedorDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/funcionarioDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/locacaoDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/locadoraDAO.c" ex="false" tool="0" flavor2="0">
+      <item path="modelo/daos/contaDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -333,6 +318,8 @@
       </item>
       <item path="funcionarioDAO.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="locacoesDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
@@ -341,19 +328,7 @@
       </item>
       <item path="modelo/NotaFiscal.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="modelo/daos/categoriaDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/clienteDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/filmeDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/fornecedorDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/funcionarioDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/locacaoDAO.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="modelo/daos/locadoraDAO.c" ex="false" tool="0" flavor2="0">
+      <item path="modelo/daos/contaDAO.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="modelo/daos/tamanho.c" ex="false" tool="0" flavor2="0">
       </item>

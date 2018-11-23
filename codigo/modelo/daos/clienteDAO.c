@@ -124,10 +124,10 @@ Cliente* ListarClientesTexto() {
     FILE *arquivo;
     Cliente *array = malloc((getTamanhoClienteTexto()) * sizeof (Cliente));
     //Cliente c;
-    arquivo = fopen("cliente.txt", "rt");
+    arquivo = fopen("cliente.txt", "r");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
         // if (c.deletado != '*') {
         array[i].codigo = c.codigo;
         strcpy(array[i].nome, c.nome);
@@ -138,8 +138,6 @@ Cliente* ListarClientesTexto() {
         array[i].sexo = c.sexo;
         strcpy(array[i].estado_civil, c.estado_civil);
         strcpy(array[i].data_nascimento, c.data_nascimento);
-        
-
         i++;
         //        } else {
         //            cont++;
@@ -219,8 +217,8 @@ Cliente ConsultarClientesTexto(float cod) {
     arquivo = fopen("cliente.txt", "rt");
     Cliente c;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
-        if (c.codigo == cod && c.deletado != '*') {
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
+        if (c.codigo == cod) {
             break;
         }
     }

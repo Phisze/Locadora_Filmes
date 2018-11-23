@@ -56,13 +56,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/modelo/Ex_Importacao.o \
 	${OBJECTDIR}/modelo/NotaFiscal.o \
-	${OBJECTDIR}/modelo/daos/categoriaDAO.o \
-	${OBJECTDIR}/modelo/daos/clienteDAO.o \
-	${OBJECTDIR}/modelo/daos/filmeDAO.o \
-	${OBJECTDIR}/modelo/daos/fornecedorDAO.o \
-	${OBJECTDIR}/modelo/daos/funcionarioDAO.o \
-	${OBJECTDIR}/modelo/daos/locacaoDAO.o \
-	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
+	${OBJECTDIR}/modelo/daos/contaDAO.o \
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
 	${OBJECTDIR}/visao/VisaoCliente.o \
@@ -201,40 +195,10 @@ ${OBJECTDIR}/modelo/NotaFiscal.o: modelo/NotaFiscal.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/NotaFiscal.o modelo/NotaFiscal.c
 
-${OBJECTDIR}/modelo/daos/categoriaDAO.o: modelo/daos/categoriaDAO.c
+${OBJECTDIR}/modelo/daos/contaDAO.o: modelo/daos/contaDAO.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/categoriaDAO.o modelo/daos/categoriaDAO.c
-
-${OBJECTDIR}/modelo/daos/clienteDAO.o: modelo/daos/clienteDAO.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/daos
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/clienteDAO.o modelo/daos/clienteDAO.c
-
-${OBJECTDIR}/modelo/daos/filmeDAO.o: modelo/daos/filmeDAO.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/daos
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/filmeDAO.o modelo/daos/filmeDAO.c
-
-${OBJECTDIR}/modelo/daos/fornecedorDAO.o: modelo/daos/fornecedorDAO.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/daos
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/fornecedorDAO.o modelo/daos/fornecedorDAO.c
-
-${OBJECTDIR}/modelo/daos/funcionarioDAO.o: modelo/daos/funcionarioDAO.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/daos
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/funcionarioDAO.o modelo/daos/funcionarioDAO.c
-
-${OBJECTDIR}/modelo/daos/locacaoDAO.o: modelo/daos/locacaoDAO.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/daos
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/locacaoDAO.o modelo/daos/locacaoDAO.c
-
-${OBJECTDIR}/modelo/daos/locadoraDAO.o: modelo/daos/locadoraDAO.c
-	${MKDIR} -p ${OBJECTDIR}/modelo/daos
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/locadoraDAO.o modelo/daos/locadoraDAO.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/modelo/daos/contaDAO.o modelo/daos/contaDAO.c
 
 ${OBJECTDIR}/modelo/daos/tamanho.o: modelo/daos/tamanho.c
 	${MKDIR} -p ${OBJECTDIR}/modelo/daos

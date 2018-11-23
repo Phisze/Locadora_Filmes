@@ -41,7 +41,7 @@ int inclusaoCategoria(Categoria c) {
 
 void inclusaoCategoriaTexto(Categoria c) {
     FILE *arquivo;
-    arquivo = fopen("categoria.txt", "wt");
+    arquivo = fopen("categoria.txt", "a");
     fprintf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
     fclose(arquivo);
     tamanhoTexto = getTamanhoCategoriaTexto();
@@ -105,7 +105,7 @@ Categoria* ListarCategoriaTexto() {
     //catente c;
     arquivo = fopen("categoria.txt", "rt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
+        fscanf(arquivo, "%f %s %f \n", &c.codigo, &c.descricao, &c.valor_locacao);
         // if (c.deletado != '*') {
         array[i].codigo = c.codigo;
         strcpy(array[i].descricao, c.descricao);
@@ -181,7 +181,7 @@ Categoria ConsultarCategoriaTexto(float cod) {
     arquivo = fopen("categoria.txt", "rt");
     Categoria c;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
+        fscanf(arquivo, "%f %s %f \n", &c.codigo, &c.descricao, &c.valor_locacao);
         if (c.codigo == cod && c.deletado != '*') {
             break;
         }

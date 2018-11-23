@@ -698,3 +698,95 @@ int getTamanhoLocacaoTexto() {
 //    return tamanho;
 //
 //}
+
+void setTamanhoConta(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoCon.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoCon.pro");
+
+    FILE *arqB = fopen("tamanhoCli.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoConta() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoCon.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+
+}
+
+void setTamanhoContaTexto(int tamanho) {
+    //FILE *arq = fopen("C:\\Projetos\\Locadora_Filmes\\codigo\\cliente.pro", "ab");
+    FILE *arq = fopen("tamanhoContxt.pro", "ab");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir arquivo");
+    }
+
+    remove("tamanhoContxt.pro");
+
+    FILE *arqB = fopen("tamanhoContxt.pro", "wb");
+
+    fwrite(&tamanho, sizeof (tamanho), 1, arqB);
+    fclose(arqB);
+}
+
+int getTamanhoContaTexto() {
+
+    int c;
+    int tamanho;
+    // VECTOR_INIT(v);
+    //    Cliente *cli = &clientes;
+    FILE *arq = fopen("tamanhoContxt.pro", "rb");
+    //printf("Arquivo xistente!");
+
+    if (arq == NULL) {
+        // printf("Arquivo inexistente!");
+
+        return 0;
+    }
+    while (fread(&c, sizeof (c), 1, arq)) {
+
+        // VECTOR_ADD(v,c);
+        // array[i].nome = c.nome;
+        tamanho = c;
+        // }
+        //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
+
+        //VECTOR_ADD(clientes, cw);
+        //printf("Cod %s\n", c.nome);
+    }
+    fclose(arq);
+    return tamanho;
+
+}

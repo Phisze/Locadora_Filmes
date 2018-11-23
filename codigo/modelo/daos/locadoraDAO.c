@@ -39,7 +39,7 @@ int inclusaoLocadora(Locadora l) {
 
 void inclusaoLocadoraTexto(Locadora l) {
     FILE *arquivo;
-    arquivo = fopen("locadora.txt", "wt");
+    arquivo = fopen("locadora.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
     fclose(arquivo);
     tamanhoTexto = getTamanhoLocadoraTexto();
@@ -93,6 +93,7 @@ Locadora* listarLocadora() {
         strcpy(array[i].cnpj, l.cnpj);
         strcpy(array[i].nome_responsavel, l.nome_responsavel);
         strcpy(array[i].tel_responsavel, l.tel_responsavel);
+        array[i].deletado = l.deletado;
         i++;
         //        } else {
         //            cont++;
@@ -108,11 +109,11 @@ Locadora* ListarLocadoraTexto() {
     int cont;
     Locadora l;
     FILE *arquivo;
-    Locadora *array = malloc(getTamanhoLocadora() * sizeof l);
+    Locadora *array = malloc(getTamanhoLocadoraTexto() * sizeof l);
     arquivo = fopen("locadora.txt", "rt");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", &l.codigo, &l.nome, &l.razao_social, &l.inscricao_estadual, &l.cnpj, &l.endereco, &l.telefone, &l.email, &l.nome_responsavel, &l.tel_responsavel);
         //  if (l.deletado != '*') {
         array[i].codigo = l.codigo;
         strcpy(array[i].nome, l.nome);
@@ -205,7 +206,7 @@ Locadora ConsultarLocadoraTexto(float cod) {
     arquivo = fopen("locadora.txt", "rt");
     Locadora l;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", &l.codigo, &l.nome, &l.razao_social, &l.inscricao_estadual, &l.cnpj, &l.endereco, &l.telefone, &l.email, &l.nome_responsavel, &l.tel_responsavel);
         if (l.codigo == cod && l.deletado != '*') {
             break;
         }
@@ -334,7 +335,7 @@ int excluirLocadora(float cod) {
                 fseek(arq, sizeof (Locadora)*-1, SEEK_CUR);
                 fwrite(&l, sizeof (l), 1, arq);
                 fseek(arq, sizeof (l)* 0, SEEK_END);
-               // return 1;
+                // return 1;
             } else if (certeza == 'n')
                 return 1;
         }

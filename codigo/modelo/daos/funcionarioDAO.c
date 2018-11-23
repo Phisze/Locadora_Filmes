@@ -42,7 +42,7 @@ int inclusaoFuncionarios(Funcionario f) {
 
 void inclusaoFuncionarioTexto(Funcionario f) {
     FILE *arquivo;
-    arquivo = fopen("funcionario.txt", "wt");
+    arquivo = fopen("funcionario.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
     fclose(arquivo);
     tamanhoTexto = getTamanhoFuncionarioTexto();
@@ -107,11 +107,11 @@ Funcionario* ListarFuncionarioTexto() {
     int cont = 0;
     Funcionario f;
     FILE *arquivo;
-    Funcionario *array = malloc(getTamanhoFuncionario() * sizeof f);
+    Funcionario *array = malloc(getTamanhoFuncionarioTexto() * sizeof f);
     arquivo = fopen("funcionario.txt", "rt");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
+        fscanf(arquivo, "%f %s %s %s %s %s\n", &f.codigo, &f.nome, &f.cargo, &f.endereco, &f.telefone, f.email);
         //        if (f.deletado != '*') {
         array[i].codigo = f.codigo;
         strcpy(array[i].nome, f.nome);

@@ -47,7 +47,7 @@ int inclusaoFilmes(Filme f) {
 
 void inclusaoFilmeTexto(Filme f) {
     FILE *arquivo;
-    arquivo = fopen("filme.txt", "wt");
+    arquivo = fopen("filme.txt", "a");
     fprintf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
     fclose(arquivo);
     tamanhoTexto = getTamanhoFilmeTexto();
@@ -111,11 +111,11 @@ Filme* ListarFilmesTexto() {
     Filme f;
     int cont = 0;
     FILE *arquivo;
-    Filme *array = malloc(getTamanhoFilme() * sizeof f);
+    Filme *array = malloc(getTamanhoFilmeTexto() * sizeof f);
     arquivo = fopen("filme.txt", "rt");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
+        fscanf(arquivo, "%f %s %f %f %s\n", &f.codigo, &f.descricao, &f.exemplares, &f.catCodigo, &f.lingua);
         //if (f.deletado != '*') {
         array[i].codigo = f.codigo;
         strcpy(array[i].descricao, f.descricao);

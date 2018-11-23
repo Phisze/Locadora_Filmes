@@ -43,7 +43,7 @@ int inclusaoFornecedor(Fornecedor f) {
 
 void inclusaoFornecedorTexto(Fornecedor f) {
     FILE *arquivo;
-    arquivo = fopen("fornecedor.txt", "wt");
+    arquivo = fopen("fornecedor.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s %s %s\n", f.codigo, f.nome, f.razao_social, f.inscricao_estadual, f.cnpj, f.endereco, f.telefone, f.email);
     fclose(arquivo);
     tamanhoTexto = getTamanhoFornecedorTexto();
@@ -110,11 +110,11 @@ Fornecedor* ListarFornecedorTexto() {
     Fornecedor f;
     int cont = 0;
     FILE *arquivo;
-    Fornecedor *array = malloc(getTamanhoFornecedor() * sizeof f);
+    Fornecedor *array = malloc(getTamanhoFornecedorTexto() * sizeof f);
     arquivo = fopen("fornecedor.txt", "rt");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %s %s\n", f.codigo, f.nome, f.razao_social, f.inscricao_estadual, f.cnpj, f.endereco, f.telefone, f.email);
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s\n", &f.codigo, &f.nome, &f.razao_social, &f.inscricao_estadual, &f.cnpj, &f.endereco, &f.telefone, &f.email);
         //   if (f.deletado != '*') {
         array[i].codigo = f.codigo;
         strcpy(array[i].nome, f.nome);
@@ -202,7 +202,7 @@ Fornecedor ConsultarFornecedorTexto(float cod) {
     arquivo = fopen("fornecedor.txt", "rt");
     Fornecedor f;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %s %s\n", f.codigo, f.nome, f.razao_social, f.inscricao_estadual, f.cnpj, f.endereco, f.telefone, f.email);
+        fscanf(arquivo, "%f %s %s %s %s %s %s %s\n", &f.codigo, &f.nome, &f.razao_social, &f.inscricao_estadual, &f.cnpj, &f.endereco, &f.telefone, &f.email);
         if (f.codigo == cod && f.deletado != '*') {
             break;
         }
