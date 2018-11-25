@@ -23,6 +23,7 @@
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
+      <itemPath>funcoesUteis.h</itemPath>
       <itemPath>locacoesDAO.h</itemPath>
       <itemPath>locadoraDAO.h</itemPath>
       <itemPath>structs.h</itemPath>
@@ -57,6 +58,7 @@
       <itemPath>controle/conPersistencia.c</itemPath>
       <itemPath>modelo/daos/contaDAO.c</itemPath>
       <itemPath>controle/feedback.c</itemPath>
+      <itemPath>controle/funcoesUteis.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
@@ -157,6 +159,8 @@
       </item>
       <item path="controle/feedback.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="controle/funcoesUteis.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vetorCategoria.c" ex="false" tool="0" flavor2="0">
@@ -178,6 +182,8 @@
       <item path="fornecedorDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="funcionarioDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="funcoesUteis.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="locacoesDAO.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -296,6 +302,8 @@
       </item>
       <item path="controle/feedback.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="controle/funcoesUteis.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="controle/vector.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="controle/vetorCategoria.c" ex="false" tool="0" flavor2="0">
@@ -317,6 +325,8 @@
       <item path="fornecedorDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="funcionarioDAO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="funcoesUteis.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="locacoesDAO.h" ex="false" tool="3" flavor2="0">
       </item>

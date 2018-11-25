@@ -25,11 +25,22 @@ extern "C" {
 }
 #endif
 
+#define MEMORIA 0
+#define TEXTO 2
+#define BINARIO 1
 
 extern int tipoPersistencia;
 
 int getTipoPersistencia();
 void setTipoPersistencia(int tipo);
 
+//    if (getTipoPersistencia() == MEMORIA) {
+//
+//
+//    } else if (getTipoPersistencia() == BINARIO) {
+//
+//    } else {
+//
+//    }
 #endif /* CONPERSISTENCIA_H */
 

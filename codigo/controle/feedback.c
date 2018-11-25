@@ -6,24 +6,12 @@
 #include "../structs.h"
 #include "../conCliente.h"
 #include "../conFilme.h"
-
+#include "../funcoesUteis.h"
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-time_t to_seconds(const char *date) {
-    struct tm storage = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    char *p = NULL;
-    time_t retval = 0;
-    p = (char *) strptime(date, "%d/%m/%Y", &storage);
-    if (p == NULL) {
-        retval = 0;
-    } else {
-        retval = mktime(&storage);
-    }
-    return retval;
-}
 
 Cliente* clienteCodigoFeedback(int cod1, int cod2) {
     Cliente *Clientes;

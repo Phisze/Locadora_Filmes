@@ -33,7 +33,7 @@ extern "C" {
 #define TELEFONE 13
 #define EMAIL 35
 #define ESTADO_CIVIL 10
-#define DATA_NASCIMENTO 10
+#define DATA 10
 #define DESCRICAO 100
 #define LINGUA 10
 #define CARGO 10
@@ -51,7 +51,7 @@ typedef struct {
     char email[EMAIL];
     char sexo;
     char estado_civil[ESTADO_CIVIL];
-    char data_nascimento[DATA_NASCIMENTO];
+    char data[DATA];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Cliente;
 
@@ -115,7 +115,7 @@ typedef struct{
     int qtdParcelaInicial;
     int qtdParcela;
     float valorParcela;
-    char data[DATA_NASCIMENTO];
+    char data[DATA];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Conta;
 
@@ -127,7 +127,7 @@ typedef struct{
     int filCodigo2;
     int filCodigo3;
     int tipo;// 0 = A vista ou 1 = A prazo
-    char data[DATA_NASCIMENTO];
+    char data[DATA];
     float valor;
     //na ultima pos -1 pra saber quando 
     int qtde_Filmes_Locados;
