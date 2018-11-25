@@ -1,0 +1,17 @@
+build/Debug/Cygwin-Windows/main.o: main.c ../codigo/clienteDAO.h \
+ ../codigo/structs.h ../codigo/vector.h ../codigo/vector.h \
+ ../codigo/conCliente.h ../codigo/tamanho.h Ex_Importacao.h
+
+../codigo/clienteDAO.h:
+
+../codigo/structs.h:
+
+../codigo/vector.h:
+
+../codigo/vector.h:
+
+../codigo/conCliente.h:
+
+../codigo/tamanho.h:
+
+Ex_Importacao.h:
