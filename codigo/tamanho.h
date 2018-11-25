@@ -72,5 +72,20 @@ void setTamanhoLocadoraTexto(int tamanho);
 
 int getTamanhoLocadoraTexto();
 
+void setTamanhoLocacao(int tamanho);
+
+int getTamanhoLocacao();
+
+void setTamanhoLocacaoTexto(int tamanho);
+
+int getTamanhoLocacaoTexto();
+
+void setTamanhoConta(int tamanho);
+
+int getTamanhoConta();
+
+void setTamanhoContaTexto(int tamanho);
+
+int getTamanhoContaTexto();
 #endif /* TAMANHO_H */
 
