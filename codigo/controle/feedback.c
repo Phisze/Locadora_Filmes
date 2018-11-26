@@ -90,12 +90,12 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
     Locacao *Locacoess;
     float qtde;
     Locacoess = listaLocacoes();
-    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+    Locacao *array = malloc((qtdLocacoes())  * sizeof (Locacao));
     Filme f;
     Filme f1;
     Filme f2;
     float j = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+    for (int i = 0; i < (qtdLocacoes()); i++) {
         for (int w = 0; w < Locacoess[i].qtde_Filmes_Locados; w++) {
             f = consultaFilme(Locacoess[i].filCodigo1);
             f1 = consultaFilme(Locacoess[i].filCodigo2);
@@ -118,10 +118,10 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
 Locacao * locacoesCodigoFeedback(int tipo) {
     Locacao *Locacoess;
     Locacoess = listaLocacoes();
-    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+    Locacao *array = malloc((qtdLocacoes()) * sizeof (Locacao));
     int j = 0;
     int w = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+    for (int i = 0; i < (qtdLocacoes()); i++) {
         if (tipo == Locacoess[i].codigo) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;
@@ -153,11 +153,11 @@ Locacao * locacoesCodigoFeedback(int tipo) {
 Locacao * locacoesNomeFeedback(Cliente cli) {
     Locacao *Locacoess;
     Locacoess = listaLocacoes();
-    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+    Locacao *array = malloc((qtdLocacoes())  * sizeof (Locacao));
     Cliente c;
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+    for (int i = 0; i < (qtdLocacoes()); i++) {
         c = consultaCliente(array[i].cliCodigo);
         if (strcmp(cli.nome, c.nome) == 0) {
             if (Locacoess[i].deletado != '*') {
@@ -190,13 +190,13 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
 //Locacao * movimentacaoCaixaFeedbackLocacao(char *data1, char *data2) {
 //    Locacao *Locacoess;
 //    //Locacoess = listaLocacoes();
-//    Locacao *array = malloc(/*(qtdLocacoes())*/ 1 * sizeof (Locacao));
+//    Locacao *array = malloc((qtdLocacoes()) 1 * sizeof (Locacao));
 //    time_t d1 = to_seconds(data1);
 //    time_t d2 = to_seconds(data2);
 //    time_t dataLocacoes;
 //    int w = 0;
 //    int j = 0;
-//    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+//    for (int i = 0; i < 2(qtdLocacoes()); i++) {
 //        dataLocacoes = to_seconds(Locacoess[i].data);
 //        if (d1 > dataLocacoes && d2 < dataLocacoes) {
 //            if (Locacoess[i].deletado != '*') {
@@ -222,13 +222,13 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
 Locacao * contasReceberDataFeedback(char *data1, char *data2) {
     Locacao *Locacoess;
     Locacoess = listaContas();
-    Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
+    Locacao *array = malloc((qtdConta())  * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
     time_t dataLocacoes;
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2/*(qtdConta())*/; i++) {
+    for (int i = 0; i < (qtdConta()); i++) {
         dataLocacoes = to_seconds(Locacoess[i].data);
         if (d1 > dataLocacoes && d2 < dataLocacoes) {
             if (Locacoess[i].deletado != '*') {
@@ -262,10 +262,10 @@ Locacao * contasReceberDataFeedback(char *data1, char *data2) {
 Locacao * contasReceberCodigoFeedback(int cod1, int cod2) {
     Locacao *Locacoess;
     Locacoess = listaContas();
-    Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
+    Locacao *array = malloc((qtdConta())  * sizeof (Conta));
     int j = 0;
     int w;
-    for (int i = 0; i < 2/*(qtdConta())*/; i++) {
+    for (int i = 0; i < (qtdConta()); i++) {
         if (Locacoess[i].tipo == 0) {
             if (cod1 > Locacoess[i].codigo && cod2 < Locacoess[i].codigo) {
                 if (Locacoess[i].deletado != '*') {
@@ -300,13 +300,13 @@ Locacao * contasReceberCodigoFeedback(int cod1, int cod2) {
 Conta * contasPagarDataFeedback(char *data1, char *data2) {
     Conta *Contas;
     //Locacoess = listaConta();
-    Conta *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
+    Conta *array = malloc((qtdConta()) * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
     time_t dataLocacoes;
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2/*(qtdConta())*/; i++) {
+    for (int i = 0; i < (qtdConta()); i++) {
         if (Contas[i].tipo == 1) {
             dataLocacoes = to_seconds(Contas[i].data);
             if (d1 > dataLocacoes && d2 < dataLocacoes) {
@@ -337,10 +337,10 @@ Conta * contasPagarDataFeedback(char *data1, char *data2) {
 Conta * contasPagarCodigoFeedback(int cod1, int cod2) {
     Conta *Contas;
     //Locacoess = listaConta();
-    Conta *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
+    Conta *array = malloc((qtdConta()) * sizeof (Conta));
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2/*(qtdConta())*/; i++) {
+    for (int i = 0; i < (qtdConta()); i++) {
         if (Contas[i].tipo == 1) {
             if (cod1 > Contas[i].codigo && cod2 < Contas[i].codigo) {
                 if (Contas[i].deletado != '*') {
