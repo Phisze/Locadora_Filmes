@@ -26,7 +26,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-extern int tamanhoFilmesListar;
+extern int tamanhoFilmes;
 /*
  **  Inclui Filmes em arquivo binario
  */

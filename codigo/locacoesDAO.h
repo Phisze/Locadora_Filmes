@@ -24,6 +24,8 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+extern int tamanhoLocacaos;
+
 void inclusao_parcela(Locacao f);
 
 Locacao * listarParcelas();

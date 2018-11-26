@@ -27,6 +27,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+extern int tamanhoFuncionarios;
 /*
  **  Inclui Fornecedor em arquivo binario
  */

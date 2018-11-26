@@ -30,7 +30,7 @@ extern "C" {
 /*
  * *Variavel para saber o tamanho do array dinamico
  */ 
-extern int tamanhoClientesListar;
+extern int tamanhoClientes;
 /*
  **  Inclui Clientes em arquivo binario
  */
