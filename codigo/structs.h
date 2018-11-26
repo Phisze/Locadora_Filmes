@@ -51,7 +51,7 @@ typedef struct {
     char email[EMAIL];
     char sexo;
     char estado_civil[ESTADO_CIVIL];
-    char data[DATA];
+    char data_nascimento[DATA];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Cliente;
 

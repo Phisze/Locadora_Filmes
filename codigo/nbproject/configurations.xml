@@ -24,7 +24,7 @@
       <itemPath>fornecedorDAO.h</itemPath>
       <itemPath>funcionarioDAO.h</itemPath>
       <itemPath>funcoesUteis.h</itemPath>
-      <itemPath>locacoesDAO.h</itemPath>
+      <itemPath>locacoeDAO.h</itemPath>
       <itemPath>locadoraDAO.h</itemPath>
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
@@ -185,7 +185,7 @@
       </item>
       <item path="funcoesUteis.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="locacoesDAO.h" ex="false" tool="3" flavor2="0">
+      <item path="locacoeDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -328,7 +328,7 @@
       </item>
       <item path="funcoesUteis.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="locacoesDAO.h" ex="false" tool="3" flavor2="0">
+      <item path="locacoeDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="locadoraDAO.h" ex="false" tool="3" flavor2="0">
       </item>

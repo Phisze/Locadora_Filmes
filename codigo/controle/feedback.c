@@ -29,7 +29,7 @@ Cliente* clienteCodigoFeedback(int cod1, int cod2) {
                 strcpy(array[j].email, Clientes[i].email);
                 array[j].sexo = Clientes[i].sexo;
                 strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-                strcpy(array[j].data, Clientes[i].data);
+                strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
                 j++;
             }
         }
@@ -54,7 +54,7 @@ Cliente* clienteSexoFeedback(char sexo) {
                 strcpy(array[j].email, Clientes[i].email);
                 array[j].sexo = Clientes[i].sexo;
                 strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-                strcpy(array[j].data, Clientes[i].data);
+                strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
                 j++;
             }
         }
