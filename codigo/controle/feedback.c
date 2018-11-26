@@ -29,7 +29,7 @@ Cliente* clienteCodigoFeedback(int cod1, int cod2) {
                 strcpy(array[j].email, Clientes[i].email);
                 array[j].sexo = Clientes[i].sexo;
                 strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-                strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
+                strcpy(array[j].data, Clientes[i].data);
                 j++;
             }
         }
@@ -54,7 +54,7 @@ Cliente* clienteSexoFeedback(char sexo) {
                 strcpy(array[j].email, Clientes[i].email);
                 array[j].sexo = Clientes[i].sexo;
                 strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-                strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
+                strcpy(array[j].data, Clientes[i].data);
                 j++;
             }
         }
@@ -221,7 +221,7 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
 
 Locacao * contasReceberDataFeedback(char *data1, char *data2) {
     Locacao *Locacoess;
-    Locacoess = listaConta();
+    Locacoess = listaContas();
     Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
@@ -261,7 +261,7 @@ Locacao * contasReceberDataFeedback(char *data1, char *data2) {
 
 Locacao * contasReceberCodigoFeedback(int cod1, int cod2) {
     Locacao *Locacoess;
-    Locacoess = listaConta();
+    Locacoess = listaContas();
     Locacao *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
     int j = 0;
     int w;

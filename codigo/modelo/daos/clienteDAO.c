@@ -50,7 +50,7 @@ void inclusaoClienteTexto(Cliente c) {
     FILE *arquivo;
     tamanhoTexto = getTamanhoClienteTexto();
     arquivo = fopen("cliente.txt", "a");
-    fprintf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+    fprintf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data);
     fclose(arquivo);
     tamanhoTexto++;
     setTamanhoClienteTexto(tamanhoTexto);
@@ -67,7 +67,7 @@ void insereClienteArrayDinamico(Cliente c) {
     strcpy(Clientes[tamanhoClientes - 1].email, c.email);
     Clientes[tamanhoClientes - 1].sexo = c.sexo;
     strcpy(Clientes[tamanhoClientes - 1].estado_civil, c.estado_civil);
-    strcpy(Clientes[tamanhoClientes - 1].data_nascimento, c.data_nascimento);
+    strcpy(Clientes[tamanhoClientes - 1].data, c.data);
 }
 
 //Funções de Listar
@@ -100,7 +100,7 @@ Cliente* lClientes() {
         strcpy(array[i].email, c.email);
         array[i].sexo = c.sexo;
         strcpy(array[i].estado_civil, c.estado_civil);
-        strcpy(array[i].data_nascimento, c.data_nascimento);
+        strcpy(array[i].data, c.data);
         array[i].deletado = c.deletado;
         // }
         //printf("Cod %f --- Descricao: %s\n", c.codigo, c.nome);
@@ -127,7 +127,7 @@ Cliente* ListarClientesTexto() {
     arquivo = fopen("cliente.txt", "r");
 
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data);
         // if (c.deletado != '*') {
         array[i].codigo = c.codigo;
         strcpy(array[i].nome, c.nome);
@@ -137,7 +137,7 @@ Cliente* ListarClientesTexto() {
         strcpy(array[i].email, c.email);
         array[i].sexo = c.sexo;
         strcpy(array[i].estado_civil, c.estado_civil);
-        strcpy(array[i].data_nascimento, c.data_nascimento);
+        strcpy(array[i].data, c.data);
         i++;
         //        } else {
         //            cont++;
@@ -164,7 +164,7 @@ Cliente* listarClienteArrayDinamico() {
     //            strcpy(array[j].email, Clientes[i].email);
     //            array[j].sexo = Clientes[i].sexo;
     //            strcpy(array[j].estado_civil, Clientes[i].estado_civil);
-    //            strcpy(array[j].data_nascimento, Clientes[i].data_nascimento);
+    //            strcpy(array[j].data, Clientes[i].data);
     //            j++;
     //        } else {
     //            cont++;
@@ -217,7 +217,7 @@ Cliente ConsultarClientesTexto(float cod) {
     arquivo = fopen("cliente.txt", "rt");
     Cliente c;
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data);
         if (c.codigo == cod) {
             break;
         }
@@ -279,7 +279,7 @@ void alterarClienteTexto(float cod, Cliente cli) {
     arquivo = fopen("cliente.txt", "rt");
     arq = fopen("clienteBackup.txt", "wt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data);
         if (cod == c.codigo && c.deletado != '*') {
             c.codigo = cli.codigo;
             strcpy(c.nome, cli.nome);
@@ -289,10 +289,10 @@ void alterarClienteTexto(float cod, Cliente cli) {
             strcpy(c.email, cli.email);
             c.sexo = cli.sexo;
             strcpy(c.estado_civil, cli.estado_civil);
-            strcpy(c.data_nascimento, cli.data_nascimento);
-            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+            strcpy(c.data, cli.data);
+            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data);
         } else {
-            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data);
         }
     }
     fclose(arquivo);
@@ -310,7 +310,7 @@ void alterarClienteArrayDinamico(int cod, Cliente c) {
     strcpy(Clientes[cod - 1].email, c.email);
     Clientes[cod - 1].sexo = c.sexo;
     strcpy(Clientes[cod - 1].estado_civil, c.estado_civil);
-    strcpy(Clientes[cod - 1].data_nascimento, c.data_nascimento);
+    strcpy(Clientes[cod - 1].data, c.data);
     //printf("Alterar %c\n", Clientes[0].sexo);
 }
 
@@ -364,10 +364,10 @@ void excluirClienteTexto(float cod) {
     arquivo = fopen("cliente.txt", "rt");
     arq = fopen("clienteBackup.txt", "wt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data);
         if (cod == c.codigo && c.deletado != '*') {
         } else {
-            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+            fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data);
         }
     }
     fclose(arquivo);
