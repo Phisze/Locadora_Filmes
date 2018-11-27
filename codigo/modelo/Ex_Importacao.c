@@ -1,7 +1,4 @@
 /*
- * 
- */
-/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -18,7 +15,11 @@
 #include <stdlib.h>
 #include "../structs.h"
 #include "../conCliente.h"
-
+#include "../conCategoria.h"
+#include "../conFilme.h"
+#include "../conFornecedor.h"
+#include "../conFuncionario.h"
+#include "../conLocadora.h"
 /*
  * 
  */
