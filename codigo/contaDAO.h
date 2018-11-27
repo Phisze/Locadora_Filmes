@@ -35,11 +35,11 @@ int inclusaoConta(Conta c);
 /*
  **  Inclui Contas em arquivo texto
  */
-void inclusaoContaTexto(Conta c);
+int inclusaoContaTexto(Conta c);
 /*
  **  Inclui Contas em Array Dinamico
  */
-void insereContaArrayDinamico(Conta c);
+int insereContaArrayDinamico(Conta c);
 /*
  **  Lista Contas em arquivo binario
  */
@@ -71,11 +71,11 @@ int alterarConta(Conta clintes, float cod);
 /*
  **  Altera Contas em arquivo texto
  */
-void alterarContaTexto(float cod, Conta cli);
+int alterarContaTexto(float cod, Conta cli);
 /*
  **  Altera Contas em Array Dinamico
  */
-void alterarContaArrayDinamico(int cod, Conta c);
+int alterarContaArrayDinamico(int cod, Conta c);
 /*
  **  Deleta Contas em arquivo binario
  */
@@ -83,6 +83,6 @@ int excluirConta(float cod);
 /*
  **  Deleta Contas em Array Dinamico
  */
-void excluirContaTexto(int cod);
+int excluirContaTexto(int cod);
 #endif /* CONTADAO_H */
 
