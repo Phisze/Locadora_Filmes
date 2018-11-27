@@ -37,7 +37,7 @@ int inclusaoLocadora(Locadora l) {
     return 1;
 }
 
-void inclusaoLocadoraTexto(Locadora l) {
+int inclusaoLocadoraTexto(Locadora l) {
     FILE *arquivo;
     arquivo = fopen("locadora.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s %s %s %s %s\n", l.codigo, l.nome, l.razao_social, l.inscricao_estadual, l.cnpj, l.endereco, l.telefone, l.email, l.nome_responsavel, l.tel_responsavel);
@@ -45,9 +45,10 @@ void inclusaoLocadoraTexto(Locadora l) {
     tamanhoTexto = getTamanhoLocadoraTexto();
     tamanhoTexto++;
     setTamanhoLocadoraTexto(tamanhoTexto);
+    return 1;
 }
 
-void insereLocadoraArrayDinamico(Locadora c) {
+int insereLocadoraArrayDinamico(Locadora c) {
     tamanhoLocadoras++;
     Locadoras = realloc(Locadoras, tamanhoLocadoras * sizeof (Locadora));
     Locadoras[tamanhoLocadoras - 1].codigo = c.codigo;
@@ -60,7 +61,7 @@ void insereLocadoraArrayDinamico(Locadora c) {
     strcpy(Locadoras[tamanhoLocadoras - 1].cnpj, c.cnpj);
     strcpy(Locadoras[tamanhoLocadoras - 1].nome_responsavel, c.nome_responsavel);
     strcpy(Locadoras[tamanhoLocadoras - 1].tel_responsavel, c.tel_responsavel);
-
+    return 1;
 }
 //Funções de Listar
 
@@ -258,10 +259,10 @@ int alterarLocadora(Locadora locadora, float cod) {
         printf("\nCodigo nao cadastrado!!\n");
 
     fclose(arq);
-    return 0;
+    return 1;
 }
 
-void alterarLocadoraTexto(float cod, Locadora loc) {
+int alterarLocadoraTexto(float cod, Locadora loc) {
     FILE *arquivo;
     FILE *arq;
     Locadora l;
@@ -289,9 +290,10 @@ void alterarLocadoraTexto(float cod, Locadora loc) {
     fclose(arq);
     remove("locadora.txt");
     rename("locadoraBackup.txt", "locadora.txt");
+    return 1;
 }
 
-void alterarLocadoraArrayDinamico(int cod, Locadora c) {
+int alterarLocadoraArrayDinamico(int cod, Locadora c) {
     Locadoras[cod - 1].codigo = c.codigo;
     strcpy(Locadoras[cod - 1].nome, c.nome);
     strcpy(Locadoras[cod - 1].endereco, c.endereco);
@@ -302,6 +304,7 @@ void alterarLocadoraArrayDinamico(int cod, Locadora c) {
     strcpy(Locadoras[cod - 1].nome_responsavel, c.nome_responsavel);
     strcpy(Locadoras[cod - 1].razao_social, c.razao_social);
     strcpy(Locadoras[cod - 1].tel_responsavel, c.tel_responsavel);
+    return 1;
 }
 
 //Funcções de exclusão
@@ -311,7 +314,7 @@ int excluirLocadora(float cod) {
     FILE *arq = fopen("locadora.pro", "r+b");
     if (arq == NULL) {
         printf("Arquivo inexistente!");
-        return 0;
+        return 1;
     }
 
     Locadora l;
@@ -337,7 +340,7 @@ int excluirLocadora(float cod) {
                 fseek(arq, sizeof (l)* 0, SEEK_END);
                 // return 1;
             } else if (certeza == 'n')
-                return 1;
+                return 0;
         }
     }
 
@@ -345,10 +348,10 @@ int excluirLocadora(float cod) {
         printf("\nCodigo nao cadastrado!!\n");
 
     fclose(arq);
-    return 0;
+    return 1;
 }
 
-void excluirLocadoraTexto(float cod) {
+int excluirLocadoraTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Locadora l;
@@ -368,8 +371,10 @@ void excluirLocadoraTexto(float cod) {
     tamanhoTexto = getTamanhoLocadoraTexto();
     tamanhoTexto--;
     setTamanhoLocadoraTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirLocadoraArrayDinamico(int cod) {
+int excluirLocadoraArrayDinamico(int cod) {
     Locadoras[cod - 1].deletado = '*';
+    return 1;
 }

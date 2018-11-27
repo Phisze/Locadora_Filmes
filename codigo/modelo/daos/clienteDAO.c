@@ -46,7 +46,7 @@ int inclusaoCliente(Cliente c) {
     return 1;
 }
 
-void inclusaoClienteTexto(Cliente c) {
+int inclusaoClienteTexto(Cliente c) {
     FILE *arquivo;
     tamanhoTexto = getTamanhoClienteTexto();
     arquivo = fopen("cliente.txt", "a");
@@ -54,9 +54,10 @@ void inclusaoClienteTexto(Cliente c) {
     fclose(arquivo);
     tamanhoTexto++;
     setTamanhoClienteTexto(tamanhoTexto);
+    return 1;
 }
 
-void insereClienteArrayDinamico(Cliente c) {
+int insereClienteArrayDinamico(Cliente c) {
     tamanhoClientes++;
     Clientes = realloc(Clientes, tamanhoClientes * sizeof (Cliente));
     Clientes[tamanhoClientes - 1].codigo = c.codigo;
@@ -68,6 +69,7 @@ void insereClienteArrayDinamico(Cliente c) {
     Clientes[tamanhoClientes - 1].sexo = c.sexo;
     strcpy(Clientes[tamanhoClientes - 1].estado_civil, c.estado_civil);
     strcpy(Clientes[tamanhoClientes - 1].data_nascimento, c.data_nascimento);
+    return 1;
 }
 
 //Funções de Listar
@@ -272,7 +274,7 @@ int alterarCliente(Cliente clintes, float cod) {
     return 0;
 }
 
-void alterarClienteTexto(float cod, Cliente cli) {
+int alterarClienteTexto(float cod, Cliente cli) {
     FILE *arquivo;
     FILE *arq;
     Cliente c;
@@ -299,9 +301,10 @@ void alterarClienteTexto(float cod, Cliente cli) {
     fclose(arq);
     remove("cliente.txt");
     rename("clienteBackup.txt", "cliente.txt");
+    return 1;
 }
 
-void alterarClienteArrayDinamico(int cod, Cliente c) {
+int alterarClienteArrayDinamico(int cod, Cliente c) {
     Clientes[cod - 1].codigo = c.codigo;
     strcpy(Clientes[cod - 1].nome, c.nome);
     strcpy(Clientes[cod - 1].endereco, c.endereco);
@@ -312,6 +315,7 @@ void alterarClienteArrayDinamico(int cod, Cliente c) {
     strcpy(Clientes[cod - 1].estado_civil, c.estado_civil);
     strcpy(Clientes[cod - 1].data_nascimento, c.data_nascimento);
     //printf("Alterar %c\n", Clientes[0].sexo);
+    return 1;
 }
 
 //Funcções de exclusão
@@ -357,7 +361,7 @@ int excluirCliente(float cod) {
     return 0;
 }
 
-void excluirClienteTexto(float cod) {
+int excluirClienteTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Cliente c;
@@ -377,8 +381,10 @@ void excluirClienteTexto(float cod) {
     tamanhoTexto = getTamanhoClienteTexto();
     tamanhoTexto--;
     setTamanhoClienteTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirClienteArrayDinamico(int cod) {
+int excluirClienteArrayDinamico(int cod) {
     Clientes[cod - 1].deletado = '*';
+    return 1;
 }

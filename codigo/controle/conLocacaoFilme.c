@@ -69,8 +69,8 @@ int devolveFilmes(float cliCodigo, float filCodigo) {
         locacoes = ListarLocacaoTexto();
     }
 
-    int qtdLocacao = 0;
-    qtdLocacao = qtdLocacao();
+    int qtdLoco = 0;
+    qtdLoco = qtdLocacao();
     int contadorMemoria = 1;
 
     Locacao * locacaoCliente = malloc(contadorMemoria * sizeof (Locacao));

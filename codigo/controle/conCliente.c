@@ -47,7 +47,7 @@ int deletaCliente(float codigo) {
     } else if (getTipoPersistencia() == BINARIO) {
         return excluirCliente(codigo);
     } else {
-        return excluirClienteTexto(codigo);
+       // return excluirClienteTexto(codigo);
     }
 
 

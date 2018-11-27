@@ -37,7 +37,7 @@ int inclusaoLocacao(Locacao l) {
     return 1;
 }
 
-void inclusaoLocacaoTexto(Locacao l) {
+int inclusaoLocacaoTexto(Locacao l) {
     FILE *arquivo;
     arquivo = fopen("Locacao.txt", "a");
     fprintf(arquivo, "%f %f %d %d %d %d %s %f %d %d %d %f\n", l.codigo, l.cliCodigo, l.filCodigo1, l.filCodigo2, l.filCodigo3, l.tipo, l.data, l.valor, l.qtde_Filmes_Locados, l.qtdParcelaInicial, l.qtdParcela, l.valorParcela);
@@ -45,9 +45,10 @@ void inclusaoLocacaoTexto(Locacao l) {
     tamanhoTexto = getTamanhoLocacaoTexto();
     tamanhoTexto++;
     setTamanhoLocacaoTexto(tamanhoTexto);
+    return 1;
 }
 
-void insereLocacaoArrayDinamico(Locacao c) {
+int insereLocacaoArrayDinamico(Locacao c) {
     tamanhoLocacaos++;
     Locacaos = realloc(Locacaos, tamanhoLocacaos * sizeof (Locacao));
     Locacaos[tamanhoLocacaos - 1].codigo = c.codigo;
@@ -63,7 +64,7 @@ void insereLocacaoArrayDinamico(Locacao c) {
     Locacaos[tamanhoLocacaos - 1].tipo = c.tipo;
     Locacaos[tamanhoLocacaos - 1].valor = c.valor;
     Locacaos[tamanhoLocacaos - 1].valorParcela c.valorParcela;
-
+    return 1;
 }
 //Funções de Listar
 
@@ -196,7 +197,7 @@ Locacao consultarLocacao(float cod) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            return l;
+            return 0;
         }
     }
 
@@ -268,7 +269,7 @@ int alterarLocacao(Locacao Locacao, float cod) {
     return 0;
 }
 
-void alterarLocacaoTexto(float cod, Locacao loc) {
+int alterarLocacaoTexto(float cod, Locacao loc) {
     FILE *arquivo;
     FILE *arq;
     Locacao l;
@@ -300,9 +301,10 @@ void alterarLocacaoTexto(float cod, Locacao loc) {
     fclose(arq);
     remove("Locacao.txt");
     rename("LocacaoBackup.txt", "Locacao.txt");
+    return 1;
 }
 
-void alterarLocacaoArrayDinamico(int cod, Locacao c) {
+int alterarLocacaoArrayDinamico(int cod, Locacao c) {
     Locacaos[cod - 1].codigo = c.codigo;
     strcpy(Locacaos[cod - 1].data, c.data);
     Locacaos[cod - 1].cliCodigo = c.cliCodigo;
@@ -316,6 +318,7 @@ void alterarLocacaoArrayDinamico(int cod, Locacao c) {
     Locacaos[cod - 1].tipo = c.tipo;
     Locacaos[cod - 1].valor = c.valor;
     Locacaos[cod - 1].valorParcela = c.valorParcela;
+    return 1;
 }
 
 //Funcções de exclusão
@@ -359,10 +362,10 @@ int excluirLocacao(float cod) {
         printf("\nCodigo nao cadastrado!!\n");
 
     fclose(arq);
-    return 0;
+    return 1;
 }
 
-void excluirLocacaoTexto(float cod) {
+int excluirLocacaoTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Locacao l;
@@ -382,8 +385,10 @@ void excluirLocacaoTexto(float cod) {
     tamanhoTexto = getTamanhoLocacaoTexto();
     tamanhoTexto--;
     setTamanhoLocacaoTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirLocacaoArrayDinamico(int cod) {
+int excluirLocacaoArrayDinamico(int cod) {
     Locacaos[cod - 1].deletado = '*';
+    return 1;
 }

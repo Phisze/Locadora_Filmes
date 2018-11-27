@@ -26,7 +26,7 @@ extern "C" {
 #endif
 extern int tamanhoLocacaos;
 
-void inclusao_parcela(Locacao f);
+int inclusao_parcela(Locacao f);
 
 Locacao * listarParcelas();
 /*
@@ -36,11 +36,11 @@ int inclusaoLocacaos(Locacao f);
 /*
  **  Inclui Fornecedor em arquivo Texto
  */
-void inclusaoLocacaoTexto(Locacao f);
+int inclusaoLocacaoTexto(Locacao f);
 /*
  **  Inclui Fornecedor em Array Dinamico
  */
-void insereLocacaoArrayDinamico(Locacao f);
+int insereLocacaoArrayDinamico(Locacao f);
 /*
  **  Lista Fornecedor em arquivo binario
  */
@@ -72,11 +72,11 @@ int alterarLocacaos(Locacao Locacao, float cod);
 /*
  **  Deleta Filmes em arquivo Texto
  */
-void alterarLocacaoTexto(float cod, Locacao fun);
+int alterarLocacaoTexto(float cod, Locacao fun);
 /*
  **  Deleta Filmes em Array Dinamico
  */
-void alterarLocacaoArrayDinamico(int cod, Locacao c);
+int alterarLocacaoArrayDinamico(int cod, Locacao c);
 /*
  **  Deleta Filmes em arquivo binario
  */
@@ -84,10 +84,10 @@ int excluirLocacaos(float cod);
 /*
  **  Deleta Filmes em arquivo Texto
  */
-void excluirLocacaoTexto(float cod);
+int excluirLocacaoTexto(float cod);
 /*
  **  Deleta Filmes em Array Dinamico
  */
-void excluirLocacaoArrayDinamico(int cod);
+int excluirLocacaoArrayDinamico(int cod);
 #endif /* LOCACOEDAO_H */
 

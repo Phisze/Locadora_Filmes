@@ -38,11 +38,11 @@ int inclusaoCliente(Cliente c);
 /*
  **  Inclui Clientes em arquivo texto
  */
-void inclusaoClienteTexto(Cliente c);
+int inclusaoClienteTexto(Cliente c);
 /*
  **  Inclui Clientes em Array Dinamico
  */
-void insereClienteArrayDinamico(Cliente c);
+int insereClienteArrayDinamico(Cliente c);
 /*
  **  Lista Clientes em arquivo binario
  */
@@ -74,11 +74,11 @@ int alterarCliente(Cliente clintes, float cod);
 /*
  **  Altera Clientes em arquivo texto
  */
-void alterarClienteTexto(float cod, Cliente cli);
+int alterarClienteTexto(float cod, Cliente cli);
 /*
  **  Altera Clientes em Array Dinamico
  */
-void alterarClienteArrayDinamico(int cod, Cliente c);
+int alterarClienteArrayDinamico(int cod, Cliente c);
 /*
  **  Deleta Clientes em arquivo binario
  */
@@ -86,6 +86,6 @@ int excluirCliente(float cod);
 /*
  **  Deleta Clientes em Array Dinamico
  */
-void excluirClienteTexto(int cod);
+int excluirClienteTexto(int cod);
 #endif /* CLIENTEDAO_H */
 

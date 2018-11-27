@@ -40,7 +40,7 @@ int inclusaoFuncionarios(Funcionario f) {
 
 }
 
-void inclusaoFuncionarioTexto(Funcionario f) {
+int inclusaoFuncionarioTexto(Funcionario f) {
     FILE *arquivo;
     arquivo = fopen("funcionario.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s\n", f.codigo, f.nome, f.cargo, f.endereco, f.telefone, f.email);
@@ -48,9 +48,10 @@ void inclusaoFuncionarioTexto(Funcionario f) {
     tamanhoTexto = getTamanhoFuncionarioTexto();
     tamanhoTexto++;
     setTamanhoFuncionarioTexto(tamanhoTexto);
+    return 1;
 }
 
-void insereFuncionarioArrayDinamico(Funcionario f) {
+int insereFuncionarioArrayDinamico(Funcionario f) {
     tamanhoFuncionarios++;
     Funcionarios = realloc(Funcionarios, tamanhoFuncionarios * sizeof (Funcionario));
     Funcionarios[tamanhoFuncionarios - 1].codigo = f.codigo;
@@ -59,6 +60,7 @@ void insereFuncionarioArrayDinamico(Funcionario f) {
     strcpy(Funcionarios[tamanhoFuncionarios - 1].cargo, f.cargo);
     strcpy(Funcionarios[tamanhoFuncionarios - 1].telefone, f.telefone);
     strcpy(Funcionarios[tamanhoFuncionarios - 1].email, f.email);
+    return 1;
 }
 
 //Funções de Listar
@@ -248,7 +250,7 @@ int alterarFuncionarios(Funcionario funcionario, float cod) {
     return 0;
 }
 
-void alterarFuncionarioTexto(float cod, Funcionario fun) {
+int alterarFuncionarioTexto(float cod, Funcionario fun) {
     FILE *arquivo;
     FILE *arq;
     Funcionario f;
@@ -272,9 +274,10 @@ void alterarFuncionarioTexto(float cod, Funcionario fun) {
     fclose(arq);
     remove("funcionario.txt");
     rename("funcionarioBackup.txt", "funcionario.txt");
+    return 1;
 }
 
-void alterarFuncionarioArrayDinamico(int cod, Funcionario c) {
+int alterarFuncionarioArrayDinamico(int cod, Funcionario c) {
     Funcionarios[cod - 1].codigo = c.codigo;
     strcpy(Funcionarios[cod - 1].nome, c.nome);
     strcpy(Funcionarios[cod - 1].endereco, c.endereco);
@@ -282,6 +285,7 @@ void alterarFuncionarioArrayDinamico(int cod, Funcionario c) {
     strcpy(Funcionarios[cod - 1].telefone, c.telefone);
     strcpy(Funcionarios[cod - 1].email, c.email);
     //printf("Alterar %c\n", Funcionarios[0].sexo);
+    return 1;
 }
 
 //Funcções de exclusão
@@ -328,7 +332,7 @@ int excluirFuncionarios(float cod) {
     return 0;
 }
 
-void excluirFuncionarioTexto(float cod) {
+int excluirFuncionarioTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Funcionario f;
@@ -348,8 +352,10 @@ void excluirFuncionarioTexto(float cod) {
     tamanhoTexto = getTamanhoFuncionarioTexto();
     tamanhoTexto--;
     setTamanhoFuncionarioTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirFuncionarioArrayDinamico(int cod) {
+int excluirFuncionarioArrayDinamico(int cod) {
     Funcionarios[cod - 1].deletado = '*';
+    return 1;
 }

@@ -41,7 +41,7 @@ int inclusaoFornecedor(Fornecedor f) {
 
 }
 
-void inclusaoFornecedorTexto(Fornecedor f) {
+int inclusaoFornecedorTexto(Fornecedor f) {
     FILE *arquivo;
     arquivo = fopen("fornecedor.txt", "a");
     fprintf(arquivo, "%f %s %s %s %s %s %s %s\n", f.codigo, f.nome, f.razao_social, f.inscricao_estadual, f.cnpj, f.endereco, f.telefone, f.email);
@@ -49,9 +49,10 @@ void inclusaoFornecedorTexto(Fornecedor f) {
     tamanhoTexto = getTamanhoFornecedorTexto();
     tamanhoTexto++;
     setTamanhoFornecedorTexto(tamanhoTexto);
+    return 1;
 }
 
-void insereFornecedorArrayDinamico(Fornecedor f) {
+int insereFornecedorArrayDinamico(Fornecedor f) {
     tamanhoFornecedors++;
     Fornecedors = realloc(Fornecedors, tamanhoFornecedors * sizeof (Fornecedor));
     Fornecedors[tamanhoFornecedors - 1].codigo = f.codigo;
@@ -62,6 +63,7 @@ void insereFornecedorArrayDinamico(Fornecedor f) {
     strcpy(Fornecedors[tamanhoFornecedors - 1].email, f.email);
     strcpy(Fornecedors[tamanhoFornecedors - 1].inscricao_estadual, f.inscricao_estadual);
     strcpy(Fornecedors[tamanhoFornecedors - 1].cnpj, f.cnpj);
+    return 1;
 }
 
 //Funções de Listar
@@ -257,7 +259,7 @@ int alterarFornecedor(Fornecedor fornecedor, float cod) {
     return 0;
 }
 
-void alterarFornecedorTexto(float cod, Fornecedor forn) {
+int alterarFornecedorTexto(float cod, Fornecedor forn) {
     FILE *arquivo;
     FILE *arq;
     Fornecedor f;
@@ -283,9 +285,10 @@ void alterarFornecedorTexto(float cod, Fornecedor forn) {
     fclose(arq);
     remove("fornecedor.txt");
     rename("fornecedorBackup.txt", "fornecedor.txt");
+    return 1;
 }
 
-void alterarFornecedorArrayDinamico(int cod, Fornecedor f) {
+int alterarFornecedorArrayDinamico(int cod, Fornecedor f) {
     Fornecedors[cod - 1].codigo = f.codigo;
     strcpy(Fornecedors[cod - 1].nome, f.nome);
     strcpy(Fornecedors[cod - 1].endereco, f.endereco);
@@ -295,6 +298,7 @@ void alterarFornecedorArrayDinamico(int cod, Fornecedor f) {
     strcpy(Fornecedors[cod - 1].inscricao_estadual, f.inscricao_estadual);
     strcpy(Fornecedors[cod - 1].cnpj, f.cnpj);
     //printf("Alterar %c\n", Fornecedors[0].sexo);
+    return 1;
 }
 
 //Funcções de exclusão
@@ -341,7 +345,7 @@ int excluirFornecedor(float cod) {
     return 0;
 }
 
-void excluirFornecedorTexto(float cod) {
+int excluirFornecedorTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Fornecedor f;
@@ -361,8 +365,10 @@ void excluirFornecedorTexto(float cod) {
     tamanhoTexto = getTamanhoFornecedorTexto();
     tamanhoTexto--;
     setTamanhoFornecedorTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirFornecedorArrayDinamico(int cod) {
+int excluirFornecedorArrayDinamico(int cod) {
     Fornecedors[cod - 1].deletado = '*';
+    return 1;
 }

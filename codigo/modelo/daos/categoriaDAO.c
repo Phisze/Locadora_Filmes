@@ -39,7 +39,7 @@ int inclusaoCategoria(Categoria c) {
     return 1;
 }
 
-void inclusaoCategoriaTexto(Categoria c) {
+int inclusaoCategoriaTexto(Categoria c) {
     FILE *arquivo;
     arquivo = fopen("categoria.txt", "a");
     fprintf(arquivo, "%f %s %f \n", c.codigo, c.descricao, c.valor_locacao);
@@ -47,13 +47,15 @@ void inclusaoCategoriaTexto(Categoria c) {
     tamanhoTexto = getTamanhoCategoriaTexto();
     tamanhoTexto++;
     setTamanhoCategoriaTexto(tamanhoTexto);
+    return 1;
 }
 
-void insereCategoriaArrayDinamico(Categoria c) {
+int insereCategoriaArrayDinamico(Categoria c) {
     tamanhoCategorias++;
     Categorias = realloc(Categorias, tamanhoCategorias * sizeof (Categoria));
     Categorias[tamanhoCategorias - 1].codigo = c.codigo;
     Categorias[tamanhoCategorias - 1].valor_locacao = c.valor_locacao;
+    return 1;
 }
 
 //Funções de Listar
@@ -236,7 +238,7 @@ int alterarCategoria(Categoria categoria, float cod) {
     return 0;
 }
 
-void alterarCategoriaTexto(float cod, Categoria cat) {
+int alterarCategoriaTexto(float cod, Categoria cat) {
     FILE *arquivo;
     FILE *arq;
     Categoria c;
@@ -258,13 +260,15 @@ void alterarCategoriaTexto(float cod, Categoria cat) {
     fclose(arq);
     remove("categoria.txt");
     rename("categoriaBackup.txt", "categoria.txt");
+    return 1;
 }
 
-void alterarCategoriaArrayDinamico(int cod, Categoria c) {
+int alterarCategoriaArrayDinamico(int cod, Categoria c) {
     Categorias[cod - 1].codigo = c.codigo;
     strcpy(Categorias[cod - 1].descricao, c.descricao);
     Categorias[cod - 1].valor_locacao = c.valor_locacao;
     //printf("Alterar %c\n", Categorias[0].sexo);
+    return 1;
 }
 
 //Funcções de exclusão
@@ -310,7 +314,7 @@ int excluirCategoria(float cod) {
     return 0;
 }
 
-void excluirCategoriaTexto(float cod) {
+int excluirCategoriaTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Categoria c;
@@ -330,8 +334,10 @@ void excluirCategoriaTexto(float cod) {
     tamanhoTexto = getTamanhoCategoriaTexto();
     tamanhoTexto--;
     setTamanhoCategoriaTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirCategoriaArrayDinamico(int cod) {
+int excluirCategoriaArrayDinamico(int cod) {
     Categorias[cod - 1].deletado = '*';
+    return 1;
 }

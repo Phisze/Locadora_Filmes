@@ -58,7 +58,7 @@ void insereContaArrayDinamico(Conta c) {
     Contas[tamanhoContas - 1].qtdParcelaInicial = c.qtdParcelaInicial;
     Contas[tamanhoContas - 1].tipo = c.tipo;
     Contas[tamanhoContas - 1].valor = c.valor;
-    Contas[tamanhoContas - 1].valorParcela c.valorParcela;
+    Contas[tamanhoContas - 1].valorParcela =c.valorParcela;
 
 }
 //Funções de Listar
@@ -217,6 +217,7 @@ Conta consultaContaArrayDinamico(int cod) {
 }
 
 //Funções de Alteração
+    Conta l;
 
 int alterarConta(Conta Conta, float cod) {
     FILE *arq = fopen("Conta.pro", "r+b");
@@ -225,7 +226,6 @@ int alterarConta(Conta Conta, float cod) {
         return 0;
     }
 
-    Conta l;
     //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");

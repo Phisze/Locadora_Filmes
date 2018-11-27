@@ -19,6 +19,7 @@
       <itemPath>conImportacao.h</itemPath>
       <itemPath>conLocadora.h</itemPath>
       <itemPath>conPersistencia.h</itemPath>
+      <itemPath>contaDAO.h</itemPath>
       <itemPath>feedback.h</itemPath>
       <itemPath>filmeDAO.h</itemPath>
       <itemPath>fornecedorDAO.h</itemPath>
@@ -136,6 +137,8 @@
       <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conPersistencia.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="contaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -279,6 +282,8 @@
       <item path="conLocadora.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="conPersistencia.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="contaDAO.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="controle/conCategoria.c" ex="false" tool="0" flavor2="0">
       </item>

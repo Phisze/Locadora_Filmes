@@ -45,7 +45,7 @@ int inclusaoFilmes(Filme f) {
     return 1;
 }
 
-void inclusaoFilmeTexto(Filme f) {
+int inclusaoFilmeTexto(Filme f) {
     FILE *arquivo;
     arquivo = fopen("filme.txt", "a");
     fprintf(arquivo, "%f %s %f %f %s\n", f.codigo, f.descricao, f.exemplares, f.catCodigo, f.lingua);
@@ -53,9 +53,10 @@ void inclusaoFilmeTexto(Filme f) {
     tamanhoTexto = getTamanhoFilmeTexto();
     tamanhoTexto++;
     setTamanhoFilme(tamanhoTexto);
+    return 1;
 }
 
-void insereFilmeArrayDinamico(Filme f) {
+int insereFilmeArrayDinamico(Filme f) {
     tamanhoFilmes++;
     Filmes = realloc(Filmes, tamanhoFilmes * sizeof (Filme));
     Filmes[tamanhoFilmes - 1].codigo = f.codigo;
@@ -63,6 +64,7 @@ void insereFilmeArrayDinamico(Filme f) {
     strcpy(Filmes[tamanhoFilmes - 1].lingua, f.lingua);
     Filmes[tamanhoFilmes - 1].exemplares = f.exemplares;
     Filmes[tamanhoFilmes - 1].catCodigo = f.catCodigo;
+    return 1;
 }
 
 //Funções de Listar
@@ -248,7 +250,7 @@ int alterarFilmes(Filme filme, float cod) {
     return 0;
 }
 
-void alterarFilmeTexto(float cod, Filme fil) {
+int alterarFilmeTexto(float cod, Filme fil) {
     FILE *arquivo;
     FILE *arq;
     Filme f;
@@ -270,9 +272,10 @@ void alterarFilmeTexto(float cod, Filme fil) {
     fclose(arq);
     remove("filme.txt");
     rename("filmeBackup.txt", "filme.txt");
+    return 1;
 }
 
-void alterarFilmeArrayDinamico(int cod, Filme f) {
+int alterarFilmeArrayDinamico(int cod, Filme f) {
     Filmes[cod - 1].codigo = f.codigo;
     strcpy(Filmes[cod - 1].descricao, f.descricao);
     strcpy(Filmes[cod - 1].lingua, f.lingua);
@@ -322,7 +325,7 @@ int excluirFilmes(float cod) {
     return 0;
 }
 
-void excluirFilmeTexto(float cod) {
+int excluirFilmeTexto(float cod) {
     FILE *arquivo;
     FILE *arq;
     Filme f;
@@ -342,8 +345,10 @@ void excluirFilmeTexto(float cod) {
     tamanhoTexto = getTamanhoFilmeTexto();
     tamanhoTexto--;
     setTamanhoFilmeTexto(tamanhoTexto);
+    return 1;
 }
 
-void excluirFilmeArrayDinamico(int cod) {
+int excluirFilmeArrayDinamico(int cod) {
     Filmes[cod - 1].deletado = '*';
+    return 1;
 }
