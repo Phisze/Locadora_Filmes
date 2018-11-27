@@ -35,11 +35,11 @@ int inclusaoLocadora(Locadora l);
 /*
  **  Inclui Locadora em arquivo Texto
  */
-void inclusaoLocadoraTexto(Locadora l);
+int inclusaoLocadoraTexto(Locadora l);
 /*
  **  Inclui Locadora em Array Dinamico
  */
-void insereLocadoraArrayDinamico(Locadora c);
+int insereLocadoraArrayDinamico(Locadora c);
 /*
  **  Lista Locadora em arquivo binario
  */
@@ -71,11 +71,11 @@ int alterarLocadora(Locadora locadora, float cod);
 /*
  **  Altera Locadora em arquivo Texto
  */
-void alterarLocadoraTexto(float cod, Locadora loc);
+int alterarLocadoraTexto(float cod, Locadora loc);
 /*
  **  Altera Locadora em arquivo Array Dinamico
  */
-void alterarLocadoraArrayDinamico(int cod, Locadora c);
+int alterarLocadoraArrayDinamico(int cod, Locadora c);
 /*
  **  Deleta Locadora em arquivo binario
  */
@@ -87,6 +87,6 @@ int excluirLocadoraTexto(float cod);
 /*
  **  Deleta Locadora em Array Dinamico
  */
-void excluirLocadoraArrayDinamico(int cod);
+int excluirLocadoraArrayDinamico(int cod);
 #endif /* LOCADORADAO_H */
 

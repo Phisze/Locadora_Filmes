@@ -34,11 +34,11 @@ int inclusaoFilmes(Filme f);
 /*
  **  Inclui Filmes em arquivo Texto
  */
-void inclusaoFilmeTexto(Filme f);
+int inclusaoFilmeTexto(Filme f);
 /*
  **  Inclui Filmes em Array Dinamico
  */
-void insereFilmeArrayDinamico(Filme f);
+int insereFilmeArrayDinamico(Filme f);
 /*
  **  Lista Filmes em arquivo binario
  */
@@ -70,11 +70,11 @@ int alterarFilmes(Filme filme, float cod);
 /*
  **  Altera Filmes em arquivo Texto
  */
-void alterarFilmeTexto(float cod, Filme fil);
+int alterarFilmeTexto(float cod, Filme fil);
 /*
  **  Altera Filmes em Array Dinamico
  */
-void alterarFilmeArrayDinamico(int cod, Filme c);
+int alterarFilmeArrayDinamico(int cod, Filme c);
 /*
  **  Deleta Filmes em arquivo binario
  */
@@ -86,6 +86,6 @@ int excluirFilmesTexto(float cod);
 /*
  **  Deleta Filmes em Array Dinamico
  */
-void excluirFilmeArrayDinamico(int cod);
+int excluirFilmeArrayDinamico(int cod);
 #endif /* FILME_H */
 

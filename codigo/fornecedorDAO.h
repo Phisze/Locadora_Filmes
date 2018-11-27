@@ -32,11 +32,11 @@ int inclusaoFornecedor(Fornecedor f);
 /*
  **  Inclui Fornecedor em arquivo Texto
  */
-void inclusaoFornecedorTexto(Fornecedor f);
+int inclusaoFornecedorTexto(Fornecedor f);
 /*
  **  Inclui Fornecedor em Array Dinamico
  */
-void insereFornecedorArrayDinamico(Fornecedor f);
+int insereFornecedorArrayDinamico(Fornecedor f);
 /*
  **  Lista Fornecedor em arquivo binario
  */
@@ -68,11 +68,11 @@ int alterarFornecedor(Fornecedor fornecedor, float cod);
 /*
  **  Altera Fornecedor em arquivo Texto
  */
-void alterarFornecedorTexto(float cod, Fornecedor forn);
+int alterarFornecedorTexto(float cod, Fornecedor forn);
 /*
  **  Altera Fornecedor em Array Dinamico
  */
-void alterarFornecedorArrayDinamico(int cod, Fornecedor f);
+int alterarFornecedorArrayDinamico(int cod, Fornecedor f);
 /*
  **  Deleta Fornecedor em arquivo binario
  */
@@ -80,10 +80,10 @@ int excluirFornecedor(float cod);
 /*
  **  Deleta Fornecedor em arquivo binario
  */
-void excluirFornecedorTexto(float cod);
+int excluirFornecedorTexto(float cod);
 /*
  **  Deleta Fornecedor em Array Dinamico
  */
-void excluirFornecedorArrayDinamico(int cod);
+int excluirFornecedorArrayDinamico(int cod);
 #endif /* FORNECEDORDAO_H */
 
