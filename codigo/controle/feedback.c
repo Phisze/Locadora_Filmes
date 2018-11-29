@@ -218,13 +218,13 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
 Conta * contasReceberDataFeedback(char *data1, char *data2) {
     Conta *Contas;
     Contas = listaContas();
-    Conta *array = malloc((qtdConta()) 1 * sizeof (Conta));
+    Conta *array = malloc((qtdConta()) * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
     time_t dataLocacoes;
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2(qtdConta()); i++) {
+    for (int i = 0; i < (qtdConta()); i++) {
         if (Contas[i].tipo == 0) {
             dataLocacoes = to_seconds(Contas[i].data);
             if (d1 > dataLocacoes && d2 < dataLocacoes) {
@@ -311,7 +311,7 @@ Conta * contasPagarDataFeedback(char *data1, char *data2) {
 Conta * contasPagarCodigoFeedback(int cod1, int cod2) {
     Conta *Contas;
     Contas = listaContas();
-    Conta *array = malloc((qtdConta()) 1 * sizeof (Conta));
+    Conta *array = malloc((qtdConta()) * sizeof (Conta));
     int w = 0;
     int j = 0;
     for (int i = 0; i < (qtdConta()); i++) {
