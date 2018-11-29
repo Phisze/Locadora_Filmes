@@ -240,3 +240,8 @@ int qtdLocacao() {
         return getTamanhoLocacaoTexto();
     }
 }
+
+Locacao * locacoesReceber() {
+
+}
+

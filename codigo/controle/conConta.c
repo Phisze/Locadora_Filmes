@@ -39,7 +39,7 @@ int atualizaConta(Conta c) {
 
 int deletaConta(float codigo) {
     if (getTipoPersistencia() == MEMORIA) {
-        return excluirContaArrayDinamico((int)codigo);
+        return excluirContaArrayDinamico((int) codigo);
     } else if (getTipoPersistencia() == BINARIO) {
         return excluirConta(codigo);
     } else {
@@ -70,6 +70,17 @@ int qtdConta() {
     }
 }
 
+//Conta* contasPagar() {
+//    Conta * contas = listaContas();
+//    int tamanhoConta = qtdConta();
+//
+//    int contadorPagar = 1;
+//    Conta * contasPagar = malloc(contadorPagar * sizeof (Conta));
+//
+//    for (int i = 0; i < tamanhoConta; i++) {
+//        if(contas)
+//    }
+//}
 //Conta consultaConta(float codigo) {
 //    if (getTipoPersistencia() == MEMORIA) {
 //        
