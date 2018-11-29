@@ -1,13 +1,13 @@
 <dados>
    <tabela=clientes>
-      <registro>
+    <registro>
          <codigo>0</codigo>
          <nome>32weewq</nome>
          <endereco>adasdsa</endereco>
          <cpf>123456</cpf>
          <telefone>2312</telefone>
          <email>adsasd</email>
-         <sexo>`</sexo>
+         <sexo>M</sexo>
          <estado_civil>esda</estado_civil>
          <data_nascimento>212131</data_nascimento>
       </registro>

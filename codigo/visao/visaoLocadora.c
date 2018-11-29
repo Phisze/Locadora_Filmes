@@ -191,20 +191,21 @@ int deletLoc() {
 void consulteLoc() {
 
     Locadora locadora;
-    Locadora *p = listaLocadoras(); //p vetor com todos os clientes 
+    Locadora p; //p vetor com todos os clientes 
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
     float cod;
     printf("-------------------------------------------------------\n"); 
     printf("Digite o codigo do clinte que deseja consultar: \n");
     scanf("%f%*c",&cod);
+    p = consultaLocadora(cod);
     printf("-------------------------------------------------------\n"); 
-    for (int i = 0; i <= tamanho; i++) {
-        if (p[i].codigo == cod) { //Não mostrar os deletados
-             printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s\n Nome do responsavel: %s\n Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
-        } 
+  //  for (int i = 0; i <= tamanho; i++) {
+    //    if (p[i].codigo == cod) { //Não mostrar os deletados
+             printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s\n Nome do responsavel: %s\n Telefone do Responsavel: %s\n",p.codigo, p.nome, p.razao_social, p.inscricao_estadual, p.cnpj, p.endereco, p.telefone, p.email, p.nome_responsavel, p.tel_responsavel);
+      //  } 
        
-    }
-     consultaLocadora(cod);
+    //}
+    // consultaLocadora(cod);
 }
     
 

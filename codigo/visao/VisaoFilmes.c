@@ -10,11 +10,11 @@ void filmeMenu() {
         printf("\t MENU FILME \n");
         printf("-------------------------------------------------------\n");
         printf("0. Sair \n");
-        printf("1. Salvar Filme \n");//OK
-        printf("2. Atualizar Filme \n");//OK
-        printf("3. Deletar Filme \n");//ñ
-        printf("4. Listar Filme  \n");//OK
-        printf("5. Consultar Filme \n");//OK
+        printf("1. Salvar Filme \n"); //OK
+        printf("2. Atualizar Filme \n"); //OK
+        printf("3. Deletar Filme \n"); //ñ
+        printf("4. Listar Filme  \n"); //OK
+        printf("5. Consultar Filme \n"); //OK
         printf("6. Voltar para o menu principal \n");
         printf("-------------------------------------------------------\n");
         printf("\t Digite uma das opções: \n");
@@ -60,10 +60,6 @@ void filmeMenu() {
 void salveFlimes() {
 
     Filme filme;
-
-    printf("Digite a descrição do filme: \n");
-    scanf("%[^\n]%*c", filme.descricao); //Até o usuario dar enter
-    fflush(stdin);
 
     printf("Digite a quantidade de exemplares do filme na locadora: \n");
     scanf("%f%*c", &filme.exemplares);
@@ -119,22 +115,22 @@ void attFilmes() {
 
 void deletFilme() {
 
-//   Filme filme;
-//    Filme *p = listaFilmes(); //p vetor com todos os clientes 
-//    int tamanho = qtdFilme(); //quantidade de clientes do vetor
+    //   Filme filme;
+    //    Filme *p = listaFilmes(); //p vetor com todos os clientes 
+    //    int tamanho = qtdFilme(); //quantidade de clientes do vetor
     float cod;
     printf("-------------------------------------------------------\n");
     printf("\t Digite o codigo do cliente que deseja deletar: \n");
     scanf("%f%*c", &cod);
     printf("-------------------------------------------------------\n");
-//    for (int i = 0; i <= tamanho; i++) {
-//        if (p[i].codigo == cod) {
-            mensagem_operacao(deletaFilme(cod));
-//            break;
-//
-//        } else
-//            printf("Clinte Inexistente!");
-//    }
+    //    for (int i = 0; i <= tamanho; i++) {
+    //        if (p[i].codigo == cod) {
+    mensagem_operacao(deletaFilme(cod));
+    //            break;
+    //
+    //        } else
+    //            printf("Clinte Inexistente!");
+    //    }
 
 }
 

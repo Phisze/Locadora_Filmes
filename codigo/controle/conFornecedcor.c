@@ -32,7 +32,7 @@ int deletaFornecedor(float codFornecedor) {
 }
 
 Fornecedor* listaFornecedor() {
-    return listaFornecedor();
+    return listarFornecedor();
 }
 
 //implementar esse olhar se no codigo do wev tem

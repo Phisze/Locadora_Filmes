@@ -70,22 +70,22 @@ void salveFornecedor(){
     Fornecedor fornecedor;
 
     fflush(stdin); //limpa                       
-    printf("Digite o nome fantasia da locadora: \n");
+    printf("Digite o nome do Fornecedor: \n");
     scanf("%[^\n]%*c", fornecedor.nome); //Até o usuario dar enter
     fflush(stdin); //limpa
     
                            
-    printf("Digite a razão social da empresa: \n");
+    printf("Digite a razão social do Fornecedor: \n");
     scanf("%[^\n]%*c", fornecedor.razao_social); //Até o usuario dar enter
     fflush(stdin); //limpa
     
                           
-    printf("Digite a inscrição estadual da empresa: \n");
+    printf("Digite a inscrição estadual do Fornecedor: \n");
     scanf("%[^\n]%*c", fornecedor.inscricao_estadual); //Até o usuario dar enter
     fflush(stdin); //limpa
     
                          
-    printf("Digite o CNPJ da empresa: \n");
+    printf("Digite o CNPJ do Fornecedor: \n");
     scanf("%[^\n]%*c", fornecedor.cnpj); //Até o usuario dar enter
     fflush(stdin); //limpa
     
@@ -151,7 +151,7 @@ void attLocadora(){
             strcpy(fornecedor.nome, p[i].nome);
             fflush(stdin); //limpa
             
-            printf("Digite o tefone: \n");
+            printf("Digite o telefone: \n");
             scanf("%[^\n]%*c", p[i].telefone); //Até o usuario dar enter
             strcpy(fornecedor.telefone, p[i].telefone);
             fflush(stdin); //limpa
@@ -167,7 +167,7 @@ void attLocadora(){
 }
 void listfornecedor() {
 
-    Fornecedor *p = listarFornecedor(); //p vetor com todos os clientes 
+    Fornecedor *p = listaFornecedor(); //p vetor com todos os clientes 
     int tamanho = qtdFornecedor(); //quantidade de clientes do vetor
 
     for (int i = 0; i <= tamanho; i++) {
@@ -179,18 +179,19 @@ void listfornecedor() {
 void consulteFornecedor() {
 
   Fornecedor fornecedor;
-  Fornecedor *p = listaFornecedor(); //p vetor com todas Fornecedores
   int tamanho = qtdFornecedor(); //quantidade de Fornecesores do vetor
   float cod;
     printf("---------------------------------------------\n");        
     printf("Digite o codigo do clinte que deseja consultar: \n");
     scanf("%f%*c", &cod);
+    Fornecedor p = consultaFornecedor(cod); //p vetor com todas Fornecedores
+
     printf("---------------------------------------------\n");        
-    for (int i = 0; i <= tamanho; i++) {
-        if (p[i].codigo == cod) { //Não mostrar os deletados
-            printf("Codigo: %0f, \n Nome: %s, \n Razão social: %s,\n Inscrição Estadual: %s,\n CNPJ: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n -------------------------------------------------\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
-        } 
-    }
+   // for (int i = 0; i <= tamanho; i++) {
+     //   if (p[i].codigo == cod) { //Não mostrar os deletados
+            printf("Codigo: %0f, \n Nome: %s, \n Razão social: %s,\n Inscrição Estadual: %s,\n CNPJ: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n -------------------------------------------------\n",p.codigo, p.nome, p.razao_social, p.inscricao_estadual, p.cnpj, p.endereco, p.telefone, p.email);
+       // } 
+    //}
     mensagem_operacao(consultaFornecedor(cod));
 
 }
