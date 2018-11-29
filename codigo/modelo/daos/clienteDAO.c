@@ -751,7 +751,7 @@ int excluirClienteTexto(float cod) {
     FILE *arq;
     Cliente c;
     arquivo = fopen("cliente.txt", "rt");
-    arq = fopen("clienteBackup.txt", "wt");
+    arq = fopen("clienteBackup.txt", "a");
     while (!feof(arquivo)) {
         fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
         if (cod == c.codigo && c.deletado != '*') {
