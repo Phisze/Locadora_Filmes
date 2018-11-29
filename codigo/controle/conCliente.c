@@ -126,12 +126,12 @@ int salvaCliente(Cliente * c) {
 
 int atualizaCliente(Cliente c) {
     if (getTipoPersistencia() == MEMORIA) {
-
+       return alterarClienteArrayDinamico(c.codigo,c);
 
     } else if (getTipoPersistencia() == BINARIO) {
-        alterarCliente(c, c.codigo);
+        return alterarCliente(c, c.codigo);
     } else {
-        alterarClienteTexto(c.codigo, c);
+       return alterarClienteTexto(c.codigo, c);
     }
 }
 //funcionando ok
@@ -168,7 +168,6 @@ int qtdCliente() {
     } else {
         return getTamanhoClienteTexto();
     }
-
 }
 
 Cliente consultaCliente(float codigo) {
@@ -179,7 +178,6 @@ Cliente consultaCliente(float codigo) {
     } else {
         return ConsultarClientesTexto(codigo);
     }
-
 }
 
 /*
