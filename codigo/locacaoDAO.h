@@ -1,3 +1,32 @@
+///*
+// * To change this license header, choose License Headers in Project Properties.
+// * To change this template file, choose Tools | Templates
+// * and open the template in the editor.
+// */
+//
+///* 
+// * File:   locacaoDAO.h
+// * Author: Administrador
+// *
+// * Created on 28 de Novembro de 2018, 16:58
+// */
+//
+//#ifndef LOCACAODAO_H
+//#define LOCACAODAO_H
+//
+//#ifdef __cplusplus
+//extern "C" {
+//#endif
+//
+//
+//
+//
+//#ifdef __cplusplus
+//}
+//#endif
+//
+//#endif /* LOCACAODAO_H */
+//
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,6 +42,7 @@
 
 #ifndef LOCACOEDAO_H
 #define LOCACOEDAO_H
+#include "structs.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,7 +74,8 @@ int insereLocacaoArrayDinamico(Locacao f);
 /*
  **  Lista Fornecedor em arquivo binario
  */
-Locacao* listarLocacaos();
+//Locacao* listarLocacaos();
+Locacao* listarLocacao();
 /*
  **  Lista Fornecedor em arquivo binario
  */
@@ -80,7 +111,7 @@ int alterarLocacaoArrayDinamico(int cod, Locacao c);
 /*
  **  Deleta Filmes em arquivo binario
  */
-int excluirLocacaos(float cod);
+int excluirLocacao(float cod);
 /*
  **  Deleta Filmes em arquivo Texto
  */

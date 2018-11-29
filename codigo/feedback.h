@@ -34,11 +34,11 @@ Filme* filmeCodigoFeedback(int cod1, int cod2);
 
 int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme);
 
-Locacao * locacoesCodigoFeedback(int tipo);
+Locacoes * locacoesCodigoFeedback(int tipo);
 
-Locacao * locacoesNomeFeedback(Cliente c);
+Locacoes * locacoesNomeFeedback(Cliente c);
 
-//Locacoes * movimentacaoCaixaFeedback(char *data1, char *data2);
+Locacoes * movimentacaoCaixaFeedback(char *data1, char *data2);
 
 Conta * contasReceberDataFeedback(char *data1, char *data2);
 

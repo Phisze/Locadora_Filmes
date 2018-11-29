@@ -191,7 +191,7 @@ void consulteFornecedor() {
             printf("Codigo: %0f, \n Nome: %s, \n Razão social: %s,\n Inscrição Estadual: %s,\n CNPJ: %s,\n Endereço: %s,\n Telefone: %s,\n E-mail: %s \n -------------------------------------------------\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email);
         } 
     }
-//    mensagem_operacao(consultaFornecedor(cod));
+    mensagem_operacao(consultaFornecedor(cod));
 
 }
  int deletFornecedor(){

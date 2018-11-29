@@ -26,7 +26,7 @@ void menuPrincipal() {
 
         switch (x) {
             
-                //enceerra
+                //encerra o programa
             case 0:
                 printf("SAINDO!");
                 exit(1);

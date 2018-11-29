@@ -117,9 +117,9 @@ void attFilmes() {
 
 }
 
-int deletFilme() {
+void deletFilme() {
 
-//    Filme filme;
+//   Filme filme;
 //    Filme *p = listaFilmes(); //p vetor com todos os clientes 
 //    int tamanho = qtdFilme(); //quantidade de clientes do vetor
     float cod;
@@ -159,7 +159,7 @@ void consulteFilme() {
     float cod;
     printf("-------------------------------------------------------\n");
     printf("Digite o codigo do clinte que deseja consultar: \n");
-    scanf("%f", &cod);
+    scanf("%f%*C", &cod);
     printf("-------------------------------------------------------\n");
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {

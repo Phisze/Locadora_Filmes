@@ -63,17 +63,17 @@ int insereLocacaoArrayDinamico(Locacao c) {
     Locacaos[tamanhoLocacaos - 1].qtde_Filmes_Locados = c.qtde_Filmes_Locados;
     Locacaos[tamanhoLocacaos - 1].tipo = c.tipo;
     Locacaos[tamanhoLocacaos - 1].valor = c.valor;
-    Locacaos[tamanhoLocacaos - 1].valorParcela c.valorParcela;
+    Locacaos[tamanhoLocacaos - 1].valorParcela = c.valorParcela;
     return 1;
 }
 //Funções de Listar
-
-Locacao* listarLocacao() {
+Locacao l;
+Locacao* listarLocacao(){
     int i = 0;
     int cont = 0;
-    Locacao l;
+
     Locacao *fw = &l;
-    Locacao *array = malloc(getTamanhoLocacao() * sizeof l);
+    Locacao *array = malloc(getTamanhoLocacao() * sizeof (Locacao));
     FILE *arq = fopen("Locacao.pro", "rb");
     //printf("Arquivo xistente!");
 
@@ -197,7 +197,7 @@ Locacao consultarLocacao(float cod) {
 
             // printf("Cod %d --- Descricao: %-8s --- Valor R$ %4.2f\n", produtos.codigo, produtos.descricao, produtos.valor);
             achei = 1;
-            return 0;
+            return l;
         }
     }
 
@@ -230,7 +230,7 @@ Locacao consultaLocacaoArrayDinamico(int cod) {
 }
 
 //Funções de Alteração
-
+Locacao l;
 int alterarLocacao(Locacao Locacao, float cod) {
     FILE *arq = fopen("Locacao.pro", "r+b");
     if (arq == NULL) {
@@ -238,7 +238,7 @@ int alterarLocacao(Locacao Locacao, float cod) {
         return 0;
     }
 
-    Locacao l;
+    
     //float cod, 
     int achei = 0;
     //printf("\nDigite o codigo que deseja alterar: \n");

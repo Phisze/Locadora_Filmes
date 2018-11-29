@@ -1,18 +1,20 @@
 build/Debug/Cygwin-Windows/controle/conLocacaoFilme.o: \
- controle/conLocacaoFilme.c controle/../structs.h controle/../vector.h \
- controle/../locacaoDAO.h controle/../funcoesUteis.h \
- controle/../conCliente.h controle/../structs.h \
- controle/../conPersistencia.h
+ controle/conLocacaoFilme.c controle/../../codigo/locacaoDAO.h \
+ controle/../../codigo/structs.h controle/../../codigo/vector.h \
+ controle/../funcoesUteis.h controle/../conCliente.h controle/../vector.h \
+ controle/../structs.h controle/../conPersistencia.h
 
-controle/../structs.h:
+controle/../../codigo/locacaoDAO.h:
 
-controle/../vector.h:
+controle/../../codigo/structs.h:
 
-controle/../locacaoDAO.h:
+controle/../../codigo/vector.h:
 
 controle/../funcoesUteis.h:
 
 controle/../conCliente.h:
+
+controle/../vector.h:
 
 controle/../structs.h:
 

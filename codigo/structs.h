@@ -33,7 +33,7 @@ extern "C" {
 #define TELEFONE 13
 #define EMAIL 35
 #define ESTADO_CIVIL 10
-#define DATA 10
+#define DATA_NASCIMENTO 10
 #define DESCRICAO 100
 #define LINGUA 10
 #define CARGO 10
@@ -51,7 +51,7 @@ typedef struct {
     char email[EMAIL];
     char sexo;
     char estado_civil[ESTADO_CIVIL];
-    char data_nascimento[DATA];
+    char data_nascimento[DATA_NASCIMENTO];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Cliente;
 
@@ -107,36 +107,35 @@ typedef struct {
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Locadora;
 
-typedef struct{
+typedef struct {
     float codigo;
     float cliCodigo;
     float valor;
-    int tipo; //0=A receber ou 1 = A pagar
     int qtdParcelaInicial;
     int qtdParcela;
     float valorParcela;
-    char data[DATA];
+    int tipo; //0=A receber ou 1 = A pagar
+    char data[DATA_NASCIMENTO];
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
 } Conta;
 
-typedef struct{
+typedef struct {
     float codigo;
     float cliCodigo;
     //na ultima posicao tem -1
-    int filCodigo1;
-    int filCodigo2;
-    int filCodigo3;
-    int tipo;// 0 = A vista ou 1 = A prazo
-    char data[DATA];
+    float filCodigo1;
+    float filCodigo2;
+    float filCodigo3;
+    int tipo; // 0 = A vista ou 1 = A prazo
+    char data[DATA_NASCIMENTO];
+    float valorParcela;
     float valor;
     //na ultima pos -1 pra saber quando 
+    int qtdParcelaInicial;
+    int qtdParcela;
     int qtde_Filmes_Locados;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
     //na ultima tem -1
-    int qtdParcelaInicial;
-    int qtdParcela;
-    float valorParcela;
-    //float * parcelas;
 } Locacao;
 
 typedef struct {

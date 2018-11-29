@@ -4,4 +4,51 @@
         <activeConfTypeElem>1</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/contaDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/fornecedorDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/funcionarioDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conFuncionario.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/funcoesUteis.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vetorFornecedor.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conLocadora.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/categoriaDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/contaDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vetorLocadora.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/main.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vetorCliente.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/tamanho.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conCliente.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/funcionarioDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conCategoria.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conFornecedcor.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conEntradaFilme.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conFilme.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/fornecedorDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/conLocadora.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conPersistencia.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/clienteDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/filmeDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vector.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/clienteDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/conPersistencia.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/locacaoDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/conLocacaoFilme.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/locadoraDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/categoriaDAO.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vetorFuncionario.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/conCliente.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/feedback.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vetorCategoria.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/conCategoria.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/locacaoDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conImportacao.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/modelo/daos/filmeDAO.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/conImportacao.h</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/vetorFilme.c</file>
+            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora/Locadora_Filmes/codigo/controle/conLocacaoFilme.c</file>
+        </group>
+    </open-files>
 </project-private>

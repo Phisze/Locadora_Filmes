@@ -27,7 +27,7 @@ extern "C" {
 void locadoraMenu();
 void salveLoc();
 void attLocadora();
-int deletLoc();
+void deletLoc();
 void consulteLoc();
 void consulteLoc();
 

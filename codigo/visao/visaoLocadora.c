@@ -165,7 +165,8 @@ void lisLoc() {
     printf("-------------------------------------------------------\n"); 
     for (int i = 0; i < tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s Nome do responsavel: %s Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
+            printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s \n Nome do responsavel: %s\n Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
+             printf("-------------------------------------------------------\n");
         }
     }
  }
@@ -195,16 +196,15 @@ void consulteLoc() {
     float cod;
     printf("-------------------------------------------------------\n"); 
     printf("Digite o codigo do clinte que deseja consultar: \n");
-    scanf("%f",&cod);
+    scanf("%f%*c",&cod);
     printf("-------------------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
-//            locadora=p[i];
-             printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s Nome do responsavel: %s Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
+             printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s\n Nome do responsavel: %s\n Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
         } 
        
     }
-//     consultaLocadora(cod);
+     consultaLocadora(cod);
 }
     
 

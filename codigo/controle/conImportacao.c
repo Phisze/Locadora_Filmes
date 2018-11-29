@@ -5,50 +5,50 @@
  */
 #include "../Ex_Importacao.h"
 
-void importaCliente(){
+void importaCliente() {
     importacaoCliente();
 }
 
-void exportaCliente(int qtde){
+void exportaCliente(int qtde) {
     exportacaoCliente(qtde);
 }
 
-void importaCategoria(){
+void importaCategoria() {
     importacaoCategoria();
 }
 
-void exportaCategoria(int qtde){
+void exportaCategoria(int qtde) {
     exportacaoCategoria(qtde);
 }
 
-void importaFilme(){
+void importaFilme() {
     importacaoFilme();
 }
 
-void exportaFilme(int qtde){
+void exportaFilme(int qtde) {
     exportacaoFilme(qtde);
 }
 
-void importaFornecedor(){
+void importaFornecedor() {
     importacaoFornecedor();
 }
 
-void exportaFornecedor(int qtde){
+void exportaFornecedor(int qtde) {
     exportacaoFornecedor(qtde);
 }
 
-void importaFuncionario(){
+void importaFuncionario() {
     importacaoFuncionario();
 }
 
-void exportaFuncionario(int qtde){
+void exportaFuncionario(int qtde) {
     exportacaoFuncionario(qtde);
 }
 
-void importaLocadora(){
+void importaLocadora() {
     importacaoLocadora();
 }
 
-void exportaLocadora(int qtde){
+void exportaLocadora(int qtde) {
     exportacaoLocadora(qtde);
 }

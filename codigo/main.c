@@ -14,22 +14,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../codigo/clienteDAO.h"
 #include "../codigo/vector.h"
 #include "../codigo/conCliente.h"
 #include "../codigo/tamanho.h"
 #include "Ex_Importacao.h"
+#include "../codigo/visao/Menu_primeiro.h"
+#include "../codigo/visao/Menu_primeiro.c"
+
 
 /*
  * 
  */
+Locacao* teste(){
+    return listarLocacao();
+}
+
 int main(int argc, char** argv) {
     //    Cliente c;
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
 
-    menuPrincipal();
-
+  Menu_primeiro();
+    //  listarLocacao();
     //importacaoCliente();
     //[
 
@@ -40,7 +46,7 @@ int main(int argc, char** argv) {
 
     //setTamanhoFuncionario(5);
     //printf("%d" ,getTamanhoFuncionario());
-    Cliente c;
+    //Cliente c;
     //[
 //    for (int i = 0; i < 4; i++) {
 //        c.codigo = i;

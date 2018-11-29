@@ -5,14 +5,14 @@
  */
 
 /* 
- * File:   MenuPrincipal_.h
+ * File:   Menu_primeiro.h
  * Author: duda
  *
- * Created on 1 de Novembro de 2018, 15:09
+ * Created on 23 de Novembro de 2018, 13:04
  */
 
-#ifndef MENUPRINCIPAL__H
-#define MENUPRINCIPAL__H
+#ifndef MENU_PRIMEIRO_H
+#define MENU_PRIMEIRO_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,6 +24,6 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-void MenuPrincipal_1();
-#endif /* MENUPRINCIPAL__H */
+    void Menu_primeiro();
+#endif /* MENU_PRIMEIRO_H */
 
