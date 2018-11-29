@@ -181,39 +181,39 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
     return array;
 }
 
-Locacao * movimentacaoCaixaFeedback(char *data1, char *data2) {
-    Locacao *Locacoess;
-    Locacoess = listaLocacoes();
-    Locacao *array;
-    array = malloc(qtdLocacao() * sizeof (Locacao));
-    time_t d1 = to_seconds(data1);
-    time_t d2 = to_seconds(data2);
-    time_t dataLocacoes;
-    int w = 0;
-    int j = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
-        dataLocacoes = to_seconds(Locacoess[i].data);
-        if (d1 > dataLocacoes && d2 < dataLocacoes) {
-            if (Locacoess[i].deletado != '*') {
-                array[j].codigo = Locacoess[i].codigo;
-                array[j].cliCodigo = Locacoess[i].cliCodigo;
-                array[j].filCodigo1 = Locacoess[i].filCodigo1;
-                array[j].filCodigo2 = Locacoess[i].filCodigo2;
-                array[j].filCodigo3 = Locacoess[i].filCodigo3;
-                array[j].qtdParcela = Locacoess[i].qtdParcela;
-                array[j].qtdParcelaInicial = Locacoess[i].qtdParcelaInicial;
-                array[j].valorParcela = Locacoess[i].valorParcela;
-                array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
-                array[j].tipo = Locacoess[i].tipo;
-                array[j].valor = Locacoess[i].valor;
-                strcpy(array[j].data, Locacoess[i].data);
-                j++;
-            }
-        }
-    }
-    array = realloc(array, j * sizeof (Locacao));
-    return array;
-}
+//Locacao * movimentacaoCaixaFeedback(char *data1, char *data2) {
+//    Locacao *Locacoess;
+//    Locacoess = listaLocacoes();
+//    Locacao *array;
+//    array = malloc(qtdLocacao() * sizeof (Locacao));
+//    time_t d1 = to_seconds(data1);
+//    time_t d2 = to_seconds(data2);
+//    time_t dataLocacoes;
+//    int w = 0;
+//    int j = 0;
+//    for (int i = 0; i < qtdLocacao();i++) {
+//        dataLocacoes = to_seconds(Locacoess[i].data);
+//        if (d1 > dataLocacoes && d2 < dataLocacoes) {
+//            if (Locacoess[i].deletado != '*') {
+//                array[j].codigo = Locacoess[i].codigo;
+//                array[j].cliCodigo = Locacoess[i].cliCodigo;
+//                array[j].filCodigo1 = Locacoess[i].filCodigo1;
+//                array[j].filCodigo2 = Locacoess[i].filCodigo2;
+//                array[j].filCodigo3 = Locacoess[i].filCodigo3;
+//                array[j].qtdParcela = Locacoess[i].qtdParcela;
+//                array[j].qtdParcelaInicial = Locacoess[i].qtdParcelaInicial;
+//                array[j].valorParcela = Locacoess[i].valorParcela;
+//                array[j].qtde_Filmes_Locados = Locacoess[i].qtde_Filmes_Locados;
+//                array[j].tipo = Locacoess[i].tipo;
+//                array[j].valor = Locacoess[i].valor;
+//                strcpy(array[j].data, Locacoess[i].data);
+//                j++;
+//            }
+//        }
+//    }
+//    array = realloc(array, j * sizeof (Locacao));
+//    return array;
+//}
 
 Conta * contasReceberDataFeedback(char *data1, char *data2) {
     Conta *Contas;
@@ -236,7 +236,8 @@ Conta * contasReceberDataFeedback(char *data1, char *data2) {
                     //Perguntar o Thomas como ele sabe o numero de parcelas
                     array[j].cliCodigo = Contas[i].cliCodigo;
                     array[j].qtdParcela = Contas[i].qtdParcela;
-                    array[j].qtdParcelaInicial = Contas[i].valorParcela;
+                    array[j].qtdParcelaInicial = Contas[i].qtdParcelaInicial;
+                    array[j].valorParcela = Contas[i].valorParcela;
                     j++;
                 }
             }
@@ -263,10 +264,10 @@ Conta * contasReceberCodigoFeedback(int cod1, int cod2) {
                     //Perguntar o Thomas como ele sabe o numero de parcelas
                     array[j].cliCodigo = Contas[i].cliCodigo;
                     array[j].qtdParcela = Contas[i].qtdParcela;
-                    array[j].qtdParcelaInicial = Contas[i].valorParcela;
+                    array[j].qtdParcelaInicial = Contas[i].qtdParcelaInicial;
+                    array[j].valorParcela = Contas[i].valorParcela;
                     j++;
                 }
-                j++;
             }
         }
     }
@@ -296,7 +297,8 @@ Conta * contasPagarDataFeedback(char *data1, char *data2) {
                     //Perguntar o Thomas como ele sabe o numero de parcelas
                     array[j].cliCodigo = Contas[i].cliCodigo;
                     array[j].qtdParcela = Contas[i].qtdParcela;
-                    array[j].qtdParcelaInicial = Contas[i].valorParcela;
+                    array[j].qtdParcelaInicial = Contas[i].qtdParcelaInicial;
+                    array[j].valorParcela = Contas[i].valorParcela;
                     j++;
                 }
             }
@@ -323,7 +325,8 @@ Conta * contasPagarCodigoFeedback(int cod1, int cod2) {
                     //Perguntar o Thomas como ele sabe o numero de parcelas
                     array[j].cliCodigo = Contas[i].cliCodigo;
                     array[j].qtdParcela = Contas[i].qtdParcela;
-                    array[j].qtdParcelaInicial = Contas[i].valorParcela;
+                    array[j].qtdParcelaInicial = Contas[i].qtdParcelaInicial;
+                    array[j].valorParcela = Contas[i].valorParcela;
                     j++;
                 }
             }
