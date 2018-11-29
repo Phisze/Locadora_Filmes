@@ -664,9 +664,9 @@ int alterarClienteTexto(float cod, Cliente cli) {
     FILE *arq;
     Cliente c;
     arquivo = fopen("cliente.txt", "rt");
-    arq = fopen("clienteBackup.txt", "wt");
+    arq = fopen("clienteBackup.txt", "a");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
         if (cod == c.codigo && c.deletado != '*') {
             c.codigo = cli.codigo;
             strcpy(c.nome, cli.nome);
@@ -753,7 +753,7 @@ int excluirClienteTexto(float cod) {
     arquivo = fopen("cliente.txt", "rt");
     arq = fopen("clienteBackup.txt", "wt");
     while (!feof(arquivo)) {
-        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);
+        fscanf(arquivo, "%f %s %s %s %s %s %c %s %s\n", &c.codigo, &c.nome, &c.endereco, &c.cpf, &c.telefone, &c.email, &c.sexo, &c.estado_civil, &c.data_nascimento);
         if (cod == c.codigo && c.deletado != '*') {
         } else {
             fprintf(arq, "%f %s %s %s %s %s %c %s %s\n", c.codigo, c.nome, c.endereco, c.cpf, c.telefone, c.email, c.sexo, c.estado_civil, c.data_nascimento);

@@ -30,7 +30,7 @@
 #define BINARIO 1
 
 
-int tipoPersistencia = BINARIO;
+int tipoPersistencia = TEXTO;
 
 int getTipoPersistencia() {
     return tipoPersistencia;
