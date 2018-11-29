@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/controle/conCategoria.o \
 	${OBJECTDIR}/controle/conCliente.o \
+	${OBJECTDIR}/controle/conConta.o \
 	${OBJECTDIR}/controle/conEntradaFilme.o \
 	${OBJECTDIR}/controle/conFilme.o \
 	${OBJECTDIR}/controle/conFornecedcor.o \
@@ -108,6 +109,11 @@ ${OBJECTDIR}/controle/conCliente.o: controle/conCliente.c
 	${MKDIR} -p ${OBJECTDIR}/controle
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conCliente.o controle/conCliente.c
+
+${OBJECTDIR}/controle/conConta.o: controle/conConta.c
+	${MKDIR} -p ${OBJECTDIR}/controle
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/controle/conConta.o controle/conConta.c
 
 ${OBJECTDIR}/controle/conEntradaFilme.o: controle/conEntradaFilme.c
 	${MKDIR} -p ${OBJECTDIR}/controle

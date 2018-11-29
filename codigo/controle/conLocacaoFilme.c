@@ -73,6 +73,7 @@
 #include "../funcoesUteis.h"
 #include "../conCliente.h"
 #include "../conPersistencia.h"
+#include "../conFilme.h"
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -100,14 +101,24 @@ int locaFilmes(float cliCodigo, float* filmesCod, int qtdFilme, float totalPago,
     l.tipo = tipo;
     l.valor = totalPago;
 
-    //    char * dataAtual;
-    //    dataAtual = pegaDataAtual();
-    ////    for (int i = 0; i < 10; i++) {
-    ////        l.data[i] = dataAtual[i];
-    ////    }
+    char * dataAtual;
+    dataAtual = pegaDataAtual();
+    for (int i = 0; i < 10; i++) {
+        l.data[i] = dataAtual[i];
+    }
+
+    for (int i = 0; i < qtdFilme; i++) {
+        if (filmesCod[i] != -1) {
+            Filme f = consultaFilme(filmesCod[i]);
+            f.exemplares = f.exemplares - 1;
+            atualizaFilme(f);
+        }
+    }
+
+
     //se essa nao der certo tentar a funcao comentada acima
     //l.data = pegaDataAtual();
-
+    return 1;
 }
 //
 
@@ -159,16 +170,27 @@ int devolveFilmes(float cliCodigo, float filCodigo) {
     }
 
     if (locacaoCliente[contadorMemoria - 1].codigo != -1) {
+
         if (locacaoCliente[contadorMemoria - 1].filCodigo1 == filCodigo) {
+            Filme f = consultaFilme(filCodigo);
+            f.exemplares = f.exemplares + 1;
+            atualizaFilme(f);
             locacaoCliente[contadorMemoria - 1].filCodigo1 = -1;
             return 1;
         } else if (locacaoCliente[contadorMemoria - 1].filCodigo2 == filCodigo) {
+            Filme f = consultaFilme(filCodigo);
+            f.exemplares = f.exemplares + 1;
+            atualizaFilme(f);
             locacaoCliente[contadorMemoria - 1].filCodigo2 = -1;
             return 1;
         } else if (locacaoCliente[contadorMemoria - 1].filCodigo3 == filCodigo) {
+            Filme f = consultaFilme(filCodigo);
+            f.exemplares = f.exemplares + 1;
+            atualizaFilme(f);
             locacaoCliente[contadorMemoria - 1].filCodigo3 = -1;
             return 1;
         }
+        //tem que mudar a quantidade do filme tambem quando devolve
         //2 quando o cliente por acaso esta tentando retornar um filme que nao está na sua ultima locacao
         return 2;
     }
@@ -200,7 +222,7 @@ Locacao* listaLocacoes() {
 
 Locacao consultaLocacao(float codigo) {
     if (getTipoPersistencia() == MEMORIA) {
-        return consultaLocacaoArrayDinamico((int)codigo);
+        return consultaLocacaoArrayDinamico((int) codigo);
     } else if (getTipoPersistencia() == BINARIO) {
         return consultaLocacao(codigo);
     } else if (getTipoPersistencia() == TEXTO) {

@@ -13,7 +13,7 @@
 
 #ifndef CONTADAO_H
 #define CONTADAO_H
-
+#include "structs.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -43,11 +43,11 @@ int insereContaArrayDinamico(Conta c);
 /*
  **  Lista Contas em arquivo binario
  */
-Conta* lContas();
+Conta* listarConta();
 /*
  **  Lista Contas em arquivo binario
  */
-Conta* ListarContasTexto();
+Conta* ListarContaTexto();
 /*
  **  Consultar Contas em Array Dinamico
  */

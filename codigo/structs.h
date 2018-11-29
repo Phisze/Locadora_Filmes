@@ -133,6 +133,7 @@ typedef struct {
     //na ultima pos -1 pra saber quando 
     int qtdParcelaInicial;
     int qtdParcela;
+    // 1, 2 ou 3
     int qtde_Filmes_Locados;
     char deletado; // deletado = '*' / nao deletado = ' ' - exclusao logica
     //na ultima tem -1
