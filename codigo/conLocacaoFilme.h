@@ -61,10 +61,10 @@ extern "C" {
 #endif
 
 int locaFilmes(float cliCodigo, float* filmesCod, float totalPago, int tipo, int numParcela, float entrada);
-//int deletaLocacao(float codLoc);
+int deletaLocacao(float codLoc);
 Locacao* listaLocacoes();
-//Locacao consultaLocacao(float codigo);
+Locacao consultaLocacao(float codigo);
 int qtdLocacao();
-
+int devolveFilmes(float cliCodigo, float filCodigo);
 #endif /* CONLOCACAOFILME_H */
 

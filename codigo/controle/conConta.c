@@ -70,17 +70,24 @@ int qtdConta() {
     }
 }
 
-//Conta* contasPagar() {
-//    Conta * contas = listaContas();
-//    int tamanhoConta = qtdConta();
-//
-//    int contadorPagar = 1;
-//    Conta * contasPagar = malloc(contadorPagar * sizeof (Conta));
-//
-//    for (int i = 0; i < tamanhoConta; i++) {
-//        if(contas)
-//    }
-//}
+Conta* contasPagar() {
+    Conta * contas = listaContas();
+    int tamanhoConta = qtdConta();
+
+    int contadorPagar = 1;
+    Conta * contasPagar = malloc(contadorPagar * sizeof (Conta));
+
+    for (int i = 0; i < tamanhoConta; i++) {
+        if (contas[i].qtdParcela == 0) {
+            contadorPagar++;
+            contasPagar = realloc(contasPagar, contadorPagar * sizeof (Conta));
+            contasPagar[i]=contas[i];
+        }
+    }
+    contasPagar[contadorPagar-1].codigo=-1;
+    
+    return contasPagar;
+}
 //Conta consultaConta(float codigo) {
 //    if (getTipoPersistencia() == MEMORIA) {
 //        

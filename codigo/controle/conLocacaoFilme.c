@@ -139,9 +139,9 @@ int devolveFilmes(float cliCodigo, float filCodigo) {
 
     int qtdLoca = 0;
     qtdLoca = qtdLocacao();
-    int contadorMemoria = 1;
+    int LocacaodorMemoria = 1;
 
-    Locacao * locacaoCliente = malloc(contadorMemoria * sizeof (Locacao));
+    Locacao * locacaoCliente = malloc(LocacaodorMemoria * sizeof (Locacao));
 
     //pra saber quando cliente nao tem locacoes pendentes em seu nome
     locacaoCliente[0].codigo = -1;
@@ -150,8 +150,8 @@ int devolveFilmes(float cliCodigo, float filCodigo) {
         if (locacoes[i].cliCodigo == cliCodigo && i == 0) {
             locacaoCliente[i] = locacoes[i];
         } else if (locacoes[i].cliCodigo == cliCodigo) {
-            contadorMemoria++;
-            locacaoCliente = realloc(locacaoCliente, contadorMemoria * sizeof (Locacao));
+            LocacaodorMemoria++;
+            locacaoCliente = realloc(locacaoCliente, LocacaodorMemoria * sizeof (Locacao));
             locacaoCliente[i] = locacoes[i];
         }
     }
@@ -169,25 +169,25 @@ int devolveFilmes(float cliCodigo, float filCodigo) {
         }
     }
 
-    if (locacaoCliente[contadorMemoria - 1].codigo != -1) {
+    if (locacaoCliente[LocacaodorMemoria - 1].codigo != -1) {
 
-        if (locacaoCliente[contadorMemoria - 1].filCodigo1 == filCodigo) {
+        if (locacaoCliente[LocacaodorMemoria - 1].filCodigo1 == filCodigo) {
             Filme f = consultaFilme(filCodigo);
             f.exemplares = f.exemplares + 1;
             atualizaFilme(f);
-            locacaoCliente[contadorMemoria - 1].filCodigo1 = -1;
+            locacaoCliente[LocacaodorMemoria - 1].filCodigo1 = -1;
             return 1;
-        } else if (locacaoCliente[contadorMemoria - 1].filCodigo2 == filCodigo) {
+        } else if (locacaoCliente[LocacaodorMemoria - 1].filCodigo2 == filCodigo) {
             Filme f = consultaFilme(filCodigo);
             f.exemplares = f.exemplares + 1;
             atualizaFilme(f);
-            locacaoCliente[contadorMemoria - 1].filCodigo2 = -1;
+            locacaoCliente[LocacaodorMemoria - 1].filCodigo2 = -1;
             return 1;
-        } else if (locacaoCliente[contadorMemoria - 1].filCodigo3 == filCodigo) {
+        } else if (locacaoCliente[LocacaodorMemoria - 1].filCodigo3 == filCodigo) {
             Filme f = consultaFilme(filCodigo);
             f.exemplares = f.exemplares + 1;
             atualizaFilme(f);
-            locacaoCliente[contadorMemoria - 1].filCodigo3 = -1;
+            locacaoCliente[LocacaodorMemoria - 1].filCodigo3 = -1;
             return 1;
         }
         //tem que mudar a quantidade do filme tambem quando devolve
@@ -242,6 +242,22 @@ int qtdLocacao() {
 }
 
 Locacao * locacoesReceber() {
+    Locacao * locacoes = listaLocacoes();
+    int tamanhoLocacao = qtdLocacao();
+
+    int contadorReceber = 1;
+    Locacao * locacoesReceber = malloc(contadorReceber * sizeof (Locacao));
+
+    for (int i = 0; i < tamanhoLocacao; i++) {
+        if (locacoes[i].qtdParcela > 0) {
+            contadorReceber++;
+            locacoesReceber = realloc(locacoesReceber, contadorReceber * sizeof (Locacao));
+            locacoesReceber[i] = locacoes[i];
+        }
+    }
+    locacoesReceber[contadorReceber - 1].codigo = -1;
+
+    return locacoesReceber;
 
 }
 
