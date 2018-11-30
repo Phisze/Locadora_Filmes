@@ -93,7 +93,7 @@ void salvecli() {
     scanf("%[^\n]%*c", cliente.email); //Até o usuario dar enter
     fflush(stdin);
 
-    printf("Digite o sexo (F para femino e M para masculino): \n");
+    printf("Digite o sexo (F para feminino e M para masculino): \n");
     scanf("%c%*c", &cliente.sexo); //Até o usuario dar enter
     fflush(stdin);
 
@@ -202,7 +202,6 @@ void consulteCli() {
     printf("-------------------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) { //Não mostrar os deletados
-            //cliente=p[i];
             printf("Codigo: %0.f \n Nome: %s \n Endereço: %s \n CPF: %s \n Telefone: %s \n E-mail: %s \n Sexo: %c\n Estado civil: %s \n Data de Nascimento: %s \n________________________________________________\n", p[i].codigo, p[i].nome, p[i].endereco, p[i].cpf, p[i].telefone, p[i].email, p[i].sexo, p[i].estado_civil, p[i].data_nascimento);
         } 
     }

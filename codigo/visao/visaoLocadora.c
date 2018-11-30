@@ -1,55 +1,54 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
 #include "../locadoraDAO.h"
 #include "../structs.h"
 #include "../conLocadora.h"
 #include <string.h>
 
-void locadoraMenu() {
+void locadoraMenu(){
     int x;
-    do {
-        printf("MENU FORNECEDOR\n");
-        printf("---------------------------------------------\n");
-        printf("0. Sair \n");
-        printf("1. Salvar Locadora \n"); //OK
-        printf("2. Atualizar locadora \n"); //OK
-        printf("3. Deletar locadora \n"); //Ñ
-        printf("4. Listar locadora \n"); //OK
-        printf("5. Consultar locadora \n"); //Ñ
-        printf("6. Voltar para o menu principal \n");
-        printf("---------------------------------------------\n");
-        printf("Digite uma das opções: \n");
-        scanf("%d%*c", &x);
-        printf("---------------------------------------------\n");
+    do{
+    printf("MENU FORNECEDOR\n");
+    printf("---------------------------------------------\n");
+    printf("0. Sair \n");
+    printf("1. Salvar Locadora \n"); //OK
+    printf("2. Atualizar locadora \n");//OK
+    printf("3. Deletar locadora \n");//Ñ
+    printf("4. Listar locadora \n");//OK
+    printf("5. Consultar locadora \n");//Ñ
+    printf("6. Voltar para o menu principal \n");
+    printf("---------------------------------------------\n");
+    printf("Digite uma das opções: \n");
+    scanf("%d%*c", &x);
+    printf("---------------------------------------------\n");
 
-        switch (x) {
-            case 0:
-                printf("SAINDO!");
-                exit(1);
-            case 1:
-                salveLoc();
-                break;
-            case 2:
-                attLoc();
-                break;
-            case 3:
-                deletLoc();
-                break;
-            case 4:
-                lisLoc();
-                break;
-            case 5:
-                consulteLoc();
-                break;
-            case 6:
-                menuPrincipal();
-                break;
-        }
-    } while (x != 0);
+    switch(x){
+        case 0:
+            printf("SAINDO!");
+            exit(1);
+        case 1:
+            salveLoc();
+            break;
+        case 2:
+            attLoc();
+            break;
+        case 3:
+            deletLoc();
+            break;
+        case 4:
+            lisLoc();
+            break;
+        case 5:
+            consulteLoc();
+            break;
+        case 6:
+            menuPrincipal();
+            break;
+    }
+    }while(x!= 0);
 
-}
+ }
 
-void salveLoc() {
+void salveLoc(){
 
     Locadora locadora;
 
@@ -73,7 +72,7 @@ void salveLoc() {
     scanf("%[^\n]%*c", locadora.cnpj); //Até o usuario dar enter
     fflush(stdin); //limpa
 
-    //observações aqui
+        //observações aqui
     printf("Digite o endereço completo : \n");
     scanf("%[^\n]%*c", locadora.endereco); //Até o usuario dar enter
     fflush(stdin); //limpa
@@ -95,23 +94,22 @@ void salveLoc() {
     scanf("%[^\n]%*c", locadora.tel_responsavel); //Até o usuario dar enter
     fflush(stdin); //limpa
 
-    mensagem_operacao(salvaLocadora(&locadora));
+     mensagem_operacao(salvaLocadora(&locadora));
 }
-
-void attLoc() {
+void attLoc(){
     Locadora locadora;
     Locadora *p = listarLocadora(); //p vetor com todas Locadoraes
     int tamanho = qtdLocadora(); //quantidade de Fornecesores do vetor
     float cod;
-    printf("-------------------------------------------------------\n");
+    printf("-------------------------------------------------------\n"); 
     printf("Digite o codigo do cliente que deseja atluaizar: ");
     fflush(stdin);
     scanf("%f%*c", &cod);
     fflush(stdin); //limpa 
-    printf("------------------------------------------------------\n");
+    printf("------------------------------------------------------\n"); 
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
-            locadora = p[i];
+            locadora =p[i];
             locadora.codigo = cod;
             printf("Digite o nome fantasia da locadora: \n");
             scanf("%[^\n]%*c", p[i].nome); //Até o usuario dar enter
@@ -157,33 +155,31 @@ void attLoc() {
             scanf("%[^\n]%*c", locadora.tel_responsavel); //Até o usuario dar enter
             strcpy(locadora.tel_responsavel, p[i].tel_responsavel);
             fflush(stdin); //limpa
-            mensagem_operacao(atualizaLocadora(locadora));
+         mensagem_operacao(atualizaLocadora(locadora));
         }
     }
 }
-
 void lisLoc() {
     Locadora *p = listarLocadora(); //p vetor com todos os clientes
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
-    printf("-------------------------------------------------------\n");
+    printf("-------------------------------------------------------\n"); 
     for (int i = 0; i < tamanho; i++) {
         if (p[i].deletado != '*') { //Não mostrar os deletados
-            printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s \n Nome do responsavel: %s\n Telefone do Responsavel: %s\n", p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
-            printf("-------------------------------------------------------\n");
+            printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s \n Nome do responsavel: %s\n Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
+             printf("-------------------------------------------------------\n");
         }
     }
-}
-
+ }
 int deletLoc() {
 
     Locadora locadora;
     Locadora *p = listaLocadoras(); //p vetor com todos os clientes 
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
     float cod;
-    printf("-------------------------------------------------------\n");
+    printf("-------------------------------------------------------\n");  
     printf("\t Digite o codigo do clinte que deseja deletar: \n");
     scanf("%f%*c", &cod);
-    printf("--------------------------------------------------------\n");
+    printf("--------------------------------------------------------\n");  
     for (int i = 0; i <= tamanho; i++) {
         if (p[i].codigo == cod) {
             mensagem_operacao(deletaLocadora(p[i].codigo));
@@ -192,27 +188,25 @@ int deletLoc() {
         }
     }
 }
-
 void consulteLoc() {
 
     Locadora locadora;
-    Locadora p; //p vetor com todos os clientes 
+    Locadora *p = listaLocadoras(); //p vetor com todos os clientes 
     int tamanho = qtdLocadora(); //quantidade de clientes do vetor
     float cod;
-    printf("-------------------------------------------------------\n");
+    printf("-------------------------------------------------------\n"); 
     printf("Digite o codigo do clinte que deseja consultar: \n");
-    scanf("%f%*c", &cod);
-    p = consultaLocadora(cod);
-    printf("-------------------------------------------------------\n");
-    //  for (int i = 0; i <= tamanho; i++) {
-    //    if (p[i].codigo == cod) { //Não mostrar os deletados
-    printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s\n Nome do responsavel: %s\n Telefone do Responsavel: %s\n", p.codigo, p.nome, p.razao_social, p.inscricao_estadual, p.cnpj, p.endereco, p.telefone, p.email, p.nome_responsavel, p.tel_responsavel);
-    //  } 
+    scanf("%f%*c",&cod);
+    printf("-------------------------------------------------------\n"); 
+    for (int i = 0; i <= tamanho; i++) {
+        if (p[i].codigo == cod) { //Não mostrar os deletados
+             printf("Codigo: %0.f \n Nome: %s \n Razão social: %s \n Inscrição Estadual: %s \n CNPJ: %s \n Endereço: %s \n Telefone: %s \n E-mail: %s\n Nome do responsavel: %s\n Telefone do Responsavel: %s\n",p[i].codigo, p[i].nome, p[i].razao_social, p[i].inscricao_estadual, p[i].cnpj, p[i].endereco, p[i].telefone, p[i].email, p[i].nome_responsavel, p[i].tel_responsavel);
+        } 
+       
+    }
 
-    //}
-    // consultaLocadora(cod);
 }
-
+    
 
 
 

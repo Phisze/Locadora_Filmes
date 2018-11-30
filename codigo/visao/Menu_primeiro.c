@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include <string.h>
 #include<strings.h>
+#include "menuTransacoes.h"
+#include "menufeedback.h"
 
 void Menu_primeiro() {
 
@@ -14,7 +16,6 @@ void Menu_primeiro() {
         printf("2. MENU DE MÓDULO DE TRANSAÇÕES \n");
         printf("3. MENU MÓDULO FEEDBACK\n");
         printf("4. MENU MÓDULO IMPORTAÇÃO/EXPORTAÇÃO DE DADOS \n");
-        printf("5. MENU LOCAÇÂO DE FILMES \n");
         printf("-------------------------------------------------------\n");         
         printf("\tDigite uma das opções: ");
          __fpurge(stdin);
@@ -24,22 +25,22 @@ void Menu_primeiro() {
         
         
         switch (x) {
-            
+            case 0:
+                printf("Saindo");
+                exit(1);
             case 1:
                 menuPrincipal();
                 break;
             case 2:
-               
+               menuTransacoes();
                 break;
             case 3:
-                
+                menufeedback();
                 break;
             case 4:
                 
                 break;
-            case 5:
-        //      locacao_filme();
-                break;
+         
         }
     }
 }

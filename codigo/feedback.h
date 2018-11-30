@@ -13,7 +13,8 @@
 
 #ifndef FEEDBACK_H
 #define FEEDBACK_H
-
+#include "structs.h"
+#include <time.h>
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,11 +35,11 @@ Filme* filmeCodigoFeedback(int cod1, int cod2);
 
 int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme);
 
-Locacoes * locacoesCodigoFeedback(int tipo);
+Locacao * locacoesCodigoFeedback(int tipo);
 
-Locacoes * locacoesNomeFeedback(Cliente c);
+Locacao * locacoesNomeFeedback(Cliente c);
 
-Locacoes * movimentacaoCaixaFeedback(char *data1, char *data2);
+Locacao * movimentacaoCaixaFeedback(char *data1, char *data2);
 
 Conta * contasReceberDataFeedback(char *data1, char *data2);
 

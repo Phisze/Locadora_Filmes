@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=Cygwin-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -69,11 +69,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/modelo/daos/locadoraDAO.o \
 	${OBJECTDIR}/modelo/daos/tamanho.o \
 	${OBJECTDIR}/visao/MenuPrincipal.o \
+	${OBJECTDIR}/visao/Menu_primeiro.o \
 	${OBJECTDIR}/visao/VisaoCliente.o \
 	${OBJECTDIR}/visao/VisaoFilmes.o \
 	${OBJECTDIR}/visao/VisaoFornecedor.o \
 	${OBJECTDIR}/visao/VisaoFuncionario.o \
-	${OBJECTDIR}/visao/locacao_filme.o \
+	${OBJECTDIR}/visao/menuTransacoes.o \
+	${OBJECTDIR}/visao/menufeedback.o \
 	${OBJECTDIR}/visao/visaoLocadora.o
 
 
@@ -91,13 +93,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lm
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/codigo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
@@ -271,6 +273,11 @@ ${OBJECTDIR}/visao/MenuPrincipal.o: visao/MenuPrincipal.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/MenuPrincipal.o visao/MenuPrincipal.c
 
+${OBJECTDIR}/visao/Menu_primeiro.o: visao/Menu_primeiro.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/Menu_primeiro.o visao/Menu_primeiro.c
+
 ${OBJECTDIR}/visao/VisaoCliente.o: visao/VisaoCliente.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
@@ -291,10 +298,15 @@ ${OBJECTDIR}/visao/VisaoFuncionario.o: visao/VisaoFuncionario.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/VisaoFuncionario.o visao/VisaoFuncionario.c
 
-${OBJECTDIR}/visao/locacao_filme.o: visao/locacao_filme.c
+${OBJECTDIR}/visao/menuTransacoes.o: visao/menuTransacoes.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/locacao_filme.o visao/locacao_filme.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/menuTransacoes.o visao/menuTransacoes.c
+
+${OBJECTDIR}/visao/menufeedback.o: visao/menufeedback.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/menufeedback.o visao/menufeedback.c
 
 ${OBJECTDIR}/visao/visaoLocadora.o: visao/visaoLocadora.c
 	${MKDIR} -p ${OBJECTDIR}/visao

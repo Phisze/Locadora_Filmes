@@ -18,8 +18,8 @@
 #include "../codigo/conCliente.h"
 #include "../codigo/tamanho.h"
 #include "Ex_Importacao.h"
-#include "../codigo/visao/Menu_primeiro.h"
-#include "../codigo/visao/Menu_primeiro.c"
+#include "visao/Menu_primeiro.h"
+
 
 
 /*
