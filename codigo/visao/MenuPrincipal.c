@@ -3,6 +3,7 @@
 #include <string.h>
 #include<strings.h>
 #include "VisaoCliente.h"
+#include "Menu_primeiro.h"
 
 void menuPrincipal() {
 
@@ -47,6 +48,7 @@ void menuPrincipal() {
                 fornecedorMenu();
                 break;
             case 6:
+                Menu_primeiro();
                 break;
         }
     }
