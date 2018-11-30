@@ -18,10 +18,10 @@ void menufeedback() {
         printf("2.  RELATÓRIOS DE FILMES \n");
         printf("3.  RELATÓRIOS DE QUANTIDADE RESTANTE DE FILMES\n");
         printf("4.  RELATÓRIOS DE LOCAÇÕES\n");
-        printf("6.  RELATÓRIOS DE CONTAS A RECEBER \n");
-        printf("7.  RELATÓRIOS DE CONTAS A PAGAR \n");
-        printf("8.  RELATÓRIOS DE MOVIMENTAÇÃO DE CAIXA\n");
-        printf("9.  VOLTAR AO MENU INICIAL\n");
+        printf("5.  RELATÓRIOS DE CONTAS A RECEBER \n");
+        printf("6.  RELATÓRIOS DE CONTAS A PAGAR \n");
+        printf("7.  RELATÓRIOS DE MOVIMENTAÇÃO DE CAIXA\n");
+        printf("8.  VOLTAR AO MENU INICIAL\n");
         printf("-------------------------------------------------------\n");
         printf("Digite uma das opções: ");
         scanf("%d%*c",&x);
@@ -29,22 +29,25 @@ void menufeedback() {
         switch (x) {
             
             case 1:
-                
+                relatrio();
                 break;
             case 2:
-               
+               relat_filme();
                 break;
             case 3:
              
                 break;
             case 4:
-                
+                relat_loc();
                 break;
             case 5:
-                
+                relat_cont_receber();
                 break;
             case 6:
-               
+               relat_cont_pagar();
+                break;
+            case 7:
+                mov_caixa();
                 break;
         }
     }
@@ -55,9 +58,9 @@ void relatrio(){
     float cod_1, cod_2;
     printf("\t RELATÓRIO DE CLIENTES VIA CODIGO:");
     printf("-------------------------------------------------------\n");
-    printf("Digite o codigo do clinte no qual deseja iniciar a listagem:\n")
+    printf("Digite o codigo do clinte no qual deseja iniciar a listagem:\n");
     scanf("%f%*c", &cod_1);
-    printf("Digite o codigo do clinte no qual deseja terminar a listagem:\n")
+    printf("Digite o codigo do clinte no qual deseja terminar a listagem:\n");
     scanf("%f%*c", &cod_2);  
     printf("-------------------------------------------------------\n");
     mensagem_operacao(clienteCodigoFeedback(cod_1, cod_2));
@@ -74,20 +77,22 @@ void relat_filme(){
     Filme filme;
     float cod_1, cod_2;
     printf("\t RELATÓRIO DE FILMES VIA CODIGO:");
-    printf("Digite o codigo do Filme no qual deseja iniciar a listagem:\n")
+    printf("Digite o codigo do Filme no qual deseja iniciar a listagem:\n");
     scanf("%f%*c", &cod_1);
-    printf("Digite o codigo do Filme no qual deseja terminar a listagem:\n")
+    printf("Digite o codigo do Filme no qual deseja terminar a listagem:\n");
     scanf("%f%*c", &cod_2);  
     printf("-------------------------------------------------------\n");
     
 }
-void relt_qtd(){
-  
+void qtd_filme_restante(){
+    
     
 }
+
 void relat_loc(){
     int d;
     Cliente cliente;
+    float cod;
     printf("\t RELATÓRIO DE LOCAÇOES VIA À PRAZO OU À VISTA:");
     printf("-------------------------------------------------------\n");
     printf("Digite se desejar a listagem (à prazo = 0 / à vista = 1):\n");
@@ -97,9 +102,9 @@ void relat_loc(){
     printf("\t RELATÓRIO DE LOCAÇOES VIA CLIENTE:");
     printf("-------------------------------------------------------\n");
     printf("Digite o codigo do cliente");
-    scanf("%d%*c", &cod);
+    scanf("%f%*c", &cod);
     printf("-------------------------------------------------------\n");
-    mensagem_operacao(locacoesNomeFeedback(cod));
+    mensagem_operacao(locacoesNomeFeedback(consultaCliente(cod)));
     
 }
 void relat_cont_receber(){
@@ -159,15 +164,17 @@ void relat_cont_pagar(){
     
 }
 void mov_caixa(){
+    char data_1[10];
+    char data_2[10];
     printf("\t RELATÓRIO DE CONTAS MOVIMENTAÇÃO DE CAIXA:");
     printf("-------------------------------------------------------\n");
     printf("As datas devem ser apresentas no formato:\n \t dd/mm/aaaa\n");
     printf("-------------------------------------------------------\n");
     printf("Digite a data inicial para a listagem: \n");
-    scanf("%[^\n]%*c", &data_1);
+    scanf("%[^\n]%*c", data_1);
     printf("-------------------------------------------------------\n");
     printf("Digite a data final para a listagem: \n");
-    scanf("%[^\n]%*c", &data_1);
+    scanf("%[^\n]%*c", data_1);
     printf("-------------------------------------------------------\n");
     mensagem_operacao(contasPagarDataFeedback(data_1, data_2));
     mensagem_operacao(contasReceberDataFeedback(data_1, data_2));

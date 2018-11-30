@@ -24,6 +24,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+int movimentaCaixa(float valor);
 
 time_t to_seconds(const char *date);
 

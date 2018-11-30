@@ -29,8 +29,9 @@
       <itemPath>funcionarioDAO.h</itemPath>
       <itemPath>funcoesUteis.h</itemPath>
       <itemPath>locacaoDAO.h</itemPath>
-      <itemPath>visao/locacao_filme.h</itemPath>
       <itemPath>locadoraDAO.h</itemPath>
+      <itemPath>visao/menuTransacoes.h</itemPath>
+      <itemPath>visao/menufeedback.h</itemPath>
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
       <itemPath>vector.h</itemPath>
@@ -46,6 +47,7 @@
                    projectFiles="true">
       <itemPath>modelo/Ex_Importacao.c</itemPath>
       <itemPath>visao/MenuPrincipal.c</itemPath>
+      <itemPath>visao/Menu_primeiro.c</itemPath>
       <itemPath>modelo/NotaFiscal.c</itemPath>
       <itemPath>visao/VisaoCliente.c</itemPath>
       <itemPath>visao/VisaoFilmes.c</itemPath>
@@ -72,9 +74,10 @@
       <itemPath>modelo/daos/funcionarioDAO.c</itemPath>
       <itemPath>controle/funcoesUteis.c</itemPath>
       <itemPath>modelo/daos/locacaoDAO.c</itemPath>
-      <itemPath>visao/locacao_filme.c</itemPath>
       <itemPath>modelo/daos/locadoraDAO.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>visao/menuTransacoes.c</itemPath>
+      <itemPath>visao/menufeedback.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
       <itemPath>controle/vetorCategoria.c</itemPath>
@@ -121,6 +124,11 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="Ex_Importacao.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -258,6 +266,8 @@
       </item>
       <item path="visao/MenuPrincipal_1.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="visao/Menu_primeiro.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="visao/Menu_primeiro.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
@@ -268,9 +278,13 @@
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/locacao_filme.c" ex="false" tool="0" flavor2="0">
+      <item path="visao/menuTransacoes.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/locacao_filme.h" ex="false" tool="3" flavor2="0">
+      <item path="visao/menuTransacoes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="visao/menufeedback.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/menufeedback.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/visaoLocadora.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -431,6 +445,8 @@
       </item>
       <item path="visao/MenuPrincipal_1.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="visao/Menu_primeiro.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="visao/Menu_primeiro.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/VisaoCliente.c" ex="false" tool="0" flavor2="0">
@@ -441,9 +457,13 @@
       </item>
       <item path="visao/VisaoFuncionario.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/locacao_filme.c" ex="false" tool="0" flavor2="0">
+      <item path="visao/menuTransacoes.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="visao/locacao_filme.h" ex="false" tool="3" flavor2="0">
+      <item path="visao/menuTransacoes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="visao/menufeedback.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/menufeedback.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/visaoLocadora.c" ex="false" tool="0" flavor2="0">
       </item>

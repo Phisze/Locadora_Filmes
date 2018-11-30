@@ -5,6 +5,10 @@
  */
 #include <time.h>
 
+int movimentaCaixa(float valor){
+    return 1;
+}
+
 time_t to_seconds(const char *date) {
     struct tm storage = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     char *p = NULL;

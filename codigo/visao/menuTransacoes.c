@@ -15,9 +15,9 @@ void menuTransacoes() {
 
     while (x != 0) {
 
-        printf("\t MENU PRINCIPAL MÓDULO DE TRANSAÇOES:\n)");
+        printf("\t MENU PRINCIPAL MÓDULO DE TRANSAÇOES:\n");
         printf("-------------------------------------------------------\n");
-        printf("0. SAIR DO PROGRAMA ");
+        printf("0. SAIR DO PROGRAMA\n ");
         printf("1. LOCAÇÃO DE FILMES \n");
         printf("2. DEVOLUÇÃO DE FILMES \n");
         printf("3. CONTAS A RECEBER \n");
