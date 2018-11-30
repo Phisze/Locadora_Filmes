@@ -40,7 +40,8 @@ extern "C" {
 #define RAZAO_SOCIAL 20
 #define INSCRICAO_ESTADUAL 20
 #define CNPJ 14
-#define TIPO_COMPRA 7 
+#define TIPO_COMPRA 7
+
 
 typedef struct {
     float codigo;
@@ -175,4 +176,5 @@ typedef struct {
     int total;
 } vetorLocadora;
 
+float caixa;
 #endif /* STRUCTS_H */
