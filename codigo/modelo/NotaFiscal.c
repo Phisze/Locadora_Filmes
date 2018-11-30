@@ -10,6 +10,7 @@
 #include <math.h>
 #include "../structs.h"
 #include "../conFilme.h"
+#include "../funcoesUteis.h"
 //int i = 0;
 
 void notaFiscal(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd, float *valor) {
@@ -41,4 +42,7 @@ void notaFiscal(Fornecedor f, float frete, float imposto, Filme *fil, float *qtd
     finalImposto = imposto / somadorQTD;
     fprintf(arquivo, "Total Nota(Filmes + Frete + Imposto): %d\n", finalFrete + finalImposto + total);
     fclose(arquivo);
+    float valorCaixa=0.0;
+    valorCaixa=valorCaixa-(finalFrete+finalImposto+total);
+    movimentaCaixa(valorCaixa);
 }

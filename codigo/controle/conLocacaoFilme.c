@@ -128,6 +128,17 @@ int locaFilmes(float cliCodigo, float* filmesCod, int qtdFilme, float totalPago,
     float tamanhoLocacao = qtdLocacao() + 1;
     l.codigo = tamanhoLocacao;
 
+    //a vista
+    if (tipo == 1) {
+        float vcaixa = 0;
+        vcaixa = vcaixa + totalPago;
+        movimentaCaixa(vcaixa);
+    } else {
+        float vcaixa = 0;
+        vcaixa = vcaixa + entrada;
+        movimentaCaixa(vcaixa);
+    }
+
     if (getTipoPersistencia() == MEMORIA) {
         return insereLocacaoArrayDinamico(l);
     } else if (getTipoPersistencia() == BINARIO) {

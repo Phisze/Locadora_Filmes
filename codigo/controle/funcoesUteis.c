@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 #include <time.h>
-
+#include "../structs.h"
 int movimentaCaixa(float valor){
+    caixa=caixa+valor;
     return 1;
 }
 

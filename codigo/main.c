@@ -14,18 +14,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "structs.h"
 #include "../codigo/vector.h"
 #include "../codigo/conCliente.h"
 #include "../codigo/tamanho.h"
 #include "Ex_Importacao.h"
 #include "visao/Menu_primeiro.h"
 
-
-
 /*
  * 
  */
-Locacao* teste(){
+Locacao* teste() {
     return listarLocacao();
 }
 
@@ -33,8 +32,8 @@ int main(int argc, char** argv) {
     //    Cliente c;
     //    printf("Digite o nome do fulano: ");
     //    fgets(c.nome, 100, stdin);
-
-  Menu_primeiro();
+    caixa = 0;
+    Menu_primeiro();
     //  listarLocacao();
     //importacaoCliente();
     //[
@@ -48,18 +47,18 @@ int main(int argc, char** argv) {
     //printf("%d" ,getTamanhoFuncionario());
     //Cliente c;
     //[
-//    for (int i = 0; i < 4; i++) {
-//        c.codigo = i;
-//        strcpy(c.cpf, "123456");
-//        strcpy(c.data_nascimento, "212131");
-//        strcpy(c.email, "adsasd");
-//        strcpy(c.endereco, "adasdsa");
-//        strcpy(c.estado_civil, "esda");
-//        strcpy(c.nome, "32weewq");
-//        strcpy(c.telefone, "2312");
-//        c.sexo = "M";
-//        inclusaoCliente(c);
-//    }
+    //    for (int i = 0; i < 4; i++) {
+    //        c.codigo = i;
+    //        strcpy(c.cpf, "123456");
+    //        strcpy(c.data_nascimento, "212131");
+    //        strcpy(c.email, "adsasd");
+    //        strcpy(c.endereco, "adasdsa");
+    //        strcpy(c.estado_civil, "esda");
+    //        strcpy(c.nome, "32weewq");
+    //        strcpy(c.telefone, "2312");
+    //        c.sexo = "M";
+    //        inclusaoCliente(c);
+    //    }
     // printf("Digite o nome: ");
     //  fgets(c.nome,30,stdin);
     //  printf("O nome do cliente é: %s",c.nome);
