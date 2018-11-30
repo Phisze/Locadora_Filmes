@@ -98,8 +98,9 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
     Filme f2;
     Filme f3;
 
-    float j = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+    int j = 0;
+
+    for (int i = 0; i < qtdLocacao(); i++) {
         for (int w = 0; w < Locacoess[i].qtde_Filmes_Locados; w++) {
             f1 = consultaFilme(Locacoess[i].filCodigo1);
             f2 = consultaFilme(Locacoess[i].filCodigo2);
@@ -114,6 +115,7 @@ int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
     qtde = (precoTotal / precoFilme) - j;
     if (qtde > 0) {
         qtde = (int) ceilf(qtde);
+
         return qtde;
     }
     return 0;
@@ -126,7 +128,7 @@ Locacao * locacoesCodigoFeedback(int tipo) {
     array = malloc(qtdLocacao() * sizeof (Locacao));
     int j = 0;
     int w = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+    for (int i = 0; i < 2(qtdLocacao()); i++) {
         if (tipo == Locacoess[i].codigo) {
             if (Locacoess[i].deletado != '*') {
                 array[j].codigo = Locacoess[i].codigo;
@@ -146,6 +148,7 @@ Locacao * locacoesCodigoFeedback(int tipo) {
         }
     }
     array = realloc(array, j * sizeof (Locacao));
+
     return array;
 }
 
@@ -157,7 +160,7 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
     Cliente c;
     int w = 0;
     int j = 0;
-    for (int i = 0; i < 2/*(qtdLocacoes())*/; i++) {
+    for (int i = 0; i < qtdLocacao(); i++) {
         c = consultaCliente(array[i].cliCodigo);
         if (strcmp(cli.nome, c.nome) == 0) {
             if (Locacoess[i].deletado != '*') {
@@ -178,6 +181,7 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
         }
     }
     array = realloc(array, j * sizeof (Locacoess));
+
     return array;
 }
 
@@ -244,6 +248,7 @@ Conta * contasReceberDataFeedback(char *data1, char *data2) {
         }
     }
     array = realloc(array, j * sizeof (Conta));
+
     return array;
 }
 
@@ -273,13 +278,14 @@ Conta * contasReceberCodigoFeedback(int cod1, int cod2) {
     }
 
     array = realloc(array, j * sizeof (Conta));
+
     return array;
 }
 
 Conta * contasPagarDataFeedback(char *data1, char *data2) {
     Conta *Contas;
-    //Locacoess = listaConta();
-    Conta *array = malloc(/*(qtdConta())*/ 1 * sizeof (Conta));
+    Contas = listaContas();
+    Conta *array = malloc(qtdConta() * sizeof (Conta));
     time_t d1 = to_seconds(data1);
     time_t d2 = to_seconds(data2);
     time_t dataLocacoes;
@@ -305,6 +311,7 @@ Conta * contasPagarDataFeedback(char *data1, char *data2) {
         }
     }
     array = realloc(array, j * sizeof (Conta));
+
     return array;
 }
 
