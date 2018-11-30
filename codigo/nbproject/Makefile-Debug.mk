@@ -75,6 +75,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/visao/VisaoFornecedor.o \
 	${OBJECTDIR}/visao/VisaoFuncionario.o \
 	${OBJECTDIR}/visao/menuTransacoes.o \
+	${OBJECTDIR}/visao/menu_importacao.o \
 	${OBJECTDIR}/visao/menufeedback.o \
 	${OBJECTDIR}/visao/visaoLocadora.o
 
@@ -302,6 +303,11 @@ ${OBJECTDIR}/visao/menuTransacoes.o: visao/menuTransacoes.c
 	${MKDIR} -p ${OBJECTDIR}/visao
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/menuTransacoes.o visao/menuTransacoes.c
+
+${OBJECTDIR}/visao/menu_importacao.o: visao/menu_importacao.c
+	${MKDIR} -p ${OBJECTDIR}/visao
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/visao/menu_importacao.o visao/menu_importacao.c
 
 ${OBJECTDIR}/visao/menufeedback.o: visao/menufeedback.c
 	${MKDIR} -p ${OBJECTDIR}/visao

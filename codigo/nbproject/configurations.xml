@@ -31,6 +31,7 @@
       <itemPath>locacaoDAO.h</itemPath>
       <itemPath>locadoraDAO.h</itemPath>
       <itemPath>visao/menuTransacoes.h</itemPath>
+      <itemPath>visao/menu_importacao.h</itemPath>
       <itemPath>visao/menufeedback.h</itemPath>
       <itemPath>structs.h</itemPath>
       <itemPath>tamanho.h</itemPath>
@@ -77,6 +78,7 @@
       <itemPath>modelo/daos/locadoraDAO.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>visao/menuTransacoes.c</itemPath>
+      <itemPath>visao/menu_importacao.c</itemPath>
       <itemPath>visao/menufeedback.c</itemPath>
       <itemPath>modelo/daos/tamanho.c</itemPath>
       <itemPath>controle/vector.c</itemPath>
@@ -282,6 +284,10 @@
       </item>
       <item path="visao/menuTransacoes.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="visao/menu_importacao.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/menu_importacao.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="visao/menufeedback.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/menufeedback.h" ex="false" tool="3" flavor2="0">
@@ -460,6 +466,10 @@
       <item path="visao/menuTransacoes.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="visao/menuTransacoes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="visao/menu_importacao.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="visao/menu_importacao.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="visao/menufeedback.c" ex="false" tool="0" flavor2="0">
       </item>
