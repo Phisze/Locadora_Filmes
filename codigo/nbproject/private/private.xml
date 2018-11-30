@@ -7,22 +7,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/controle/conCategoria.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/modelo/daos/filmeDAO.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/controle/conCliente.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/fornecedorDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/locadoraDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/modelo/daos/contaDAO.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/categoriaDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/conFilme.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/controle/conConta.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/filmeDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/funcionarioDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/locacaoDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/modelo/daos/categoriaDAO.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/controle/conFilme.c</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/clienteDAO.h</file>
-            <file>file:/C:/Users/Administrador/Trab_Algoritmos/Locadora_Filmes/codigo/contaDAO.h</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/visao/menufeedback.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/structs.h</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/modelo/Ex_Importacao.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/controle/conConta.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/visao/Menu_primeiro.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/exportacaoCli.xml</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/main.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/controle/conPersistencia.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/cliente.pro</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/controle/conCliente.c</file>
+            <file>file:/C:/Users/wever/Documents/NetBeansProjects/asd/Locadora_Filmes/codigo/controle/feedback.c</file>
         </group>
     </open-files>
 </project-private>

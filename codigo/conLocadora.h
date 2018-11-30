@@ -26,7 +26,7 @@ extern "C" {
 }
 #endif
 
-
+int qtdLocadora();
 int salvaLocadora(Locadora *l);
 int atualizaLocadora(Locadora l);
 int deletaLocadora(float codLoc);
