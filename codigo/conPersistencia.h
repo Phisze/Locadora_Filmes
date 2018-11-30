@@ -69,13 +69,5 @@ extern int tipoPersistencia;
 int getTipoPersistencia();
 void setTipoPersistencia(int tipo);
 
-//    if (getTipoPersistencia() == MEMORIA) {
-//
-//
-//    } else if (getTipoPersistencia() == BINARIO) {
-//
-//    } else {
-//
-//    }
 #endif /* CONPERSISTENCIA_H */
 

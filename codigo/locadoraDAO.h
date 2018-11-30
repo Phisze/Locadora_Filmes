@@ -118,7 +118,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-extern int tamanhoLocacadoras;
+extern int tamanhoLocadoras;
 /*
  **  Inclui Locadora em arquivo binario
  */

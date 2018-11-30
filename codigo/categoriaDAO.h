@@ -121,7 +121,7 @@ extern "C" {
 }
 #endif
 
-extern int tamanhoCategoriasListar;
+extern int tamanhoCategorias;
 /*
  **  Inclui Categoria em arquivo binario
  */

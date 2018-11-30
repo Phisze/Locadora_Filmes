@@ -1,5 +1,5 @@
 #include "../contaDAO.h"
-
+#include <stdlib.h>
 #include "../tamanho.h"
 #include <stdio.h>
 #include "../conPersistencia.h"
@@ -88,13 +88,13 @@ Conta* contasPagar() {
     
     return contasPagar;
 }
-//Conta consultaConta(float codigo) {
-//    if (getTipoPersistencia() == MEMORIA) {
-//        
-//        return consultaContaArrayDinamico(codigo);
-//    } else if (getTipoPersistencia() == BINARIO) {
-//        return consultarContas(codigo);
-//    } else {
-//        return ConsultarContasTexto(codigo);
-//    }
-//}
+Conta consultaConta(float codigo) {
+    if (getTipoPersistencia() == MEMORIA) {
+        
+        return consultaContaArrayDinamico(codigo);
+    } else if (getTipoPersistencia() == BINARIO) {
+        return consultarConta(codigo);
+    } else {
+        return ConsultarContaTexto(codigo);
+    }
+}

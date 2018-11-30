@@ -13,36 +13,85 @@
 #include "../tamanho.h"
 #include "../structs.h"
 #include "../fornecedorDAO.h"
-//#include "../conPersistencia.h"
+#include "../conPersistencia.h"
+
+int qtdFornecedor() {
+    if (getTipoPersistencia() == MEMORIA) {
+
+        return tamanhoFornecedors;
+    } else if (getTipoPersistencia() == BINARIO) {
+        return getTamanhoFornecedor();
+    } else {
+        return getTamanhoFornecedorTexto();
+    }
+}
 
 int salvaFornecedor(Fornecedor *f) {
 
-    float tamanhoFornecedor= getTamanhoFornecedor() + 1;
+    float tamanhoFornecedor = qtdFornecedor() + 1;
     (*f).codigo = tamanhoFornecedor;
-    return inclusaoFornecedor(*f);
+
+    if (getTipoPersistencia() == MEMORIA) {
+        return insereFuncionarioArrayDinamico(*f);
+    } else if (getTipoPersistencia() == BINARIO) {
+        return inclusaoFornecedor(*f);
+    } else {
+        return inclusaoFornecedorTexto(*f);
+    }
+
 }
 
 int atualizaFornecedor(Fornecedor f) {
-    return alterarFornecedor(f, f.codigo);
+    if (getTipoPersistencia() == MEMORIA) {
+
+        return alterarFornecedorArrayDinamico(f.codigo, f);
+    } else if (getTipoPersistencia() == BINARIO) {
+        return alterarFornecedor(f, f.codigo);
+    } else {
+        return alterarFornecedorTexto(f.codigo, f);
+    }
 
 }
 
 int deletaFornecedor(float codFornecedor) {
-    return deletaFornecedor(codFornecedor);
+
+    if (getTipoPersistencia() == MEMORIA) {
+        return excluirFornecedorArrayDinamico((int) codFornecedor);
+    } else if (getTipoPersistencia() == BINARIO) {
+        return deletaFornecedor(codFornecedor);
+    } else {
+        return excluirFornecedorTexto(codFornecedor);
+    }
+
 }
 
 Fornecedor* listaFornecedor() {
-    return listarFornecedor();
+
+    if (getTipoPersistencia() == MEMORIA) {
+
+        return listarFornecedorArrayDinamico();
+    } else if (getTipoPersistencia() == BINARIO) {
+        return listarFornecedor();
+    } else {
+        return ListarFornecedorTexto();
+    }
+
 }
 
 //implementar esse olhar se no codigo do wev tem
 
 Fornecedor consultaFornecedor(float codigo) {
-    return consultarFornecedor(codigo);
+
+    if (getTipoPersistencia() == MEMORIA) {
+
+        return consultaFornecedorArrayDinamico((int) codigo);
+    } else if (getTipoPersistencia() == BINARIO) {
+        return consultarFornecedor(codigo);
+    } else {
+        return ConsultarFornecedorTexto(codigo);
+    }
 }
 
-int qtdFornecedor() {
-    return getTamanhoFornecedor();
-}
+
 
 

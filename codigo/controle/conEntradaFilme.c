@@ -33,6 +33,7 @@
 #include "../NotaFiscal.h"
 #include "../structs.h"
 #include "../conFilme.h"
+#include "../conPersistencia.h"
 //o valor da compra sai do caixa e a entrada fica salva
 
 int conEntraFilme(Fornecedor fornecedor, float precoFrete, float imposto, Filme* filmesComprados, float * valorCompraFilmes, int * qtdFilmes) {
@@ -40,12 +41,12 @@ int conEntraFilme(Fornecedor fornecedor, float precoFrete, float imposto, Filme*
     //o último index do qtdFilmes tem que ter um 0 
     //pro algoritmo saber quando parar
     while (qtdFilmes[index] != 0) {
-
-        Filme f = consultaFilme(filmesComprados[index].codigo);
-        f.exemplares += qtdFilmes[index];
+    
+        Filme f=consultaFilme(filmesComprados[index].codigo);
+        f.exemplares+=qtdFilmes[index];
         atualizaFilme(f);
-
-
+    
+        
         index++;
     }
 

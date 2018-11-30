@@ -83,6 +83,16 @@
 
 //int locaFilmes(float cliCodigo,Filme* filmes,int * Qtd,float totalPago,int tipo,int numParcela,float entrada){
 
+int qtdLocacao() {
+    if (getTipoPersistencia() == MEMORIA) {
+        return tamanhoLocacaos;
+    } else if (getTipoPersistencia() == BINARIO) {
+        return getTamanhoLocacao();
+    } else if (getTipoPersistencia() == TEXTO) {
+        return getTamanhoLocacaoTexto();
+    }
+}
+
 int locaFilmes(float cliCodigo, float* filmesCod, int qtdFilme, float totalPago, int tipo, int numParcela, float entrada) {
 
 
@@ -115,27 +125,38 @@ int locaFilmes(float cliCodigo, float* filmesCod, int qtdFilme, float totalPago,
         }
     }
 
+    float tamanhoLocacao = qtdLocacao() + 1;
+    l.codigo = tamanhoLocacao;
 
+    if (getTipoPersistencia() == MEMORIA) {
+        return insereLocacaoArrayDinamico(l);
+    } else if (getTipoPersistencia() == BINARIO) {
+        return inclusaoLocacao(l);
+    } else if (getTipoPersistencia() == TEXTO) {
+        return inclusaoLocacaoTexto(l);
+    }
     //se essa nao der certo tentar a funcao comentada acima
     //l.data = pegaDataAtual();
-    return 1;
+
 }
 //
+
+Locacao* listaLocacoes() {
+    if (getTipoPersistencia() == MEMORIA) {
+        return listarLocacaoArrayDinamico();
+    } else if (getTipoPersistencia() == BINARIO) {
+        return listarLocacao();
+    } else if (getTipoPersistencia() == TEXTO) {
+        return ListarLocacaoTexto();
+    }
+}
 
 int devolveFilmes(float cliCodigo, float filCodigo) {
 
     char * dataAtual = pegaDataAtual();
 
     Locacao * locacoes;
-    if (getTipoPersistencia() == MEMORIA) {
-        locacoes = listarLocacaoArrayDinamico();
-    } else if (getTipoPersistencia() == BINARIO) {
-
-        locacoes = listarLocacao();
-        //  locacoes = listaLocacoes();
-    } else {
-        locacoes = ListarLocacaoTexto();
-    }
+    locacoes = listaLocacoes();
 
     int qtdLoca = 0;
     qtdLoca = qtdLocacao();
@@ -208,18 +229,6 @@ int deletaLocacao(float codLoc) {
     }
 }
 
-Locacao* listaLocacoes() {
-    if (getTipoPersistencia() == MEMORIA) {
-        return listarLocacaoArrayDinamico();
-    } else if (getTipoPersistencia() == BINARIO) {
-        return listarLocacao();
-    } else if (getTipoPersistencia() == TEXTO) {
-        return ListarLocacaoTexto();
-    }
-}
-//
-//
-
 Locacao consultaLocacao(float codigo) {
     if (getTipoPersistencia() == MEMORIA) {
         return consultaLocacaoArrayDinamico((int) codigo);
@@ -229,16 +238,6 @@ Locacao consultaLocacao(float codigo) {
         return ConsultarLocacaoTexto(codigo);
     }
 
-}
-
-int qtdLocacao() {
-    if (getTipoPersistencia() == MEMORIA) {
-        return tamanhoLocacaos;
-    } else if (getTipoPersistencia() == BINARIO) {
-        return getTamanhoLocacao();
-    } else if (getTipoPersistencia() == TEXTO) {
-        return getTamanhoLocacaoTexto();
-    }
 }
 
 Locacao * locacoesReceber() {

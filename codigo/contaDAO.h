@@ -55,11 +55,11 @@ Conta* listarContaArrayDinamico();
 /*
  **  Consultar Contas em arquivo binario
  */
-Conta consultarContas(float cod);
+Conta consultarConta(float cod);
 /*
  **  Consultar Contas em arquivo texto
  */
-Conta ConsultarContasTexto(float cod);
+Conta ConsultarContaTexto(float cod);
 /*
  **  Altera Contas em arquivo Array Dinamico
  */
