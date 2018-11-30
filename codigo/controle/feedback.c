@@ -372,7 +372,7 @@
  * and open the template in the editor.
  */
 
-Cliente* clienteCodigoFeedback(float cod1, float cod2) {
+Cliente* clienteCodigoFeedback(int cod1, int cod2) {
     Cliente *Clientes;
     Clientes = listaClientes();
     Cliente *array = malloc((qtdCliente()) * sizeof (Cliente));
@@ -426,7 +426,7 @@ Cliente* clienteSexoFeedback(char sexo) {
     return array;
 }
 
-Filme* filmeCodigoFeedback(float cod1, float cod2) {
+Filme* filmeCodigoFeedback(int cod1, int cod2) {
     Filme *Filmes;
     Filmes = listaFilmes();
     Filme *array = malloc((qtdFilme()) * sizeof (Filme));
@@ -450,7 +450,7 @@ Filme* filmeCodigoFeedback(float cod1, float cod2) {
 
 //DAQUI PARA FRENTE NÃO FUNCIONA PQ TEM QUE PERSISTIR
 
-int qtdeLocacoesParaQueSePague(float cod, float precoTotal, float precoFilme) {
+int qtdeLocacoesParaQueSePague(int cod, float precoTotal, float precoFilme) {
     //Não entendi isso aqui não
     Locacao *Locacoess;
     float qtde;
@@ -584,8 +584,8 @@ Locacao * locacoesNomeFeedback(Cliente cli) {
 //    return array;
 //}
 
-Conta * contasReceberDataFeedback(char *data1, char *data2) {
-    Conta *Contas;
+Locacao * contasReceberDataFeedback(char *data1, char *data2) {
+    Locacao *Contas;
     Contas = listaContas();
     Conta *array = malloc((qtdConta()) * sizeof (Conta));
     time_t d1 = to_seconds(data1);
@@ -618,7 +618,7 @@ Conta * contasReceberDataFeedback(char *data1, char *data2) {
     return array;
 }
 
-Conta * contasReceberCodigoFeedback(float cod1, float cod2) {
+Conta * contasReceberCodigoFeedback(int cod1, int cod2) {
     Conta *Contas;
     Contas = listaContas();
     Conta *array = malloc((qtdConta()) * sizeof (Conta));
@@ -682,7 +682,7 @@ array[j-1].codigo=-1;
     return array;
 }
 
-Conta * contasPagarCodigoFeedback(float cod1, float cod2) {
+Conta * contasPagarCodigoFeedback(int cod1, int cod2) {
     Conta *Contas;
     Contas = listaContas();
     Conta *array = malloc((qtdConta()) * sizeof (Conta));
